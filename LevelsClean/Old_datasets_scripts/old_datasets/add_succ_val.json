@@ -1,0 +1,247 @@
+[
+  {
+    "theorem": "succ_add",
+    "NL": "-- Theorem Declaration: Show that the sum of the successor of 'a' and 'b' equals the successor of the sum of 'a' and 'b' for all possible natural numbers.",
+    "FL": "theorem succ_add (a b : \u2115) : succ a + b = succ (a + b)  := by"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "-- Apply induction on the natural number b, using d = 0 as the initial case and assuming that the proposition holds for succ (a) + d = succ (a + d) as the induction hypothesis. We then need to prove the base case: succ (a) + 0 = succ (a + 0) and the induction step: succ (a) + succ (d) = succ (a + succ (d)).",
+    "FL": "induction b with d hd"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "-- Begin with the base case and simplify the left-hand side from succ (a) + 0 to succ (a).",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "-- Simplify the right-hand side expression succ(a + 0) to succ (a)",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "-- Show that succ (a) is equal to succ (a), thus completing the base case",
+    "FL": "rfl"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "-- Now for the inductive case. Rewrite the expression succ (a) + succ (d) as succ (succ a + d).",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "-- Perform a rewrite to transform succ (a + succ d) into succ (succ (a + d))",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "-- Apply the inductive hypothesis to transform succ (succ a + d) into succ (succ (a + d))",
+    "FL": "rw [hd]"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "-- Demonstrate that succ (succ (a + d)) equals succ (succ (a + d)), thereby finalizing the proof",
+    "FL": "rfl"
+  },
+  {
+    "theorem": "succ_add_2",
+    "NL": "-- Theorem Declaration: Demonstrate that for all natural numbers, succ (a) + b is equivalent to succ (a + b).",
+    "FL": "theorem succ_add_2 (a b : \u2115) : succ a + b = succ (a + b)  := by"
+  },
+  {
+    "theorem": "succ_add_2",
+    "NL": "-- Apply induction on b. Here we take d as 0 for the base case and assume the inductive hypothesis that succ (a) + d equals succ (a + d). We now have two proof objectives: the base case, which is proving that succ (a) + 0 equals succ (a + 0), and the inductive step, which is proving that succ (a) + succ (d) equals succ (a + succ (d)).",
+    "FL": "induction b with d hd"
+  },
+  {
+    "theorem": "succ_add_2",
+    "NL": "-- Let's begin with the base case. We simplify the LHS by replacing succ (a) + 0 with succ (a).",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add_2",
+    "NL": "-- Simplify the right-hand side by replacing succ(a + 0) with succ(a).",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add_2",
+    "NL": "-- Confirm that succ (a) equals succ (a), thereby concluding the base case",
+    "FL": "rfl"
+  },
+  {
+    "theorem": "succ_add_2",
+    "NL": "-- Now we proceed with the inductive step. We transform the LHS succ (a) + succ (d) into succ (succ (a + d)) and the RHS succ (a + succ d) into succ (succ (a + d)). Then we apply the inductive hypothesis to rewrite RHS succ (succ a + d) to succ (succ (a + d)).",
+    "FL": "rw [add_succ, add_succ, hd]"
+  },
+  {
+    "theorem": "succ_add_2",
+    "NL": "-- Demonstrate that succ (succ (a + d)) equals succ (succ (a + d)), thereby finalizing the proof.",
+    "FL": "rfl"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- Proof Objective: Demonstrate that the sum of natural numbers follows the associative property, i.e., a + b + c is the same as a + (b + c).",
+    "FL": "theorem succ_add_logically_eq (a b : \u2115) : succ a + b = succ (a + b)  := by"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- Start an induction proof on b, where the base case is when b equals zero, so we have succ(a) + 0 equals succ(a + 0).",
+    "FL": "induction b with d hd"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- We begin by demonstrating the base case using the equation succ(a+b) = a + succ(b), replacing b with 0 and implementing this on the RHS.",
+    "FL": "rw [\u2190 add_succ]"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- We apply the property that adding zero to any natural number c results in c itself, and substitute c with succ(a), resulting in succ(a) equals a plus succ(0).",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- Utilize the property that a + succ(b) equals to succ(a+b), and apply it with a as a and b as 0 to obtain a + succ(0) equals to succ(a+0) on the right side of the equation.",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- Using the property that adding zero to any natural number results in the same number and setting c = a, we get that succ(a) equals succ(a) on the right side.",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- As succ(a) is equal to succ(a), we have successfully proven the base case.",
+    "FL": "rfl"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- To establish the inductive case, we utilize the property that a + succ(b) = succ(a + b) for all a, b in \u2115, and let a be succ(a) and b be n, which results in succ(succ(a) + n) = succ(a + succ(n)).",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- Once again, we utilize the property that a + succ(b) equals succ(a + b) for all natural numbers a and b. By assigning a as a and b as n, we derive that succ(succ(a) + n) equals succ(succ(a+n)).",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- Apply the induction hypothesis to the right side of the equation, yielding succ(succ(a) + n) = succ(succ(a) + n).",
+    "FL": "rw [\u2190 hd]"
+  },
+  {
+    "theorem": "succ_add_logically_eq",
+    "NL": "-- This concludes our proof.",
+    "FL": "rfl"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- Claim to Prove: Establish the associativity of natural number addition, i.e., a + b + c is equivalent to a + (b + c).",
+    "FL": "theorem succ_add_logical_deviation_1 (a b : \u2115) : succ a + b = succ (a + b) := by"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- Start induction on b, beginning with the base case where b is zero, so succ(a) + 0 is equal to succ(a + 0)",
+    "FL": "induction b with d hd"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- We begin by demonstrating the base case using the equation succ(a+b) = a + succ(b), replacing b with 0 and implementing this on the RHS.",
+    "FL": "rw [\u2190 add_succ]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- We apply the property that adding zero to any natural number c results in c itself, and substitute c with succ(a), resulting in succ(a) equals a plus succ(0).",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- Utilize the property that a + succ(b) equals to succ(a+b), and apply it with a as a and b as 0 to obtain a + succ(0) equals to succ(a+0) on the right side of the equation.",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- Using the property that adding zero to any natural number results in the same number and setting c = a, we get that succ(a) equals succ(a) on the right side.",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- Given that succ(a) is equivalent to succ(a), the base case has been proven.",
+    "FL": "rfl"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- Moving on to the inductive step, we utilize the property that a + succ(b) = succ(a + b) for all a, b in \u2115, and let a be succ(a) and b be n, which results in succ(succ(a) + n) = succ(a + succ(n)).",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- Using the property that for all natural numbers a and b, a + succ(b) equals succ(a + b), and applying this to the right side of our equation with a unchanged and b replaced by n, we get that succ(succ(a) + n) equals succ(succ(a+n)).",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- Apply the induction hypothesis to the right side of the equation, yielding succ(succ(a) + n) = succ(succ(a) + n).",
+    "FL": "rw [\u2190 hd]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_1",
+    "NL": "-- This concludes our proof.",
+    "FL": "rfl"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- The goal is to demonstrate that for any natural numbers a and b, the successor of a added to b equals the successor of the sum of a and b.",
+    "FL": "theorem succ_add_logical_deviation_2 (a b : \u2115) : succ a + b = succ (a + b)  := by"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- Start an induction process on b, with the base case being when b equals 0: succ(a) + 0 equates to succ(a + 0)",
+    "FL": "induction b with d hd"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- We begin by demonstrating the base case using the equation succ(a+b) = a + succ(b), replacing b with 0 and implementing this on the RHS.",
+    "FL": "rw [\u2190 add_succ]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- We apply the property that adding zero to any natural number c results in c itself, and substitute c with succ(a), resulting in succ(a) equals a plus succ(0).",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- Utilize the property that a + succ(b) equals to succ(a+b), and apply it with a as a and b as 0 to obtain a + succ(0) equals to succ(a+0) on the right side of the equation.",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- Using the property that adding zero to any natural number results in the same number and setting c = a, we get that succ(a) equals succ(a) on the right side.",
+    "FL": "rw [add_zero]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- As succ(a) is equal to succ(a), we have successfully proven the base case.",
+    "FL": "rfl"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- To establish the inductive case, we utilize the property that a + succ(b) = succ(a + b) for all a, b in \u2115, and let a be succ(a) and b be n, which results in succ(succ(a) + n) = succ(a + succ(n)).",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- Once again, we utilize the property that a + succ(b) equals succ(a + b) for all natural numbers a and b. By assigning a as a and b as n, we derive that succ(succ(a) + n) equals succ(succ(a+n)).",
+    "FL": "rw [add_succ]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- Apply the induction hypothesis to the right side of the equation, yielding succ(succ(a) + n) = succ(succ(a) + n).",
+    "FL": "rw [\u2190 hd]"
+  },
+  {
+    "theorem": "succ_add_logical_deviation_2",
+    "NL": "-- This concludes our proof.",
+    "FL": "rfl"
+  }
+]

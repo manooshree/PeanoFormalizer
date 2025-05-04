@@ -1,0 +1,2 @@
+theorem_name,predicted_tactic,tactic_success,tactic_time,error_feedback,question_feedback,strategy_feedback
+skipped_add_comm_2,Not able to be generated,False,26.48707628250122,"You've correctly set up an induction on b, but you haven't applied the inductive hypothesis in the successor case.",Can you see a way to apply the inductive hypothesis in the successor case?,You should use the inductive hypothesis hd : a + d = d + a in the successor case to simplify a + succ d.

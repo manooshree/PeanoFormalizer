@@ -1,0 +1,79 @@
+{
+    "implication_world_val": [ {
+        "theorem": "exact_9_dev_1",
+        "proof_is_correct": true,
+        "full_proof": "theorem exact_9_dev_1_temp (x : \u2115) : x + 1 = y + 1 \u2192 x = y := by\nintro h\napply succ_inj\nexact h-- error"
+    }, {
+        "theorem": "exact_5_dev_1",
+        "proof_is_correct": true,
+        "full_proof": "theorem exact_5_dev_1_temp (x : \u2115) (h : x + 1 = 4) : x = 3 := by\nrw [four_eq_succ_three] at h\nrw [\u2190succ_eq_add_one] at h\nexact h"
+    }],
+    "multiplication_world_val": [{
+        "theorem": "mul_add_train1",
+        "proof_is_correct": true,
+        "full_proof": "theorem mul_add_train1_temp (a b c : \u2115) : a * (b + c) = a * b + a * c := by\ninduction b with b hb\nrw [zero_add, mul_zero, zero_add]\nrfl\nrw [hb]-- error\nrw [hb]-- error\n-- There is no specific lean code for the natural language input as the statement specifies the completion of a proof and doesn't translate directly into a tangible step in Lean. However, typical proof completion steps might be done via the 'qed' or 'exact' tactics.-- error"
+    }, {
+        "theorem": "zero_mul_test",
+        "proof_is_correct": true,
+        "full_proof": "theorem zero_mul_test_temp (m : \u2115) : 0 * m = 0 := by\ninduction m with d hd\nrw [mul_zero]\nrfl\nrfl-- error"
+    }],
+    "AdvMultiplication_world_val": [{
+        "theorem": "eq_succ_of_ne_zero_train1",
+        "proof_is_correct": true,
+        "full_proof": "theorem eq_succ_of_ne_zero_train1_temp (a : \u2115) (ha : a \u2260 0) : \u2203 n, a = succ n := by\ninduction a\ntauto\nrfl-- error"
+    }, {
+        "theorem": "mul_left_ne_zero_test",
+        "proof_is_correct": true,
+        "full_proof": "theorem mul_left_ne_zero_test_temp (a b : \u2115) (h : a * b \u2260 0) : b \u2260 0 := by\nintro hb\nrw [hb, mul_zero]-- error\ncontradiction-- error"
+    }],
+    "algorithm_world_val": [{
+        "theorem": "var_swap_dev_1",
+        "proof_is_correct": true,
+        "full_proof": "theorem var_swap_dev_1_temp (a b c d : \u2115) : a + b + (c + d) = a + c + d + b := by\nrepeat rw [add_assoc]\nrw [add_left_comm b c d]\nrfl-- error"
+    }, {
+        "theorem": "succ_ne_succ_dev_2",
+        "proof_is_correct": true,
+        "full_proof": "theorem succ_ne_succ_dev_2_temp (m n : \u2115) (h : m \u2260 n) : succ m \u2260 succ n := by\ncontrapose! h\nexact h-- error"
+    }],
+    "less_or_equal_world_val": [{
+        "theorem": "le_zero1",
+        "proof_is_correct": true,
+        "full_proof": "theorem le_zero1_temp (x : \u2115) (hx : x \u2264 0) : x = 0 := by\ncases hx with y hy\napply add_left_eq_zero at hy-- error\nexact hy-- error"
+    }],
+    "power_world_val": [{
+        "theorem": "pow_pow2",
+        "proof_is_correct": true,
+        "full_proof": "theorem pow_pow2_temp (a m n : \u2115) : (a ^ m) ^ n = a ^ (m * n) := by\ninduction n with t Ht\nrfl-- error\n'rw [pow_succ]', 'rw [Ht]', 'rw [mul_succ]', 'rw [pow_add]'-- error\nrfl-- error"
+    }, {
+        "theorem": "pow_add_persona3",
+        "proof_is_correct": true,
+        "full_proof": "theorem pow_add_persona3_temp (a m n : \u2115) : a ^ (m + n) = a ^ m * a ^ n := by\ninduction n with d hd\nrw [add_zero, pow_zero, mul_one]\nrw [pow_succ, hd, mul_assoc]-- error\nrfl-- error"
+    }],
+    "tutorial_world_val": [{
+        "theorem": "rw_intro_persona_1",
+        "proof_is_correct": true,
+        "full_proof": "theorem rw_intro_persona_1_temp (x y : \u2115) (h : y = x + 7) : 2 * y = 2 * (x + 7) := by\nrw [h]"
+    }, {
+        "theorem": "add_zero_intro_2_persona_2_d",
+        "proof_is_correct": true,
+        "full_proof": "theorem add_zero_2_persona_2_d_temp (a b c : \u2115) : a + (b + 0) + (c + 0) = a + b + c := by\nrw [add_zero]\nrfl-- error"
+    }],
+    "AdvAddition_world_val": [{
+        "theorem": "add_left_eq_self_dev_1",
+        "proof_is_correct": true,
+        "full_proof": "theorem add_left_eq_self_dev_1_temp (x y : \u2115) : x + y = y \u2192 x = 0 := by\nintro h\nnth_rewrite 2 [\u2190 zero_add y] at h\nexact h-- error"
+    }, {
+        "theorem": "add_right_cancel_dev_1",
+        "proof_is_correct": true,
+        "full_proof": "theorem add_right_cancel_dev_1_temp (a b n : \u2115) : a + n = b + n \u2192 a = b := by\ninduction n with d hd\nintro h\nrepeat rw [add_zero] at h\nexact h\nintro h\napply succ_inj at h-- error\napply hd at h-- error\nexact h-- error"
+    }],
+    "addition_world_val": [{
+        "theorem": "add_comm_2",
+        "proof_is_correct": true,
+        "full_proof": "theorem add_comm_2_temp (a b : \u2115) : a + b = b + a := by\ninduction b with d hd\nrw [add_zero, zero_add]\nrfl\nrfl-- error"
+    }, {
+        "theorem": "succ_add_2",
+        "proof_is_correct": true,
+        "full_proof": "theorem succ_add_2_temp (a b : \u2115) : succ a + b = succ (a + b) := by\ninduction b with d hd\nrw [add_zero]\nrfl -- error\n'rw [add_succ]', 'rw [add_succ]', 'rw [hd]'\nrfl"
+}]
+}

@@ -1,0 +1,941 @@
+rw [add_comm]
+	rw [add_comm c b]
+		induction b with b b_ih
+			rw [add_zero]
+				rw [add_comm a c]
+					rw [zero_add]
+						rw [add_comm]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rfl
+								SYSTEM: Exceeded max depth
+					rw [add_comm, zero_add]
+						rw [add_comm a c]
+							rw [add_comm c a]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							induction a with a a_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_comm c a]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm c a]
+							rw [add_comm a c]
+								SYSTEM: Exceeded max depth
+					induction c with c c_ih
+						rw [add_zero]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+						rw [add_comm, zero_add]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_zero, zero_add]
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+					induction c with c c_ih
+						rw [add_zero]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+				rw [zero_add]
+					rw [add_comm a c]
+						rw [add_comm c a]
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							exact (by rfl)
+								SYSTEM: Exceeded max depth
+					rw [add_comm]
+						rw [add_comm a c]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+					induction c with c c_ih
+						rw [add_zero]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+					induction a with a a_ih
+						rw [zero_add]
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+						rw [add_comm c 0]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_zero]
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm, zero_add]
+							rfl
+								SYSTEM: Exceeded max depth
+			rw [zero_add]
+				rw [add_zero]
+					rw [add_comm c a]
+						rw [add_comm]
+							rfl
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+					rw [add_comm a c]
+						rw [add_comm c a]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rfl
+								SYSTEM: Exceeded max depth
+						rw [add_comm c a]
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+					induction c with c c_ih
+						rw [add_zero]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rw [add_comm, zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+				rw [add_comm c a]
+					rw [add_comm a c]
+						rw [add_zero]
+							rw [add_comm c a]
+								SYSTEM: Exceeded max depth
+					rw [add_zero]
+						rw [add_comm]
+							rfl
+								SYSTEM: Exceeded max depth
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm b c] at b_ih
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							induction b with b b_ih
+								SYSTEM: Exceeded max depth
+				induction c with c c_ih
+					rw [add_zero]
+						rw [add_zero]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+					rw [zero_add]
+						rw [add_zero]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+			rw [add_comm a c]
+				rw [add_zero]
+					rw [add_comm]
+						rw [zero_add]
+							rw [add_comm a c]
+								SYSTEM: Exceeded max depth
+							rw [add_comm c a]
+								SYSTEM: Exceeded max depth
+						rw [add_comm c a]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+					rw [zero_add]
+						rw [add_comm c a]
+							rfl
+								SYSTEM: Exceeded max depth
+					rw [add_comm c a]
+						rw [add_comm, zero_add]
+							rw [add_assoс]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a c]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_comm c a]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a c]
+								SYSTEM: Exceeded max depth
+						induction c with c c_ih
+							rw [add_comm, zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+						induction a with a a_ih
+							rw [add_comm, zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+				rw [zero_add]
+					rw [add_comm, add_zero]
+						rw [add_comm a c]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+						rw [add_comm]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+						induction c with c c_ih
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+					rw [add_comm c a]
+						rw [add_comm, add_zero]
+							rw [add_comm c a]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+					induction c with c c_ih
+						rw [add_zero]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+					rw [add_zero] at *
+						rw [add_comm]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm c a]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+				induction c with c c_ih
+					rw [add_zero]
+						rw [add_zero]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+					rw [zero_add]
+						rw [add_zero]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+			induction c with c c_ih
+				rw [add_zero]
+					rw [add_zero]
+						rw [zero_add]
+							rw [add_comm, zero_add]
+								SYSTEM: Exceeded max depth
+						rw [add_zero]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a 0]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+					rw [zero_add]
+						rw [add_zero]
+							rw [add_comm, zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+					induction a with a a_ih
+						rw [zero_add]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+						rw [add_comm, zero_add]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+				rw [zero_add]
+					rw [add_zero]
+						rw [add_zero]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+					rw [zero_add]
+						rw [add_zero]
+							rw [add_comm, zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+				rw [add_comm, zero_add]
+					rw [add_zero]
+						rw [add_comm, zero_add]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+						rw [add_comm]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+				induction a with a a_ih
+					rw [add_zero]
+						rw [add_zero]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rfl
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+						rw [add_comm, zero_add]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rfl
+								SYSTEM: Exceeded max depth
+					rw [zero_add]
+						rw [add_zero]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rfl
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+					rw [add_comm]
+						rw [add_zero]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+	induction c with c c_ih
+		rw [zero_add]
+			rw [add_comm, add_zero]
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				rw [add_comm] at *
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				rfl
+					rw [add_succ]
+						induction c with c c_ih
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm, add_zero]
+								SYSTEM: Exceeded max depth
+						rw [succ_add]
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+					rw [succ_add]
+						rw [add_succ]
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [succ_add]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [c_ih]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						induction c with c c_ih
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+					rw [add_comm]
+						rw [add_succ]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a c]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [succ_add]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							rw [add_comm c b]
+								SYSTEM: Exceeded max depth
+						induction c with c c_ih
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a]
+								SYSTEM: Exceeded max depth
+						induction (succ c) with c c_ih
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [add_comm, zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm, add_zero]
+								SYSTEM: Exceeded max depth
+							rw [c_ih] at c_ih✝
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							induction c✝ with c✝ c_ih✝
+								SYSTEM: Exceeded max depth
+			rw [add_comm b a]
+				rw [add_zero]
+					rw [add_comm]
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+		rw [add_zero]
+			rw [add_comm]
+				rw [zero_add]
+					rw [add_comm]
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a (succ c)]
+								SYSTEM: Exceeded max depth
+							rw [add_comm (succ c) b]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c' c_ih'
+								SYSTEM: Exceeded max depth
+					rw [add_comm a b]
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+			rw [zero_add]
+				rw [add_comm b a]
+					rw [add_comm]
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+					rw [add_comm a b]
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+					rfl
+						rw [succ_add]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm a]
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						induction c with c c_ih
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+				rw [add_comm]
+					rw [add_comm a b]
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a (succ c)]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+					rfl
+						rw [add_succ]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [succ_add]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm a (succ c)]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction b with b b_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm (succ c) b]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							rw [add_comm a (succ c)]
+								SYSTEM: Exceeded max depth
+						induction c with c c_ih
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+				rw [add_comm a]
+					rw [add_comm]
+						rfl
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+					rw [add_comm b a]
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+		rw [add_comm, zero_add]
+			rw [add_comm a b]
+				rw [add_comm, add_zero]
+					rw [add_comm]
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+					rfl
+						rw [add_succ]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [succ_add]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						induction c with c c_ih
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm, succ_add]
+								SYSTEM: Exceeded max depth
+			rw [add_zero]
+				rw [add_comm]
+					rfl
+						rw [add_succ]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [succ_add]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+				rfl
+					rw [add_succ]
+						rw [add_comm]
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [succ_add]
+							rw [succ_add, add_comm]
+								SYSTEM: Exceeded max depth
+							induction b with b b_ih
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						induction c with c c_ih
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+					rw [succ_add]
+						rw [add_succ]
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [succ_add]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [c_ih]
+								SYSTEM: Exceeded max depth
+							rw [add_comm, add_succ]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						induction c with c c_ih
+							rw [add_comm, zero_add]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+					rw [add_comm]
+						rw [succ_add]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_comm, add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm c b]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a]
+								SYSTEM: Exceeded max depth
+						rw [add_comm a (succ c)]
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+							rw [add_comm] at c_ih
+								SYSTEM: Exceeded max depth
+						induction c with c c_ih
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm] at c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_comm (succ c) b]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+						rw [add_succ]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+					induction c with c c_ih
+						rw [add_succ]
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+						rw [succ_add]
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+						rw [add_comm] at c_ih
+							rw [succ_add]
+								SYSTEM: Exceeded max depth
+							rw [c_ih] at *
+								SYSTEM: Exceeded max depth
+	rw [add_comm a c]
+		induction b with b b_ih
+			rw [add_zero]
+				rw [add_comm]
+					rw [add_zero]
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm c a]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+				rw [add_comm c a]
+					rw [add_zero]
+						rw [add_comm a c]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rfl
+								SYSTEM: Exceeded max depth
+						rfl
+							rw [add_succ]
+								SYSTEM: Exceeded max depth
+							rw [add_comm c (succ b)]
+								SYSTEM: Exceeded max depth
+							rw [add_comm c a]
+								SYSTEM: Exceeded max depth
+			rw [add_comm]
+				rw [add_comm c a]
+					rw [add_zero]
+						rw [add_comm]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+						rw [add_zero]
+							rw [add_comm a c]
+								SYSTEM: Exceeded max depth
+				rw [add_zero]
+					rw [add_zero]
+						rw [add_comm a c]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [add_comm c a]
+								SYSTEM: Exceeded max depth
+						rw [add_comm c a]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+					rw [add_comm]
+						rw [add_comm, add_zero]
+							rw [add_comm a c]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+						rw [add_comm c a]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+					rw [add_comm a c]
+						rw [add_comm c a]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+						rw [add_comm]
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							induction c with c c_ih
+								SYSTEM: Exceeded max depth
+		rw [add_comm c b]
+			rw [add_comm]
+				rw [add_comm b c]
+					induction c with c c_ih
+						rw [zero_add]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm a]
+								SYSTEM: Exceeded max depth
+						induction b with b b_ih
+							rw [add_zero]
+								SYSTEM: Exceeded max depth
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+				induction c with c c_ih
+					rw [add_zero]
+						rw [add_comm]
+							rw [zero_add]
+								SYSTEM: Exceeded max depth
+						rw [zero_add]
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+						rw [add_comm, zero_add]
+							rw [add_comm b]
+								SYSTEM: Exceeded max depth
+					rw [zero_add]
+						rw [add_zero]
+							SYSTEM: Exceeded budget
+						rw [add_comm]
+							SYSTEM: Exceeded budget
+						rw [add_comm a b]
+							SYSTEM: Exceeded budget
+				induction b with b b_ih
+					SYSTEM: Exceeded budget
+			induction c with c c_ih
+				SYSTEM: Exceeded budget
+induction c with c c_ih
+	SYSTEM: Exceeded budget

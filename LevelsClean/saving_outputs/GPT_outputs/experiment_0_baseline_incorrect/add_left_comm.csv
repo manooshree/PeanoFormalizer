@@ -1,0 +1,17 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Tactics Match,Is Incorrect Tactic,Correctly Identified As Wrong
+add_left_comm,add_left_comm_dev_1,"-- By associativity of addition, can change a + (b + c) into (a + b) + c",rw [add_assoc],rw [← add_assoc],"a b c : ℕ
+⊢ a + b + c = b + (a + c)
+",error,No,No,No
+add_left_comm,add_left_comm_dev_1,"-- So we just need to show b + (a + c) = b + (a + c), which is true by reflexivity.",rfl,rfl,,error,Yes,Yes,Yes
+add_left_comm,add_left_comm_dev_2,-- a + (b + c) = b + (a + c) -> (a + b) + c = b + (a + c),rw [add_assoc],rw [← add_assoc],"a b c : ℕ
+⊢ a + b + c = b + (a + c)
+",error,No,No,No
+add_left_comm,add_left_comm_dev_2,-- lhs = rhs,rw [add_assoc],rfl,,error,No,Yes,Yes
+add_left_comm,add_left_comm_dev_1,"-- By associativity of addition, can change a + (b + c) into (a + b) + c",rw [add_assoc],rw [← add_assoc],"a b c : ℕ
+⊢ a + b + c = b + (a + c)
+",error,No,No,No
+add_left_comm,add_left_comm_dev_1,"-- So we just need to show b + (a + c) = b + (a + c), which is true by reflexivity.",rfl,rfl,,error,Yes,Yes,Yes
+add_left_comm,add_left_comm_dev_2,-- a + (b + c) = b + (a + c) -> (a + b) + c = b + (a + c),rw [add_assoc],rw [← add_assoc],"a b c : ℕ
+⊢ a + b + c = b + (a + c)
+",error,No,No,No
+add_left_comm,add_left_comm_dev_2,-- lhs = rhs,"rw [← add_assoc, add_comm a b, add_assoc]",rfl,,error,No,Yes,Yes

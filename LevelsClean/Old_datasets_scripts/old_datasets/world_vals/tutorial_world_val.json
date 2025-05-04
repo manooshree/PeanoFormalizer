@@ -1,0 +1,578 @@
+[
+  {
+    "theorem": "rfl_intro",
+    "NL": "-- Theorem Declaration: Prove for natural numbers x, q, that 37 * x + q = 37 * x + q",
+    "FL": "theorem rfl_intro (x q : \u2115) : 37 * x + q = 37 * x + q := by",
+    "state": "x q : \u2115\n\u22a2 37 * x + q = 37 * x + q\n"
+  },
+  {
+    "theorem": "rfl_intro",
+    "NL": "-- Prove LHS and RHS are equal, 37 * x + q = 37 * x + q, completing the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "rfl_intro_persona_1",
+    "NL": "-- Theorem Declaration: Prove for natural numbers x, q, that 37 * x + q = 37 * x + q",
+    "FL": "theorem rfl_intro_persona_1 (x q : \u2115) : 37 * x + q = 37 * x + q := by",
+    "state": "x q : \u2115\n\u22a2 37 * x + q = 37 * x + q\n"
+  },
+  {
+    "theorem": "rfl_intro_persona_1",
+    "NL": "-- 37 * x + q = 37 * x + q, QED",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "rfl_intro_persona_2",
+    "NL": "-- Theorem Declaration: Prove for natural numbers x, q, that 37 * x + q = 37 * x + q",
+    "FL": "theorem rfl_intro_persona_2 (x q : \u2115) : 37 * x + q = 37 * x + q := by",
+    "state": "x q : \u2115\n\u22a2 37 * x + q = 37 * x + q\n"
+  },
+  {
+    "theorem": "rfl_intro_persona_2",
+    "NL": "-- both sides of the equation are equal hence we can complete the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "rw_intro",
+    "NL": "-- Theorem Declaration: Prove 2 * y = 2 * (x + 7) for natural numbers x, y, given that y = x + 7",
+    "FL": "theorem rw_intro (x y : \u2115) (h : y = x + 7) : 2 * y = 2 * (x + 7) := by",
+    "state": "x y : \u2115\nh : y = x + 7\n\u22a2 2 * y = 2 * (x + 7)\n"
+  },
+  {
+    "theorem": "rw_intro",
+    "NL": "-- Rewrite 2 * y in the LHS of the proof goal as 2 * (x + 7) using the fact that y = x + 7",
+    "FL": "rw [h]",
+    "state": "x y : \u2115\nh : y = x + 7\n\u22a2 2 * (x + 7) = 2 * (x + 7)\n"
+  },
+  {
+    "theorem": "rw_intro",
+    "NL": "-- Prove LHS and RHS are equal, 2 * (x + 7) = 2 * (x + 7), completing the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "rw_intro_persona_1",
+    "NL": "-- Theorem Declaration: Prove 2 * y = 2 * (x + 7) for natural numbers x, y, given that y = x + 7",
+    "FL": "theorem rw_intro_persona_1 (x y : \u2115) (h : y = x + 7) : 2 * y = 2 * (x + 7) := by",
+    "state": "x y : \u2115\nh : y = x + 7\n\u22a2 2 * y = 2 * (x + 7)\n"
+  },
+  {
+    "theorem": "rw_intro_persona_1",
+    "NL": "-- Rewrite LHS: 2 * y -> 2 * (x + 7) using our hypothesis that y = x + 7",
+    "FL": "rw [h]",
+    "state": "x y : \u2115\nh : y = x + 7\n\u22a2 2 * (x + 7) = 2 * (x + 7)\n"
+  },
+  {
+    "theorem": "rw_intro_persona_1",
+    "NL": "-- 2 * (x + 7) = 2 * (x + 7), QED",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "rw_intro_persona_2",
+    "NL": "-- Theorem Declaration: Prove 2 * y = 2 * (x + 7) for natural numbers x, y, given that y = x + 7",
+    "FL": "theorem rw_intro_persona_2 (x y : \u2115) (h : y = x + 7) : 2 * y = 2 * (x + 7) := by",
+    "state": "x y : \u2115\nh : y = x + 7\n\u22a2 2 * y = 2 * (x + 7)\n"
+  },
+  {
+    "theorem": "rw_intro_persona_2",
+    "NL": "-- We use our hypothesis to rewrite on the LHS, obtaining 2 * (x + 7)",
+    "FL": "rw [h]",
+    "state": "x y : \u2115\nh : y = x + 7\n\u22a2 2 * (x + 7) = 2 * (x + 7)\n"
+  },
+  {
+    "theorem": "rw_intro_persona_2",
+    "NL": "-- both sides of the equation are equal hence we can complete the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "two_eq_ss0",
+    "NL": "-- Theorem Declaration: Prove that the succ (succ (0)) is 2.",
+    "FL": "theorem two_eq_ss0: 2 = succ (succ 0) := by",
+    "state": "x\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0",
+    "NL": "-- Use the fact that the successor of 1, succ 1, is 2, in the proof goal, changing the equation to 'succ 1 = succ (succ 0)'",
+    "FL": "rw [two_eq_succ_one]",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0",
+    "NL": "-- Use the fact that 1 = succ 0 and expand the LHS succ (succ 0), changing the equation to succ (succ 0) = succ (succ 0)",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0",
+    "NL": "-- LHS and RHS are equal, succ (succ 0) = succ (succ 0), completing the proof",
+    "FL": "rfl",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0_persona_1",
+    "NL": "-- Theorem Declaration: Prove that the succ (succ (0)) is 2.",
+    "FL": "theorem two_eq_ss0_persona_1: 2 = succ (succ 0) := by",
+    "state": "x\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0_persona_1",
+    "NL": "-- Substitute 2 -> succ(1) on the LHS",
+    "FL": "rw [two_eq_succ_one]",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0_persona_1",
+    "NL": "-- Substitute 1 -> succ(0) on the LHS",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0_persona_1",
+    "NL": "-- succ(succ(0)) = succ(succ(0)), QED",
+    "FL": "rfl",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0_persona_2",
+    "NL": "-- Theorem Declaration: Prove that the succ (succ (0)) is 2.",
+    "FL": "theorem two_eq_ss0_persona_2: 2 = succ (succ 0) := by",
+    "state": "x\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0_persona_2",
+    "NL": "-- Using the successor properties, we can rewrite the LHS to succ 1",
+    "FL": "rw [two_eq_succ_one]",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0_persona_2",
+    "NL": "-- Using the successor properties once again, we can rewrite the LHS to succ(succ(0))",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "two_eq_ss0_persona_2",
+    "NL": "-- both sides of the equation are equal hence we can complete the proof",
+    "FL": "rfl",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "rw_backwards",
+    "NL": "-- Theorem Declaration: Prove that the succ (succ (0)) is 2.",
+    "FL": "theorem rw_backwards : 2 = succ (succ 0) := by",
+    "state": "\u22a2 2 = succ (succ 0)\n"
+  },
+  {
+    "theorem": "rw_backwards",
+    "NL": "-- Simplify succ 0 to 1, changing RHS from succ (succ 0) to succ 1",
+    "FL": "rw [\u2190 one_eq_succ_zero]",
+    "state": "\u22a2 2 = succ 1\n"
+  },
+  {
+    "theorem": "rw_backwards",
+    "NL": "-- Simplify succ 1 to 2, changing RHS from succ 1 to 2",
+    "FL": "rw [\u2190 two_eq_succ_one]",
+    "state": "\u22a2 2 = 2\n"
+  },
+  {
+    "theorem": "rw_backwards",
+    "NL": "-- Prove LHS and RHS are equal, 2 = 2, completing the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "rw_backwards_persona_1",
+    "NL": "-- Theorem Declaration: Prove that the succ (succ (0)) is 2.",
+    "FL": "theorem rw_backwards_persona_1 : 2 = succ (succ 0) := by",
+    "state": "\u22a2 2 = succ (succ 0)\n"
+  },
+  {
+    "theorem": "rw_backwards_persona_1",
+    "NL": "-- Substitute succ(0) -> 1 on the RHS",
+    "FL": "rw [\u2190 one_eq_succ_zero]",
+    "state": "\u22a2 2 = succ 1\n"
+  },
+  {
+    "theorem": "rw_backwards_persona_1",
+    "NL": "-- Substitute succ(1) -> 2 on the RHS",
+    "FL": "rw [\u2190 two_eq_succ_one]",
+    "state": "\u22a2 2 = 2\n"
+  },
+  {
+    "theorem": "rw_backwards_persona_1",
+    "NL": "-- 2 = 2, QED",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "rw_backwards_persona_2",
+    "NL": "-- Theorem Declaration: Prove that the succ (succ (0)) is 2.",
+    "FL": "theorem rw_backwards_persona_2 : 2 = succ (succ 0) := by",
+    "state": "\u22a2 2 = succ (succ 0)\n"
+  },
+  {
+    "theorem": "rw_backwards_persona_2",
+    "NL": "-- Using the successor properties, we can rewrite the RHS to succ 1",
+    "FL": "rw [\u2190 one_eq_succ_zero]",
+    "state": "\u22a2 2 = succ 1\n"
+  },
+  {
+    "theorem": "rw_backwards_persona_2",
+    "NL": "-- Using the successor properties once again, we can rewrite the LHS to 2",
+    "FL": "rw [\u2190 two_eq_succ_one]",
+    "state": "\u22a2 2 = 2\n"
+  },
+  {
+    "theorem": "rw_backwards_persona_2",
+    "NL": "-- both sides of the equation are equal hence we can complete the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "add_zero_intro",
+    "NL": "-- Theorem Declaration: Prove for natural numbers a, b, and c, that a + (b + 0) + (c + 0) is equal to a + b + c",
+    "FL": "theorem add_zero_intro (a b c : \u2115) : a + (b + 0) + (c + 0) = a + b + c := by",
+    "state": "a b c : \u2115\n\u22a2 a + (b + 0) + (c + 0) = a + b + c\n"
+  },
+  {
+    "theorem": "add_zero_intro",
+    "NL": "-- Simplify the expression in the LHS (b + 0) to  b",
+    "FL": "rw [add_zero]",
+    "state": "a b c : \u2115\n\u22a2 a + b + (c + 0) = a + b + c\n"
+  },
+  {
+    "theorem": "add_zero_intro",
+    "NL": "-- Simplify the expression in the LHS (c + 0) to c",
+    "FL": "rw [add_zero]",
+    "state": "a b c : \u2115\n\u22a2 a + b + c = a + b + c\n"
+  },
+  {
+    "theorem": "add_zero_intro",
+    "NL": "-- Prove LHS and RHS are equal, a + b + c = a + b + c, completing the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "add_zero_intro_persona_1_d",
+    "NL": "-- Theorem Declaration: Prove for natural numbers a, b, and c, that a + (b + 0) + (c + 0) is equal to a + b + c",
+    "FL": "theorem add_zero_intro_persona_1_d (a b c : \u2115) : a + (b + 0) + (c + 0) = a + b + c := by",
+    "state": "a b c : \u2115\n\u22a2 a + (b + 0) + (c + 0) = a + b + c\n"
+  },
+  {
+    "theorem": "add_zero_intro_persona_1_d",
+    "NL": "-- Substitute c + 0 -> c on the LHS",
+    "FL": "rw [add_zero c]",
+    "state": "a b c : \u2115\n\u22a2 a + (b + 0) + c = a + b + c\n"
+  },
+  {
+    "theorem": "add_zero_intro_persona_1_d",
+    "NL": "-- Substitute b + 0 -> b on the LHS",
+    "FL": "rw [add_zero b]",
+    "state": "a b c : \u2115\n\u22a2 a + b + c = a + b + c\n"
+  },
+  {
+    "theorem": "add_zero_intro_persona_1_d",
+    "NL": "--  a + b + c = a + b + c, QED",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "add_zero_intro_2_persona_2_d",
+    "NL": "-- Theorem Declaration: Prove for natural numbers a, b, and c, that a + (b + 0) + (c + 0) is equal to a + b + c",
+    "FL": "theorem add_zero_2_persona_2_d (a b c : \u2115) : a + (b + 0) + (c + 0) = a + b + c := by",
+    "state": "a b c : \u2115\n\u22a2 a + (b + 0) + (c + 0) = a + b + c\n"
+  },
+  {
+    "theorem": "add_zero_intro_2_persona_2_d",
+    "NL": "-- Using the properties of addition by 0, we can rewrite b + 0 to b",
+    "FL": "rw [add_zero b]",
+    "state": "a b c : \u2115\n\u22a2 a + b + (c + 0) = a + b + c\n"
+  },
+  {
+    "theorem": "add_zero_intro_2_persona_2_d",
+    "NL": "-- Using the properties of addition by 0, we can rewrite c + 0 to c",
+    "FL": "rw [add_zero c]",
+    "state": "a b c : \u2115\n\u22a2 a + b + c = a + b + c\n"
+  },
+  {
+    "theorem": "add_zero_intro_2_persona_2_d",
+    "NL": "-- both sides of the equation are equal hence we can complete the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "succ_eq_add_one",
+    "NL": "-- Theorem Declaration: For natural number n, prove that succ n is equivalent to n + 1",
+    "FL": "theorem succ_eq_add_one n : succ n = n + 1 := by",
+    "state": "n : \u2115\n\u22a2 succ n = n + 1\n"
+  },
+  {
+    "theorem": "succ_eq_add_one",
+    "NL": "-- Rewrite RHS n + 1 as n + succ 0",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "n : \u2115\n\u22a2 succ n = n + succ 0\n"
+  },
+  {
+    "theorem": "succ_eq_add_one",
+    "NL": "-- Rewrite RHS from n + succ 0 to succ (n + 0)",
+    "FL": "rw [add_succ]",
+    "state": "n : \u2115\n\u22a2 succ n = succ (n + 0)\n"
+  },
+  {
+    "theorem": "succ_eq_add_one",
+    "NL": "-- Simplify RHS succ (n + 0) to succ n",
+    "FL": "rw [add_zero]",
+    "state": "n : \u2115\n\u22a2 succ n = succ n\n"
+  },
+  {
+    "theorem": "succ_eq_add_one",
+    "NL": "-- Prove LHS and RHS are equal, succ n = succ n, completing the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d",
+    "NL": "-- Theorem Declaration: For natural number n, prove that succ n is equivalent to n + 1",
+    "FL": "theorem succ_eq_add_one_persona_1_d n : succ n = n + 1 := by",
+    "state": "n : \u2115\n\u22a2 succ n = n + 1\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d",
+    "NL": "-- Rewrite on both RHS and LHS making n -> n + 0",
+    "FL": "rw [\u2190 add_zero n]",
+    "state": "n : \u2115\n\u22a2 succ (n + 0) = n + 0 + 1\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d",
+    "NL": "-- Rewrite on RHS making 1 -> succ 0",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "n : \u2115\n\u22a2 succ (n + 0) = n + 0 + succ 0\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d",
+    "NL": "-- Rewrite on RHS making n + 0 + succ(0) -> succ(n+0+0)",
+    "FL": "rw [add_succ]",
+    "state": "n : \u2115\n\u22a2 succ (n + 0) = succ (n + 0 + 0)\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d",
+    "NL": "-- Rewrite on RHS making n + 0 -> n",
+    "FL": "rw [add_zero (n+0)]",
+    "state": "n : \u2115\n\u22a2 succ (n + 0) = succ (n + 0)\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d",
+    "NL": "-- succ(n+0) = succ(n+0), QED",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d2",
+    "NL": "-- Theorem Declaration: For natural number n, prove that succ n is equivalent to n + 1",
+    "FL": "theorem succ_eq_add_one_persona_1_d2 : succ n = n + 1 := by",
+    "state": "n : \u2115\n\u22a2 succ n = n + 1\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d2",
+    "NL": "-- Rewrite RHS 1 -> succ(0)",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "n : \u2115\n\u22a2 succ n = n + succ 0\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d2",
+    "NL": "-- Rewrite both RHS and LHS n -> n + 0",
+    "FL": "rw [\u2190 add_zero n]",
+    "state": "n : \u2115\n\u22a2 succ (n + 0) = n + 0 + succ 0\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d2",
+    "NL": "-- Rewrite RHS n + 0 + succ(0) -> succ(n + 0 + 0)",
+    "FL": "rw [add_succ]",
+    "state": "n : \u2115\n\u22a2 succ (n + 0) = succ (n + 0 + 0)\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d2",
+    "NL": "-- Rewrite LHS and RHS n + 0 -> n",
+    "FL": "rw [add_zero]",
+    "state": "n : \u2115\n\u22a2 succ n = succ (n + 0)\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d2",
+    "NL": "-- Rewrite RHS n + 0 -> n",
+    "FL": "rw [add_zero]",
+    "state": "n : \u2115\n\u22a2 succ n = succ n\n"
+  },
+  {
+    "theorem": "succ_eq_add_one_persona_1_d2",
+    "NL": "-- succ(n) = succ(n), QED",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "twoaddtwo",
+    "NL": "-- Theorem Declaration: Prove 2 + 2 = 4",
+    "FL": "theorem twoaddtwo : (2 : \u2115) + 2 = 4 := by",
+    "state": "\u22a2 2 + 2 = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo",
+    "NL": "-- Replace the second 2 in the LHS with succ 1, changing 2 + 2 to 2 + succ 1",
+    "FL": "nth_rewrite 2 [two_eq_succ_one]",
+    "state": "\u22a2 2 + succ 1 = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo",
+    "NL": "-- Rewrite LHS from 2 + succ 1 to succ (2 + 1)",
+    "FL": "rw [add_succ]",
+    "state": "\u22a2 succ (2 + 1) = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo",
+    "NL": "-- Rewrite 1 as succ 0, so LHS changes from succ (2 + 1) to succ (2 + succ 0)",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "\u22a2 succ (2 + succ 0) = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo",
+    "NL": "-- Rewrite the LHS from succ (2 + succ 0) to succ (succ (2 + 0))",
+    "FL": "rw [add_succ]",
+    "state": "\u22a2 succ (succ (2 + 0)) = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo",
+    "NL": "-- Simplify 2 + 0 to 2, changing LHS from succ (succ (2 + 0)) to succ (succ (2))",
+    "FL": "rw [add_zero]",
+    "state": "\u22a2 succ (succ 2) = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo",
+    "NL": "-- Rewrite 4 as succ 3, changing RHS from 4 to succ 3",
+    "FL": "rw [four_eq_succ_three]",
+    "state": "\u22a2 succ (succ 2) = succ 3\n"
+  },
+  {
+    "theorem": "twoaddtwo",
+    "NL": "-- Rewrite 3 to succ 2, changing RHS from succ 3 to succ (succ (2))",
+    "FL": "rw [three_eq_succ_two]",
+    "state": "\u22a2 succ (succ 2) = succ (succ 2)\n"
+  },
+  {
+    "theorem": "twoaddtwo",
+    "NL": "-- Prove LHS and RHS are equal, succ (succ 2) = succ (succ 2), completing the proof",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "twoaddtwo_persona_1",
+    "NL": "-- Theorem Declaration: Prove 2 + 2 = 4",
+    "FL": "theorem twoaddtwo_persona_1 : (2 : \u2115) + 2 = 4 := by",
+    "state": "\u22a2 2 + 2 = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_1",
+    "NL": "-- 4 -> succ(3) on the RHS to obtain 2 + 2 = succ(3)",
+    "FL": "rw [four_eq_succ_three]",
+    "state": "\u22a2 2 + 2 = succ 3\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_1",
+    "NL": "-- 3 -> succ(2) on the RHS to obtain 2 + 2 = succ(succ(2))",
+    "FL": "rw [three_eq_succ_two]",
+    "state": "\u22a2 2 + 2 = succ (succ 2)\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_1",
+    "NL": "-- 2 -> succ(1) on the LHS and RHS to obtain succ(1) + succ(1) = succ(succ(succ(1)))",
+    "FL": "rw [two_eq_succ_one]",
+    "state": "\u22a2 succ 1 + succ 1 = succ (succ (succ 1))\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_1",
+    "NL": "--  succ(1) + succ(1) -> succ(succ(1) + 1) on the LHS to obtain succ(succ(1) + 1) = succ(succ(succ(1)))",
+    "FL": "rw [add_succ]",
+    "state": "\u22a2 succ (succ 1 + 1) = succ (succ (succ 1))\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_1",
+    "NL": "-- 1 -> succ(0) on the LHS and RHS to obtain succ(succ(succ(0) + succ(0))) = succ(succ(succ(0)))",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "\u22a2 succ (succ (succ 0) + succ 0) = succ (succ (succ (succ 0)))\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_1",
+    "NL": "-- succ (succ (succ 0) + succ 0) -> succ(succ(succ((0))) + 0 on the LHS to obtain succ(succ(succ(0) + 0)) = succ(succ(succ(0)))",
+    "FL": "rw [add_succ]",
+    "state": "\u22a2 succ (succ (succ (succ 0) + 0)) = succ (succ (succ (succ 0)))\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_1",
+    "NL": "-- succ(succ(succ((0))) + 0 -> succ(succ(succ((0))) on LHS to obtain succ(succ(succ(0))) = succ(succ(succ(0)))",
+    "FL": "rw [add_zero]",
+    "state": "\u22a2 succ (succ (succ (succ 0))) = succ (succ (succ (succ 0)))\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_1",
+    "NL": "-- succ(succ(succ(0))) = succ(succ(succ(0))), QED",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "twoaddtwo_persona_2",
+    "NL": "-- Theorem Declaration: Prove 2 + 2 = 4",
+    "FL": "theorem twoaddtwo_persona_2 : (2 : \u2115) + 2 = 4 := by",
+    "state": "\u22a2 2 + 2 = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_2",
+    "NL": "-- Use properties of succession, replacing LHS with 2 + succ(1)",
+    "FL": "nth_rewrite 2 [two_eq_succ_one]",
+    "state": "\u22a2 2 + succ 1 = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_2",
+    "NL": "-- use another property of succession to rewrite LHS to succ(2 + 1)",
+    "FL": "rw [add_succ]",
+    "state": "\u22a2 succ (2 + 1) = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_2",
+    "NL": "-- Using properties of succession, rewrite 1 to succ(0) on LHS",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "\u22a2 succ (2 + succ 0) = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_2",
+    "NL": "-- Using properties of succession, rewrite LHS to succ(succ(2 + 0))",
+    "FL": "rw [add_succ]",
+    "state": "\u22a2 succ (succ (2 + 0)) = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_2",
+    "NL": "-- Using properties of addition by zero, rewrite LHS to succ(succ(2))",
+    "FL": "rw [add_zero]",
+    "state": "\u22a2 succ (succ 2) = 4\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_2",
+    "NL": "-- Using properties of succession, rewrite 4 to succ(3) on RHS",
+    "FL": "rw [four_eq_succ_three]",
+    "state": "\u22a2 succ (succ 2) = succ 3\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_2",
+    "NL": "-- Using properties of succession, rewrite to succ(3) on LHS",
+    "FL": "rw [\u2190 three_eq_succ_two]",
+    "state": "\u22a2 succ 3 = succ 3\n"
+  },
+  {
+    "theorem": "twoaddtwo_persona_2",
+    "NL": "-- Prove LHS and RHS are equal, succ(3) = succ(3), completing the proof",
+    "FL": "rfl",
+    "state": ""
+  }
+]

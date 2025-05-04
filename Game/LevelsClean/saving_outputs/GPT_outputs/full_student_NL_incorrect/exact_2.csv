@@ -1,0 +1,17 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Tactics Match,Is Incorrect Tactic,Correctly Identified As Wrong
+exact_2,exact_2_dev_1,-- We simplify the hypothesis of 0 + x = 0 + y + 2 to x = 0 + x + 2.,rw [zero_add] at h,rw [zero_add] at h,"y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+",Yes,No,Yes
+exact_2,exact_2_dev_1,"-- So, x = y + 2, which is exactly what we wanted to prove.",exact h,exact h,,error,Yes,Yes,Yes
+exact_2,exact_2_dev_2,-- 0 + x = 0 + y + 2 -> x = 0 + y + 2,rw [zero_add] at h,rw [zero_add] at h,"y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+",Yes,No,Yes
+exact_2,exact_2_dev_2,-- x = y + 2,exact h,exact h,,error,Yes,Yes,Yes

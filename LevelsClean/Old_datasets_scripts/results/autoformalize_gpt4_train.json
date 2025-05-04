@@ -1,0 +1,9 @@
+{"implication_world_val": {"accuracy": "Accuracy: 95 / 114 = 83.33%", "proof_accuracy": "Proof Accuracy: 28 / 39 = 71.79%"}, 
+"multiplication_world_val": {"accuracy": "Accuracy: 66 / 82 = 80.49%", "proof_accuracy": "Proof Accuracy: 5 / 14 = 35.71%"}, 
+"AdvMultiplication_world_val": {"accuracy": "Accuracy: 58 / 89 = 65.17%", "proof_accuracy": "Proof Accuracy: 4 / 13 = 30.77%"}, 
+"algorithm_world_val": {"accuracy": "Accuracy: 47 / 60 = 78.33%", "proof_accuracy": "Proof Accuracy: 8 / 15 = 53.33%"}, 
+"less_or_equal_world_val": {"accuracy": "Accuracy: 167 / 251 = 66.53%", "proof_accuracy": "Proof Accuracy: 10 / 31 = 32.26%"}, 
+"power_world_val": {"accuracy": "Accuracy: 85 / 94 = 90.43%", "proof_accuracy": "Proof Accuracy: 9 / 13 = 69.23%"}, 
+"tutorial_world_val": {"accuracy": "Accuracy: 74 / 81 = 91.36%", "proof_accuracy": "Proof Accuracy: 17 / 22 = 77.27%"}, 
+"AdvAddition_world_val": {"accuracy": "Accuracy: 78 / 96 = 81.25%", "proof_accuracy": "Proof Accuracy: 7 / 18 = 38.89%"}, 
+"addition_world_val": {"accuracy": "Accuracy: 158 / 178 = 88.76%", "proof_accuracy": "Proof Accuracy: 14 / 26 = 53.85%"}}

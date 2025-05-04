@@ -1,0 +1,91 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Tactics Match,Is Incorrect Tactic,Correctly Identified As Wrong
+zero_add,zero_add_persona_1_d,-- Induct on n,induction n with d hd,induction n with d hd,"case zero
+⊢ 0 + 0 = 0
+case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+","case zero
+⊢ 0 + 0 = 0
+case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+",Yes,No,Yes
+zero_add,zero_add_persona_1_d,-- substitute 0 -> 0 + 0 into the RHS giving us 0 + 0 = 0 + 0,rw [add_zero],nth_rewrite 3 [← add_zero 0],"case zero
+⊢ 0 + 0 = 0 + 0
+case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+","case zero
+⊢ 0 = 0
+case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+",No,No,Yes
+zero_add,zero_add_persona_1_d,"-- 0 + 0 = 0 + 0, completing base case",rfl,rfl,"case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+","case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+",Yes,No,Yes
+zero_add,zero_add_persona_1_d,-- 0 + d -> d on LHS -> succ d = succ d,"rw [add_succ, hd]",rw [hd],"case succ
+d : ℕ
+hd : 0 + d = d
+⊢ succ d = succ d
+","case succ
+d : ℕ
+hd : 0 + d = d
+⊢ succ d = succ d
+",No,Yes,No
+zero_add,zero_add_persona_1_d,"-- succ d = succ d, QED",rfl,rfl,,,Yes,Yes,No
+zero_add,zero_add_persona_2,-- Begin by initiating induction on n,induction n with d hd,induction n with d hd,"case zero
+⊢ 0 + 0 = 0
+case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+","case zero
+⊢ 0 + 0 = 0
+case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+",Yes,No,Yes
+zero_add,zero_add_persona_2,-- Using the properties of addition by 0 we can rewrite 0 + 0 to 0 on the LHS,rw [add_zero],rw [add_zero],"case zero
+⊢ 0 = 0
+case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+","case zero
+⊢ 0 = 0
+case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+",Yes,No,Yes
+zero_add,zero_add_persona_2,"-- Since both sides are equal, we are done with the base case",rfl,rfl,"case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+","case succ
+d : ℕ
+hd : 0 + d = d
+⊢ 0 + succ d = succ d
+",Yes,No,Yes
+zero_add,zero_add_persona_2,-- Using the induction hypothesis we can rewrite succ (0 + d) to succ d,"rw [add_succ, hd]",rw [hd],"case succ
+d : ℕ
+hd : 0 + d = d
+⊢ succ d = succ d
+","case succ
+d : ℕ
+hd : 0 + d = d
+⊢ succ d = succ d
+",No,Yes,No
+zero_add,zero_add_persona_2,"-- Since both sides are equal, we are done with the proof",rfl,rfl,,,Yes,Yes,No

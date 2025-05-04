@@ -1,0 +1,748 @@
+apply le_mul_right at h0
+	SYSTEM: No compiling tactics found, asking GPT for more tactics...
+	SYSTEM: No compiling tactics found, asking GPT for more tactics...
+	SYSTEM: No compiling tactics found, asking GPT for more tactics...
+	SYSTEM: Could not find compiling tactics, dead end
+tauto
+	have h1 : y ≠ 0
+		have h2 : y ≤ 1
+			tauto
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			have h3 : y ≤ 1
+				tauto
+					SYSTEM: Exceeded budget
+				have h4 : y ≤ 1
+					SYSTEM: Exceeded budget
+				have h5 : x = 1
+					SYSTEM: Exceeded budget
+				have h6 : y ≠ 0
+					SYSTEM: Exceeded budget
+			rw [h] at h0
+				tauto
+					SYSTEM: Exceeded budget
+				have h3 : y = 1
+					SYSTEM: Exceeded budget
+				use y
+					SYSTEM: Exceeded budget
+			have h4 : y ≠ 0
+				tauto
+					SYSTEM: Exceeded budget
+				intro h2
+					SYSTEM: Exceeded budget
+			have h5 : x = 1 ∨ x = 0
+				SYSTEM: Exceeded budget
+			have h6 : y = 1
+				SYSTEM: Exceeded budget
+		tauto
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		cases y with y h_y
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			tauto
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			rw [h] at h0
+				SYSTEM: Exceeded budget
+			intro h1
+				SYSTEM: Exceeded budget
+		intro hyp
+			rw [hyp] at h
+				tauto
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				apply one_ne_zero
+					SYSTEM: Exceeded budget
+				have h2 : x = 1 ∧ y = 0 → False
+					SYSTEM: Exceeded budget
+				have h3 : x * 0 ≠ 0
+					SYSTEM: Exceeded budget
+			have h2 : x ≠ 0
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			rw [h] at h0
+				SYSTEM: Exceeded budget
+			apply one_ne_zero
+				SYSTEM: Exceeded budget
+		rw [h] at h0
+			have h2 : x = 0 ∨ x = 1
+				tauto
+					SYSTEM: Exceeded budget
+				have
+					SYSTEM: Exceeded budget
+			have h3 : x ≤ 1
+				SYSTEM: Exceeded budget
+			intro h4
+				SYSTEM: Exceeded budget
+		have h3 : y = 1
+			rw [h] at h0
+				tauto
+					SYSTEM: Exceeded budget
+				have h4 : y = 1
+					SYSTEM: Exceeded budget
+				have : y ≠ 0 → x = 1
+					SYSTEM: Exceeded budget
+			have h4 : y ≤ 1
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			have h5 : y = 0 ∨ y = 1
+				SYSTEM: Exceeded budget
+	rw [h] at h0
+		have h1 : x ≤ 1
+			tauto
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+		tauto
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		cases x with n
+			apply zero_mul at h
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			cases y with m
+				SYSTEM: Exceeded budget
+			apply le_one at h0
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			have h1 : y ≠ 0
+				SYSTEM: Exceeded budget
+		cases y with m
+			cases zero
+				tauto
+					SYSTEM: Exceeded budget
+				have h1 : x = 1
+					SYSTEM: Exceeded budget
+			exact 1
+				SYSTEM: Exceeded budget
+			use 1
+				SYSTEM: Exceeded budget
+	tauto
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: Could not find compiling tactics, dead end
+	have h2 : x ≤ 1
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		tauto
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		have
+			have h2 : x ≤ 1
+				have
+					le_mul_right
+						SYSTEM: Exceeded budget
+					exact h2
+						SYSTEM: Exceeded budget
+					apply le_one
+						SYSTEM: Exceeded budget
+					tauto
+						SYSTEM: Exceeded budget
+					have h3 : x = 1
+						SYSTEM: Exceeded budget
+					intro
+						SYSTEM: Exceeded budget
+					use one_ne_zero
+						SYSTEM: Exceeded budget
+					have h4 : x * y ≠ 0 → x ≠ 0
+						SYSTEM: Exceeded budget
+					cases (zero_mul x)
+						SYSTEM: Exceeded budget
+				rw [h] at h0
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+				rw [h] at h0
+					SYSTEM: Exceeded budget
+			apply le_mul_right
+				SYSTEM: Exceeded budget
+			use one_ne_zero
+				SYSTEM: Exceeded budget
+			rfl
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			exact one_ne_zero
+				SYSTEM: Exceeded budget
+			intro h2
+				SYSTEM: Exceeded budget
+			have h3 : x ≤ 1 ∧ x ≠ 0
+				SYSTEM: Exceeded budget
+			cases h2
+				SYSTEM: Exceeded budget
+			apply le_one
+				SYSTEM: Exceeded budget
+cases y with y y_ih
+	tauto
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		tauto
+			cases y with y y_ih
+				cases zero
+					rw [h] at h0
+						tauto
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+					tauto
+						SYSTEM: Exceeded budget
+					rw [h] at h0
+						SYSTEM: Exceeded budget
+					have h2 : ∀ (m : ℕ), m = 0 ∨ m ≥ 1
+						SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				have h1 : x ≠ 0
+					SYSTEM: Exceeded budget
+				use 1
+					SYSTEM: Exceeded budget
+			rw [h] at h0
+				cases y with y y_ih
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+			rw [h] at h0
+				cases y with y y_ih
+					SYSTEM: Exceeded budget
+				have h1 : y ≠ 0
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+			have h1 : y ≠ 0
+				rw [h] at h0
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+				cases y with y y_ih
+					SYSTEM: Exceeded budget
+				have h2 : y ≤ 1
+					SYSTEM: Exceeded budget
+				have h3 : x = 1 ∨ x = 0
+					SYSTEM: Exceeded budget
+			rw [h] at h
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+		exact one_ne_zero
+			tauto
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			cases y with y y_ih
+				SYSTEM: Exceeded budget
+			have h1 : y ≠ 0
+				SYSTEM: Exceeded budget
+			apply zero_mul at h0
+				SYSTEM: Exceeded budget
+			rw [h] at h0
+				SYSTEM: Exceeded budget
+			have h2 : x ≠ 0
+				SYSTEM: Exceeded budget
+		cases y with y y_ih
+			have
+				apply le_mul_right
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				exact one_ne_zero
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+				have h1 : x = 1
+					SYSTEM: Exceeded budget
+				intro h1
+					SYSTEM: Exceeded budget
+				apply le_one
+					SYSTEM: Exceeded budget
+				cases h0
+					SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			intro
+				SYSTEM: Exceeded budget
+		have h1 : succ y ≠ 0
+			tauto
+				have h2 : x ≠ 0
+					tauto
+						SYSTEM: Exceeded budget
+					induction y with y y_ih
+						SYSTEM: Exceeded budget
+				cases y with y'
+					SYSTEM: Exceeded budget
+				use one_ne_zero
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+				intro
+					SYSTEM: Exceeded budget
+				induction y with y' y_ih
+					SYSTEM: Exceeded budget
+			cases y with y y_ih
+				SYSTEM: Exceeded budget
+			intro h_neq
+				SYSTEM: Exceeded budget
+		apply zero_mul at h
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		intro
+			cases y with y y_ih
+				tauto
+					SYSTEM: Exceeded budget
+				have h0 : x ≠ 0
+					SYSTEM: Exceeded budget
+				apply zero_mul at h
+					SYSTEM: Exceeded budget
+				apply le_mul_right at h0
+					SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			have h1 : x = 0 ∨ x = 1
+				SYSTEM: Exceeded budget
+			apply zero_mul at h0
+				SYSTEM: Exceeded budget
+		have h2 : x = 1 ∨ x = 0
+			cases y with y y_ih
+				tauto
+					SYSTEM: Exceeded budget
+				have h3 : x ≠ 0
+					SYSTEM: Exceeded budget
+				apply zero_mul at h0
+					SYSTEM: Exceeded budget
+				apply le_mul_right at h
+					SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+	intro
+		.
+			have
+				apply one_ne_zero
+					have h1 : y ≠ 0
+						intro
+							apply one_ne_zero
+								SYSTEM: Exceeded max depth
+							.
+								SYSTEM: Exceeded max depth
+							cases y
+								SYSTEM: Exceeded max depth
+							.
+								SYSTEM: Exceeded max depth
+							.
+								SYSTEM: Exceeded max depth
+							have h2 : y = 0 → False
+								SYSTEM: Exceeded max depth
+							.
+								SYSTEM: Exceeded max depth
+							.
+								SYSTEM: Exceeded max depth
+							.
+								SYSTEM: Exceeded max depth
+							.
+								SYSTEM: Exceeded max depth
+							have h3 : y ≠ 0
+								SYSTEM: Exceeded max depth
+							.
+								SYSTEM: Exceeded max depth
+							tauto
+								SYSTEM: Exceeded max depth
+						have
+							SYSTEM: Exceeded budget
+						tauto
+							SYSTEM: Exceeded budget
+					have h2 : x ≠ 0
+						SYSTEM: Exceeded budget
+					have h3 : x ≤ 1
+						SYSTEM: Exceeded budget
+				have h1 : x ≠ 0
+					SYSTEM: Exceeded budget
+				exact one_ne_zero
+					SYSTEM: Exceeded budget
+				have h2 : 0 < x
+					SYSTEM: Exceeded budget
+				intro
+					SYSTEM: Exceeded budget
+				apply le_mul_right
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+			tauto
+				tauto
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				cases y with y y_ih
+					SYSTEM: Exceeded budget
+			intro
+				have h1 : y ≠ 0
+					intro
+						SYSTEM: Exceeded budget
+					tauto
+						SYSTEM: Exceeded budget
+					cases y with y y_ih
+						SYSTEM: Exceeded budget
+					rw [h] at *
+						SYSTEM: Exceeded budget
+				apply zero_mul at h
+					SYSTEM: Exceeded budget
+				cases y with y' y_ih
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+		.
+			cases y with y y_ih
+				have h2 : x ≠ 0
+					SYSTEM: Exceeded budget
+				have h3 : x = 1
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+				intro h1
+					SYSTEM: Exceeded budget
+				exact one_ne_zero
+					SYSTEM: Exceeded budget
+				have h4 : succ 0 = 1
+					SYSTEM: Exceeded budget
+			have h1 : x = 0 ∨ x = 1
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			intro
+				SYSTEM: Exceeded budget
+		tauto
+			tauto
+				SYSTEM: Exceeded budget
+			intro
+				SYSTEM: Exceeded budget
+			apply le_mul_right at h
+				SYSTEM: Exceeded budget
+			use one_ne_zero
+				SYSTEM: Exceeded budget
+		.
+			intro
+				SYSTEM: Exceeded budget
+			have h2 : x ≠ 0
+				SYSTEM: Exceeded budget
+			exact one_ne_zero
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			have h3 : succ y ≠ 0
+				SYSTEM: Exceeded budget
+		.
+			cases y with y y_ih
+				SYSTEM: Exceeded budget
+		.
+			have h1 : y ≠ 0
+				SYSTEM: Exceeded budget
+			exact one_ne_zero
+				SYSTEM: Exceeded budget
+			intro
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+		have : 1 ≤ x
+			SYSTEM: Exceeded budget
+		.
+			SYSTEM: Exceeded budget
+		.
+			SYSTEM: Exceeded budget
+		have h' : x ≠ 0
+			SYSTEM: Exceeded budget
+		.
+			SYSTEM: Exceeded budget
+		have : x = 1
+			SYSTEM: Exceeded budget
+intro
+	tauto
+		have
+			have
+				have
+					apply le_mul_right
+						have h1 : y ≠ 0
+							apply le_mul_right
+								SYSTEM: Exceeded max depth
+							tauto
+								SYSTEM: Exceeded max depth
+							rw [h] at h0
+								SYSTEM: Exceeded max depth
+							intro h3
+								SYSTEM: Exceeded max depth
+							have h4 : x ≠ 0 := by apply le_mul_right
+								SYSTEM: Exceeded max depth
+							rw [h] at h0
+								SYSTEM: Exceeded max depth
+						have h2 : x ≠ 0
+							have h2 : x ≠ 0
+								SYSTEM: Exceeded max depth
+							apply le_mul_right h2
+								SYSTEM: Exceeded max depth
+							rw [h] at h0
+								SYSTEM: Exceeded max depth
+							intro h3
+								SYSTEM: Exceeded max depth
+							tauto
+								SYSTEM: Exceeded max depth
+							have h4 : y ≠ 0
+								SYSTEM: Exceeded max depth
+					exact h0
+						SYSTEM: Exceeded budget
+					use h1
+						SYSTEM: Exceeded budget
+					tauto
+						SYSTEM: Exceeded budget
+					cases h2
+						SYSTEM: Exceeded budget
+					intro h3
+						SYSTEM: Exceeded budget
+					apply le_one
+						SYSTEM: Exceeded budget
+				apply le_mul_right
+					have h1 : y ≠ 0
+						SYSTEM: Exceeded budget
+					have h2 : x ≤ 1
+						SYSTEM: Exceeded budget
+				cases h0
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+				intro
+					SYSTEM: Exceeded budget
+				use h0
+					SYSTEM: Exceeded budget
+				apply h0
+					SYSTEM: Exceeded budget
+				rfl
+					SYSTEM: Exceeded budget
+			apply
+				have h1 : y ≠ 0
+					SYSTEM: Exceeded budget
+				have h1 : x = 1 ∨ x = 0
+					SYSTEM: Exceeded budget
+			exact
+				SYSTEM: Exceeded budget
+			rw
+				SYSTEM: Exceeded budget
+			intro
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			cases
+				SYSTEM: Exceeded budget
+			use
+				SYSTEM: Exceeded budget
+			le_mul_right
+				SYSTEM: Exceeded budget
+			le_one
+				SYSTEM: Exceeded budget
+			one_ne_zero
+				SYSTEM: Exceeded budget
+			zero_mul
+				SYSTEM: Exceeded budget
+		tauto
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+	have h1 : x ≠ 0
+		intro
+			.
+				'apply'
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				'rw'
+					SYSTEM: Exceeded budget
+				'exact'
+					SYSTEM: Exceeded budget
+				'have'
+					SYSTEM: Exceeded budget
+				'intro'
+					SYSTEM: Exceeded budget
+				'cases'
+					SYSTEM: Exceeded budget
+				'tauto'
+					SYSTEM: Exceeded budget
+				'use'
+					SYSTEM: Exceeded budget
+				'le_mul_right'
+					SYSTEM: Exceeded budget
+				'le_one'
+					SYSTEM: Exceeded budget
+				'one_ne_zero'
+					SYSTEM: Exceeded budget
+				'rfl'
+					SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			have h2 : y ≠ 0
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			have h3 : x ≤ 1
+				SYSTEM: Exceeded budget
+			exact le_mul_right
+				SYSTEM: Exceeded budget
+		have h2 : ¬ (x = 0)
+			have h3 : y ≠ 0
+				tauto
+					SYSTEM: Exceeded budget
+				have h1 : x ≠ 0
+					SYSTEM: Exceeded budget
+				have h3 : y ≠ 0
+					SYSTEM: Exceeded budget
+				intro
+					SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			have h4 : x ≤ y
+				SYSTEM: Exceeded budget
+			have h5 : (x = 1 ∧ y = 1)
+				SYSTEM: Exceeded budget
+			intro h6
+				SYSTEM: Exceeded budget
+		have h3 : x ≤ 1
+			tauto
+				SYSTEM: Exceeded budget
+			have
+				SYSTEM: Exceeded budget
+		tauto
+			have h2 : 1 ≤ y
+				SYSTEM: Exceeded budget
+			apply zero_mul at h1
+				SYSTEM: Exceeded budget
+			have h3 : y ≤ 1
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+	have h2 : y ≠ 0
+		have h3 : y = 1
+			have h1 : y = 1
+				cases h
+					.
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+				have h4 : y = 1
+					SYSTEM: Exceeded budget
+				have h5 : x ≠ 0
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+				apply zero_mul at h
+					SYSTEM: Exceeded budget
+			have h1 : x = 1
+				cases y
+					SYSTEM: Exceeded budget
+				have h1 : x ≤ 1
+					SYSTEM: Exceeded budget
+				have h2 : y ≤ 1
+					SYSTEM: Exceeded budget
+				tauto
+					SYSTEM: Exceeded budget
+				have h3 : x * y = 1
+					SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+		have h4 : x ≤ 1
+			have
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+		tauto
+			SYSTEM: Exceeded budget
+		intro
+			SYSTEM: Exceeded budget
+		cases h
+			SYSTEM: Exceeded budget
+		have h5 : x * y = 1
+			SYSTEM: Exceeded budget
+	have h3 : x ≤ 1
+		have
+			contradiction
+				have h3 : x ≤ 1
+					tauto
+						SYSTEM: Exceeded budget
+					apply zero_mul at h
+						SYSTEM: Exceeded budget
+				have h0 : x * y ≠ 0
+					SYSTEM: Exceeded budget
+			apply le_mul_right
+				SYSTEM: Exceeded budget
+			have h2 : x ≠ 0
+				SYSTEM: Exceeded budget
+			apply le_one
+				SYSTEM: Exceeded budget
+			exact h2
+				SYSTEM: Exceeded budget
+			tauto
+				SYSTEM: Exceeded budget
+			have h3 : x ≤ 1
+				SYSTEM: Exceeded budget
+			contradiction
+				SYSTEM: Exceeded budget
+			exact h
+				SYSTEM: Exceeded budget
+			intro h2
+				SYSTEM: Exceeded budget
+		tauto
+			tauto
+				SYSTEM: Exceeded budget
+			have h4 : x = 0 ∨ x = 1
+				SYSTEM: Exceeded budget
+			apply or.elim h4
+				SYSTEM: Exceeded budget
+			rw [←h] at h3
+				SYSTEM: Exceeded budget
+			have h5 : 0 < x
+				SYSTEM: Exceeded budget

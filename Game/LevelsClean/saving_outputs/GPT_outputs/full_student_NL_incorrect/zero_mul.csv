@@ -1,0 +1,68 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Tactics Match,Is Incorrect Tactic,Correctly Identified As Wrong
+zero_mul,zero_mul_train2,-- Proof by induction on m with base case 0 * 0 = 0 and inductive step 0 * d + 1 = 0,induction m with d hd,induction m with d hd,"case zero
+⊢ 0 * 0 = 0
+case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+","case zero
+⊢ 0 * 0 = 0
+case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+",Yes,No,Yes
+zero_mul,zero_mul_train2,-- First prove base case. Simplify LHS 0 * 0 to 0,rw [mul_zero],rw [mul_zero],"case zero
+⊢ 0 = 0
+case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+","case zero
+⊢ 0 = 0
+case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+",Yes,No,Yes
+zero_mul,zero_mul_train2,-- The base case is not complete.,rfl,rfl,"case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+","case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+",Yes,No,Yes
+zero_mul,zero_mul_train2,-- Simplify the LHS 0 * d + 0 to 0 + 0 using the definition of addition,rw [add_zero],rw [add_zero],"case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * d = 0
+",error,Yes,Yes,Yes
+zero_mul,zero_mul_train2,-- This is exactly the inductive hypothesis so we can complete the proof.,rfl,exact hd,,error,No,Yes,Yes
+zero_mul,zero_mul_test,-- Proof by induction on m with base case 0 * 0 = 0 and inductive step 0 * d + 1 = 0,induction m with d hd,induction m with d hd,"case zero
+⊢ 0 * 0 = 0
+case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+","case zero
+⊢ 0 * 0 = 0
+case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+",Yes,No,Yes
+zero_mul,zero_mul_test,-- 0 * 0 = 0 -> 0 = 0,rfl,rw [mul_zero],"case zero
+⊢ 0 = 0
+case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+",error,No,No,No
+zero_mul,zero_mul_test,-- That proves the base case.,rfl,rfl,"case succ
+d : ℕ
+hd : 0 * d = 0
+⊢ 0 * succ d = 0
+",error,Yes,No,No
+zero_mul,zero_mul_test,-- This is exactly the inductive hypothesis so we can complete the proof.,rfl,exact hd,,error,No,Yes,Yes

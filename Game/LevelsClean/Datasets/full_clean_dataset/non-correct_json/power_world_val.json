@@ -1,0 +1,644 @@
+{
+    "zero_pow_zero": {},
+    "zero_pow_succ": {
+        "zero_pow_succ_dev_2": [
+            {
+                "theorem": "zero_pow_succ_dev_2",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem zero_pow_succ_dev_2 (m : \u2115) : (0 : \u2115) ^ (succ m) = 0 := by",
+                "state": "m : \u2115\n\u22a2 0 ^ succ m = 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "zero_pow_succ_dev_2",
+                "NL": "-- We can use induction on m. For the base case, we want to show that 0^succ(0) = 0.",
+                "FL": "induction m with h hd",
+                "state": "case zero\n\u22a2 0 ^ succ 0 = 0\ncase succ\nh : \u2115\nhd : 0 ^ succ h = 0\n\u22a2 0 ^ succ (succ h) = 0\n",
+                "is_correct": true
+            }
+        ]
+    },
+    "pow_one": {
+        "pow_one_dev_1": [
+            {
+                "theorem": "pow_one_dev_1",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem pow_one_dev_1 (a : \u2115) : a ^ 1 = a  := by",
+                "state": "a : \u2115\n\u22a2 a ^ 1 = a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_one_dev_1",
+                "NL": "-- a^succ(0) = a",
+                "FL": "rw [one_eq_succ_zero]",
+                "state": "a : \u2115\n\u22a2 a ^ succ 0 = a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_one_dev_1",
+                "NL": "-- lhs = rhs, so we are done.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "pow_one_dev_2": [
+            {
+                "theorem": "pow_one_dev_2",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem pow_one_dev_2 (a : \u2115) : a ^ 1 = a  := by",
+                "state": "a : \u2115\n\u22a2 a ^ 1 = a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_one_dev_2",
+                "NL": "-- Using the fact that we defined 1 to be the successor of zero, we can write this as: a^succ(0) = a.",
+                "FL": "rw[one_eq_succ_zero]",
+                "state": "a : \u2115\n\u22a2 a ^ succ 0 = a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_one_dev_2",
+                "NL": "-- We defined the power function with the axiom such that for any natural numbers a,b, a^succ(b) = a^b * a. Using this, we can write our goal as: a^0 * a = a",
+                "FL": "rw[pow_succ]",
+                "state": "a : \u2115\n\u22a2 a ^ 0 * a = a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_one_dev_2",
+                "NL": "-- Once again, we can use the fact that 1 is the successor 0, to write: succ(0) * a = a",
+                "FL": "rw[one_eq_succ_zero]",
+                "state": "a : \u2115\n\u22a2 succ 0 * a = a\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "pow_one_dev_2",
+                "NL": "-- Since adding zero to any natural number does not change its, we can simplify our goal to: a=a.",
+                "FL": "rw[zero_add]",
+                "state": "a : \u2115\n\u22a2 a = a\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "pow_one_dev_2",
+                "NL": "-- Since the LHS and RHS are prcisely the same expression, we are done by reflexivity.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "one_pow": {
+        "one_pow_dev_1": [
+            {
+                "theorem": "one_pow_dev_1",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem one_pow_dev_1 (m : \u2115) : (1 : \u2115) ^ m = 1 := by",
+                "state": "m : \u2115\n\u22a2 1 ^ m = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_1",
+                "NL": "-- We can use induction on m, with the inductive hypothesis 1^m = 1. Our base is 1^0 = 1, and our inductive case is 1^succ(m) = 1.",
+                "FL": "induction m with m hm",
+                "state": "case zero\n\u22a2 1 ^ 0 = 1\ncase succ\nm : \u2115\nhm : 1 ^ m = 1\n\u22a2 1 ^ succ m = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_1",
+                "NL": "-- We start with the base cae, which becomes 1 = 1",
+                "FL": "rw [pow_zero]",
+                "state": "case zero\n\u22a2 1 = 1\ncase succ\nm : \u2115\nhm : 1 ^ m = 1\n\u22a2 1 ^ succ m = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_1",
+                "NL": "-- 1 * 1 = 1",
+                "FL": "rw [hm]",
+                "state": "case succ\nm : \u2115\nhm : 1 ^ m = 1\n\u22a2 1 * 1 = 1\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "one_pow_dev_1",
+                "NL": "-- rhs = lhs, so we are done.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "one_pow_dev_2": [
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem one_pow_dev_2 (m : \u2115) : (1 : \u2115) ^ m = 1 := by",
+                "state": "m : \u2115\n\u22a2 1 ^ m = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- We can begin by inducting on m.",
+                "FL": "induction m with h hd",
+                "state": "case zero\n\u22a2 1 ^ 0 = 1\ncase succ\nh : \u2115\nhd : 1 ^ h = 1\n\u22a2 1 ^ succ h = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- First, we prove the base case, which states that 1^0 = 1. To do so, we use the fact that anything to the power of zero is zero, so 1^0 = 1.",
+                "FL": "rw[pow_zero]",
+                "state": "case zero\n\u22a2 1 = 1\ncase succ\nh : \u2115\nhd : 1 ^ h = 1\n\u22a2 1 ^ succ h = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- Thus, we have simplified our statement to 1=1, so our proof is complete by reflexivity.",
+                "FL": "rfl",
+                "state": "case succ\nh : \u2115\nhd : 1 ^ h = 1\n\u22a2 1 ^ succ h = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- Next, we can consider the inductive hypothesis, which states that 1^succ(h) = 1. To do so, we can induct on h again, with a variable k.",
+                "FL": "induction h with k hk",
+                "state": "case succ.zero\nhd : 1 ^ 0 = 1\n\u22a2 1 ^ succ 0 = 1\ncase succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ (succ k) = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- Our new base case is 1^succ(0) = 1. To prove this, we can begin by simplifying using the successor axiom for the power operation, so 1^succ(0) = 1^0*1, and our goal becomes 1^0 *1 = 1.",
+                "FL": "rw[pow_succ]",
+                "state": "case succ.zero\nhd : 1 ^ 0 = 1\n\u22a2 1 ^ 0 * 1 = 1\ncase succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ (succ k) = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- We can use the fact that anything to the power of zero is zero, and simplify to: 1 * 1 =1.",
+                "FL": "rw[pow_zero]",
+                "state": "case succ.zero\nhd : 1 ^ 0 = 1\n\u22a2 1 * 1 = 1\ncase succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ (succ k) = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- Simplifying with the fact that multiplication by one is equivalent to the identity operation, we know that 1*1=1, and thus our goal state becomes 1=1.",
+                "FL": "rw[mul_one]",
+                "state": "case succ.zero\nhd : 1 ^ 0 = 1\n\u22a2 1 = 1\ncase succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ (succ k) = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- Thus, we see that our goal state 1^succ(k) = 1 is precisely the same as our hypothesis hk, so we are done.",
+                "FL": "exact hk",
+                "state": "  hk\nhas type\n  1 ^ k = 1 \u2192 1 ^ succ k = 1 : Prop\nbut is expected to have type\n  1 ^ succ k = 1 : Prop\n",
+                "is_correct": false
+            }
+        ]
+    },
+    "pow_two": {
+        "pow_two_dev_1": [
+            {
+                "theorem": "pow_two_dev_1",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem pow_two_dev_1 (a : \u2115) : a ^ 2 = a * a := by",
+                "state": "a : \u2115\n\u22a2 a ^ 2 = a * a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_two_dev_1",
+                "NL": "-- a^succ(1) = a*a",
+                "FL": "rw [two_eq_succ_one]",
+                "state": "a : \u2115\n\u22a2 a ^ succ 1 = a * a\n",
+                "is_correct": true
+            }
+        ],
+        "pow_two_dev_2": [
+            {
+                "theorem": "pow_two_dev_2",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem pow_two_dev_2 (a : \u2115) : a ^ 2 = a * a := by",
+                "state": "a : \u2115\n\u22a2 a ^ 2 = a * a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_two_dev_2",
+                "NL": "-- First, we observe that two is the successor of one, and write our goal as: a^succ(1) = a*a.",
+                "FL": "rw[two_eq_succ_one]",
+                "state": "a : \u2115\n\u22a2 a ^ succ 1 = a * a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_two_dev_2",
+                "NL": "-- LHS = RHS, so our proof is complete by the reflexive property of equality.",
+                "FL": "rfl",
+                "state": "  ?a ^ (?m + ?n)\na : \u2115\n\u22a2 a ^ (1 + 1) = a * a\n",
+                "is_correct": false
+            }
+        ]
+    },
+    "pow_add": {
+        "pow_add_dev_1": [
+            {
+                "theorem": "pow_add_dev_1",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem pow_add_dev_1 (a m n : \u2115) : a ^ (m + n) = a ^ m * a ^ n := by",
+                "state": "a m n : \u2115\n\u22a2 a ^ (m + n) = a ^ m * a ^ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_1",
+                "NL": "-- We can use induction on n, making the inductive hypothesis that a ^ (m + d) = a ^ m * a ^ d. Then, the base case is a ^ (m + 0) = a ^ m * a ^ 0, and the inductive case is: a ^ (m + succ d) = a ^ m * a ^ succ d",
+                "FL": "induction n with d hd",
+                "state": "case zero\na m : \u2115\n\u22a2 a ^ (m + 0) = a ^ m * a ^ 0\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_1",
+                "NL": "-- For the base case a ^ (m + 0) = a ^ m * a ^ 0 becomes a^m = a^m * a^0",
+                "FL": "rw [add_zero]",
+                "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m * a ^ 0\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_1",
+                "NL": "-- a^m = a^m * 1",
+                "FL": "rw [pow_zero]",
+                "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m * 1\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_1",
+                "NL": "-- a^m = a^m",
+                "FL": "rw [mul_one]",
+                "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_1",
+                "NL": "-- lhs = rhs, so we are done with the base case.",
+                "FL": "rfl",
+                "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_1",
+                "NL": "-- For the inductive case a ^ (m + succ d) = a ^ m * a ^ succ d, we begin by rewriting as a ^ succ (m + d) = a ^ m * a ^ succ d",
+                "FL": "rw [add_succ]",
+                "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ succ (m + d) = a ^ m * a ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_1",
+                "NL": "-- We use the inductive hypothesis hd, to get: a ^ m * a ^ d * a = a ^ m * (a ^ d * a)",
+                "FL": "rw [hd]",
+                "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ m * a ^ d * a = a ^ m * (a ^ d * a)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_1",
+                "NL": "-- lhs = rhs, so we are done.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "pow_add_dev_2": [
+            {
+                "theorem": "pow_add_dev_2",
+                "NL": "-- Theorem Declaration: Prove that a^(m + n) = a^m * a^n",
+                "FL": "theorem pow_add_dev_2 (a m n : \u2115) : a ^ (m + n) = a ^ m * a ^ n := by",
+                "state": "a m n : \u2115\n\u22a2 a ^ (m + n) = a ^ m * a ^ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_2",
+                "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis a^(m + d) = a^m * a^d. There are now two proof goals, prove base case: a^(m + 0) = a^m * a^0 and inductive step: a^(m + d) = a^m * a^d implies a^(m + succ d) = a^m * a^(succ d).",
+                "FL": "induction n with t ht",
+                "state": "case zero\na m : \u2115\n\u22a2 a ^ (m + 0) = a ^ m * a ^ 0\ncase succ\na m t : \u2115\nht : a ^ (m + t) = a ^ m * a ^ t\n\u22a2 a ^ (m + succ t) = a ^ m * a ^ succ t\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_add_dev_2",
+                "NL": "-- The goal is now to prove that a^m * (a^d * a) = a^m * a^(d + 1), which is true by reflexivity",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "mul_pow": {
+        "mul_pow_dev_1": [
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem mul_pow_dev_1 (a b n : \u2115) : (a * b) ^ n = a ^ n * b ^ n := by",
+                "state": "a b n : \u2115\n\u22a2 (a * b) ^ n = a ^ n * b ^ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- We can use induction on n. We begin with the base case, which is: 1 = a ^ 0 * b ^ 0",
+                "FL": "induction n with d hd",
+                "state": "case zero\na b : \u2115\n\u22a2 (a * b) ^ 0 = a ^ 0 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "--1 = a ^ 0 * b ^ 0",
+                "FL": "rw [pow_zero]",
+                "state": "case zero\na b : \u2115\n\u22a2 1 = a ^ 0 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- 1 = 1 * b^0",
+                "FL": "rw [pow_zero]",
+                "state": "case zero\na b : \u2115\n\u22a2 1 = 1 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- 1 = 1*1",
+                "FL": "rw [pow_zero]",
+                "state": "case zero\na b : \u2115\n\u22a2 1 = 1 * 1\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- 1=1",
+                "FL": "rw [mul_one]",
+                "state": "case zero\na b : \u2115\n\u22a2 1 = 1\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- lhs = rhs, so we have proven the base case.",
+                "FL": "rfl",
+                "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- Next, we proceed with the inductive case, which states that: (a * b) ^ succ d = a ^ succ d * b ^ succ d. Thus becomes: (a * b) ^ d * (a * b) = a ^ succ d * b ^ succ d",
+                "FL": "rw [pow_succ]",
+                "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ d * (a * b) = a ^ succ d * b ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- (a * b) ^ d * (a * b) = a ^ d * a * b ^ succ d",
+                "FL": "rw [pow_succ]",
+                "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ d * (a * b) = a ^ d * a * b ^ succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- (a * b) ^ d * (a * b) = a ^ d * a * (b ^ d * b)",
+                "FL": "rw [pow_succ]",
+                "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ d * (a * b) = a ^ d * a * (b ^ d * b)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- With the inductive hypothesis hd, we get: a ^ d * b ^ d * (a * b) = a ^ d * a * (b ^ d * b)",
+                "FL": "rw [hd]",
+                "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * b ^ d * (a * b) = a ^ d * a * (b ^ d * b)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (a * b))",
+                "FL": "rw [mul_comm b a]",
+                "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (a * b))\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "mul_pow_dev_1",
+                "NL": "-- lhs = rhs, so we are done.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "mul_pow_dev_2": [
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "-- Theorem Declaration: Prove that (a * b)^n = a^n * b^n",
+                "FL": "theorem mul_pow_dev_2 (a b n : \u2115) : (a * b) ^ n = a ^ n * b ^ n := by",
+                "state": "a b n : \u2115\n\u22a2 (a * b) ^ n = a ^ n * b ^ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a * b)^d = a^d * b^d. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^d = a^d * b^d implies (a * b)^(succ d) = a^(succ d) * b^(succ d).",
+                "FL": "induction n with t Ht",
+                "state": "case zero\na b : \u2115\n\u22a2 (a * b) ^ 0 = a ^ 0 * b ^ 0\ncase succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 (a * b) ^ succ t = a ^ succ t * b ^ succ t\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "-- Rewrite the left-hand side of the goal using the theorem that x^0 = 1, then simplify a^0 * b^0 to 1 * 1, and finally simplify 1 * 1 to 1",
+                "FL": "rw [pow_zero, pow_zero, pow_zero, mul_one]",
+                "state": "case zero\na b : \u2115\n\u22a2 1 = 1\ncase succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 (a * b) ^ succ t = a ^ succ t * b ^ succ t\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "-- The goal is now to prove that 1 = 1, which is true by reflexivity",
+                "FL": "rfl",
+                "state": "case succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 (a * b) ^ succ t = a ^ succ t * b ^ succ t\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "-- The goal is now to prove that a^d * (b^d * (a * b)) = a^d * (b^d * (a * b)), which is true by reflexivity",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "pow_pow": {
+        "pow_pow_dev_1": [
+            {
+                "theorem": "pow_pow_dev_1",
+                "NL": "-- Theorem Declaration: Prove that any natural number to the power of the power of another natural number is equal to that natural number to the power of the first natural number, multiplied by that natural number to the power of the second natural number",
+                "FL": "theorem pow_pow_dev_1 (a m n : \u2115) : (a ^ m) ^ n = a ^ (m * n) := by",
+                "state": "a m n : \u2115\n\u22a2 (a ^ m) ^ n = a ^ (m * n)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_pow_dev_1",
+                "NL": "-- Induct on n, with (a ^ m) ^ 0 = a ^ (m * 0) as the base case and (a ^ m) ^ succ t = a ^ (m * succ t) as the inductive case.",
+                "FL": "induction n with t Ht",
+                "state": "case zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ (m * 0)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_pow_dev_1",
+                "NL": "-- LHS = RHS",
+                "FL": "rfl",
+                "state": "  ?a ^ (?m + ?n)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * t + m)\n",
+                "is_correct": false
+            }
+        ],
+        "pow_pow_dev_2": [
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "-- Theorem Declaration: Prove that any natural number to the power of the power of another natural number is equal to that natural number to the power of the first natural number, multiplied by that natural number to the power of the second natural number",
+                "FL": "theorem pow_pow_dev_2 (a m n : \u2115) : (a ^ m) ^ n = a ^ (m * n) := by",
+                "state": "a m n : \u2115\n\u22a2 (a ^ m) ^ n = a ^ (m * n)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a ^ m) ^ t = a ^ (m * t).",
+                "FL": "induction n with t Ht",
+                "state": "case zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ (m * 0)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "-- for the base case, simplify the LHS by the properties of powers and the RHS by the properties of multiplication to 1 = a ^ 0",
+                "FL": "rw [pow_zero, mul_zero]",
+                "state": "case zero\na m : \u2115\n\u22a2 1 = a ^ 0\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "-- further simplify the RHS by the properties of powers to 1 = 1",
+                "FL": "rw [pow_zero]",
+                "state": "case zero\na m : \u2115\n\u22a2 1 = 1\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "-- LHS = RHS, so we have shown the base case",
+                "FL": "rfl",
+                "state": "case succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "-- LHS = RHS, so we complete the proof by induction",
+                "FL": "rfl",
+                "state": "  ?a ^ (?m + ?n)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * t + m)\n",
+                "is_correct": false
+            }
+        ]
+    },
+    "add_sq": {
+        "add_sq_dev_1": [
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- Theorem Declaration: ",
+                "FL": "theorem add_sq_dev_1 (a b : \u2115) : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b := by",
+                "state": "a b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- (a + b) * (a + b) = a^2 + b^2 + 2a*b",
+                "FL": "rw [pow_two]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- (a + b) * (a + b) = a*a + b^2 + 2a*b",
+                "FL": "rw [pow_two]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- (a + b) * (a + b) = a*a + b*b + 2a*b",
+                "FL": "rw [pow_two]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- (a + b) * (a + b) = a*a + 2a*b + b*b",
+                "FL": "rw [add_right_comm]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- a * (a + b) + b * (a + b) = a*a + 2a*b + b*b",
+                "FL": "rw [mul_add]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- a * a + a * b + b * (a + b) = a*a + 2a*b + b*b",
+                "FL": "rw [add_mul]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- a * a + a * b + b * a + b*b = a*a + 2a*b + b*b",
+                "FL": "rw [add_mul]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- a * a + a * b + (b * a + b*b) = a*a + (a*b + a*b) + b*b",
+                "FL": "rw [add_mul]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- a * a + a * b + (a * b + b*b) = a*a + a*b + a*b + b*b",
+                "FL": "rw [mul_comm b a]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "add_sq_dev_1",
+                "NL": "-- lhs = rhs",
+                "FL": "rfl",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": false
+            }
+        ],
+        "add_sq2_dev_2": [
+            {
+                "theorem": "add_sq2_dev_2",
+                "NL": "-- Theorem Declaration: Prove that (a + b)^2 = a^2 + b^2 + 2 * a * b",
+                "FL": "theorem add_sq2_dev_2 (a b : \u2115) : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b := by",
+                "state": "a b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq2_dev_2",
+                "NL": "-- Rewrite the expression for the square of (a + b), a^2, and b^2 to be (a + b) * (a + b), a * a, and b * b respectively.",
+                "FL": "rw [pow_two, pow_two, pow_two]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_sq2_dev_2",
+                "NL": "-- rewrite the left-hand side of the equation using the distributive property of multiplication over addition. This expands (a + b) * (a + b) to a * a + b * a + a * b + b * b.",
+                "FL": "rw [mul_add, add_mul, add_mul]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "add_sq2_dev_2",
+                "NL": "-- We rewrite the expression a * b as b * a in the goal. This is based on the commutative property of multiplication, which states that the order of the factors does not change the product. This results in the new goal: a * a + a * b + (a * b + b * b) = a * a + (a * b + a * b) + b * b.",
+                "FL": "rw [mul_comm b a]",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "add_sq2_dev_2",
+                "NL": "-- The goal is now to prove that a * a + a * b + a * b + b * b = a * a + a * b + a * b + b * b, which is true by reflexivity",
+                "FL": "rfl",
+                "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+                "is_correct": false
+            }
+        ]
+    }
+}

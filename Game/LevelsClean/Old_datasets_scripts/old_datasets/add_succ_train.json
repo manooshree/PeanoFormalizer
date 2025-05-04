@@ -1,0 +1,56 @@
+[
+    {
+      "theorem": "succ_add",
+      "NL": "Prove that succ (a) + b  = succ (a + b) for all natural numbers",
+      "FL": "theorem succ_add1 (a b : ℕ) : succ a + b = succ (a + b)  := by",
+      "filename": "AdditionClean.lean"
+    },
+    {
+      "theorem": "succ_add",
+      "NL": "Induct on b, with d = 0 as the base case and the inductive hypothesis succ (a) + d = succ (a + d). There are now two proof goals, prove base case: succ (a) + 0 = succ (a + 0) and inductive step: succ (a) + succ (d) = succ (a + succ (d))",
+      "FL": "induction b with d hd",
+      "filename": "AdditionClean.lean"
+    },
+    {
+      "theorem": "succ_add", 
+      "NL": "First prove base case. Reduce LHS succ (a) + 0 = succ (a)",
+      "FL": "rw [add_zero]",
+      "filename": "AdditionClean.lean"
+    },
+    {
+      "theorem": "succ_add",
+      "NL": "Reduce RHS succ(a + 0) = succ (a)",
+      "FL": "rw [add_zero]",
+      "filename": "AdditionClean.lean"
+    },
+    {
+      "theorem": "succ_add",
+      "NL": "Prove succ (a) = succ (a), finishing the base case",
+      "FL": "rfl",
+      "filename": "AdditionClean.lean"
+    },
+    {
+      "theorem": "succ_add",
+      "NL": "Now prove the inductive step. Rewrite succ (a) + succ (d) = succ (succ a + d)",
+      "FL": "rw [add_succ]",
+      "filename": "AdditionClean.lean"
+    },
+    {
+      "theorem": "succ_add",
+      "NL": "Rewrite succ (a + succ d) = succ (succ (a + d))",
+      "FL": "rw [add_succ]",
+      "filename": "AdditionClean.lean"
+    },
+    {
+      "theorem": "succ_add",
+      "NL": "Rewrite RHS succ (succ a + d) to succ (succ (a + d)) using the inductive hypothesis",
+      "FL": "rw [hd]",
+      "filename": "AdditionClean.lean"
+    },
+    {
+      "theorem": "succ_add",
+      "NL": "Prove succ (succ (a + d)) = succ (succ (a + d)), completing the proof",
+      "FL": "rfl",
+      "filename": "AdditionClean.lean"
+    }
+]

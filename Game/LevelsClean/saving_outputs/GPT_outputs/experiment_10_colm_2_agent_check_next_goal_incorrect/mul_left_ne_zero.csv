@@ -1,0 +1,30 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Tactics Match,Is Incorrect Tactic,Correctly Identified As Wrong
+mul_left_ne_zero,mul_left_ne_zero__dev_1,-- Assume that b equals 0.,intro hd,intro hb,"a b : ℕ
+h : a * b ≠ 0
+hb : b = 0
+⊢ False
+","a b : ℕ
+h : a * b ≠ 0
+hd : b = 0
+⊢ False
+",No,No,Yes
+mul_left_ne_zero,mul_left_ne_zero__dev_1,-- We use reflexivity to prove the goal of 0 = 0.,"As previously stated, the natural language instruction cannot be converted into Lean code given the current state. The current goal in Lean is ""False"", not ""0 = 0"", making reflexivity inapplicable. Consequently, I underline that I unfortunately cannot provide a line of Lean code corresponding to the given instruction.",rfl,,"a b : ℕ
+h : a * b ≠ 0
+hd : b = 0
+⊢ False
+",No,Yes,No
+mul_left_ne_zero,mul_left_ne_zero__dev_2,-- Assume that b equals 0.,intro hd,intro hd,"a b : ℕ
+h : a * b ≠ 0
+hd : b = 0
+⊢ False
+","a b : ℕ
+h : a * b ≠ 0
+hd : b = 0
+⊢ False
+",Yes,No,Yes
+mul_left_ne_zero,mul_left_ne_zero__dev_2,-- We have 0 != 0 which is a contradiction.,"exfalso
+rfl",tauto,,"a b : ℕ
+h : a * b ≠ 0
+hd : b = 0
+⊢ False
+",No,Yes,No

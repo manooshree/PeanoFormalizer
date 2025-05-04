@@ -1,0 +1,12 @@
+NNG4/Game/LevelsClean/Manooshree_tests/myenv/
+env/
+myenv/
+*.pyc
+__pycache__/
+*.dylib
+myenv/
+env/
+__pycache__/
+*.pyc
+*.dylib
+*.so

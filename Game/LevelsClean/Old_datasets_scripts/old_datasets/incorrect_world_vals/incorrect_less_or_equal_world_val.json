@@ -1,0 +1,366 @@
+[
+  {
+    "theorem": "skipped_le_trans",
+    "NL": "-- Theorem Declaration: Prove that if x \u2264 y and y \u2264 z, then x \u2264 z for any natural numbers x, y, and z",
+    "FL": "theorem skipped_le_trans (x y z : \u2115) (hxy : x \u2264 y) (hyz : y \u2264 z) : x \u2264 z := by",
+    "state": "x y z : \u2115\nhxy : x \u2264 y\nhyz : y \u2264 z\n\u22a2 x \u2264 z\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_trans",
+    "NL": "-- Break down the assumption that x is less than or equal to y into a specific case where there exists a natural number 'a' such that y equals x plus 'a'.",
+    "FL": "cases hxy with a ha",
+    "state": "case intro\nx y z : \u2115\nhyz : y \u2264 z\na : \u2115\nha : y = x + a\n\u22a2 x \u2264 z\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_trans",
+    "NL": "-- Break down the assumption that y is less than or equal to z into a specific case where there exists a natural number 'b' such that z equals y plus 'b'.",
+    "FL": "cases hyz with b hb",
+    "state": "case intro.intro\nx y z a : \u2115\nha : y = x + a\nb : \u2115\nhb : z = y + b\n\u22a2 x \u2264 z\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_trans",
+    "NL": "-- Use the case of a + b to simplify the goal to equal z = x + (a + b).",
+    "FL": "use a + b",
+    "state": "case h\nx y z a : \u2115\nha : y = x + a\nb : \u2115\nhb : z = y + b\n\u22a2 z = x + (a + b)\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_trans",
+    "NL": "-- The goal is now to prove that x + a + b = x + (a + b), which can be proven by applying the theorem that states that addition is associative to the left-hand side of the goal.",
+    "FL": "exact add_assoc x a b -- error",
+    "state": "  add_assoc x a b\nhas type\n  x + a + b = x + (a + b) : Prop\nbut is expected to have type\n  z = x + (a + b) : Prop\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_le_trans1",
+    "NL": "-- Theorem Declaration: Prove that if x \u2264 y and y \u2264 z, then x \u2264 z for any natural numbers x, y, and z",
+    "FL": "theorem skipped_le_trans1 (x y z : \u2115) (hxy : x \u2264 y) (hyz : y \u2264 z) : x \u2264 z := by",
+    "state": "x y z : \u2115\nhxy : x \u2264 y\nhyz : y \u2264 z\n\u22a2 x \u2264 z\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_trans1",
+    "NL": "-- Break down the assumption that x is less than or equal to y into a specific case where there exists a natural number 'a' such that y equals x plus 'a'.",
+    "FL": "cases hxy with a ha",
+    "state": "case intro\nx y z : \u2115\nhyz : y \u2264 z\na : \u2115\nha : y = x + a\n\u22a2 x \u2264 z\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_trans1",
+    "NL": "-- Break down the assumption that y is less than or equal to z into a specific case where there exists a natural number 'b' such that z equals y plus 'b'.",
+    "FL": "cases hyz with b hb",
+    "state": "case intro.intro\nx y z a : \u2115\nha : y = x + a\nb : \u2115\nhb : z = y + b\n\u22a2 x \u2264 z\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_trans1",
+    "NL": "-- Substitute z with y + b resulting in the equation y + b = x + (a + b).",
+    "FL": "rw [hb]",
+    "state": "case intro.intro\nx y z a : \u2115\nha : y = x + a\nb : \u2115\nhb : z = y + b\n\u22a2 x \u2264 y + b\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_trans1",
+    "NL": "-- Substitute y with x + a resulting in the equation x + a + b = x + (a + b).",
+    "FL": "rw [ha]",
+    "state": "case intro.intro\nx y z a : \u2115\nha : y = x + a\nb : \u2115\nhb : z = y + b\n\u22a2 x \u2264 x + a + b\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_trans1",
+    "NL": "-- The goal is now to prove that x + a + b = x + (a + b), which can be proven by applying the theorem that states that addition is associative to the left-hand side of the goal.",
+    "FL": "exact add_assoc x a b -- error",
+    "state": "  add_assoc x a b\nhas type\n  x + a + b = x + (a + b) : Prop\nbut is expected to have type\n  x \u2264 x + a + b : Prop\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_le_zero",
+    "NL": "-- Theorem Declaration: Prove that if x \u2264 0, then x = 0 for any natural number x",
+    "FL": "theorem skipped_le_zero (x : \u2115) (hx : x \u2264 0) : x = 0 := by",
+    "state": "x : \u2115\nhx : x \u2264 0\n\u22a2 x = 0\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_zero",
+    "NL": "-- The goal is to prove that x equals 0 given that x is less than or equal to 0. We then consider the case where x is the sum of 0 and some natural number y. This gives us the equation 0 = x + y. Our goal now is to show that x equals 0 given this equation.",
+    "FL": "cases hx with y hy",
+    "state": "case intro\nx y : \u2115\nhy : 0 = x + y\n\u22a2 x = 0\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_zero",
+    "NL": "-- Flip the equation so that it reads 'x + y = 0' instead of '0 = x + y'.",
+    "FL": "symm at hy",
+    "state": "case intro\nx y : \u2115\nhy : x + y = 0\n\u22a2 x = 0\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_zero",
+    "NL": "-- The goal is now to prove that x = 0, which can be proven by applying hy to the goal.",
+    "FL": "exact hy -- error",
+    "state": "  hy\nhas type\n  x + y = 0 : Prop\nbut is expected to have type\n  x = 0 : Prop\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_le_antisymm",
+    "NL": "-- Theorem Declaration: Prove that if x is less than or equal to y and y is less than or equal to x, then x equals y.",
+    "FL": "theorem skipped_le_antisymm (x y : \u2115) (hxy : x \u2264 y) (hyx : y \u2264 x) : x = y := by",
+    "state": "x y : \u2115\nhxy : x \u2264 y\nhyx : y \u2264 x\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_antisymm",
+    "NL": "-- We consider the case where x is less than or equal to y so y = x + some natural number a.",
+    "FL": "cases hxy with a ha",
+    "state": "case intro\nx y : \u2115\nhyx : y \u2264 x\na : \u2115\nha : y = x + a\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_antisymm",
+    "NL": "-- We consider the case where y is less than or equal to x so x = y + some natural number b.",
+    "FL": "cases hyx with b hb",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = y + b\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_antisymm",
+    "NL": "-- We substitute y in the goal with x + a, changing our goal to prove that x equals x + a.",
+    "FL": "rw [ha]",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = y + b\n\u22a2 x = x + a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_antisymm",
+    "NL": "-- Using the equality y = x + a, we substitute y in the equation x = y + b with x + a.",
+    "FL": "rw [ha] at hb",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = x + a + b\n\u22a2 x = x + a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_antisymm",
+    "NL": "-- We re-arrange the right side of the equation x = x + a + b to x = x + (a + b) using the property that addition is associative.",
+    "FL": "rw [add_assoc] at hb",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = x + (a + b)\n\u22a2 x = x + a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_antisymm",
+    "NL": "-- We simplify x + 0 to x.",
+    "FL": "rw [add_zero] -- error",
+    "state": "  ?a + 0\ncase intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = x + (a + b)\n\u22a2 x = x + a\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_le_antisymm1",
+    "NL": "-- Theorem Declaration: Prove that if x is less than or equal to y and y is less than or equal to x, then x equals y.",
+    "FL": "theorem skipped_le_antisymm1 (x y : \u2115) (hxy : x \u2264 y) (hyx : y \u2264 x) : x = y := by",
+    "state": "x y : \u2115\nhxy : x \u2264 y\nhyx : y \u2264 x\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_antisymm1",
+    "NL": "-- We consider the case where x is less than or equal to y so y = x + some natural number a.",
+    "FL": "cases hxy with a ha",
+    "state": "case intro\nx y : \u2115\nhyx : y \u2264 x\na : \u2115\nha : y = x + a\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_antisymm1",
+    "NL": "-- We consider the case where y is less than or equal to x so x = y + some natural number b.",
+    "FL": "cases hyx with b hb",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = y + b\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_antisymm1",
+    "NL": "-- The goal is now to prove that x equals x, which is true by reflexivity.",
+    "FL": "rfl -- error",
+    "state": "  x\nis not definitionally equal to rhs\n  y\ncase intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = y + b\n\u22a2 x = y\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_orr_symm",
+    "NL": "-- Theorem Declaration: Prove that if x equals 37 or y equals 42, then y equals 42 or x equals 37.",
+    "FL": "theorem skipped_orr_symm (x y : \u2115) (h : x = 37 \u2228 y = 42) : y = 42 \u2228 x = 37 := by",
+    "state": "x y : \u2115\nh : x = 37 \u2228 y = 42\n\u22a2 y = 42 \u2228 x = 37\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_orr_symm",
+    "NL": "--We consider the two possible cases given that either x equals 37 or y equals 42. For both cases, we aim to show that y equals 42 or x equals 37.",
+    "FL": "cases h with hx hy",
+    "state": "case inl\nx y : \u2115\nhx : x = 37\n\u22a2 y = 42 \u2228 x = 37\ncase inr\nx y : \u2115\nhy : y = 42\n\u22a2 y = 42 \u2228 x = 37\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_orr_symm",
+    "NL": "-- We choose to prove the right side of the disjunction, which is x = 37.",
+    "FL": "right",
+    "state": "case inl.h\nx y : \u2115\nhx : x = 37\n\u22a2 x = 37\ncase inr\nx y : \u2115\nhy : y = 42\n\u22a2 y = 42 \u2228 x = 37\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_orr_symm",
+    "NL": "-- We are given that y equals 42, so we can use this to prove the goal.",
+    "FL": "exact hy -- error",
+    "state": "case inr\nx y : \u2115\nhy : y = 42\n\u22a2 y = 42 \u2228 x = 37\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_le_total",
+    "NL": "-- Theorem Declaration: Prove that for any natural numbers x and y, either x is less than or equal to y or y is less than or equal to x.",
+    "FL": "theorem skipped_le_total (x y : \u2115) : x \u2264 y \u2228 y \u2264 x := by",
+    "state": "x y : \u2115\n\u22a2 x \u2264 y \u2228 y \u2264 x\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_total",
+    "NL": "-- Induct on y, with d = 0 as the base case and the inductive hypothesis x = d. There are now two proof goals, prove base case: x <= 0 or 0 <= x and inductive step: x <= d + 1 or d + 1 <= x.",
+    "FL": "induction y with d hd",
+    "state": "case zero\nx : \u2115\n\u22a2 x \u2264 0 \u2228 0 \u2264 x\ncase succ\nx d : \u2115\nhd : x \u2264 d \u2228 d \u2264 x\n\u22a2 x \u2264 succ d \u2228 succ d \u2264 x\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_total",
+    "NL": "-- We choose to prove the right side of the disjunction, which is 0 \u2264 x.",
+    "FL": "right",
+    "state": "case zero.h\nx : \u2115\n\u22a2 0 \u2264 x\ncase succ\nx d : \u2115\nhd : x \u2264 d \u2228 d \u2264 x\n\u22a2 x \u2264 succ d \u2228 succ d \u2264 x\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_total",
+    "NL": "-- We assert that 0 is less than or equal to any natural number x, which completes the proof for this case.",
+    "FL": "exact zero_le x -- error",
+    "state": "case succ\nx d : \u2115\nhd : x \u2264 d \u2228 d \u2264 x\n\u22a2 x \u2264 succ d \u2228 succ d \u2264 x\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_succ_le_succ",
+    "NL": "-- Theorem Declaration: Prove that if the successor of x is less than or equal to the successor of y, then x is less than or equal to y.",
+    "FL": "theorem skipped_succ_le_succ (x y : \u2115) (hx : succ x \u2264 succ y) : x \u2264 y := by",
+    "state": "x y : \u2115\nhx : succ x \u2264 succ y\n\u22a2 x \u2264 y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_succ_le_succ",
+    "NL": "-- We consider the case where the successor of x is less than or equal to the successor of y. This implies that the successor of y is equal to the successor of x plus some natural number d.",
+    "FL": "cases hx with d hd",
+    "state": "case intro\nx y d : \u2115\nhd : succ y = succ x + d\n\u22a2 x \u2264 y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_succ_le_succ",
+    "NL": "-- We rewrite the right-hand side of succ y = succ x + d using the theorem that states the the successor of a sum of two natural numbers is the same as the successor of the first number added to the second number.",
+    "FL": "rw [succ_add] at hd",
+    "state": "case intro\nx y d : \u2115\nhd : succ y = succ (x + d)\n\u22a2 x \u2264 y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_succ_le_succ",
+    "NL": "-- We apply the property that if two natural numbers with successors are equal, then the original numbers are also equal.",
+    "FL": "apply succ_inj at hd",
+    "state": "case intro\nx y d : \u2115\nhd : y = x + d\n\u22a2 x \u2264 y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_succ_le_succ",
+    "NL": "-- We have shown that x = y + d, so we can use this to prove the goal.",
+    "FL": "exact hd -- error",
+    "state": "  hd\nhas type\n  y = x + d : Prop\nbut is expected to have type\n  x \u2264 y : Prop\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_le_one",
+    "NL": "-- Theorem Declaration: Prove that if x is less than or equal to 1, then x is equal to 0 or 1.",
+    "FL": "theorem skipped_le_one (x : \u2115) (hx : x \u2264 1) : x = 0 \u2228 x = 1 := by",
+    "state": "x : \u2115\nhx : x \u2264 1\n\u22a2 x = 0 \u2228 x = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_one",
+    "NL": "-- We consider the case where x is a natural number. We then break down this case into two subcases: one where x is equal to 0, and the other where x is equal to the successor of another natural number y.",
+    "FL": "cases x with y",
+    "state": "case zero\nhx : 0 \u2264 1\n\u22a2 0 = 0 \u2228 0 = 1\ncase succ\ny : \u2115\nhx : succ y \u2264 1\n\u22a2 succ y = 0 \u2228 succ y = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_one",
+    "NL": "-- We choose to prove the left side of the disjunction, which is 0 = 0.",
+    "FL": "left",
+    "state": "case zero.h\nhx : 0 \u2264 1\n\u22a2 0 = 0\ncase succ\ny : \u2115\nhx : succ y \u2264 1\n\u22a2 succ y = 0 \u2228 succ y = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_one",
+    "NL": "-- We are given that 0 equals 0, so we can use reflexivity to prove the goal.",
+    "FL": "rfl",
+    "state": "case succ\ny : \u2115\nhx : succ y \u2264 1\n\u22a2 succ y = 0 \u2228 succ y = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_one",
+    "NL": "-- Replace 1 with the successor of 0. This means we are given that the succ y <= succ 0, and the updated goal is that the succ y = 0 or the succ y = succ 0.",
+    "FL": "rw [one_eq_succ_zero] at hx \u22a2",
+    "state": "case succ\ny : \u2115\nhx : succ y \u2264 succ 0\n\u22a2 succ y = 0 \u2228 succ y = succ 0\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_one",
+    "NL": "-- We are given that succ 0 equals succ 0, so we can use reflexivity to prove the goal.",
+    "FL": "rfl -- error",
+    "state": "case succ\ny : \u2115\nhx : succ y \u2264 succ 0\n\u22a2 succ y = 0 \u2228 succ y = succ 0\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_le_two",
+    "NL": "-- Theorem Declaration: Prove that if x is less than or equal to 2, then x is equal to 0, 1, or 2.",
+    "FL": "theorem skipped_le_two (x : \u2115) (hx : x \u2264 2) : x = 0 \u2228 x = 1 \u2228 x = 2 := by",
+    "state": "x : \u2115\nhx : x \u2264 2\n\u22a2 x = 0 \u2228 x = 1 \u2228 x = 2\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_two",
+    "NL": "-- We consider the case where x is a natural number. We then break down this case into two subcases: one where x is equal to 0, and the other where x is equal to the successor of another natural number y.",
+    "FL": "cases x with y",
+    "state": "case zero\nhx : 0 \u2264 2\n\u22a2 0 = 0 \u2228 0 = 1 \u2228 0 = 2\ncase succ\ny : \u2115\nhx : succ y \u2264 2\n\u22a2 succ y = 0 \u2228 succ y = 1 \u2228 succ y = 2\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_two",
+    "NL": "-- We choose to prove the left side of the disjunction, which is 0 = 0.",
+    "FL": "left",
+    "state": "case zero.h\nhx : 0 \u2264 2\n\u22a2 0 = 0\ncase succ\ny : \u2115\nhx : succ y \u2264 2\n\u22a2 succ y = 0 \u2228 succ y = 1 \u2228 succ y = 2\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_two",
+    "NL": "-- We are given that 0 equals 0, so we can use reflexivity to prove the goal.",
+    "FL": "rfl",
+    "state": "case succ\ny : \u2115\nhx : succ y \u2264 2\n\u22a2 succ y = 0 \u2228 succ y = 1 \u2228 succ y = 2\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_two",
+    "NL": "-- We consider the case where y is a natural number. We then break down this case into two subcases: one where y is equal to 0, and the other where y is equal to the successor of another natural number z.",
+    "FL": "cases y with z",
+    "state": "case succ.zero\nhx : succ 0 \u2264 2\n\u22a2 succ 0 = 0 \u2228 succ 0 = 1 \u2228 succ 0 = 2\ncase succ.succ\nz : \u2115\nhx : succ (succ z) \u2264 2\n\u22a2 succ (succ z) = 0 \u2228 succ (succ z) = 1 \u2228 succ (succ z) = 2\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_two",
+    "NL": "-- We choose to prove the right side of the disjunction, which is succ 0 = 1 \u2228 succ 0 = 2.",
+    "FL": "right",
+    "state": "case succ.zero.h\nhx : succ 0 \u2264 2\n\u22a2 succ 0 = 1 \u2228 succ 0 = 2\ncase succ.succ\nz : \u2115\nhx : succ (succ z) \u2264 2\n\u22a2 succ (succ z) = 0 \u2228 succ (succ z) = 1 \u2228 succ (succ z) = 2\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_le_two",
+    "NL": "-- We have that succ (succ 0) = succ (succ 0), so we can use reflexivity to prove the goal.",
+    "FL": "rfl -- error",
+    "state": "case succ.zero.h\nhx : succ 0 \u2264 2\n\u22a2 succ 0 = 1 \u2228 succ 0 = 2\n",
+    "is_error": true
+  }
+]

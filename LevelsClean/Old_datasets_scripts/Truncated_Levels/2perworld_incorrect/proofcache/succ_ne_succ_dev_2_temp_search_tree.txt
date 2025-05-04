@@ -1,0 +1,10 @@
+apply succ_inj
+	rw [h]
+		apply succ_inj at h
+			apply succ_inj at h
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			rfl
+			SYSTEM: QED

@@ -1,0 +1,332 @@
+[
+  {
+    "theorem": "succ_add",
+    "NL": "Prove that succ (a) + b  = succ (a + b) for all natural numbers",
+    "FL": "theorem succ_add1 (a b : ℕ) : succ a + b = succ (a + b)  := by",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "Induct on b, with d = 0 as the base case and the inductive hypothesis succ (a) + d = succ (a + d). There are now two proof goals, prove base case: succ (a) + 0 = succ (a + 0) and inductive step: succ (a) + succ (d) = succ (a + succ (d))",
+    "FL": "induction b with d hd",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "succ_add", 
+    "NL": "First prove base case. Reduce LHS succ (a) + 0 = succ (a)",
+    "FL": "· rw [add_zero]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "Reduce RHS succ(a + 0) = succ (a)",
+    "FL": "rw [add_zero]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "Prove succ (a) = succ (a), finishing the base case",
+    "FL": "rfl",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "Now prove the inductive step. Rewrite succ (a) + succ (d) = succ (succ a + d)",
+    "FL": "· rw [add_succ]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "Rewrite succ (a + succ d) = succ (succ (a + d))",
+    "FL": "rw [add_succ]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "Rewrite RHS succ (succ a + d) to succ (succ (a + d)) using the inductive hypothesis",
+    "FL": "rw [hd]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "succ_add",
+    "NL": "Prove succ (succ (a + d)) = succ (succ (a + d)), completing the proof",
+    "FL": "rfl",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_left_eq_zero",
+    "NL": "Prove that a + b = 0 implies b = 0 for all natural numbers",
+    "FL": "theorem add_left_eq_zero (a b : ℕ) : a + b = 0 → b = 0 := by",
+    "filename": "AdvAdditionClean.lean"
+  },
+  {
+    "theorem": "add_left_eq_zero",
+    "NL": "Rewrite the goal by swapping the addition operands in the left side of both equations, changing a + b = 0 to b + a = 0.",
+    "FL": "rw [add_comm]",
+    "filename": "AdvAdditionClean.lean"
+  },
+  {
+    "theorem": "add_left_eq_zero",
+    "NL": "Apply the theorem that states that if a + b = 0, then b = 0 for all natural numbers.",
+    "FL": "exact add_right_eq_zero b a",
+    "filename": "AdvAdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "Prove that the addition of natural numbers is associative, i.e., a + b + c = a + (b + c).",
+    "FL": "theorem add_assoc (a b c : ℕ) : a + b + c = a + (b + c) := by",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "Induct on c, with d = 0 as the base case and the inductive hypothesis a + b + d = a + (b + d). There are now two proof goals, prove base case: a + b + 0 = a + (b + 0), and inductive step: a + b + succ (d) = a + (b + succ (d))",
+    "FL": "induction c with d hd",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "First prove base case. Simplify LHS a + b + 0 = a + b",
+    "FL": "· rw [add_zero]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "Reduce RHS a + (b + 0) to a + b",
+    "FL": "rw [add_zero]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "Prove LHS and RHS are equal, a + b = a + b, completing the base case.",
+    "FL": "rfl",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "Now prove the inductive step. Rewrite the LHS expression a + b + succ d to succ (a + b + d)",
+    "FL": "· rw [add_succ]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "Rewrite RHS a + (b + succ d) to a + succ (b + d)",
+    "FL": "rw [add_succ]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "Use the inductive hypothesis to rewrite the left-hand side, changing succ (a + b + d) to succ (a + (b + d))",
+    "FL": "rw [hd]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "Rewrite the RHS, a + succ (b + d) to succ (a + (b + d))",
+    "FL": "rw [add_succ]",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_assoc",
+    "NL": "Prove LHS and RHS are equal, succ (a + (b + d)) = succ (a + (b + d)), completing the proof",
+    "FL": "rfl",
+    "filename": "AdditionClean.lean"
+  },
+  {
+    "theorem": "add_left_comm",
+    "NL": "Prove that for natural numbers a, b, and c, a + (b + c) = b + (a + c).",
+    "FL": "theorem add_left_comm (a b c : ℕ) : a + (b + c) = b + (a + c) := by",
+    "filename": "AlgorithmClean.lean"
+  },
+  {
+    "theorem": "add_left_comm",
+    "NL": "Rewrite LHS using the commutative property of addition, changing a + (b + c) to a + b + c",
+    "FL": "rw [← add_assoc]",
+    "filename": "AlgorithmClean.lean"
+  },
+  {
+    "theorem": "add_left_comm",
+    "NL": "Rewrite LHS, swapping the order of a and b, changing a + b + c to b + a + c",
+    "FL": "rw [add_comm a b]",
+    "filename": "AlgorithmClean.lean"
+  },
+  {
+    "theorem": "add_left_comm",
+    "NL": "Rewrite LHS b + a + c as b + (a + c)",
+    "FL": "rw [add_assoc]",
+    "filename": "AlgorithmClean.lean"
+  },
+  {
+    "theorem": "add_left_comm",
+    "NL": "Prove LHS and RHS are equal, b + (a + c) = b + (a + c), completing the proof",
+    "FL": "rfl",
+    "filename": "AlgorithmClean.lean"
+  },
+  {
+    "theorem": "exact_4",
+    "NL": "For some x and y which are natural numbers, given that  x = 37 and that x = 37 implied y = 42, prove y = 42",
+    "FL": "theorem exact_4 (x y : ℕ) (h1 : x = 37) (h2 : x = 37 → y = 42) : y = 42 := by",
+    "filename": "ImplicationClean.lean"
+  },
+  {
+    "theorem": "exact_4",
+    "NL": "Starting with the given x = 37, use the implication that x = 37 → y = 42 on the given, to deduce that y = 42",
+    "FL": "apply h2 at h1",
+    "filename": "ImplicationClean.lean"
+  },
+  {
+    "theorem": "exact_4",
+    "NL": "We can exactly prove that y = 42 with our given facts, to complete the proof",
+    "FL": "exact h1",
+    "filename": "ImplicationClean.lean"
+  },
+  {
+    "theorem": "le_succ_self",
+    "NL": "Prove that x ≤ succ x for any natural number x",
+    "FL": "theorem le_succ_self (x : ℕ) : x ≤ succ x := by",
+    "filename": "LessOrEqualClean.lean"
+  },
+  {
+    "theorem": "le_succ_self",
+    "NL": "We simplify the claim to being succ x = x + 1 by using the case of 1.",
+    "FL": "use 1",
+    "filename": "LessOrEqualClean.lean"
+  },
+  {
+    "theorem": "le_succ_self",
+    "NL": "Rewrite the left-hand side of the goal using the theorem that states that the successor of a number is equal to that number plus one. The goal now becomes proving that x + 1 equals x + 1.",
+    "FL": "rw [succ_eq_add_one]",
+    "filename": "LessOrEqualClean.lean"
+  },
+  {
+    "theorem": "le_succ_self",
+    "NL": "The goal is now to prove that x + 1 equals x + 1, which is true by reflexivity.",
+    "FL": "rfl",
+    "filename": "LessOrEqualClean.lean"
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "Prove that multiplication is commutative, that is a * b  = b * a for all natural numbers",
+    "FL": "theorem mul_comm (a b : ℕ) : a * b = b * a := by",
+    "filename": "MultiplicationClean.lean"
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "Induct on b, with d = 0 as the base case and the inductive hypothesis a * d = d * a. There are now two proof goals, prove base case: a * 0 = 0 * a, and inductive step: a * succ d = succ d * a.",
+    "FL": "induction b with d hd",
+    "filename": "MultiplicationClean.lean"
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "First we prove base case. Simplify RHS 0 * a to 0",
+    "FL": "· rw [zero_mul]",
+    "filename": "MultiplicationClean.lean"
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "Simplify LHS a * 0 to 0",
+    "FL": "rw [mul_zero]",
+    "filename": "MultiplicationClean.lean"
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "Prove LHS and RHS are equal, 0 = 0, completing base case",
+    "FL": "rfl",
+    "filename": "MultiplicationClean.lean"
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "Next prove inductive step. Rewrite RHS succ d * a to d * a + a",
+    "FL": "· rw [succ_mul]",
+    "filename": "MultiplicationClean.lean"
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "Rewrite the RHS from d * a + a to a * d + a using the inductive hypothesis",
+    "FL": "rw [← hd]",
+    "filename": "MultiplicationClean.lean"
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "Rewrite the LHS, changing a * succ d to a * d + a",
+    "FL": "rw [mul_succ]",
+    "filename": "MultiplicationClean.lean"
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "Prove LHS and RHS are equal, a * d + a = a * d + a, completing the proof",
+    "FL": "rfl",
+    "filename": "MultiplicationClean.lean"
+  },
+  {
+    "theorem": "mul_pow1",
+    "NL": "Prove that (a * b)^n = a^n * b^n",
+    "FL": "theorem mul_pow1 (a b n : ℕ) : (a * b) ^ n = a ^ n * b ^ n := by",
+    "filename": "PowerClean.lean"
+  },
+  {
+    "theorem": "mul_pow1",
+    "NL": "Induct on n, with t = 0 as the base case and the inductive hypothesis (a * b)^t = a^t * b^t. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^t = a^t * b^t implies (a * b)^(succ t) = a^(succ t) * b^(succ t).",
+    "FL": "induction n with t Ht",
+    "filename": "PowerClean.lean"
+  },
+  {
+    "theorem": "mul_pow1",
+    "NL": "Rewrite the left-hand side of the goal using the theorem that x^0 = 1, then simplify a^0 * b^0 to 1 * 1, and finally simplify 1 * 1 to 1",
+    "FL": "rw [pow_zero, pow_zero, pow_zero, mul_one]",
+    "filename": "PowerClean.lean"
+  },
+  {
+    "theorem": "mul_pow1",
+    "NL": "The goal is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "filename": "PowerClean.lean"
+  },
+  {
+    "theorem": "mul_pow1",
+    "NL": "We rewrite the goal using the property that (a * b)^(t+1) = (a * b)^t * (a * b). We use the inductive hypothesis that (a * b)^t = a^t * b^t.",
+    "FL": "rw [pow_succ, pow_succ, pow_succ, Ht]",
+    "filename": "PowerClean.lean"
+  },
+  {
+    "theorem": "mul_pow1",
+    "NL": "Rewrite the right-hand side of the equation to move the multiplication of b and a inside the parentheses, changing b^d * b * a to b^d * (b * a).",
+    "FL": "repeat rw [mul_assoc]",
+    "filename": "PowerClean.lean"
+  },
+  {
+    "theorem": "mul_pow1",
+    "NL": "Rearrange the terms on the right side of the equation using commutativity and associativity of multiplication. Specifically, swap a and (b * t), then regroup terms, and finally swap b and a.",
+    "FL": "rw [mul_comm a (_ * b), mul_assoc, mul_comm b a]",
+    "filename": "PowerClean.lean"
+  },
+  {
+    "theorem": "mul_pow1",
+    "NL": "The goal is now to prove that a^d * (b^d * (a * b)) = a^d * (b^d * (a * b)), which is true by reflexivity",
+    "FL": "rfl",
+    "filename": "PowerClean.lean"
+  },
+  {
+    "theorem": "two_eq_ss0",
+    "NL": "Prove that the succ (succ (0)) is 2.",
+    "FL": "theorem two_eq_ss0: 2 = succ (succ 0) := by",
+    "filename": "TutorialClean.lean"
+  },
+  {
+    "theorem": "two_eq_ss0",
+    "NL": "Use the fact that the successor of 1, succ 1, is 2, in the proof goal, changing the equation to 'succ 1 = succ (succ 0)'",
+    "FL": "rw [two_eq_succ_one]",
+    "filename": "TutorialClean.lean"
+  },
+  {
+    "theorem": "two_eq_ss0",
+    "NL": "Use the fact that 1 = succ 0 and expand the LHS succ (succ 0), changing the equation to succ (succ 0) = succ (succ 0)",
+    "FL": "rw [one_eq_succ_zero]",
+    "filename": "TutorialClean.lean"
+  },
+  {
+    "theorem": "two_eq_ss0",
+    "NL": "Prove LHS and RHS are equal, succ (succ 0) = succ (succ 0), completing the proof",
+    "FL": "rfl",
+    "filename": "TutorialClean.lean"
+  }
+]

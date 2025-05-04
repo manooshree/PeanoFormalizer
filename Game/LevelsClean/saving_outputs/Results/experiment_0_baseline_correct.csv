@@ -1,0 +1,11 @@
+World Name,Correct Accuracy,Proof Accuracy
+implication_world_val,0 / 5 = 0.00%,0 / 2 = 0.00%
+multiplication_world_val,6 / 11 = 54.55%,0 / 2 = 0.00%
+AdvMultiplication_world_val,3 / 8 = 37.50%,0 / 2 = 0.00%
+algorithm_world_val,3 / 7 = 42.86%,1 / 2 = 50.00%
+less_or_equal_world_val,21 / 32 = 65.62%,0 / 2 = 0.00%
+power_world_val,1 / 11 = 9.09%,0 / 2 = 0.00%
+tutorial_world_val,8 / 11 = 72.73%,0 / 2 = 0.00%
+AdvAddition_world_val,6 / 18 = 33.33%,0 / 2 = 0.00%
+addition_world_val,9 / 12 = 75.00%,1 / 2 = 50.00%
+Total,57 / 115 = 49.57%,2 / 18 = 11.11%

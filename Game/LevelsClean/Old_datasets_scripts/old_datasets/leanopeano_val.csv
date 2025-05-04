@@ -1,0 +1,45 @@
+theorem,NL,FL,filename
+add_assoc,"Prove that the addition of natural numbers is associative, i.e., a + b + c = a + (b + c).","theorem add_assoc (a b c : ℕ) : a + b + c = a + (b + c) := by",AdditionClean.lean
+add_assoc,"Induct on c, with d = 0 as the base case and the inductive hypothesis a + b + d = a + (b + d). There are now two proof goals, prove base case: a + b + 0 = a + (b + 0), and inductive step: a + b + succ (d) = a + (b + succ (d))","induction c with d hd",AdditionClean.lean
+add_assoc,"First prove base case. Simplify LHS a + b + 0 = a + b","· rw [add_zero]",AdditionClean.lean
+add_assoc,"Reduce RHS a + (b + 0) to a + b","rw [add_zero]",AdditionClean.lean
+add_assoc,"Prove LHS and RHS are equal, a + b = a + b, completing the base case.","rfl",AdditionClean.lean
+add_assoc,"Now prove the inductive step. Rewrite the LHS expression a + b + succ d to succ (a + b + d)","· rw [add_succ]",AdditionClean.lean
+add_assoc,"Rewrite RHS a + (b + succ d) to a + succ (b + d)","rw [add_succ]",AdditionClean.lean
+add_assoc,"Use the inductive hypothesis to rewrite the left-hand side, changing succ (a + b + d) to succ (a + (b + d))","rw [hd]",AdditionClean.lean
+add_left_eq_zero,"Prove that a + b = 0 implies b = 0 for all natural numbers","theorem add_left_eq_zero (a b : ℕ) : a + b = 0 → b = 0 := by",AdvAdditionClean.lean
+add_left_eq_zero,"Rewrite the goal by swapping the addition operands in the left side of both equations, changing a + b = 0 to b + a = 0.","rw [add_comm]",AdvAdditionClean.lean
+add_left_eq_zero,"Apply the theorem that states that if a + b = 0, then b = 0 for all natural numbers.","exact add_right_eq_zero b a",AdvAdditionClean.lean
+add_left_comm,"Prove that for natural numbers a, b, and c, a + (b + c) = b + (a + c).","theorem add_left_comm (a b c : ℕ) : a + (b + c) = b + (a + c) := by",AlgorithmClean.lean
+add_left_comm,"Rewrite LHS using the commutative property of addition, changing a + (b + c) to a + b + c","rw [← add_assoc]",AlgorithmClean.lean
+add_left_comm,"Rewrite LHS, swapping the order of a and b, changing a + b + c to b + a + c","rw [add_comm a b]",AlgorithmClean.lean
+add_left_comm,"Rewrite LHS b + a + c as b + (a + c)","rw [add_assoc]",AlgorithmClean.lean
+add_left_comm,"Prove LHS and RHS are equal, b + (a + c) = b + (a + c), completing the proof","rfl",AlgorithmClean.lean
+exact_4,"For some x and y which are natural numbers, given that  x = 37 and that x = 37 implied y = 42, prove y = 42","theorem exact_4 (x y : ℕ) (h1 : x = 37) (h2 : x = 37 → y = 42) : y = 42 := by",ImplicationClean.lean
+exact_4,"Starting with the given x = 37, use the implication that x = 37 → y = 42 on the given, to deduce that y = 42","apply h2 at h1",ImplicationClean.lean
+exact_4,"We can exactly prove that y = 42 with our given facts, to complete the proof","exact h1",ImplicationClean.lean
+le_succ_self,"Prove that x ≤ succ x for any natural number x","theorem le_succ_self (x : ℕ) : x ≤ succ x := by",LessOrEqualClean.lean
+le_succ_self,"We simplify the claim to being succ x = x + 1 by using the case of 1.","use 1",LessOrEqualClean.lean
+le_succ_self,"Rewrite the left-hand side of the goal using the theorem that states that the successor of a number is equal to that number plus one. The goal now becomes proving that x + 1 equals x + 1.","rw [succ_eq_add_one]",LessOrEqualClean.lean
+le_succ_self,"The goal is now to prove that x + 1 equals x + 1, which is true by reflexivity.","rfl",LessOrEqualClean.lean
+mul_comm,"Prove that multiplication is commutative, that is a * b  = b * a for all natural numbers","theorem mul_comm (a b : ℕ) : a * b = b * a := by",MultiplicationClean.lean
+mul_comm,"Induct on b, with d = 0 as the base case and the inductive hypothesis a * d = d * a. There are now two proof goals, prove base case: a * 0 = 0 * a, and inductive step: a * succ d = succ d * a.","induction b with d hd",MultiplicationClean.lean
+mul_comm,"First we prove base case. Simplify RHS 0 * a to 0","· rw [zero_mul]",MultiplicationClean.lean
+mul_comm,"Simplify LHS a * 0 to 0","rw [mul_zero]",MultiplicationClean.lean
+mul_comm,"Prove LHS and RHS are equal, 0 = 0, completing base case","rfl",MultiplicationClean.lean
+mul_comm,"Next prove inductive step. Rewrite RHS succ d * a to d * a + a","· rw [succ_mul]",MultiplicationClean.lean
+mul_comm,"Rewrite the RHS from d * a + a to a * d + a using the inductive hypothesis","rw [← hd]",MultiplicationClean.lean
+mul_comm,"Rewrite the LHS, changing a * succ d to a * d + a","rw [mul_succ]",MultiplicationClean.lean
+mul_comm,"Prove LHS and RHS are equal, a * d + a = a * d + a, completing the proof","rfl",MultiplicationClean.lean
+mul_pow1,"Prove that (a * b)^n = a^n * b^n","theorem mul_pow1 (a b n : ℕ) : (a * b) ^ n = a ^ n * b ^ n := by",PowerClean.lean
+mul_pow1,"Induct on n, with d = 0 as the base case and the inductive hypothesis (a * b)^d = a^d * b^d. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^d = a^d * b^d implies (a * b)^(succ d) = a^(succ d) * b^(succ d).","induction n with t Ht",PowerClean.lean
+mul_pow1,"Rewrite the left-hand side of the goal using the theorem that x^0 = 1, then simplify a^0 * b^0 to 1 * 1, and finally simplify 1 * 1 to 1","rw [pow_zero, pow_zero, pow_zero, mul_one]",PowerClean.lean
+mul_pow1,"The goal is now to prove that 1 = 1, which is true by reflexivity","rfl",PowerClean.lean
+mul_pow1,"We rewrite the goal using the property that (a * b)^(t+1) = (a * b)^t * (a * b). We use the inductive hypothesis that (a * b)^t = a^t * b^t.","rw [pow_succ, pow_succ, pow_succ, Ht]",PowerClean.lean
+mul_pow1,"Rewrite the right-hand side of the equation to move the multiplication of b and a inside the parentheses, changing b^d * b * a to b^d * (b * a).","repeat rw [mul_assoc]",PowerClean.lean
+mul_pow1,"Rearrange the terms on the right side of the equation using commutativity and associativity of multiplication. Specifically, swap a and (b * t), then regroup terms, and finally swap b and a.","rw [mul_comm a (_ * b), mul_assoc, mul_comm b a]",PowerClean.lean
+mul_pow1,"The goal is now to prove that a^d * (b^d * (a * b)) = a^d * (b^d * (a * b)), which is true by reflexivity","rfl",PowerClean.lean
+two_eq_ss0,"Prove that the succ (succ (0)) is 2.","theorem two_eq_ss0: 2 = succ (succ 0) := by",TutorialClean.lean
+two_eq_ss0,"Use the fact that the successor of 1, succ 1, is 2, in the proof goal, changing the equation to 'succ 1 = succ (succ 0)'","rw [two_eq_succ_one]",TutorialClean.lean
+two_eq_ss0,"Use the fact that 1 = succ 0 and expand the LHS succ (succ 0), changing the equation to succ (succ 0) = succ (succ 0)","rw [one_eq_succ_zero]",TutorialClean.lean
+two_eq_ss0,"Prove LHS and RHS are equal, succ (succ 0) = succ (succ 0), completing the proof","rfl",TutorialClean.lean 

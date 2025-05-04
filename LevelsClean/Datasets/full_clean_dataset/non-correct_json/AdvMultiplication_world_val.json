@@ -1,0 +1,937 @@
+{
+    "mul_le_mul_right": {
+        "mul_le_mul_right__dev_1": [
+            {
+                "theorem": "mul_le_mul_right__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if a is less than or equal to b, then a times t is less than or equal to b times t.",
+                "FL": "theorem mul_le_mul_right__dev_1 (a b t : \u2115) (h : a \u2264 b) : a * t \u2264 b * t := by",
+                "state": "a b t : \u2115\nh : a \u2264 b\n\u22a2 a * t \u2264 b * t\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_le_mul_right__dev_1",
+                "NL": "-- We know that a \u2264 b, so we can express b as a + d for some natural number d.",
+                "FL": "cases h with d hd",
+                "state": "case intro\na b t d : \u2115\nhd : b = a + d\n\u22a2 a * t \u2264 b * t\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_le_mul_right__dev_1",
+                "NL": "-- simplify to a * t \u2264 a * t + d * t using the distributive property of multiplication over addition",
+                "FL": "rw [add_mul]",
+                "state": "case intro\na b t d : \u2115\nhd : b = a + d\n\u22a2 a * t \u2264 a * t + d * t\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "mul_le_mul_right__dev_1",
+                "NL": "-- The LHS and RHS are equal, completing the proof",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "mul_le_mul_right__dev_2": [
+            {
+                "theorem": "mul_le_mul_right__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if a is less than or equal to b, then a times t is less than or equal to b times t.",
+                "FL": "theorem mul_le_mul_right__dev_2 (a b t : \u2115) (h : a \u2264 b) : a * t \u2264 b * t := by",
+                "state": "a b t : \u2115\nh : a \u2264 b\n\u22a2 a * t \u2264 b * t\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_le_mul_right__dev_2",
+                "NL": "-- We know that a \u2264 b, so we can express b as a + d for some natural number d.",
+                "FL": "cases h with d hd",
+                "state": "case intro\na b t d : \u2115\nhd : b = a + d\n\u22a2 a * t \u2264 b * t\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_le_mul_right__dev_2",
+                "NL": "-- The LHS and RHS are equal, completing the proof",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "mul_left_ne_zero": {
+        "mul_left_ne_zero__dev_1": [
+            {
+                "theorem": "mul_left_ne_zero__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if a times b is not equal to 0, then b is not equal to 0.",
+                "FL": "theorem mul_left_ne_zero__dev_1 (a b : \u2115) (h : a * b \u2260 0) : b \u2260 0 := by",
+                "state": "a b : \u2115\nh : a * b \u2260 0\n\u22a2 b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_ne_zero__dev_1",
+                "NL": "-- Assume that b equals 0.",
+                "FL": "intro hb",
+                "state": "a b : \u2115\nh : a * b \u2260 0\nhb : b = 0\n\u22a2 False\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_ne_zero__dev_1",
+                "NL": "-- We use reflexivity to prove the goal of 0 = 0.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "mul_left_ne_zero__dev_2": [
+            {
+                "theorem": "mul_left_ne_zero__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if a times b is not equal to 0, then b is not equal to 0.",
+                "FL": "theorem mul_left_ne_zero__dev_2 (a b : \u2115) (h : a * b \u2260 0) : b \u2260 0 := by",
+                "state": "a b : \u2115\nh : a * b \u2260 0\n\u22a2 b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_ne_zero__dev_2",
+                "NL": "-- Assume that b equals 0.",
+                "FL": "intro hd",
+                "state": "a b : \u2115\nh : a * b \u2260 0\nhd : b = 0\n\u22a2 False\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_ne_zero__dev_2",
+                "NL": "-- We have 0 != 0 which is a contradiction.",
+                "FL": "tauto",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "eq_succ_of_ne_zero": {
+        "eq_succ_of_ne_zero__dev_1": [
+            {
+                "theorem": "eq_succ_of_ne_zero__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if a is not equal to 0, then a is the successor of some natural number.",
+                "FL": "theorem eq_succ_of_ne_zero__dev_1 (a : \u2115) (ha : a \u2260 0) : \u2203 n, a = succ n := by",
+                "state": "a : \u2115\nha : a \u2260 0\n\u22a2 \u2203 n, a = succ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "eq_succ_of_ne_zero__dev_1",
+                "NL": "-- We use induction on a.",
+                "FL": "induction a with d _",
+                "state": "case zero\nha : 0 \u2260 0\n\u22a2 \u2203 n, 0 = succ n\ncase succ\nd : \u2115\nn_ih\u271d : d \u2260 0 \u2192 \u2203 n, d = succ n\nha : succ d \u2260 0\n\u22a2 \u2203 n, succ d = succ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "eq_succ_of_ne_zero__dev_1",
+                "NL": "-- We use reflexivity to prove that 'succ d' equals 'succ d'.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "eq_succ_of_ne_zero__dev_2": [
+            {
+                "theorem": "eq_succ_of_ne_zero__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if a is not equal to 0, then a is the successor of some natural number.",
+                "FL": "theorem eq_succ_of_ne_zero__dev_2 (a : \u2115) (ha : a \u2260 0) : \u2203 n, a = succ n := by",
+                "state": "a : \u2115\nha : a \u2260 0\n\u22a2 \u2203 n, a = succ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "eq_succ_of_ne_zero__dev_2",
+                "NL": "-- We use induction on a.",
+                "FL": "induction a with d _",
+                "state": "case zero\nha : 0 \u2260 0\n\u22a2 \u2203 n, 0 = succ n\ncase succ\nd : \u2115\nn_ih\u271d : d \u2260 0 \u2192 \u2203 n, d = succ n\nha : succ d \u2260 0\n\u22a2 \u2203 n, succ d = succ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "eq_succ_of_ne_zero__dev_2",
+                "NL": "-- Since the LHS and RHS are equal, we can use reflexivity to prove the goal.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "one_le_of_ne_zero": {
+        "one_le_of_ne_zero__dev_1": [
+            {
+                "theorem": "one_le_of_ne_zero__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if a is not equal to 0, then 1 is less than or equal to a.",
+                "FL": "theorem one_le_of_ne_zero__dev_1 (a : \u2115) (ha : a \u2260 0) : 1 \u2264 a := by",
+                "state": "a : \u2115\nha : a \u2260 0\n\u22a2 1 \u2264 a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_le_of_ne_zero__dev_1",
+                "NL": "-- a is either 0 or the successor of some natural number d.",
+                "FL": "cases a with d",
+                "state": "case zero\nha : 0 \u2260 0\n\u22a2 1 \u2264 0\ncase succ\nd : \u2115\nha : succ d \u2260 0\n\u22a2 1 \u2264 succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_le_of_ne_zero__dev_1",
+                "NL": "-- When a = 0, the theorem doesn't hold because we know a != 0.",
+                "FL": "tauto",
+                "state": "case succ\nd : \u2115\nha : succ d \u2260 0\n\u22a2 1 \u2264 succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_le_of_ne_zero__dev_1",
+                "NL": "-- 1 <= d + 1 -> 1 + d = d + 1",
+                "FL": "use d",
+                "state": "case h\nd : \u2115\nha : succ d \u2260 0\n\u22a2 d + 1 = 1 + d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_le_of_ne_zero__dev_1",
+                "NL": "-- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "one_le_of_ne_zero__dev_2": [
+            {
+                "theorem": "one_le_of_ne_zero__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if a is not equal to 0, then 1 is less than or equal to a.",
+                "FL": "theorem one_le_of_ne_zero__dev_2 (a : \u2115) (ha : a \u2260 0) : 1 \u2264 a := by",
+                "state": "a : \u2115\nha : a \u2260 0\n\u22a2 1 \u2264 a\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_le_of_ne_zero__dev_2",
+                "NL": "-- We use induction on a.",
+                "FL": "induction a with d _",
+                "state": "case zero\nha : 0 \u2260 0\n\u22a2 1 \u2264 0\ncase succ\nd : \u2115\nn_ih\u271d : d \u2260 0 \u2192 1 \u2264 d\nha : succ d \u2260 0\n\u22a2 1 \u2264 succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_le_of_ne_zero__dev_2",
+                "NL": "-- For the base case, a = 0, the theorem doesn't hold because we know a != 0.",
+                "FL": "tauto",
+                "state": "case succ\nd : \u2115\nn_ih\u271d : d \u2260 0 \u2192 1 \u2264 d\nha : succ d \u2260 0\n\u22a2 1 \u2264 succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_le_of_ne_zero__dev_2",
+                "NL": "-- we know that 1 <= succ d -> 1 <= d + 1",
+                "FL": "rw [succ_eq_add_one]",
+                "state": "case succ\nd : \u2115\nn_ih\u271d : d \u2260 0 \u2192 1 \u2264 d\nha : succ d \u2260 0\n\u22a2 1 \u2264 d + 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "one_le_of_ne_zero__dev_2",
+                "NL": "-- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "le_mul_right": {
+        "le_mul_right__dev_1": [
+            {
+                "theorem": "le_mul_right__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if a times b is not equal to 0, then a is less than or equal to a times b.",
+                "FL": "theorem le_mul_right__dev_1 (a b : \u2115) (h : a * b \u2260 0) : a \u2264 a * b := by",
+                "state": "a b : \u2115\nh : a * b \u2260 0\n\u22a2 a \u2264 a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "le_mul_right__dev_1",
+                "NL": "-- b is either 0 or the successor of some natural number d.",
+                "FL": "cases b with d",
+                "state": "case zero\na : \u2115\nh : a * 0 \u2260 0\n\u22a2 a \u2264 a * 0\ncase succ\na d : \u2115\nh : a * succ d \u2260 0\n\u22a2 a \u2264 a * succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "le_mul_right__dev_1",
+                "NL": "-- a * 0 != 0 -> 0 != 0",
+                "FL": "rw [mul_zero] at h",
+                "state": "case zero\na : \u2115\nh : 0 \u2260 0\n\u22a2 a \u2264 a * 0\ncase succ\na d : \u2115\nh : a * succ d \u2260 0\n\u22a2 a \u2264 a * succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "le_mul_right__dev_1",
+                "NL": "-- 0 != 0 is false so the theorem doesn't hold for this case.",
+                "FL": "tauto",
+                "state": "case succ\na d : \u2115\nh : a * succ d \u2260 0\n\u22a2 a \u2264 a * succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "le_mul_right__dev_1",
+                "NL": "-- a * d + a = a + a * d -> a * d + a = a + a * d",
+                "FL": "rw [add_comm]",
+                "state": "case h\na d : \u2115\nh : a * succ d \u2260 0\n\u22a2 a + a * d = a + a * d\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "le_mul_right__dev_1",
+                "NL": "-- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "le_mul_right__dev_2": [
+            {
+                "theorem": "le_mul_right__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if a times b is not equal to 0, then a is less than or equal to a times b.",
+                "FL": "theorem le_mul_right__dev_2 (a b : \u2115) (h : a * b \u2260 0) : a \u2264 a * b := by",
+                "state": "a b : \u2115\nh : a * b \u2260 0\n\u22a2 a \u2264 a * b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "le_mul_right__dev_2",
+                "NL": "-- proof by induction on b",
+                "FL": "induction b with d _",
+                "state": "case zero\na : \u2115\nh : a * 0 \u2260 0\n\u22a2 a \u2264 a * 0\ncase succ\na d : \u2115\nn_ih\u271d : a * d \u2260 0 \u2192 a \u2264 a * d\nh : a * succ d \u2260 0\n\u22a2 a \u2264 a * succ d\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "le_mul_right__dev_2",
+                "NL": "-- for the base case, a * 0 != 0 -> 0 != 0",
+                "FL": "apply mul_left_ne_zero at h",
+                "state": "",
+                "is_correct": true
+            },
+            {
+                "theorem": "le_mul_right__dev_2",
+                "NL": "-- a <= a * d + a -> a * d + a = a + a * d by the definition of inequality, if we set a * d to be a.",
+                "FL": "use a * d",
+                "state": "",
+                "is_correct": false
+            },
+            {
+                "theorem": "le_mul_right__dev_2",
+                "NL": "-- a * d + a = a + a * d -> a * d + a = a + a * d by the commutative property of addition.",
+                "FL": "rw [add_comm]",
+                "state": "",
+                "is_correct": false
+            },
+            {
+                "theorem": "le_mul_right__dev_2",
+                "NL": "-- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "mul_right_eq_one": {
+        "mul_right_eq_one__dev_1": [
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if x times y is equal to 1, then x is equal to 1.",
+                "FL": "theorem mul_right_eq_one__dev_1 (x y : \u2115) (h : x * y = 1) : x = 1 := by",
+                "state": "x y : \u2115\nh : x * y = 1\n\u22a2 x = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- assume that x * y is not equal to 0",
+                "FL": "have h2 : x * y \u2260 0",
+                "state": "case h2\nx y : \u2115\nh : x * y = 1\n\u22a2 x * y \u2260 0\nx y : \u2115\nh : x * y = 1\nh2 : x * y \u2260 0\n\u22a2 x = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- rewrite the goal with the previous assumption so the new goal is 1 is not equal to 0",
+                "FL": "rw [h]",
+                "state": "case h2\nx y : \u2115\nh : x * y = 1\n\u22a2 1 \u2260 0\nx y : \u2115\nh : x * y = 1\nh2 : x * y \u2260 0\n\u22a2 x = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- We know that 1 is not equal to 0, so we can use this to prove the goal.",
+                "FL": "exact one_ne_zero",
+                "state": "x y : \u2115\nh : x * y = 1\nh2 : x * y \u2260 0\n\u22a2 x = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- We have shown that for any natural number x, if x * y not equal to 0, x <= x * y. so we know that x \u2264 x * y",
+                "FL": "apply le_mul_right at h2",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- We are given that x * y = 1, so we know that x \u2264 1",
+                "FL": "rw [h] at h2",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- Since x <= 1, x must be 1 or 0.",
+                "FL": "apply le_one at h2",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- We consider the two possible cases for x given by the disjunction in h2: either x equals 0 or x equals 1.",
+                "FL": "cases h2 with h0 h1",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- we know that 0 * n = 0 for any natural number n, so we have 0 = 1.",
+                "FL": "rw [zero_mul] at h",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_1",
+                "NL": "-- We have shown that x = 1 which proves the goal.",
+                "FL": "tauto",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": false
+            }
+        ],
+        "mul_right_eq_one__dev_2": [
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if x times y is equal to 1, then x is equal to 1.",
+                "FL": "theorem mul_right_eq_one__dev_2 (x y : \u2115) (h : x * y = 1) : x = 1 := by",
+                "state": "x y : \u2115\nh : x * y = 1\n\u22a2 x = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- assume that x * y is not equal to 0",
+                "FL": "have h2 : x * y \u2260 0",
+                "state": "case h2\nx y : \u2115\nh : x * y = 1\n\u22a2 x * y \u2260 0\nx y : \u2115\nh : x * y = 1\nh2 : x * y \u2260 0\n\u22a2 x = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- rewrite the goal with the previous assumption so the new goal is 1 is not equal to 0",
+                "FL": "rw [h]",
+                "state": "case h2\nx y : \u2115\nh : x * y = 1\n\u22a2 1 \u2260 0\nx y : \u2115\nh : x * y = 1\nh2 : x * y \u2260 0\n\u22a2 x = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- We know that 1 is not equal to 0, so we can use this to prove the goal.",
+                "FL": "exact one_ne_zero",
+                "state": "x y : \u2115\nh : x * y = 1\nh2 : x * y \u2260 0\n\u22a2 x = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- x * y != 0 -> x <= x * y",
+                "FL": "apply le_mul_right at h2",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- x <= x * y -> x <= 1",
+                "FL": "rw [h] at h2",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- x <= 1 -> x = 0 or x = 1",
+                "FL": "cases x",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- for the x = 0 case, 0 * y = 1 -> 0 = 1",
+                "FL": "rw [zero_mul] at h",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- 0 = 1 is false, so we can use this to show that x is not equal to 0.",
+                "FL": "tauto",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- for the x = 1 case, succ a \u2264 1 -> succ a = 0 \u2228 succ a = 1",
+                "FL": "apply le_one at h2",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- Let's look at the two possible cases for h2: either succ a = 0 or succ a = 1",
+                "FL": "cases h2 with h0 h1",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- 0 = 1 is false, so we can use this to show that x is not equal to 0.",
+                "FL": "tauto",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_one__dev_2",
+                "NL": "-- 1 = 1 is true by reflexivity",
+                "FL": "rfl",
+                "state": "  0 as the type of a parameter of \u2200 {\u03b1 : Type ?u.156} [inst : CanonicallyOrderedCommMonoid \u03b1] {a b c : \u03b1},\n  a \u2264 b \u2192 a \u2264 b * c.\n",
+                "is_correct": false
+            }
+        ]
+    },
+    "mul_ne_zero": {
+        "mul_ne_zero__dev_1": [
+            {
+                "theorem": "mul_ne_zero__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if a is not equal to 0 and b is not equal to 0, then a times b is not equal to 0.",
+                "FL": "theorem mul_ne_zero__dev_1 (a b : \u2115) (ha : a \u2260 0) (hb : b \u2260 0) : a * b \u2260 0 := by",
+                "state": "a b : \u2115\nha : a \u2260 0\nhb : b \u2260 0\n\u22a2 a * b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_ne_zero__dev_1",
+                "NL": "-- Since a is a natural number, it is either 0 or the successor of some natural number.",
+                "FL": "cases a with a",
+                "state": "case zero\nb : \u2115\nhb : b \u2260 0\nha : 0 \u2260 0\n\u22a2 0 * b \u2260 0\ncase succ\nb : \u2115\nhb : b \u2260 0\na : \u2115\nha : succ a \u2260 0\n\u22a2 succ a * b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_ne_zero__dev_1",
+                "NL": "-- If a is 0, this theorem doesn't hold.",
+                "FL": "tauto",
+                "state": "case succ\nb : \u2115\nhb : b \u2260 0\na : \u2115\nha : succ a \u2260 0\n\u22a2 succ a * b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_ne_zero__dev_1",
+                "NL": "-- succ a * succ b \u2260 0 -> succ a * b + succ a \u2260 0 by the definition of multiplication",
+                "FL": "rw [succ_mul]",
+                "state": "case succ\nb : \u2115\nhb : b \u2260 0\na : \u2115\nha : succ a \u2260 0\n\u22a2 a * b + b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_ne_zero__dev_1",
+                "NL": "-- If b is 0, this theorem doesn't hold.",
+                "FL": "tauto",
+                "state": "case succ.succ\na : \u2115\nha : succ a \u2260 0\nb : \u2115\nhb : succ b \u2260 0\n\u22a2 a * succ b + succ b \u2260 0\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "mul_ne_zero__dev_1",
+                "NL": "-- succ a * b + succ a \u2260 0 -> succ (succ a * b + a) \u2260 0 by the definition of addition",
+                "FL": "rw [add_succ]",
+                "state": "case succ.succ\na : \u2115\nha : succ a \u2260 0\nb : \u2115\nhb : succ b \u2260 0\n\u22a2 succ (a * succ b + b) \u2260 0\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "mul_ne_zero__dev_1",
+                "NL": "-- We know that 0 is not equal to the successor of any natural number, so we can use this to prove the goal.",
+                "FL": "apply zero_ne_succ",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "mul_ne_zero__dev_2": [
+            {
+                "theorem": "mul_ne_zero__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if a is not equal to 0 and b is not equal to 0, then a times b is not equal to 0.",
+                "FL": "theorem mul_ne_zero__dev_2 (a b : \u2115) (ha : a \u2260 0) (hb : b \u2260 0) : a * b \u2260 0 := by",
+                "state": "a b : \u2115\nha : a \u2260 0\nhb : b \u2260 0\n\u22a2 a * b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_ne_zero__dev_2",
+                "NL": "-- Since a is a natural number, it is either 0 or the successor of some natural number.",
+                "FL": "cases a with a",
+                "state": "case zero\nb : \u2115\nhb : b \u2260 0\nha : 0 \u2260 0\n\u22a2 0 * b \u2260 0\ncase succ\nb : \u2115\nhb : b \u2260 0\na : \u2115\nha : succ a \u2260 0\n\u22a2 succ a * b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_ne_zero__dev_2",
+                "NL": "-- If a is 0, this theorem doesn't hold.",
+                "FL": "tauto",
+                "state": "case succ\nb : \u2115\nhb : b \u2260 0\na : \u2115\nha : succ a \u2260 0\n\u22a2 succ a * b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_ne_zero__dev_2",
+                "NL": "-- Since b is a natural number, it is either 0 or the successor of some natural number.",
+                "FL": "cases b with b",
+                "state": "case succ.zero\na : \u2115\nha : succ a \u2260 0\nhb : 0 \u2260 0\n\u22a2 succ a * 0 \u2260 0\ncase succ.succ\na : \u2115\nha : succ a \u2260 0\nb : \u2115\nhb : succ b \u2260 0\n\u22a2 succ a * succ b \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_ne_zero__dev_2",
+                "NL": "-- succ a * succ b \u2260 0 -> succ a * b + succ a \u2260 0",
+                "FL": "rw [mul_succ]",
+                "state": "case succ.succ\na : \u2115\nha : succ a \u2260 0\nb : \u2115\nhb : succ b \u2260 0\n\u22a2 succ a * b + succ a \u2260 0\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "mul_ne_zero__dev_2",
+                "NL": "-- succ (succ a * b + a) \u2260 0 -> 0 \u2260 succ (succ a * b + a)",
+                "FL": "symm",
+                "state": "case succ.succ\na : \u2115\nha : succ a \u2260 0\nb : \u2115\nhb : succ b \u2260 0\n\u22a2 0 \u2260 succ (succ a * b + a)\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "mul_ne_zero__dev_2",
+                "NL": "-- We know that 0 is not equal to the successor of any natural number, so we can use this to prove the goal.",
+                "FL": "apply zero_ne_succ",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "mul_eq_zero": {
+        "mul_eq_zero__dev_1": [
+            {
+                "theorem": "mul_eq_zero__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if a times b is equal to 0, then a is equal to 0 or b is equal to 0.",
+                "FL": "theorem mul_eq_zero__dev_1 (a b : \u2115) (h : a * b = 0) : a = 0 \u2228 b = 0 := by",
+                "state": "a b : \u2115\nh : a * b = 0\n\u22a2 a = 0 \u2228 b = 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_eq_zero__dev_1",
+                "NL": "-- We introduce a new fact stating that if neither a nor b is zero, then their product cannot be zero.",
+                "FL": "have h2 := mul_ne_zero a b",
+                "state": "  mul_ne_zero a\nargument\n  a\nhas type\n  \u2115 : Type\nbut is expected to have type\n  ?m.133 \u2260 0 : Prop\na b : \u2115\nh : a * b = 0\n\u22a2 a = 0 \u2228 b = 0\n",
+                "is_correct": true
+            }
+        ],
+        "mul_eq_zero__dev_2": [
+            {
+                "theorem": "mul_eq_zero__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if a times b is equal to 0, then a is equal to 0 or b is equal to 0.",
+                "FL": "theorem mul_eq_zero__dev_2 (a b : \u2115) (h : a * b = 0) : a = 0 \u2228 b = 0 := by",
+                "state": "a b : \u2115\nh : a * b = 0\n\u22a2 a = 0 \u2228 b = 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_eq_zero__dev_2",
+                "NL": "-- We introduce a new fact stating that if neither a nor b is zero, then their product cannot be zero.",
+                "FL": "have h2 := mul_ne_zero a b",
+                "state": "  mul_ne_zero a\nargument\n  a\nhas type\n  \u2115 : Type\nbut is expected to have type\n  ?m.133 \u2260 0 : Prop\na b : \u2115\nh : a * b = 0\n\u22a2 a = 0 \u2228 b = 0\n",
+                "is_correct": true
+            }
+        ]
+    },
+    "mul_left_cancel": {
+        "mul_left_cancel__dev_1": [
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if a times b is equal to a times c, then b is equal to c.",
+                "FL": "theorem mul_left_cancel__dev_1 (a b c : \u2115) (ha : a \u2260 0) (h : a * b = a * c) : b = c := by",
+                "state": "a b c : \u2115\nha : a \u2260 0\nh : a * b = a * c\n\u22a2 b = c\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- proof by induction on b",
+                "FL": "induction b with d hd generalizing c",
+                "state": "case zero\na : \u2115\nha : a \u2260 0\nc : \u2115\nh : a * 0 = a * c\n\u22a2 0 = c\ncase succ\na : \u2115\nha : a \u2260 0\nd : \u2115\nhd : \u2200 (c : \u2115), a * d = a * c \u2192 d = c\nc : \u2115\nh : a * succ d = a * c\n\u22a2 succ d = c\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- for the base case, a * 0 = a * c -> 0 = a * c by the definition of multiplication",
+                "FL": "rw [mul_zero] at h",
+                "state": "case zero\na : \u2115\nha : a \u2260 0\nc : \u2115\nh : 0 = a * c\n\u22a2 0 = c\ncase succ\na : \u2115\nha : a \u2260 0\nd : \u2115\nhd : \u2200 (c : \u2115), a * d = a * c \u2192 d = c\nc : \u2115\nh : a * succ d = a * c\n\u22a2 succ d = c\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- 0 = a * c -> a * c = 0 by the symmetry property of equality",
+                "FL": "symm at h",
+                "state": "case zero\na : \u2115\nha : a \u2260 0\nc : \u2115\nh : a * c = 0\n\u22a2 0 = c\ncase succ\na : \u2115\nha : a \u2260 0\nd : \u2115\nhd : \u2200 (c : \u2115), a * d = a * c \u2192 d = c\nc : \u2115\nh : a * succ d = a * c\n\u22a2 succ d = c\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- a * c = 0 -> a = 0 \u2228 c = 0 by the fact that if a times b is equal to 0, then either a is equal to 0 or b is equal to 0.",
+                "FL": "apply mul_eq_zero at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- either a is equal to 0 or c is equal to 0.",
+                "FL": "cases h with h1 h2",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- if a is equal to 0, then we have a contradiction.",
+                "FL": "tauto",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- if c is equal to 0, then we have that 0 = 0.",
+                "FL": "rw [h2]",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- 0 = 0 closes the base case.",
+                "FL": "rfl",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- consider two subcases for c: when c is 0 and when c is a successor of another natural number e.",
+                "FL": "cases c with e he",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- a * succ d = a * 0 -> a * succ d = 0 by the definition of multiplication",
+                "FL": "rw [mul_zero] at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- a * succ d = 0 -> a * succ d = 0 by the properties of multiplication",
+                "FL": "apply mul_eq_zero at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- either a is equal to 0 or c is equal to 0.",
+                "FL": "cases h with h1 h2",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- if a is equal to 0, then we have a contradiction.",
+                "FL": "tauto",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- if c = 0, then we have that ucc d  = 0.",
+                "FL": "exact h2",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- a * succ d = a * succ e -> a * d + a = a * succ e -> a * d + a = a * e + a by the definition of multiplication",
+                "FL": "rw [mul_succ, mul_succ] at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- a * d + a = a * e + a -> a * d = a * e by properties of addition",
+                "FL": "apply add_right_cancel at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_1",
+                "NL": "-- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",
+                "FL": "rfl",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": false
+            }
+        ],
+        "mul_left_cancel__dev_2": [
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if a times b is equal to a times c, then b is equal to c.",
+                "FL": "theorem mul_left_cancel__dev_2 (a b c : \u2115) (ha : a \u2260 0) (h : a * b = a * c) : b = c := by",
+                "state": "a b c : \u2115\nha : a \u2260 0\nh : a * b = a * c\n\u22a2 b = c\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- proof by induction on b",
+                "FL": "induction b with d hd generalizing c",
+                "state": "case zero\na : \u2115\nha : a \u2260 0\nc : \u2115\nh : a * 0 = a * c\n\u22a2 0 = c\ncase succ\na : \u2115\nha : a \u2260 0\nd : \u2115\nhd : \u2200 (c : \u2115), a * d = a * c \u2192 d = c\nc : \u2115\nh : a * succ d = a * c\n\u22a2 succ d = c\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- for the base case, a * 0 = a * c -> 0 = a * c",
+                "FL": "rw [mul_zero] at h",
+                "state": "case zero\na : \u2115\nha : a \u2260 0\nc : \u2115\nh : 0 = a * c\n\u22a2 0 = c\ncase succ\na : \u2115\nha : a \u2260 0\nd : \u2115\nhd : \u2200 (c : \u2115), a * d = a * c \u2192 d = c\nc : \u2115\nh : a * succ d = a * c\n\u22a2 succ d = c\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- 0 = a * c -> a * c = 0",
+                "FL": "symm at h",
+                "state": "case zero\na : \u2115\nha : a \u2260 0\nc : \u2115\nh : a * c = 0\n\u22a2 0 = c\ncase succ\na : \u2115\nha : a \u2260 0\nd : \u2115\nhd : \u2200 (c : \u2115), a * d = a * c \u2192 d = c\nc : \u2115\nh : a * succ d = a * c\n\u22a2 succ d = c\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- a * c = 0 -> a = 0 \u2228 c = 0",
+                "FL": "apply mul_eq_zero at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- either a is equal to 0 or c is equal to 0.",
+                "FL": "cases h with h1 h2",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- if a is equal to 0, then we have a contradiction.",
+                "FL": "tauto",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- if c is equal to 0, then we have that 0 = 0.",
+                "FL": "rw [h2]",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- 0 = 0 closes the base case.",
+                "FL": "rfl",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- consider two subcases for c: when c is 0 and when c is a successor of another natural number e.",
+                "FL": "cases c with e he",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- a * succ d = a * 0 -> a * succ d = 0",
+                "FL": "rw [mul_zero] at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- a * succ d = 0 -> a * succ d = 0",
+                "FL": "apply mul_eq_zero at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- either a is equal to 0 or c is equal to 0.",
+                "FL": "cases h with h1 h2",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- if a is equal to 0, then we have a contradiction.",
+                "FL": "tauto",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- if c = 0, then we have that ucc d  = 0.",
+                "FL": "exact h2",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- a * succ d = a * succ e -> a * d + a = a * succ e -> a * d + a = a * e + a",
+                "FL": "rw [mul_succ, mul_succ] at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- a * d + a = a * e + a -> a * d = a * e",
+                "FL": "apply add_right_cancel at h",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_left_cancel__dev_2",
+                "NL": "-- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",
+                "FL": "rfl",
+                "state": "  0 as the type of a parameter of \u2200 {M\u2080 : Type ?u.187} [inst : MulZeroClass M\u2080] [inst_1 : NoZeroDivisors M\u2080] {a b : M\u2080},\n  a * b = 0 \u2194 a = 0 \u2228 b = 0.\n",
+                "is_correct": false
+            }
+        ]
+    },
+    "mul_right_eq_self": {
+        "mul_right_eq_self__dev_1": [
+            {
+                "theorem": "mul_right_eq_self__dev_1",
+                "NL": "-- Theorem Declaration: Prove that if a is not equal to 0 and a times b equals a, then b equals 1.",
+                "FL": "theorem mul_right_eq_self__dev_1 (a b : \u2115) (ha : a \u2260 0) (h : a * b = a) : b = 1 := by",
+                "state": "a b : \u2115\nha : a \u2260 0\nh : a * b = a\n\u22a2 b = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_self__dev_1",
+                "NL": "-- Since b is a natural number, it is either 0 or the successor of some natural number.",
+                "FL": "cases b with d hd",
+                "state": "case zero\na : \u2115\nha : a \u2260 0\nh : a * 0 = a\n\u22a2 0 = 1\ncase succ\na : \u2115\nha : a \u2260 0\nd : \u2115\nh : a * succ d = a\n\u22a2 succ d = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_self__dev_1",
+                "NL": "-- if a is not equal to 0, then a * succ d = a -> a * succ d = a * 1",
+                "FL": "nth_rewrite 2 [\u2190 mul_one a] at h",
+                "state": "case succ\na : \u2115\nha : a \u2260 0\nd : \u2115\nh : a * succ d = a * 1\n\u22a2 succ d = 1\n",
+                "is_correct": false
+            },
+            {
+                "theorem": "mul_right_eq_self__dev_1",
+                "NL": "-- by properties of multiplication, we know that this implication is true.",
+                "FL": "exact mul_left_cancel a (succ d) 1 ha h",
+                "state": "  mul_left_cancel a\nargument\n  a\nhas type\n  \u2115 : Type\nbut is expected to have type\n  ?m.617 * ?m.618 = ?m.617 * ?m.619 : Prop\n",
+                "is_correct": false
+            }
+        ],
+        "mul_right_eq_self__dev_2": [
+            {
+                "theorem": "mul_right_eq_self__dev_2",
+                "NL": "-- Theorem Declaration: Prove that if a is not equal to 0 and a times b equals a, then b equals 1.",
+                "FL": "theorem mul_right_eq_self__dev_2 (a b : \u2115) (ha : a \u2260 0) (h : a * b = a) : b = 1 := by",
+                "state": "a b : \u2115\nha : a \u2260 0\nh : a * b = a\n\u22a2 b = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_self__dev_2",
+                "NL": "--  a * b = a -> a * 1 * b = a * 1",
+                "FL": "rw [\u2190 mul_one a] at h",
+                "state": "a b : \u2115\nha : a \u2260 0\nh : a * 1 * b = a * 1\n\u22a2 b = 1\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "mul_right_eq_self__dev_2",
+                "NL": "-- Apply the the theorem that states that for all natural numbers a and b, a times b is equal to a times c, then b is equal to c which shows that b = 1.",
+                "FL": "exact mul_left_cancel a b 1 ha h",
+                "state": "  mul_left_cancel a\nargument\n  a\nhas type\n  \u2115 : Type\nbut is expected to have type\n  ?m.159 * ?m.160 = ?m.159 * ?m.161 : Prop\n",
+                "is_correct": false
+            }
+        ]
+    }
+}

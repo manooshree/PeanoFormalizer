@@ -1,0 +1,324 @@
+[
+  {
+    "theorem": "skipped_zero_pow_zero",
+    "NL": "-- Theorem Declaration: Prove that 0 to the power of 0 is 1",
+    "FL": "theorem skipped_zero_pow_zero : (0 : \u2115) ^ 0 = 1 := by",
+    "state": "\u22a2 0 ^ 0 = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_zero_pow_zero",
+    "NL": "-- Rewrite the left-hand side of the equation using the theorem that any number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "\u22a2 1 = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_one",
+    "NL": "-- Theorem Declaration: Prove that a^1 = a",
+    "FL": "theorem skipped_pow_one (a : \u2115) : a ^ 1 = a  := by",
+    "state": "a : \u2115\n\u22a2 a ^ 1 = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_one",
+    "NL": "-- Rewrite the left hand side using the identity that 1 is equal to the successor of 0",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "a : \u2115\n\u22a2 a ^ succ 0 = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_one",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number.",
+    "FL": "rw [pow_succ]",
+    "state": "a : \u2115\n\u22a2 a ^ 0 * a = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_one",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "a : \u2115\n\u22a2 1 * a = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_one",
+    "NL": "-- The goal is now to prove that a = a, which is true by reflexivity",
+    "FL": "rfl -- error",
+    "state": "  1 * a\nis not definitionally equal to rhs\n  a\na : \u2115\n\u22a2 1 * a = a\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_one_pow",
+    "NL": "-- Theorem Declaration: Prove that 1^m = 1",
+    "FL": "theorem skipped_one_pow (m : \u2115) : (1 : \u2115) ^ m = 1 := by",
+    "state": "m : \u2115\n\u22a2 1 ^ m = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_one_pow",
+    "NL": "-- Induct on m, with d = 0 as the base case and the inductive hypothesis 1^d = 1. There are now two proof goals, prove base case: 1^0 = 1 and inductive step: 1^d = 1 implies 1^(succ d) = 1.",
+    "FL": "induction m with d hd",
+    "state": "case zero\n\u22a2 1 ^ 0 = 1\ncase succ\nd : \u2115\nhd : 1 ^ d = 1\n\u22a2 1 ^ succ d = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_one_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\n\u22a2 1 = 1\ncase succ\nd : \u2115\nhd : 1 ^ d = 1\n\u22a2 1 ^ succ d = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_one_pow",
+    "NL": "-- The goal is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "case succ\nd : \u2115\nhd : 1 ^ d = 1\n\u22a2 1 ^ succ d = 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_two",
+    "NL": "-- Theorem Declaration: Prove that a^2 = a * a",
+    "FL": "theorem skipped_pow_two (a : \u2115) : a ^ 2 = a * a := by",
+    "state": "a : \u2115\n\u22a2 a ^ 2 = a * a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_two",
+    "NL": "-- Rewrite the left hand side using the identity that 2 is equal to the successor of 1",
+    "FL": "rw [two_eq_succ_one]",
+    "state": "a : \u2115\n\u22a2 a ^ succ 1 = a * a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_two",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 1 is equal to that natural number",
+    "FL": "rw [pow_one] -- error",
+    "state": "  ?a ^ 1\na : \u2115\n\u22a2 a ^ succ 1 = a * a\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_pow_add",
+    "NL": "-- Theorem Declaration: Prove that a^(m + n) = a^m * a^n",
+    "FL": "theorem skipped_pow_add (a m n : \u2115) : a ^ (m + n) = a ^ m * a ^ n := by",
+    "state": "a m n : \u2115\n\u22a2 a ^ (m + n) = a ^ m * a ^ n\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_add",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis a^(m + d) = a^m * a^d. There are now two proof goals, prove base case: a^(m + 0) = a^m * a^0 and inductive step: a^(m + d) = a^m * a^d implies a^(m + succ d) = a^m * a^(succ d).",
+    "FL": "induction n with d hd",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ (m + 0) = a ^ m * a ^ 0\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that the sum of any natural number and 0 is equal to that natural number",
+    "FL": "rw [add_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m * a ^ 0\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m * 1\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",
+    "FL": "rw [pow_succ] -- error",
+    "state": "  ?m ^ succ ?n\ncase zero\na m : \u2115\n\u22a2 a ^ m = a ^ m * 1\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_pow_add1",
+    "NL": "-- Theorem Declaration: Prove that a^(m + n) = a^m * a^n",
+    "FL": "theorem skipped_pow_add1 (a m n : \u2115) : a ^ (m + n) = a ^ m * a ^ n := by",
+    "state": "a m n : \u2115\n\u22a2 a ^ (m + n) = a ^ m * a ^ n\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_add1",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis a^(m + d) = a^m * a^d. There are now two proof goals, prove base case: a^(m + 0) = a^m * a^0 and inductive step: a^(m + d) = a^m * a^d implies a^(m + succ d) = a^m * a^(succ d).",
+    "FL": "induction n with t ht",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ (m + 0) = a ^ m * a ^ 0\ncase succ\na m t : \u2115\nht : a ^ (m + t) = a ^ m * a ^ t\n\u22a2 a ^ (m + succ t) = a ^ m * a ^ succ t\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_add1",
+    "NL": "-- Rewrite the expression a^(m + succ t) as a^m * (a^t * a) using the fact that (m + succ t) is the same as (succ (m + t)), and that a raised to the power (succ (m + t)) is the same as (a^(m + t) * a). Also, use the inductive hypothesis that a^(m + t) is equivalent to a^m * a^t, and the fact that multiplication is associative",
+    "FL": "rw [add_succ, pow_succ, pow_succ, ht, mul_assoc] -- error",
+    "state": "  ?a + succ ?d\ncase zero\na m : \u2115\n\u22a2 a ^ (m + 0) = a ^ m * a ^ 0\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_mul_pow",
+    "NL": "-- Theorem Declaration: Prove that (a * b)^n = a^n * b^n",
+    "FL": "theorem skipped_mul_pow (a b n : \u2115) : (a * b) ^ n = a ^ n * b ^ n := by",
+    "state": "a b n : \u2115\n\u22a2 (a * b) ^ n = a ^ n * b ^ n\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a * b)^d = a^d * b^d. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^d = a^d * b^d implies (a * b)^(succ d) = a^(succ d) * b^(succ d).",
+    "FL": "induction n with d hd",
+    "state": "case zero\na b : \u2115\n\u22a2 (a * b) ^ 0 = a ^ 0 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = a ^ 0 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1 * 1\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number multiplied by 1 is equal to that natural number",
+    "FL": "rw [mul_one]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow",
+    "NL": "-- The goal is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow",
+    "NL": "-- We rewrite the expression to swap the order of multiplication in b * a to a * b, since multiplication is commutative for natural numbers.",
+    "FL": "rw [mul_comm b a] -- error",
+    "state": "  b * a\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_mul_pow1",
+    "NL": "-- Theorem Declaration: Prove that (a * b)^n = a^n * b^n",
+    "FL": "theorem skipped_mul_pow1 (a b n : \u2115) : (a * b) ^ n = a ^ n * b ^ n := by",
+    "state": "a b n : \u2115\n\u22a2 (a * b) ^ n = a ^ n * b ^ n\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow1",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a * b)^d = a^d * b^d. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^d = a^d * b^d implies (a * b)^(succ d) = a^(succ d) * b^(succ d).",
+    "FL": "induction n with t Ht",
+    "state": "case zero\na b : \u2115\n\u22a2 (a * b) ^ 0 = a ^ 0 * b ^ 0\ncase succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 (a * b) ^ succ t = a ^ succ t * b ^ succ t\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow1",
+    "NL": "-- Rewrite the left-hand side of the goal using the theorem that x^0 = 1, then simplify a^0 * b^0 to 1 * 1, and finally simplify 1 * 1 to 1",
+    "FL": "rw [pow_zero, pow_zero, pow_zero, mul_one]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1\ncase succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 (a * b) ^ succ t = a ^ succ t * b ^ succ t\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_mul_pow1",
+    "NL": "-- We rewrite the goal using the property that (a * b)^(t+1) = (a * b)^t * (a * b). We use the inductive hypothesis that (a * b)^t = a^t * b^t.",
+    "FL": "rw [pow_succ, pow_succ, pow_succ, Ht] -- error",
+    "state": "  ?m ^ succ ?n\ncase zero\na b : \u2115\n\u22a2 1 = 1\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_pow_pow",
+    "NL": "-- Theorem Declaration: Prove that any natural number to the power of the power of another natural number is equal to that natural number to the power of the first natural number, multiplied by that natural number to the power of the second natural number",
+    "FL": "theorem skipped_pow_pow (a m n : \u2115) : (a ^ m) ^ n = a ^ (m * n) := by",
+    "state": "a m n : \u2115\n\u22a2 (a ^ m) ^ n = a ^ (m * n)\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_pow",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a ^ m) ^ t = a ^ (m * t). There are now two proof goals, prove base case: (a ^ m) ^ 0 = a ^ (m * 0) and inductive step: (a ^ m) ^ t = a ^ (m * t) implies (a ^ m) ^ succ t = a ^ (m * succ t).",
+    "FL": "induction n with t Ht",
+    "state": "case zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ (m * 0)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_pow",
+    "NL": "-- Rewrite m * 0 to 0 in the right side",
+    "FL": "rw [mul_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ 0\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_pow",
+    "NL": "-- Rewrite (a ^ m) ^ 0 to 1 in the left side",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 1 = a ^ 0\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_pow",
+    "NL": "-- The goal is now to prove that a^(m\\*t) * a^m = a^(m*t) * a^m, which is true by reflexivity",
+    "FL": "rfl -- error",
+    "state": "  1\nis not definitionally equal to rhs\n  a ^ 0\ncase zero\na m : \u2115\n\u22a2 1 = a ^ 0\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_pow_pow2",
+    "NL": "-- Theorem Declaration: Prove that any natural number to the power of the power of another natural number is equal to that natural number to the power of the first natural number, multiplied by that natural number to the power of the second natural number",
+    "FL": "theorem skipped_pow_pow2 (a m n : \u2115) : (a ^ m) ^ n = a ^ (m * n) := by",
+    "state": "a m n : \u2115\n\u22a2 (a ^ m) ^ n = a ^ (m * n)\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_pow2",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a ^ m) ^ t = a ^ (m * t). There are now two proof goals, prove base case: (a ^ m) ^ 0 = a ^ (m * 0) and inductive step: (a ^ m) ^ t = a ^ (m * t) implies (a ^ m) ^ succ t = a ^ (m * succ t).",
+    "FL": "induction n with t Ht",
+    "state": "case zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ (m * 0)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_pow_pow2",
+    "NL": "-- Rewrite the left-hand side of the goal using the theorem that states (x^n)^(succ t) = (x^n)^t * (x^n). Then, use the induction hypothesis to replace (a^m)^t with a^(m\u22c6t). Next, rewrite the right-hand side of the goal using the theorem that states m*(succ t) = m\\*t + m. Finally, rewrite the right-hand side again using the theorem that states x^(a+b) = x^a * x^b. This simplifies the goal to proving that a^(m\\*t) * a^m is equal to a^(m*t) * a^m.",
+    "FL": "rw [pow_succ, Ht, mul_succ, pow_add] -- error",
+    "state": "  ?m ^ succ ?n\ncase zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ (m * 0)\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_add_sq",
+    "NL": "-- Theorem Declaration: Prove that (a + b)^2 = a^2 + b^2 + 2 * a * b",
+    "FL": "theorem skipped_add_sq (a b : \u2115) : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b := by",
+    "state": "a b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_add_sq",
+    "NL": "-- Rewrite (a + b)^2 as (a + b) * (a + b) using the theorem that x^2 = x * x",
+    "FL": "rw [pow_two] -- error",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_add_sq2",
+    "NL": "-- Theorem Declaration: Prove that (a + b)^2 = a^2 + b^2 + 2 * a * b",
+    "FL": "theorem skipped_add_sq2 (a b : \u2115) : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b := by",
+    "state": "a b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_add_sq2",
+    "NL": "-- Rewrite the expression for the square of (a + b), a^2, and b^2 to be (a + b) * (a + b), a * a, and b * b respectively.",
+    "FL": "rw [pow_two, pow_two, pow_two] -- error",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n",
+    "is_error": true
+  }
+]

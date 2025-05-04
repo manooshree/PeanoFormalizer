@@ -1,0 +1,7 @@
+rw [add_comm]
+	rw [add_comm b]
+		rw [add_comm b]
+			rw [add_comm a c]
+				rw [add_assoc]
+					rfl
+					SYSTEM: QED

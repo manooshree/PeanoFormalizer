@@ -1,0 +1,196 @@
+apply succ_inj
+	apply succ_inj
+		apply succ_inj
+			apply succ_inj
+				apply succ_inj at h
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				apply succ_inj
+					apply succ_inj
+						apply succ_inj
+							apply succ_inj
+								SYSTEM: Exceeded max depth
+							apply succ_inj at h
+								SYSTEM: Exceeded max depth
+							rw [succ_eq_add_one]
+								SYSTEM: Exceeded max depth
+							apply add_succ at h
+								SYSTEM: Exceeded max depth
+							apply succ_inj at h
+								SYSTEM: Exceeded max depth
+						apply succ_add at h
+							SYSTEM: Exceeded budget
+						apply add_succ at h
+							SYSTEM: Exceeded budget
+						rw [← h] at h
+							SYSTEM: Exceeded budget
+						apply succ_inj at h
+							SYSTEM: Exceeded budget
+						rw [succ_eq_add_one]
+							SYSTEM: Exceeded budget
+						apply add_succ at h
+							SYSTEM: Exceeded budget
+					apply succ_inj at h
+						SYSTEM: Exceeded budget
+					apply succ_add at h
+						SYSTEM: Exceeded budget
+					apply succ_inj at h.h.h.h.h
+						SYSTEM: Exceeded budget
+				apply succ_inj at h
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				apply succ_inj
+					apply succ_inj
+						apply succ_inj
+							SYSTEM: Exceeded budget
+						apply succ_inj at h
+							SYSTEM: Exceeded budget
+						apply succ_inj at h.h.h.h.h.h.h
+							SYSTEM: Exceeded budget
+						apply succ_inj at h.h.h.h.h.h
+							SYSTEM: Exceeded budget
+					apply succ_eq_add_one at h
+						SYSTEM: Exceeded budget
+					apply succ_add at h
+						SYSTEM: Exceeded budget
+					apply succ_inj at h
+						SYSTEM: Exceeded budget
+					rw [succ_eq_add_one]
+						SYSTEM: Exceeded budget
+				rw [←h] at h
+					apply succ_inj at h
+						SYSTEM: Exceeded budget
+					apply succ_inj
+						SYSTEM: Exceeded budget
+					apply succ_inj at h.h
+						SYSTEM: Exceeded budget
+					apply succ_inj at h.h.h
+						SYSTEM: Exceeded budget
+			apply succ_add at h
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			apply succ_inj at h
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			rw [h] at *
+				apply succ_inj
+					apply succ_inj
+						apply succ_inj
+							apply succ_inj
+								SYSTEM: Exceeded max depth
+							apply succ_inj at h
+								SYSTEM: Exceeded max depth
+							rw [succ_eq_add_one]
+								SYSTEM: Exceeded max depth
+							apply succ_inj at h.h
+								SYSTEM: Exceeded max depth
+						apply succ_inj at h
+							SYSTEM: Exceeded budget
+					apply succ_inj at h
+						SYSTEM: Exceeded budget
+					exact (h.h.h.h.h)
+						SYSTEM: Exceeded budget
+					apply succ_inj at y
+						SYSTEM: Exceeded budget
+				apply succ_add at h
+					SYSTEM: Exceeded budget
+				apply succ_inj at h
+					SYSTEM: Exceeded budget
+				apply succ_inj at h.h
+					SYSTEM: Exceeded budget
+				apply succ_inj at h.h.h
+					SYSTEM: Exceeded budget
+				apply succ_inj at h.h.h.h
+					SYSTEM: Exceeded budget
+			rw [add_comm] at h
+				apply succ_inj
+					apply succ_inj at h
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+					rw [add_comm] at h
+						SYSTEM: Exceeded budget
+					apply succ_inj
+						SYSTEM: Exceeded budget
+					apply succ_inj
+						SYSTEM: Exceeded budget
+				apply succ_inj at h
+					SYSTEM: Exceeded budget
+				apply succ_add at h
+					SYSTEM: Exceeded budget
+				apply succ_inj at h.h
+					SYSTEM: Exceeded budget
+			apply add_succ at h
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+		apply succ_add at h
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		apply succ_inj at h
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		apply succ_inj at h.h
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		apply succ_inj at h.h.h
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		rw [add_comm] at h
+			apply succ_inj at h
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			apply succ_inj
+				apply succ_inj at h
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				apply succ_inj
+					SYSTEM: Exceeded budget
+				rw [add_comm] at h
+					SYSTEM: Exceeded budget
+				apply succ_inj
+					SYSTEM: Exceeded budget
+				apply succ_inj
+					SYSTEM: Exceeded budget
+			apply succ_inj at h
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+	apply succ_inj at h
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: Could not find compiling tactics, dead end
+	apply add_succ at h
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: Could not find compiling tactics, dead end
+rw [succ_eq_add_one]
+	rw [h]
+		rw [succ_eq_add_one]
+			rfl
+			SYSTEM: QED

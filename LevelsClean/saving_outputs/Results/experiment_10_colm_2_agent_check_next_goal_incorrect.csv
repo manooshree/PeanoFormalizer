@@ -1,0 +1,8 @@
+World Name,Correct Accuracy,Incorrect Accuracy,Proof Accuracy,First Wrong Step Accuracy
+implication_world_val,0 / 2 = 0.00%,0 / 0 = N/A,0 / 2 = 0.00%,2 / 2 = 100.00%
+multiplication_world_val,3 / 3 = 100.00%,2 / 4 = 50.00%,1 / 2 = 50.00%,1 / 2 = 50.00%
+AdvMultiplication_world_val,2 / 2 = 100.00%,0 / 2 = 0.00%,0 / 2 = 0.00%,0 / 2 = 0.00%
+algorithm_world_val,1 / 2 = 50.00%,1 / 2 = 50.00%,0 / 2 = 0.00%,1 / 2 = 50.00%
+less_or_equal_world_val,11 / 26 = 42.31%,0 / 2 = 0.00%,0 / 2 = 0.00%,0 / 2 = 0.00%
+power_world_val,0 / 1 = 0.00%,0 / 0 = N/A,0 / 1 = 0.00%,1 / 1 = 100.00%
+tutorial_world_val,0 / 4 = 0.00%,3 / 3 = 100.00%,0 / 2 = 0.00%,2 / 2 = 100.00%

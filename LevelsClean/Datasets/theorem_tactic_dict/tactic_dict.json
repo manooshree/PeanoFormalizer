@@ -1,0 +1,82 @@
+[
+  {
+    "FL": "rw [name_of_theorem]",
+    "NL": "rewrite using a theorem"
+  },
+  {
+    "FL": "rw [ \\l name_of_theorem]", 
+    "NL": "rewrite using the left-hand side of a theorem"
+  },
+  {
+    "FL": "induction k with d hd",
+    "NL": "induction on k with d as the base case and hd as the induction step, the lean compiler automatically creates the goals for the base case and the induction step, and we start by solving the base case followed by the induction step"
+  },
+  {
+    "FL": "rfl",
+    "NL": "solve the goal whenever a goal is completed and the LHS and RHS are exactly equal, use rfl to close the goal"
+  },
+  {
+    "FL": "cases h with...",
+    "NL": "split an object or hypothesis up into the possible ways that it could have been created"
+  },
+  {
+    "FL": "intro theorem_name",
+    "NL": "If the goal is P → Q, then intro theorem_namewill introduce theorem_name : P as a hypothesis, and change the goal to Q. Mathematically, it says that to prove P⟹Q, we can assume P and then prove Q."
+  },
+  {
+    "FL": "decide",
+    "NL": "attempt to solve a goal if it can find an algorithm which it can run to solve it."
+  },
+  {
+    "FL": "exact theorem_name",
+    "NL": "If the goal is a statement P, then exact theorem_name will close the goal if theorem_name is a proof of P."
+  },
+  {
+    "FL": "apply theorem_name1 at theorem_name2",
+    "NL": "simplify theorem_name2 using theorem_name1 assuming we know theorem_name1 is true"
+  },
+  {
+    "FL": "symm",
+    "NL": "The symm tactic will change a goal or hypothesis of the form X = Y to Y = X. It will also work on X ≠ Y and on X ↔ Y."
+  },
+  {
+    "FL": "use number",
+    "NL": "When trying to prove that something exists can do 'use number' to show a specific case"
+  },
+  {
+    "FL": "left",
+    "NL": "change a goal of P ∨ Q into a goal of P. This is useful when the hypotheses guarantee that the reason that P ∨ Q is true is because P is true."
+  },
+  {
+    "FL": "right",
+    "NL": "change a goal of P ∨ Q into a goal of Q. This is useful when the hypotheses guarantee that the reason that P ∨ Q is true is because in fact Q is true."
+  },
+  {
+    "FL": "contrapose! theorem_name",
+    "NL": "change the statement to its contrapositive. The new theorem is the nagation of the goal and the new goal is the negation of the theorem"
+  },
+  {
+    "FL": "have",
+    "NL": "add new hypotheses which can be unproven"
+  },
+  {
+    "FL": "simp",
+    "NL": "rewrite every lemma tagged with simp and every lemma fed to it by the user, as much as possible."
+  },
+  {
+    "FL": "tuato",
+    "NL": "solve any goal which can be solved purely by logic (that is, by truth tables)."
+  },
+  {
+    "FL": "trivial",
+    "NL": "solve the goal true"
+  },
+  {
+    "FL": "simp_add",
+    "NL": "Our home-made tactic simp_add will solve arbitrary goals of the form a + (b + c) + (d + e) = e + (d + (c + b)) + a."
+  },
+  {
+    "FL": "·",
+    "NL": "test"
+  }
+]

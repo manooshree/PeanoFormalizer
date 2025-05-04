@@ -1,0 +1,5 @@
+rw [mul_succ]
+	rw [mul_zero]
+		rw [zero_add]
+			rfl
+			SYSTEM: QED

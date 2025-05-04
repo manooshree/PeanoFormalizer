@@ -1,0 +1,4 @@
+cases a
+	tauto
+		tauto
+		SYSTEM: QED

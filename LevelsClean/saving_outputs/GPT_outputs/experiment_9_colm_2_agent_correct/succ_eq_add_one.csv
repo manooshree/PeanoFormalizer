@@ -1,0 +1,140 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Is Correct
+succ_eq_add_one,-- Rewrite on both RHS and LHS making n -> n + 0,"rw [←add_zero n, ←add_zero n]",rw [← add_zero n],"n : ℕ
+⊢ succ (n + 0) = n + 0 + 1
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + 1
+",No
+succ_eq_add_one,-- Rewrite on RHS making 1 -> succ 0,rw one_eq_succ_zero at ⊢,rw [one_eq_succ_zero],"n : ℕ
+⊢ succ (n + 0) = n + 0 + succ 0
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + 1
+",No
+succ_eq_add_one,-- Rewrite on RHS making n + 0 + succ(0) -> succ(n+0+0),"rw [add_succ, zero_add]",rw [add_succ],"n : ℕ
+⊢ succ (n + 0) = succ (n + 0 + 0)
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + 1
+",No
+succ_eq_add_one,-- Rewrite on RHS making n + 0 -> n,rw [add_zero],rw [add_zero (n+0)],"n : ℕ
+⊢ succ (n + 0) = succ (n + 0)
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + 1
+",No
+succ_eq_add_one,"-- succ(n+0) = succ(n+0), QED",rfl,rfl,,"n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + 1
+",Yes
+succ_eq_add_one,-- Rewrite RHS 1 -> succ(0),rw [one_eq_succ_zero],rw [one_eq_succ_zero],"n : ℕ
+⊢ succ n = n + succ 0
+","n : ℕ
+⊢ succ n = n + succ 0
+",Yes
+succ_eq_add_one,-- Rewrite both RHS and LHS n -> n + 0,"rw [←add_zero n, ←add_zero n]",rw [← add_zero n],"n : ℕ
+⊢ succ (n + 0) = n + 0 + succ 0
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",No
+succ_eq_add_one,-- Rewrite RHS n + 0 + succ(0) -> succ(n + 0 + 0),rw add_succ,rw [add_succ],"n : ℕ
+⊢ succ (n + 0) = succ (n + 0 + 0)
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",No
+succ_eq_add_one,-- Rewrite LHS and RHS n + 0 -> n,"rw [add_zero, add_zero]",rw [add_zero],"n : ℕ
+⊢ succ n = succ (n + 0)
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",No
+succ_eq_add_one,-- Rewrite RHS n + 0 -> n,rw add_zero at ⊢,rw [add_zero],"n : ℕ
+⊢ succ n = succ n
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",No
+succ_eq_add_one,"-- succ(n) = succ(n), QED",rfl,rfl,,"n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",Yes
+succ_eq_add_one,-- Rewrite on both RHS and LHS making n -> n + 0,"rw [←add_zero n, ←add_zero n]",rw [← add_zero n],"n : ℕ
+⊢ succ (n + 0) = n + 0 + 1
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + 1
+",No
+succ_eq_add_one,-- Rewrite on RHS making 1 -> succ 0,rw [one_eq_succ_zero],rw [one_eq_succ_zero],"n : ℕ
+⊢ succ (n + 0) = n + 0 + succ 0
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",Yes
+succ_eq_add_one,-- Rewrite on RHS making n + 0 + succ(0) -> succ(n+0+0),rw [add_succ],rw [add_succ],"n : ℕ
+⊢ succ (n + 0) = succ (n + 0 + 0)
+","n : ℕ
+⊢ succ (n + 0 + 0) = succ (n + 0 + 0 + 0)
+",Yes
+succ_eq_add_one,-- Rewrite on RHS making n + 0 -> n,rw [add_zero] at ⊢,rw [add_zero (n+0)],"n : ℕ
+⊢ succ (n + 0) = succ (n + 0)
+",error,No
+succ_eq_add_one,"-- succ(n+0) = succ(n+0), QED",rfl,rfl,,error,Yes
+succ_eq_add_one,-- Rewrite RHS 1 -> succ(0),rw [one_eq_succ_zero],rw [one_eq_succ_zero],"n : ℕ
+⊢ succ n = n + succ 0
+","n : ℕ
+⊢ succ n = n + succ 0
+",Yes
+succ_eq_add_one,-- Rewrite both RHS and LHS n -> n + 0,"rw [← add_zero n, ← add_zero n]",rw [← add_zero n],"n : ℕ
+⊢ succ (n + 0) = n + 0 + succ 0
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",No
+succ_eq_add_one,-- Rewrite RHS n + 0 + succ(0) -> succ(n + 0 + 0),rw add_succ,rw [add_succ],"n : ℕ
+⊢ succ (n + 0) = succ (n + 0 + 0)
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",No
+succ_eq_add_one,-- Rewrite LHS and RHS n + 0 -> n,"rw [add_zero, add_zero]",rw [add_zero],"n : ℕ
+⊢ succ n = succ (n + 0)
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",No
+succ_eq_add_one,-- Rewrite RHS n + 0 -> n,rw [add_zero],rw [add_zero],"n : ℕ
+⊢ succ n = succ n
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",Yes
+succ_eq_add_one,"-- succ(n) = succ(n), QED",rfl,rfl,,"n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",Yes
+succ_eq_add_one,-- Rewrite on both RHS and LHS making n -> n + 0,"rw [← add_zero n, ← add_zero n]",rw [← add_zero n],"n : ℕ
+⊢ succ (n + 0) = n + 0 + 1
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + 1
+",No
+succ_eq_add_one,-- Rewrite on RHS making 1 -> succ 0,rw [one_eq_succ_zero],rw [one_eq_succ_zero],"n : ℕ
+⊢ succ (n + 0) = n + 0 + succ 0
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",Yes
+succ_eq_add_one,-- Rewrite on RHS making n + 0 + succ(0) -> succ(n+0+0),rw add_succ,rw [add_succ],"n : ℕ
+⊢ succ (n + 0) = succ (n + 0 + 0)
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",No
+succ_eq_add_one,-- Rewrite on RHS making n + 0 -> n,rw [add_zero],rw [add_zero (n+0)],"n : ℕ
+⊢ succ (n + 0) = succ (n + 0)
+","n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",No
+succ_eq_add_one,"-- succ(n+0) = succ(n+0), QED",rfl,rfl,,"n : ℕ
+⊢ succ (n + 0 + 0) = n + 0 + 0 + succ 0
+",Yes
+succ_eq_add_one,-- Rewrite RHS 1 -> succ(0),rw [one_eq_succ_zero],rw [one_eq_succ_zero],"n : ℕ
+⊢ succ n = n + succ 0
+","n : ℕ
+⊢ succ n = n + succ 0
+",Yes
+succ_eq_add_one,-- Rewrite both RHS and LHS n -> n + 0,rw [add_zero],rw [← add_zero n],"n : ℕ
+⊢ succ (n + 0) = n + 0 + succ 0
+",error,No
+succ_eq_add_one,-- Rewrite RHS n + 0 + succ(0) -> succ(n + 0 + 0),rw [add_succ],rw [add_succ],"n : ℕ
+⊢ succ (n + 0) = succ (n + 0 + 0)
+",error,Yes
+succ_eq_add_one,-- Rewrite LHS and RHS n + 0 -> n,rw [add_zero],rw [add_zero],"n : ℕ
+⊢ succ n = succ (n + 0)
+",error,Yes
+succ_eq_add_one,-- Rewrite RHS n + 0 -> n,rw add_zero,rw [add_zero],"n : ℕ
+⊢ succ n = succ n
+",error,No
+succ_eq_add_one,"-- succ(n) = succ(n), QED",rfl,rfl,,error,Yes

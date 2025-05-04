@@ -1,0 +1,123 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Tactics Match,Is Incorrect Tactic,Correctly Identified As Wrong
+succ_add,succ_add__dev_1,-- Initiate induction on b,induction b with d hd,induction b with n hn,"case zero
+a : ℕ
+⊢ succ a + 0 = succ (a + 0)
+case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+","case zero
+a : ℕ
+⊢ succ a + 0 = succ (a + 0)
+case succ
+a d : ℕ
+hd : succ a + d = succ (a + d)
+⊢ succ a + succ d = succ (a + succ d)
+",No,No,Yes
+succ_add,succ_add__dev_1,-- succ(a) + 0 -> succ(a) on LHS giving us succ(a) = succ(a+0),rw [add_zero],rw [add_zero],"case zero
+a : ℕ
+⊢ succ a = succ (a + 0)
+case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+","case zero
+a : ℕ
+⊢ succ a = succ (a + 0)
+case succ
+a d : ℕ
+hd : succ a + d = succ (a + d)
+⊢ succ a + succ d = succ (a + succ d)
+",Yes,No,Yes
+succ_add,succ_add__dev_1,-- a + 0 -> a on RHS giving us succ(a) = succ(a),rw [add_zero],rw [add_zero],"case zero
+a : ℕ
+⊢ succ a = succ a
+case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+","case zero
+a : ℕ
+⊢ succ a = succ a
+case succ
+a d : ℕ
+hd : succ a + d = succ (a + d)
+⊢ succ a + succ d = succ (a + succ d)
+",Yes,No,Yes
+succ_add,succ_add__dev_1,"-- succ(a) = succ(a), Hence we are done with the base case",rfl,rfl,"case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+","case succ
+a d : ℕ
+hd : succ a + d = succ (a + d)
+⊢ succ a + succ d = succ (a + succ d)
+",Yes,No,Yes
+succ_add,succ_add__dev_1,-- Now for the induction case. succ(a) + succ(n) -> succ(succ(a) + n) on LHS giving us succ(succ(a) + n) = succ(a + succ(n)),rw [add_succ],rw [add_succ],"case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ (succ a + n) = succ (a + succ n)
+","case succ
+a d : ℕ
+hd : succ a + d = succ (a + d)
+⊢ succ (succ a + d) = succ (a + succ d)
+",Yes,No,Yes
+succ_add,succ_add__dev_1,"-- succ(succ(a) + n) = succ(succ(a) + n), QED",rfl,rfl,,error,Yes,Yes,Yes
+succ_add,succ_add__dev_2,-- Initiate induction on b.,induction b with d hd,induction b with n hn,"case zero
+a : ℕ
+⊢ succ a + 0 = succ (a + 0)
+case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+","case zero
+a : ℕ
+⊢ succ a + 0 = succ (a + 0)
+case succ
+a d : ℕ
+hd : succ a + d = succ (a + d)
+⊢ succ a + succ d = succ (a + succ d)
+",No,No,Yes
+succ_add,succ_add__dev_2,"-- We start by proving the base case using properties of succession, succ(a+0) = a + succ(0) on RHS",rw [add_succ],rw [← add_succ],"case zero
+a : ℕ
+⊢ succ a + 0 = a + succ 0
+case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+",error,No,No,No
+succ_add,succ_add__dev_2,"-- Now using properties of addition by 0, we can rewrite succ(a) + 0 to succ(a) on the LHS",rw [add_zero],rw [add_zero],"case zero
+a : ℕ
+⊢ succ a = a + succ 0
+case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+",error,Yes,No,No
+succ_add,succ_add__dev_2,"-- Now using properties of succession, we can rewrite succ(a) + 0 to succ(a+0) on the RHS",rw [add_zero],rw [add_succ],"case zero
+a : ℕ
+⊢ succ a = succ (a + 0)
+case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+",error,No,No,No
+succ_add,succ_add__dev_2,"-- Now using properties of addition by 0, we can rewrite a + 0 to a on the RHS",rw [add_zero],rw [add_zero],"case zero
+a : ℕ
+⊢ succ a = succ a
+case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+",error,Yes,No,No
+succ_add,succ_add__dev_2,"-- since succ(a) = succ(a), we are done with the base case",rfl,rfl,"case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ a + succ n = succ (a + succ n)
+",error,Yes,No,No
+succ_add,succ_add__dev_2,"-- Now again using properties of succession, we substitute succ(a + succ(n)) to succ(succ(a + n)) on the RHS",rw [add_succ],rw [add_succ],"case succ
+a n : ℕ
+hn : succ a + n = succ (a + n)
+⊢ succ (succ a + n) = succ (succ (a + n))
+",error,Yes,Yes,Yes
+succ_add,succ_add__dev_2,"-- both sides are equal, hence we are done",rfl,rfl,,error,Yes,Yes,Yes

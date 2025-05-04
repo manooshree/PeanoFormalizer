@@ -1,0 +1,1340 @@
+[
+  {
+    "theorem": "zero_pow_zero",
+    "NL": "-- Theorem Declaration: Prove that 0 to the power of 0 is 1",
+    "FL": "theorem zero_pow_zero : (0 : \u2115) ^ 0 = 1 := by",
+    "state": "\u22a2 0 ^ 0 = 1\n"
+  },
+  {
+    "theorem": "zero_pow_zero",
+    "NL": "-- Rewrite the left-hand side of the equation using the theorem that any number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "\u22a2 1 = 1\n"
+  },
+  {
+    "theorem": "zero_pow_zero",
+    "NL": "-- The goal is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "zero_pow_zero_persona2",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem zero_pow_zero_persona2 : (0 : \u2115) ^ 0 = 1 := by",
+    "state": "\u22a2 0 ^ 0 = 1\n"
+  },
+  {
+    "theorem": "zero_pow_zero_persona2",
+    "NL": "-- 1 = 1",
+    "FL": "rw [pow_zero]",
+    "state": "\u22a2 1 = 1\n"
+  },
+  {
+    "theorem": "zero_pow_zero_persona2",
+    "NL": "-- lhs = rhs, so we are done.",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "zero_pow_zero_persona3",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem zero_pow_zero_persona3 : (0 : \u2115) ^ 0 = 1 := by",
+    "state": "\u22a2 0 ^ 0 = 1\n"
+  },
+  {
+    "theorem": "zero_pow_zero_persona3",
+    "NL": "-- We define the power operation such that a^0 = 1 for any natural number a, so we can write 0^0 = 1.",
+    "FL": "rw [pow_zero]",
+    "state": "\u22a2 1 = 1\n"
+  },
+  {
+    "theorem": "zero_pow_zero_persona3",
+    "NL": "-- The goal we are left with is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "zero_pow_succ",
+    "NL": "-- Theorem Declaration: Prove that 0^(succ m) = 0",
+    "FL": "theorem zero_pow_succ (m : \u2115) : (0 : \u2115) ^ (succ m) = 0 := by",
+    "state": "m : \u2115\n\u22a2 0 ^ succ m = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number.",
+    "FL": "rw [pow_succ]",
+    "state": "m : \u2115\n\u22a2 0 ^ m * 0 = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number multiplied by 0 is 0",
+    "FL": "rw [mul_zero]",
+    "state": "m : \u2115\n\u22a2 0 = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ",
+    "NL": "-- The goal is now to prove that 0 = 0, which is true by reflexivity",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "zero_pow_succ_persona2",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem zero_pow_succ_persona2 (m : \u2115) : (0 : \u2115) ^ (succ m) = 0 := by",
+    "state": "m : \u2115\n\u22a2 0 ^ succ m = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona2",
+    "NL": "-- We know that 0^(succ m) = 0^m * 0, so our goal becomes 0^m * 0 = 0",
+    "FL": "rw [pow_succ]",
+    "state": "m : \u2115\n\u22a2 0 ^ m * 0 = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona2",
+    "NL": "-- 0=0",
+    "FL": "rw [mul_zero]",
+    "state": "m : \u2115\n\u22a2 0 = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona2",
+    "NL": "-- lhs = rhs, so we are done.",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "zero_pow_succ_persona3",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem zero_pow_succ_persona3 (m : \u2115) : (0 : \u2115) ^ (succ m) = 0 := by",
+    "state": "m : \u2115\n\u22a2 0 ^ succ m = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona3",
+    "NL": "-- We can use induction on m. For the base case, we want to show that 0^succ(0) = 0.",
+    "FL": "induction m with h hd",
+    "state": "case zero\n\u22a2 0 ^ succ 0 = 0\ncase succ\nh : \u2115\nhd : 0 ^ succ h = 0\n\u22a2 0 ^ succ (succ h) = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona3",
+    "NL": "-- Using the fact that 1 is the successor of zero, we write 0^1 = 0.",
+    "FL": "rw[\u2190 one_eq_succ_zero]",
+    "state": "case zero\n\u22a2 0 ^ 1 = 0\ncase succ\nh : \u2115\nhd : 0 ^ succ h = 0\n\u22a2 0 ^ succ (succ h) = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona3",
+    "NL": "-- We know that anything to the power of one is equal to itself, so our goal becomes: 0 = 0",
+    "FL": "rw[pow_one]",
+    "state": "  ?a ^ 1\ncase zero\n\u22a2 0 ^ 1 = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona3",
+    "NL": "-- We can conclude the proof by reflexivity, as the LHS and RHS of our goal are identical.",
+    "FL": "rfl",
+    "state": "  ?a ^ 1\ncase zero\n\u22a2 0 ^ 1 = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona3",
+    "NL": "-- Next, we consider the inductive case, where we want to show that 0^succ(succ m) = 0. By the successor definition of the power function, we can write our goal as: 0^succ(m) * 0 = 0.",
+    "FL": "rw[pow_succ]",
+    "state": "  ?a ^ 1\ncase zero\n\u22a2 0 ^ 1 = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona3",
+    "NL": "-- We see that we can apply our inductive hypothesis, that 0^succ(m) = 0, and our goal becomes: 0*0 = 0",
+    "FL": "rw[hd]",
+    "state": "  ?a ^ 1\ncase zero\n\u22a2 0 ^ 1 = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona3",
+    "NL": "-- Anything multiplied by zero is zero, so we simplify to: 0*0",
+    "FL": "rw[mul_zero]",
+    "state": "  ?a ^ 1\ncase zero\n\u22a2 0 ^ 1 = 0\n"
+  },
+  {
+    "theorem": "zero_pow_succ_persona3",
+    "NL": "-- The lhs and rhs are identical, so we are done by reflexivity.",
+    "FL": "rfl",
+    "state": "  ?a ^ 1\ncase zero\n\u22a2 0 ^ 1 = 0\n"
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Theorem Declaration: Prove that a^1 = a",
+    "FL": "theorem pow_one (a : \u2115) : a ^ 1 = a  := by",
+    "state": "a : \u2115\n\u22a2 a ^ 1 = a\n"
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Rewrite the left hand side using the identity that 1 is equal to the successor of 0",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "a : \u2115\n\u22a2 a ^ succ 0 = a\n"
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number.",
+    "FL": "rw [pow_succ]",
+    "state": "a : \u2115\n\u22a2 a ^ 0 * a = a\n"
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "a : \u2115\n\u22a2 1 * a = a\n"
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number multiplied by 1 is equal to that natural number",
+    "FL": "rw [one_mul]",
+    "state": "a : \u2115\n\u22a2 a = a\n"
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- The goal is now to prove that a = a, which is true by reflexivity",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "pow_one_persona2",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem pow_one_persona2 (a : \u2115) : a ^ 1 = a  := by",
+    "state": "a : \u2115\n\u22a2 a ^ 1 = a\n"
+  },
+  {
+    "theorem": "pow_one_persona2",
+    "NL": "-- a^succ(0) = a",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "a : \u2115\n\u22a2 a ^ succ 0 = a\n"
+  },
+  {
+    "theorem": "pow_one_persona2",
+    "NL": "-- a^0 * a = a",
+    "FL": "rw [pow_succ]",
+    "state": "a : \u2115\n\u22a2 a ^ 0 * a = a\n"
+  },
+  {
+    "theorem": "pow_one_persona2",
+    "NL": "-- 1 * a = a",
+    "FL": "rw [pow_zero]",
+    "state": "a : \u2115\n\u22a2 1 * a = a\n"
+  },
+  {
+    "theorem": "pow_one_persona2",
+    "NL": "-- a = a",
+    "FL": "rw [one_mul]",
+    "state": "a : \u2115\n\u22a2 a = a\n"
+  },
+  {
+    "theorem": "pow_one_persona2",
+    "NL": "-- lhs = rhs, so we are done.",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "pow_one_persona3",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem pow_one_persona3 (a : \u2115) : a ^ 1 = a  := by",
+    "state": "a : \u2115\n\u22a2 a ^ 1 = a\n"
+  },
+  {
+    "theorem": "pow_one_persona3",
+    "NL": "-- Using the fact that we defined 1 to be the successor of zero, we can write this as: a^succ(0) = a.",
+    "FL": "rw[one_eq_succ_zero]",
+    "state": "a : \u2115\n\u22a2 a ^ succ 0 = a\n"
+  },
+  {
+    "theorem": "pow_one_persona3",
+    "NL": "-- We defined the power function with the axiom such that for any natural numbers a,b, a^succ(b) = a^b * a. Using this, we can write our goal as: a^0 * a = a",
+    "FL": "rw[pow_succ]",
+    "state": "a : \u2115\n\u22a2 a ^ 0 * a = a\n"
+  },
+  {
+    "theorem": "pow_one_persona3",
+    "NL": "-- Since anything to the power of zero is also zero, we can simplify our goal to: 1 * a = a",
+    "FL": "rw[pow_zero]",
+    "state": "a : \u2115\n\u22a2 1 * a = a\n"
+  },
+  {
+    "theorem": "pow_one_persona3",
+    "NL": "-- Once again, we can use the fact that 1 is the successor 0, to write: succ(0) * a = a",
+    "FL": "rw[one_eq_succ_zero]",
+    "state": "a : \u2115\n\u22a2 succ 0 * a = a\n"
+  },
+  {
+    "theorem": "pow_one_persona3",
+    "NL": "-- Using the axioms with which we defined multiplication, namely the fact that for any natural numbers a,b, succ(b) * a = b* a + a, we can simplify to: 0 * a + a = a.",
+    "FL": "rw[succ_mul]",
+    "state": "a : \u2115\n\u22a2 0 * a + a = a\n"
+  },
+  {
+    "theorem": "pow_one_persona3",
+    "NL": "-- Since anything multiplied by zero is also zero, we simplify our goal to: 0 + a = a.",
+    "FL": "rw[zero_mul]",
+    "state": "a : \u2115\n\u22a2 0 + a = a\n"
+  },
+  {
+    "theorem": "pow_one_persona3",
+    "NL": "-- Since adding zero to any natural number does not change its, we can simplify our goal to: a=a.",
+    "FL": "rw[zero_add]",
+    "state": "a : \u2115\n\u22a2 a = a\n"
+  },
+  {
+    "theorem": "pow_one_persona3",
+    "NL": "-- Since the LHS and RHS are prcisely the same expression, we are done by reflexivity.",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "one_pow",
+    "NL": "-- Theorem Declaration: Prove that 1^m = 1",
+    "FL": "theorem one_pow (m : \u2115) : (1 : \u2115) ^ m = 1 := by",
+    "state": "m : \u2115\n\u22a2 1 ^ m = 1\n"
+  },
+  {
+    "theorem": "one_pow",
+    "NL": "-- Induct on m, with d = 0 as the base case and the inductive hypothesis 1^d = 1. There are now two proof goals, prove base case: 1^0 = 1 and inductive step: 1^d = 1 implies 1^(succ d) = 1.",
+    "FL": "induction m with d hd",
+    "state": "case zero\n\u22a2 1 ^ 0 = 1\ncase succ\nd : \u2115\nhd : 1 ^ d = 1\n\u22a2 1 ^ succ d = 1\n"
+  },
+  {
+    "theorem": "one_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\n\u22a2 1 = 1\ncase succ\nd : \u2115\nhd : 1 ^ d = 1\n\u22a2 1 ^ succ d = 1\n"
+  },
+  {
+    "theorem": "one_pow",
+    "NL": "-- The goal is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "case succ\nd : \u2115\nhd : 1 ^ d = 1\n\u22a2 1 ^ succ d = 1\n"
+  },
+  {
+    "theorem": "one_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number.",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\nd : \u2115\nhd : 1 ^ d = 1\n\u22a2 1 ^ d * 1 = 1\n"
+  },
+  {
+    "theorem": "one_pow",
+    "NL": "-- Rewrite the left hand side using the induction hypothesis",
+    "FL": "rw [hd]",
+    "state": "case succ\nd : \u2115\nhd : 1 ^ d = 1\n\u22a2 1 * 1 = 1\n"
+  },
+  {
+    "theorem": "one_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number multiplied by 1 is equal to that natural number",
+    "FL": "rw [mul_one]",
+    "state": "case succ\nd : \u2115\nhd : 1 ^ d = 1\n\u22a2 1 = 1\n"
+  },
+  {
+    "theorem": "one_pow",
+    "NL": "-- The goal is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "one_pow_persona2",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem one_pow_persona2 (m : \u2115) : (1 : \u2115) ^ m = 1 := by",
+    "state": "m : \u2115\n\u22a2 1 ^ m = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona2",
+    "NL": "-- We can use induction on m, with the inductive hypothesis 1^m = 1. Our base is 1^0 = 1, and our inductive case is 1^succ(m) = 1.",
+    "FL": "induction m with m hm",
+    "state": "case zero\n\u22a2 1 ^ 0 = 1\ncase succ\nm : \u2115\nhm : 1 ^ m = 1\n\u22a2 1 ^ succ m = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona2",
+    "NL": "-- We start with the base cae, which becomes 1 = 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\n\u22a2 1 = 1\ncase succ\nm : \u2115\nhm : 1 ^ m = 1\n\u22a2 1 ^ succ m = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona2",
+    "NL": "-- rhs = lhs, so we are done.",
+    "FL": "rfl",
+    "state": "case succ\nm : \u2115\nhm : 1 ^ m = 1\n\u22a2 1 ^ succ m = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona2",
+    "NL": "-- Next, we consider the inductive case, which we write as 1^m * 1 = 1.",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\nm : \u2115\nhm : 1 ^ m = 1\n\u22a2 1 ^ m * 1 = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona2",
+    "NL": "-- 1 * 1 = 1",
+    "FL": "rw [hm]",
+    "state": "case succ\nm : \u2115\nhm : 1 ^ m = 1\n\u22a2 1 * 1 = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona2",
+    "NL": "-- 1=1",
+    "FL": "rw [mul_one]",
+    "state": "case succ\nm : \u2115\nhm : 1 ^ m = 1\n\u22a2 1 = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona2",
+    "NL": "-- rhs = lhs, so we are done.",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem one_pow_persona3 (m : \u2115) : (1 : \u2115) ^ m = 1 := by",
+    "state": "m : \u2115\n\u22a2 1 ^ m = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- We can begin by inducting on m.",
+    "FL": "induction m with h hd",
+    "state": "case zero\n\u22a2 1 ^ 0 = 1\ncase succ\nh : \u2115\nhd : 1 ^ h = 1\n\u22a2 1 ^ succ h = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- First, we prove the base case, which states that 1^0 = 1. To do so, we use the fact that anything to the power of zero is zero, so 1^0 = 1.",
+    "FL": "rw[pow_zero]",
+    "state": "case zero\n\u22a2 1 = 1\ncase succ\nh : \u2115\nhd : 1 ^ h = 1\n\u22a2 1 ^ succ h = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- Thus, we have simplified our statement to 1=1, so our proof is complete by reflexivity.",
+    "FL": "rfl",
+    "state": "case succ\nh : \u2115\nhd : 1 ^ h = 1\n\u22a2 1 ^ succ h = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- Next, we can consider the inductive hypothesis, which states that 1^succ(h) = 1. To do so, we can induct on h again, with a variable k.",
+    "FL": "induction h with k hk",
+    "state": "case succ.zero\nhd : 1 ^ 0 = 1\n\u22a2 1 ^ succ 0 = 1\ncase succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ (succ k) = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- Our new base case is 1^succ(0) = 1. To prove this, we can begin by simplifying using the successor axiom for the power operation, so 1^succ(0) = 1^0*1, and our goal becomes 1^0 *1 = 1.",
+    "FL": "rw[pow_succ]",
+    "state": "case succ.zero\nhd : 1 ^ 0 = 1\n\u22a2 1 ^ 0 * 1 = 1\ncase succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ (succ k) = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- We can use the fact that anything to the power of zero is zero, and simplify to: 1 * 1 =1.",
+    "FL": "rw[pow_zero]",
+    "state": "case succ.zero\nhd : 1 ^ 0 = 1\n\u22a2 1 * 1 = 1\ncase succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ (succ k) = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- Simplifying with the fact that multiplication by one is equivalent to the identity operation, we know that 1*1=1, and thus our goal state becomes 1=1.",
+    "FL": "rw[mul_one]",
+    "state": "case succ.zero\nhd : 1 ^ 0 = 1\n\u22a2 1 = 1\ncase succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ (succ k) = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- Finally, by reflexivity, we are done with the base case.",
+    "FL": "rfl",
+    "state": "case succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ (succ k) = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- Next, we can consider the inductive case, which states that 1^succ(succ(k)) = 1. Using the successor axiom for powers, we can write our goal as: 1^succ(k) * 1 = 1.",
+    "FL": "rw[pow_succ]",
+    "state": "case succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ k * 1 = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- We can simplify the LHS using the fact that multiplication by one is the identity operation, and get: 1^succ(k) = 1.",
+    "FL": "rw[mul_one]",
+    "state": "case succ.succ\nk : \u2115\nhk : 1 ^ k = 1 \u2192 1 ^ succ k = 1\nhd : 1 ^ succ k = 1\n\u22a2 1 ^ succ k = 1\n"
+  },
+  {
+    "theorem": "one_pow_persona3",
+    "NL": "-- Thus, we see that our goal state 1^succ(k) = 1 is precisely the same as our hypothesis hk, so we are done.",
+    "FL": "exact hk",
+    "state": "  hk\nhas type\n  1 ^ k = 1 \u2192 1 ^ succ k = 1 : Prop\nbut is expected to have type\n  1 ^ succ k = 1 : Prop\n"
+  },
+  {
+    "theorem": "pow_two",
+    "NL": "-- Theorem Declaration: Prove that a^2 = a * a",
+    "FL": "theorem pow_two (a : \u2115) : a ^ 2 = a * a := by",
+    "state": "a : \u2115\n\u22a2 a ^ 2 = a * a\n"
+  },
+  {
+    "theorem": "pow_two",
+    "NL": "-- Rewrite the left hand side using the identity that 2 is equal to the successor of 1",
+    "FL": "rw [two_eq_succ_one]",
+    "state": "a : \u2115\n\u22a2 a ^ succ 1 = a * a\n"
+  },
+  {
+    "theorem": "pow_two",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number.",
+    "FL": "rw [pow_succ]",
+    "state": "a : \u2115\n\u22a2 a ^ 1 * a = a * a\n"
+  },
+  {
+    "theorem": "pow_two",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 1 is equal to that natural number",
+    "FL": "rw [pow_one]",
+    "state": "  ?a ^ 1\na : \u2115\n\u22a2 a ^ 1 * a = a * a\n"
+  },
+  {
+    "theorem": "pow_two",
+    "NL": "-- The goal is now to prove that a * a = a * a, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "  ?a ^ 1\na : \u2115\n\u22a2 a ^ 1 * a = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona2",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem pow_two_persona2 (a : \u2115) : a ^ 2 = a * a := by",
+    "state": "a : \u2115\n\u22a2 a ^ 2 = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona2",
+    "NL": "-- a^succ(1) = a*a",
+    "FL": "rw [two_eq_succ_one]",
+    "state": "a : \u2115\n\u22a2 a ^ succ 1 = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona2",
+    "NL": "-- a^1* a = a*a",
+    "FL": "rw [pow_succ]",
+    "state": "a : \u2115\n\u22a2 a ^ 1 * a = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona2",
+    "NL": "-- a*a = a*a",
+    "FL": "rw [pow_one]",
+    "state": "  ?a ^ 1\na : \u2115\n\u22a2 a ^ 1 * a = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona2",
+    "NL": "-- lhs=rhs, so we are done.",
+    "FL": "rfl",
+    "state": "  ?a ^ 1\na : \u2115\n\u22a2 a ^ 1 * a = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona3",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem pow_two_persona3 (a : \u2115) : a ^ 2 = a * a := by",
+    "state": "a : \u2115\n\u22a2 a ^ 2 = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona3",
+    "NL": "-- First, we observe that two is the successor of one, and write our goal as: a^succ(1) = a*a.",
+    "FL": "rw[two_eq_succ_one]",
+    "state": "a : \u2115\n\u22a2 a ^ succ 1 = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona3",
+    "NL": "-- Then, we can use the definition of the successor as adding one, namely succ(1) = 1+1, to write our goal as: a^(1+1) = a*a.",
+    "FL": "rw[succ_eq_add_one]",
+    "state": "a : \u2115\n\u22a2 a ^ (1 + 1) = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona3",
+    "NL": "-- Then, we can use the additive property of the power function, and see that: a^1 * a^1 = a*a.",
+    "FL": "rw[pow_add]",
+    "state": "  ?a ^ (?m + ?n)\na : \u2115\n\u22a2 a ^ (1 + 1) = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona3",
+    "NL": "-- Talking anything to the power of 1 is equal to the identity operation, so we can let a^1 = 1 and simplify as: a*a = a*a",
+    "FL": "rw[pow_one]",
+    "state": "  ?a ^ (?m + ?n)\na : \u2115\n\u22a2 a ^ (1 + 1) = a * a\n"
+  },
+  {
+    "theorem": "pow_two_persona3",
+    "NL": "-- LHS = RHS, so our proof is complete by the reflexive property of equality.",
+    "FL": "rfl",
+    "state": "  ?a ^ (?m + ?n)\na : \u2115\n\u22a2 a ^ (1 + 1) = a * a\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Theorem Declaration: Prove that a^(m + n) = a^m * a^n",
+    "FL": "theorem pow_add (a m n : \u2115) : a ^ (m + n) = a ^ m * a ^ n := by",
+    "state": "a m n : \u2115\n\u22a2 a ^ (m + n) = a ^ m * a ^ n\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis a^(m + d) = a^m * a^d. There are now two proof goals, prove base case: a^(m + 0) = a^m * a^0 and inductive step: a^(m + d) = a^m * a^d implies a^(m + succ d) = a^m * a^(succ d).",
+    "FL": "induction n with d hd",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ (m + 0) = a ^ m * a ^ 0\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that the sum of any natural number and 0 is equal to that natural number",
+    "FL": "rw [add_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m * a ^ 0\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m * 1\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number multiplied by 1 is equal to that natural number",
+    "FL": "rw [mul_one]",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- The goal is now to prove that a^m = a^m, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that the sum of any natural number and the successor of another natural number is equal to the successor of the sum of the two natural numbers",
+    "FL": "rw [add_succ]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ succ (m + d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + d) * a = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + d) * a = a ^ m * (a ^ d * a)\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Rewrite the left hand side using the induction hypothesis",
+    "FL": "rw [hd]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ m * a ^ d * a = a ^ m * (a ^ d * a)\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number multiplied by the product of two natural numbers is equal to the product of the first natural number multiplied by the second natural number multiplied by the third natural number",
+    "FL": "rw [mul_assoc]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ m * (a ^ d * a) = a ^ m * (a ^ d * a)\n"
+  },
+  {
+    "theorem": "pow_add",
+    "NL": "-- The goal is now to prove that a^m * (a^d * a) = a^m * a^(d + 1), which is true by reflexivity",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem pow_add_persona2 (a m n : \u2115) : a ^ (m + n) = a ^ m * a ^ n := by",
+    "state": "a m n : \u2115\n\u22a2 a ^ (m + n) = a ^ m * a ^ n\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- We can use induction on n, making the inductive hypothesis that a ^ (m + d) = a ^ m * a ^ d. Then, the base case is a ^ (m + 0) = a ^ m * a ^ 0, and the inductive case is: a ^ (m + succ d) = a ^ m * a ^ succ d",
+    "FL": "induction n with d hd",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ (m + 0) = a ^ m * a ^ 0\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- For the base case a ^ (m + 0) = a ^ m * a ^ 0 becomes a^m = a^m * a^0",
+    "FL": "rw [add_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m * a ^ 0\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- a^m = a^m * 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m * 1\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- a^m = a^m",
+    "FL": "rw [mul_one]",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m\ncase succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- lhs = rhs, so we are done with the base case.",
+    "FL": "rfl",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + succ d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- For the inductive case a ^ (m + succ d) = a ^ m * a ^ succ d, we begin by rewriting as a ^ succ (m + d) = a ^ m * a ^ succ d",
+    "FL": "rw [add_succ]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ succ (m + d) = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- a ^ (m + d) * a = a ^ m * a ^ succ d",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + d) * a = a ^ m * a ^ succ d\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- a ^ (m + d) * a = a ^ m * (a ^ d * a)",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ (m + d) * a = a ^ m * (a ^ d * a)\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- We use the inductive hypothesis hd, to get: a ^ m * a ^ d * a = a ^ m * (a ^ d * a)",
+    "FL": "rw [hd]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ m * a ^ d * a = a ^ m * (a ^ d * a)\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- a ^ m * (a ^ d * a) = a ^ m * (a ^ d * a)",
+    "FL": "rw [mul_assoc]",
+    "state": "case succ\na m d : \u2115\nhd : a ^ (m + d) = a ^ m * a ^ d\n\u22a2 a ^ m * (a ^ d * a) = a ^ m * (a ^ d * a)\n"
+  },
+  {
+    "theorem": "pow_add_persona2",
+    "NL": "-- lhs = rhs, so we are done.",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "pow_add_persona3",
+    "NL": "-- Theorem Declaration: Prove that a^(m + n) = a^m * a^n",
+    "FL": "theorem pow_add_persona3 (a m n : \u2115) : a ^ (m + n) = a ^ m * a ^ n := by",
+    "state": "a m n : \u2115\n\u22a2 a ^ (m + n) = a ^ m * a ^ n\n"
+  },
+  {
+    "theorem": "pow_add_persona3",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis a^(m + d) = a^m * a^d. There are now two proof goals, prove base case: a^(m + 0) = a^m * a^0 and inductive step: a^(m + d) = a^m * a^d implies a^(m + succ d) = a^m * a^(succ d).",
+    "FL": "induction n with t ht",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ (m + 0) = a ^ m * a ^ 0\ncase succ\na m t : \u2115\nht : a ^ (m + t) = a ^ m * a ^ t\n\u22a2 a ^ (m + succ t) = a ^ m * a ^ succ t\n"
+  },
+  {
+    "theorem": "pow_add_persona3",
+    "NL": "-- Rewrite the goal by first simplifying the expression m + 0 to m, then simplifying a raised to the power of 0 to 1, and finally simplifying any number multiplied by 1 to the number itself. This results in the goal a^m = a^m.",
+    "FL": "rw [add_zero, pow_zero, mul_one]",
+    "state": "case zero\na m : \u2115\n\u22a2 a ^ m = a ^ m\ncase succ\na m t : \u2115\nht : a ^ (m + t) = a ^ m * a ^ t\n\u22a2 a ^ (m + succ t) = a ^ m * a ^ succ t\n"
+  },
+  {
+    "theorem": "pow_add_persona3",
+    "NL": "-- The goal is now to prove that a^m = a^m, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "case succ\na m t : \u2115\nht : a ^ (m + t) = a ^ m * a ^ t\n\u22a2 a ^ (m + succ t) = a ^ m * a ^ succ t\n"
+  },
+  {
+    "theorem": "pow_add_persona3",
+    "NL": "-- Rewrite the expression a^(m + succ t) as a^m * (a^t * a) using the fact that (m + succ t) is the same as (succ (m + t)), and that a raised to the power (succ (m + t)) is the same as (a^(m + t) * a). Also, use the inductive hypothesis that a^(m + t) is equivalent to a^m * a^t, and the fact that multiplication is associative",
+    "FL": "rw [add_succ, pow_succ, pow_succ, ht, mul_assoc]",
+    "state": "case succ\na m t : \u2115\nht : a ^ (m + t) = a ^ m * a ^ t\n\u22a2 a ^ m * (a ^ t * a) = a ^ m * (a ^ t * a)\n"
+  },
+  {
+    "theorem": "pow_add_persona3",
+    "NL": "-- The goal is now to prove that a^m * (a^d * a) = a^m * a^(d + 1), which is true by reflexivity",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Theorem Declaration: Prove that (a * b)^n = a^n * b^n",
+    "FL": "theorem mul_pow (a b n : \u2115) : (a * b) ^ n = a ^ n * b ^ n := by",
+    "state": "a b n : \u2115\n\u22a2 (a * b) ^ n = a ^ n * b ^ n\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a * b)^d = a^d * b^d. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^d = a^d * b^d implies (a * b)^(succ d) = a^(succ d) * b^(succ d).",
+    "FL": "induction n with d hd",
+    "state": "case zero\na b : \u2115\n\u22a2 (a * b) ^ 0 = a ^ 0 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = a ^ 0 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1 * 1\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number multiplied by 1 is equal to that natural number",
+    "FL": "rw [mul_one]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- The goal is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ d * (a * b) = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ d * (a * b) = a ^ d * a * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ d * (a * b) = a ^ d * a * (b ^ d * b)\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rewrite the left hand side using the induction hypothesis",
+    "FL": "rw [hd]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * b ^ d * (a * b) = a ^ d * a * (b ^ d * b)\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rearrange the multiplication in both sides of the equation to group them in a different order using the associative property of multiplication.",
+    "FL": "repeat rw [mul_assoc]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * (b ^ d * (a * b)) = a ^ d * (a * (b ^ d * b))\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rearrange the multiplication in the right-hand side of the equation, changing 'a * (b^d * b)' to 'b^d * b * a'",
+    "FL": "rw [mul_comm a (_ * b)]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * b * a)\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- Rewrite the right-hand side of the equation to move the multiplication of b and a inside the parentheses, changing b^d * b * a to b^d * (b * a).",
+    "FL": "rw [mul_assoc]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (b * a))\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- We rewrite the expression to swap the order of multiplication in b * a to a * b, since multiplication is commutative for natural numbers.",
+    "FL": "rw [mul_comm b a]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (a * b))\n"
+  },
+  {
+    "theorem": "mul_pow",
+    "NL": "-- The goal is now to prove that a^d * (b^d * (a * b)) = a^d * (b^d * (a * b)), which is true by reflexivity",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem mul_pow_persona2 (a b n : \u2115) : (a * b) ^ n = a ^ n * b ^ n := by",
+    "state": "a b n : \u2115\n\u22a2 (a * b) ^ n = a ^ n * b ^ n\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- We can use induction on n. We begin with the base case, which is: 1 = a ^ 0 * b ^ 0",
+    "FL": "induction n with d hd",
+    "state": "case zero\na b : \u2115\n\u22a2 (a * b) ^ 0 = a ^ 0 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "--1 = a ^ 0 * b ^ 0",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = a ^ 0 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- 1 = 1 * b^0",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1 * b ^ 0\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- 1 = 1*1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1 * 1\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- 1=1",
+    "FL": "rw [mul_one]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1\ncase succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- lhs = rhs, so we have proven the base case.",
+    "FL": "rfl",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ succ d = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- Next, we proceed with the inductive case, which states that: (a * b) ^ succ d = a ^ succ d * b ^ succ d. Thus becomes: (a * b) ^ d * (a * b) = a ^ succ d * b ^ succ d",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ d * (a * b) = a ^ succ d * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- (a * b) ^ d * (a * b) = a ^ d * a * b ^ succ d",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ d * (a * b) = a ^ d * a * b ^ succ d\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- (a * b) ^ d * (a * b) = a ^ d * a * (b ^ d * b)",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 (a * b) ^ d * (a * b) = a ^ d * a * (b ^ d * b)\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- With the inductive hypothesis hd, we get: a ^ d * b ^ d * (a * b) = a ^ d * a * (b ^ d * b)",
+    "FL": "rw [hd]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * b ^ d * (a * b) = a ^ d * a * (b ^ d * b)\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- a ^ d * (b ^ d * (a * b)) = a ^ d * (a * (b ^ d * b))",
+    "FL": "repeat rw [mul_assoc]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * (b ^ d * (a * b)) = a ^ d * (a * (b ^ d * b))\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * b * a)",
+    "FL": "rw [mul_comm a (_ * b)]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * b * a)\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (b * a))",
+    "FL": "rw [mul_assoc]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (b * a))\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (a * b))",
+    "FL": "rw [mul_comm b a]",
+    "state": "case succ\na b d : \u2115\nhd : (a * b) ^ d = a ^ d * b ^ d\n\u22a2 a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (a * b))\n"
+  },
+  {
+    "theorem": "mul_pow_persona2",
+    "NL": "-- lhs = rhs, so we are done.",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "mul_pow_persona3",
+    "NL": "-- Theorem Declaration: Prove that (a * b)^n = a^n * b^n",
+    "FL": "theorem mul_pow_persona3 (a b n : \u2115) : (a * b) ^ n = a ^ n * b ^ n := by",
+    "state": "a b n : \u2115\n\u22a2 (a * b) ^ n = a ^ n * b ^ n\n"
+  },
+  {
+    "theorem": "mul_pow_persona3",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a * b)^d = a^d * b^d. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^d = a^d * b^d implies (a * b)^(succ d) = a^(succ d) * b^(succ d).",
+    "FL": "induction n with t Ht",
+    "state": "case zero\na b : \u2115\n\u22a2 (a * b) ^ 0 = a ^ 0 * b ^ 0\ncase succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 (a * b) ^ succ t = a ^ succ t * b ^ succ t\n"
+  },
+  {
+    "theorem": "mul_pow_persona3",
+    "NL": "-- Rewrite the left-hand side of the goal using the theorem that x^0 = 1, then simplify a^0 * b^0 to 1 * 1, and finally simplify 1 * 1 to 1",
+    "FL": "rw [pow_zero, pow_zero, pow_zero, mul_one]",
+    "state": "case zero\na b : \u2115\n\u22a2 1 = 1\ncase succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 (a * b) ^ succ t = a ^ succ t * b ^ succ t\n"
+  },
+  {
+    "theorem": "mul_pow_persona3",
+    "NL": "-- The goal is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "case succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 (a * b) ^ succ t = a ^ succ t * b ^ succ t\n"
+  },
+  {
+    "theorem": "mul_pow_persona3",
+    "NL": "-- We rewrite the goal using the property that (a * b)^(t+1) = (a * b)^t * (a * b). We use the inductive hypothesis that (a * b)^t = a^t * b^t.",
+    "FL": "rw [pow_succ, pow_succ, pow_succ, Ht]",
+    "state": "case succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 a ^ t * b ^ t * (a * b) = a ^ t * a * (b ^ t * b)\n"
+  },
+  {
+    "theorem": "mul_pow_persona3",
+    "NL": "-- Rewrite the right-hand side of the equation to move the multiplication of b and a inside the parentheses, changing b^d * b * a to b^d * (b * a).",
+    "FL": "repeat rw [mul_assoc]",
+    "state": "case succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 a ^ t * (b ^ t * (a * b)) = a ^ t * (a * (b ^ t * b))\n"
+  },
+  {
+    "theorem": "mul_pow_persona3",
+    "NL": "-- Rearrange the terms on the right side of the equation using commutativity and associativity of multiplication. Specifically, swap a and (b * t), then regroup terms, and finally swap b and a.",
+    "FL": "rw [mul_comm a (_ * b), mul_assoc, mul_comm b a]",
+    "state": "case succ\na b t : \u2115\nHt : (a * b) ^ t = a ^ t * b ^ t\n\u22a2 a ^ t * (b ^ t * (a * b)) = a ^ t * (b ^ t * (a * b))\n"
+  },
+  {
+    "theorem": "mul_pow_persona3",
+    "NL": "-- The goal is now to prove that a^d * (b^d * (a * b)) = a^d * (b^d * (a * b)), which is true by reflexivity",
+    "FL": "rfl",
+    "state": ""
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- Theorem Declaration: Prove that any natural number to the power of the power of another natural number is equal to that natural number to the power of the first natural number, multiplied by that natural number to the power of the second natural number",
+    "FL": "theorem pow_pow (a m n : \u2115) : (a ^ m) ^ n = a ^ (m * n) := by",
+    "state": "a m n : \u2115\n\u22a2 (a ^ m) ^ n = a ^ (m * n)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a ^ m) ^ t = a ^ (m * t). There are now two proof goals, prove base case: (a ^ m) ^ 0 = a ^ (m * 0) and inductive step: (a ^ m) ^ t = a ^ (m * t) implies (a ^ m) ^ succ t = a ^ (m * succ t).",
+    "FL": "induction n with t Ht",
+    "state": "case zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ (m * 0)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- Rewrite m * 0 to 0 in the right side",
+    "FL": "rw [mul_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ 0\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- Rewrite (a ^ m) ^ 0 to 1 in the left side",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 1 = a ^ 0\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- Rewrite a ^ 0 to 1 in the right side",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 1 = 1\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- The goal is now to prove that 1 = 1, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "case succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- Rewrite the left-hand side using the theorem that states (x^n)^(succ t) = (x^n)^t * (x^n)",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ t * a ^ m = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- Use the induction hypothesis to replace (a^m)^t with a^(m*t)",
+    "FL": "rw [Ht]",
+    "state": "case succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- Rewrite the right-hand side using the theorem that states m*(succ t) = m*t + m",
+    "FL": "rw [mul_succ]",
+    "state": "case succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * t + m)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- Rewrite the right-hand side using the theorem that states x^(a+b) = x^a * x^b",
+    "FL": "rw [pow_add]",
+    "state": "  ?a ^ (?m + ?n)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * t + m)\n"
+  },
+  {
+    "theorem": "pow_pow",
+    "NL": "-- The goal is now to prove that a^(m\\*t) * a^m = a^(m*t) * a^m, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "  ?a ^ (?m + ?n)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * t + m)\n"
+  },
+  {
+    "theorem": "pow_pow_persona2",
+    "NL": "-- Theorem Declaration: Prove that any natural number to the power of the power of another natural number is equal to that natural number to the power of the first natural number, multiplied by that natural number to the power of the second natural number",
+    "FL": "theorem pow_pow_persona2 (a m n : \u2115) : (a ^ m) ^ n = a ^ (m * n) := by",
+    "state": "a m n : \u2115\n\u22a2 (a ^ m) ^ n = a ^ (m * n)\n"
+  },
+  {
+    "theorem": "pow_pow_persona2",
+    "NL": "-- Induct on n, with (a ^ m) ^ 0 = a ^ (m * 0) as the base case and (a ^ m) ^ succ t = a ^ (m * succ t) as the inductive case.",
+    "FL": "induction n with t Ht",
+    "state": "case zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ (m * 0)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow_persona2",
+    "NL": "-- (a ^ m) ^ 0 = a ^ (m * 0) -> 1 = 1",
+    "FL": "rw [mul_zero, pow_zero, pow_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 1 = 1\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow_persona2",
+    "NL": "-- LHS = RHS",
+    "FL": "rfl",
+    "state": "case succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow_persona2",
+    "NL": "-- (a ^ m) ^ succ t = a ^ (m * succ t) ->  (a ^ m) ^ succ t = a ^ (m * succ t)",
+    "FL": "rw [pow_succ, Ht, mul_succ, pow_add]",
+    "state": "  ?a ^ (?m + ?n)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * t + m)\n"
+  },
+  {
+    "theorem": "pow_pow_persona2",
+    "NL": "-- LHS = RHS",
+    "FL": "rfl",
+    "state": "  ?a ^ (?m + ?n)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * t + m)\n"
+  },
+  {
+    "theorem": "pow_pow_persona3",
+    "NL": "-- Theorem Declaration: Prove that any natural number to the power of the power of another natural number is equal to that natural number to the power of the first natural number, multiplied by that natural number to the power of the second natural number",
+    "FL": "theorem pow_pow_persona3 (a m n : \u2115) : (a ^ m) ^ n = a ^ (m * n) := by",
+    "state": "a m n : \u2115\n\u22a2 (a ^ m) ^ n = a ^ (m * n)\n"
+  },
+  {
+    "theorem": "pow_pow_persona3",
+    "NL": "-- Induct on n, with d = 0 as the base case and the inductive hypothesis (a ^ m) ^ t = a ^ (m * t).",
+    "FL": "induction n with t Ht",
+    "state": "case zero\na m : \u2115\n\u22a2 (a ^ m) ^ 0 = a ^ (m * 0)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow_persona3",
+    "NL": "-- for the base case, simplify the LHS by the properties of powers and the RHS by the properties of multiplication to 1 = a ^ 0",
+    "FL": "rw [pow_zero, mul_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 1 = a ^ 0\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow_persona3",
+    "NL": "-- further simplify the RHS by the properties of powers to 1 = 1",
+    "FL": "rw [pow_zero]",
+    "state": "case zero\na m : \u2115\n\u22a2 1 = 1\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow_persona3",
+    "NL": "-- LHS = RHS, so we have shown the base case",
+    "FL": "rfl",
+    "state": "case succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ succ t = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow_persona3",
+    "NL": "-- simplify the LHS by the properties of powers to (a ^ m) ^ t * a ^ m = a ^ (m * succ t)",
+    "FL": "rw [pow_succ]",
+    "state": "case succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 (a ^ m) ^ t * a ^ m = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow_persona3",
+    "NL": "-- use the inductive hypothesis to simplify the LHS",
+    "FL": "rw [Ht]",
+    "state": "case succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * succ t)\n"
+  },
+  {
+    "theorem": "pow_pow_persona3",
+    "NL": "-- simplify the LHS by the properties of multiplication and power to a ^ (m * t) * a ^ m = a ^ (m * t) * a ^ m",
+    "FL": "rw[mul_succ, pow_add]",
+    "state": "  ?a ^ (?m + ?n)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * t + m)\n"
+  },
+  {
+    "theorem": "pow_pow_persona3",
+    "NL": "-- LHS = RHS, so we complete the proof by induction",
+    "FL": "rfl",
+    "state": "  ?a ^ (?m + ?n)\ncase succ\na m t : \u2115\nHt : (a ^ m) ^ t = a ^ (m * t)\n\u22a2 a ^ (m * t) * a ^ m = a ^ (m * t + m)\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Theorem Declaration: Prove that (a + b)^2 = a^2 + b^2 + 2 * a * b",
+    "FL": "theorem add_sq (a b : \u2115) : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b := by",
+    "state": "a b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Rewrite (a + b)^2 as (a + b) * (a + b) using the theorem that x^2 = x * x",
+    "FL": "rw [pow_two]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Rewrite a^2 as a * a using the theorem that x^2 = x * x",
+    "FL": "rw [pow_two]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Rewrite b^2 as b * b using the theorem that x^2 = x * x",
+    "FL": "rw [pow_two]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Rearrange the terms on the right hand side of the equation, swapping the order of b * b and 2 * a * b using the commutative property of addition",
+    "FL": "rw [add_right_comm]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Use the distributive property of multiplication over addition to expand (a + b) * (a + b) to a * (a + b) + b * (a + b)",
+    "FL": "rw [mul_add]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Use the distributive property to expand a * (a + b) to a * a + a * b",
+    "FL": "rw [add_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Use the distributive property to expand b * (a + b) to b * a + b * b",
+    "FL": "rw [add_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Rewrite 2 * a * b as a * b + a * b using the theorem that 2 * x = x + x",
+    "FL": "rw [two_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Use the distributive property to expand (a * b + a * b) to a * b + a * b",
+    "FL": "rw [add_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Rewrite b * a as a * b using the commutative property of multiplication",
+    "FL": "rw [mul_comm b a]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Use the associative property of addition to rearrange (a * a + a * b) + (a * b + b * b) to a * a + (a * b + (a * b + b * b))",
+    "FL": "rw [\u2190 add_assoc]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- Use the associative property of addition again to rearrange a * a + (a * b + (a * b + b * b)) to a * a + a * b + (a * b + b * b)",
+    "FL": "rw [\u2190 add_assoc]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq",
+    "NL": "-- The goal is now to prove that a * a + a * b + a * b + b * b = a * a + a * b + a * b + b * b, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- Theorem Declaration: ",
+    "FL": "theorem add_sq_persona2 (a b : \u2115) : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b := by",
+    "state": "a b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- (a + b) * (a + b) = a^2 + b^2 + 2a*b",
+    "FL": "rw [pow_two]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- (a + b) * (a + b) = a*a + b^2 + 2a*b",
+    "FL": "rw [pow_two]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- (a + b) * (a + b) = a*a + b*b + 2a*b",
+    "FL": "rw [pow_two]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- (a + b) * (a + b) = a*a + 2a*b + b*b",
+    "FL": "rw [add_right_comm]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- a * (a + b) + b * (a + b) = a*a + 2a*b + b*b",
+    "FL": "rw [mul_add]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- a * a + a * b + b * (a + b) = a*a + 2a*b + b*b",
+    "FL": "rw [add_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- a * a + a * b + b * a + b*b = a*a + 2a*b + b*b",
+    "FL": "rw [add_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- a * a + a * b + b * a + b*b = a*a + (a+a)*b + b*b",
+    "FL": "rw [two_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- a * a + a * b + (b * a + b*b) = a*a + (a*b + a*b) + b*b",
+    "FL": "rw [add_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- a * a + a * b + (a * b + b*b) = a*a + a*b + a*b + b*b",
+    "FL": "rw [mul_comm b a]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- a * a + a * b + a * b + b * b = a * a + (a * b + a * b) + b * b",
+    "FL": "rw [\u2190 add_assoc]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- a * a + a * b + a * b + b * b = a * a + a * b + a * b + b * b",
+    "FL": "rw [\u2190 add_assoc]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq_persona2",
+    "NL": "-- lhs = rhs",
+    "FL": "rfl",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq2_persona3",
+    "NL": "-- Theorem Declaration: Prove that (a + b)^2 = a^2 + b^2 + 2 * a * b",
+    "FL": "theorem add_sq2_persona3 (a b : \u2115) : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b := by",
+    "state": "a b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq2_persona3",
+    "NL": "-- Rewrite the expression for the square of (a + b), a^2, and b^2 to be (a + b) * (a + b), a * a, and b * b respectively.",
+    "FL": "rw [pow_two, pow_two, pow_two]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq2_persona3",
+    "NL": "-- Rearrange the terms on the right hand side of the equation, swapping the order of b * b and 2 * a * b. This is based on the commutative property of addition, which states that the order of the terms does not change the result of the addition.",
+    "FL": "rw [add_right_comm]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq2_persona3",
+    "NL": "-- rewrite the left-hand side of the equation using the distributive property of multiplication over addition. This expands (a + b) * (a + b) to a * a + b * a + a * b + b * b.",
+    "FL": "rw [mul_add, add_mul, add_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq2_persona3",
+    "NL": "-- Rewrite the term 2 * a * b in the goal as (a * b + a * b) using the theorem that 2 times a number is the same as the number added to itself. Also, rewrite the term a * b + b * b as (a * b + a * b) + b * b using the theorem that the product of a sum is the sum of the products.",
+    "FL": "rw [two_mul, add_mul]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq2_persona3",
+    "NL": "-- We rewrite the expression a * b as b * a in the goal. This is based on the commutative property of multiplication, which states that the order of the factors does not change the product. This results in the new goal: a * a + a * b + (a * b + b * b) = a * a + (a * b + a * b) + b * b.",
+    "FL": "rw [mul_comm b a]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq2_persona3",
+    "NL": "-- We use the theorem that states the associativity of addition twice to rearrange the left-hand side of the equation. This changes the goal to proving that a * a + a * b + a * b + b * b equals a * a + a * b + a * b + b * b.",
+    "FL": "rw [\u2190 add_assoc, \u2190 add_assoc]",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  },
+  {
+    "theorem": "add_sq2_persona3",
+    "NL": "-- The goal is now to prove that a * a + a * b + a * b + b * b = a * a + a * b + a * b + b * b, which is true by reflexivity",
+    "FL": "rfl",
+    "state": "  ?a ^ 2\na b : \u2115\n\u22a2 (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b\n"
+  }
+]

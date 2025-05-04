@@ -1,0 +1,149 @@
+[
+  {
+    "theorem": "skipped_exact_2",
+    "NL": "-- Theorem Declaration: For some x which is a natural number, given that  0 + x = 0 + y + 2, prove x = y + 2",
+    "FL": "theorem skipped_exact_2 (x : \u2115) (h : 0 + x = 0 + y + 2) : x = y + 2 := by",
+    "state": "y x : \u2115\nh : 0 + x = 0 + y + 2\n\u22a2 x = y + 2\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_2",
+    "NL": "-- Rewrite 0 + x in the LHS of the hypothesis to x",
+    "FL": "rw [zero_add] at h",
+    "state": "y x : \u2115\nh : x = 0 + y + 2\n\u22a2 x = y + 2\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_2",
+    "NL": "-- Our simplified hypothesis is now x = y + 2, we can use this exactly to complete the proof",
+    "FL": "exact h -- error",
+    "state": "  h\nhas type\n  x = 0 + y + 2 : Prop\nbut is expected to have type\n  x = y + 2 : Prop\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_exact_5",
+    "NL": "-- Theorem Declaration: For some x which is a natural number, given x + 1 = 4, prove that x = 3",
+    "FL": "theorem skipped_exact_5 (x : \u2115) (h : x + 1 = 4) : x = 3 := by",
+    "state": "x : \u2115\nh : x + 1 = 4\n\u22a2 x = 3\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_5",
+    "NL": "-- Rewrite 4 as succ 3 in the given x + 1 = 4, changing it to x + 1 = succ 3",
+    "FL": "rw [four_eq_succ_three] at h",
+    "state": "x : \u2115\nh : x + 1 = succ 3\n\u22a2 x = 3\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_5",
+    "NL": "-- Rewrite LHS such that x + 1 = succ 3 changes to succ x = succ 3",
+    "FL": "rw [\u2190succ_eq_add_one] at h",
+    "state": "x : \u2115\nh : succ x = succ 3\n\u22a2 x = 3\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_5",
+    "NL": "-- We can exactly prove that x = 3 with our given facts, to complete the proof",
+    "FL": "exact h -- error",
+    "state": "  h\nhas type\n  succ x = succ 3 : Prop\nbut is expected to have type\n  x = 3 : Prop\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_exact_6",
+    "NL": "-- Theorem Declaration: For some x, which is a natural number, given x + 1 = 4, prove that x = 3",
+    "FL": "theorem skipped_exact_6 (x : \u2115) (h : x + 1 = 4) : x = 3 := by",
+    "state": "x : \u2115\nh : x + 1 = 4\n\u22a2 x = 3\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_6",
+    "NL": "-- Change the proof goal to succ x = succ 3 using the injectivity of the successor function",
+    "FL": "apply succ_inj",
+    "state": "case h\nx : \u2115\nh : x + 1 = 4\n\u22a2 succ x = succ 3\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_6",
+    "NL": "-- We can exactly show that x + 1 = 4 holds true, assuming x = 3, completing the proof",
+    "FL": "exact h -- error",
+    "state": "  h\nhas type\n  x + 1 = 4 : Prop\nbut is expected to have type\n  succ x = succ 3 : Prop\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_exact_8",
+    "NL": "-- Theorem Declaration: For some x and which are natural numbers, prove that x + 1 = y + 1 implies x = y",
+    "FL": "theorem skipped_exact_8 (x : \u2115) : x + 1 = y + 1 \u2192 x = y := by",
+    "state": "y x : \u2115\n\u22a2 x + 1 = y + 1 \u2192 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_8",
+    "NL": "-- We assume that x + 1 = y + 1",
+    "FL": "intro h",
+    "state": "y x : \u2115\nh : x + 1 = y + 1\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_8",
+    "NL": "-- Apply the injectivity of the successor function to 'succ x = succ y', simplifying it to 'x = y'.",
+    "FL": "apply succ_inj at h -- error",
+    "state": "",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_exact_9",
+    "NL": "-- Theorem Declaration: For some x and which are natural numbers, prove that x + 1 = y + 1 implies x = y",
+    "FL": "theorem skipped_exact_9 (x : \u2115) : x + 1 = y + 1 \u2192 x = y := by",
+    "state": "y x : \u2115\n\u22a2 x + 1 = y + 1 \u2192 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_9",
+    "NL": "-- We assume that x + 1 = y + 1",
+    "FL": "intro h",
+    "state": "y x : \u2115\nh : x + 1 = y + 1\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_9",
+    "NL": "-- Rewrite all instances of succ x and succ y as x + 1 and y + 1, the equation is now x + 1 = y + 1",
+    "FL": "repeat rw [succ_eq_add_one]",
+    "state": "y x : \u2115\nh : x + 1 = y + 1\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_exact_9",
+    "NL": "-- We can exactly show how x = y equates to x + 1 = y + 1, completing the proof",
+    "FL": "exact h -- error",
+    "state": "  h\nhas type\n  x + 1 = y + 1 : Prop\nbut is expected to have type\n  x = y : Prop\n",
+    "is_error": true
+  },
+  {
+    "theorem": "skipped_two_five",
+    "NL": "-- Theorem Declaration: Prove that 2 + 2 \u2260 5;  written in successor terms: succ (succ 0) + succ (succ 0) \u2260 succ (succ (succ (succ (succ 0))))",
+    "FL": "theorem skipped_two_five : succ (succ 0) + succ (succ 0) \u2260 succ (succ (succ (succ (succ 0)))) := by",
+    "state": "\u22a2 succ (succ 0) + succ (succ 0) \u2260 succ (succ (succ (succ (succ 0))))\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_two_five",
+    "NL": "-- Assume that succ (succ 0) + succ (succ 0) = succ (succ (succ (succ (succ 0))))",
+    "FL": "intro h",
+    "state": "h : succ (succ 0) + succ (succ 0) = succ (succ (succ (succ (succ 0))))\n\u22a2 False\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_two_five",
+    "NL": "-- Rewrite the RHS of our assumption, transforming succ (succ 0) + succ (succ 0) to succ (succ (succ (succ 0)))",
+    "FL": "rw [add_succ, add_succ, add_zero] at h",
+    "state": "h : succ (succ (succ (succ 0))) = succ (succ (succ (succ (succ 0))))\n\u22a2 False\n",
+    "is_error": false
+  },
+  {
+    "theorem": "skipped_two_five",
+    "NL": "-- We have shown that succ (succ 0) + succ (succ 0) \u2260 succ (succ (succ (succ (succ 0)))) is false, completing the proof",
+    "FL": "exact h -- error",
+    "state": "  h\nhas type\n  succ (succ (succ (succ 0))) = succ (succ (succ (succ (succ 0)))) : Prop\nbut is expected to have type\n  False : Prop\n",
+    "is_error": true
+  }
+]

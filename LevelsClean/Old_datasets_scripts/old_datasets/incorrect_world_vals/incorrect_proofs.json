@@ -1,0 +1,345 @@
+[
+  {
+    "theorem": "zero_add",
+    "NL": "-- Theorem Declaration: Prove that 0 + n = n for all natural numbers",
+    "FL": "theorem zero_add_persona_1_d (n : \u2115) : 0 + n = n := by",
+    "state": "n : \u2115\n\u22a2 0 + n = n\n",
+    "is_error": false
+  },
+  {
+    "theorem": "zero_add",
+    "NL": "-- Induct on n",
+    "FL": "induction n with d hd",
+    "state": "case zero\n\u22a2 0 + 0 = 0\ncase succ\nd : \u2115\nhd : 0 + d = d\n\u22a2 0 + succ d = succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "zero_add",
+    "NL": "-- substitute 0 -> 0 + 0 into the RHS giving us 0 + 0 = 0 + 0",
+    "FL": "nth_rewrite 3 [\u2190 add_zero 0]",
+    "state": "case zero\n\u22a2 0 + 0 = 0 + 0\ncase succ\nd : \u2115\nhd : 0 + d = d\n\u22a2 0 + succ d = succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "zero_add",
+    "NL": "-- 0 + 0 = 0 + 0, completing base case",
+    "FL": "rfl",
+    "state": "case succ\nd : \u2115\nhd : 0 + d = d\n\u22a2 0 + succ d = succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "zero_add",
+    "NL": "-- 0 + d -> d on LHS -> succ d = succ d",
+    "FL": "rw [hd]",
+    "state": "  0 + d\ncase succ\nd : \u2115\nhd : 0 + d = d\n\u22a2 0 + succ d = succ d\n",
+    "is_error": true
+  },
+  {
+    "theorem": "zero_add",
+    "NL": "-- succ d = succ d, QED",
+    "FL": "rfl",
+    "state": "",
+    "is_error": true
+  },
+  {
+    "theorem": "add_left_cancel",
+    "NL": "-- Theorem Declaration: Prove that a + n = b + n implies a = b for all natural numbers",
+    "FL": "theorem add_left_cancel_dev_1 (a b n : \u2115) : n + a = n + b \u2192 a = b := by",
+    "state": "a b n : \u2115\n\u22a2 n + a = n + b \u2192 a = b\n",
+    "is_error": false
+  },
+  {
+    "theorem": "add_left_cancel",
+    "NL": "-- We use the commutativity of addition to change n + a = n + b into a + n = b + n.",
+    "FL": "repeat rw [add_comm n]",
+    "state": "a b n : \u2115\n\u22a2 a + n = b + n \u2192 a = b\n",
+    "is_error": false
+  },
+  {
+    "theorem": "add_left_cancel",
+    "NL": "-- So, we just need to show that a + n = b + n \u2192 a = b. We start by assuming a + n = b + n.",
+    "FL": "intro h",
+    "state": "a b n : \u2115\nh : a + n = b + n\n\u22a2 a = b\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_mul_right",
+    "NL": "-- Theorem Declaration: Prove that if a times b is not equal to 0, then a is less than or equal to a times b.",
+    "FL": "theorem le_mul_right_train1 (a b : \u2115) (h : a * b \u2260 0) : a \u2264 a * b := by",
+    "state": "a b : \u2115\nh : a * b \u2260 0\n\u22a2 a \u2264 a * b\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_mul_right",
+    "NL": "-- b is either 0 or the successor of some natural number d.",
+    "FL": "cases b with d",
+    "state": "case zero\na : \u2115\nh : a * 0 \u2260 0\n\u22a2 a \u2264 a * 0\ncase succ\na d : \u2115\nh : a * succ d \u2260 0\n\u22a2 a \u2264 a * succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_mul_right",
+    "NL": "-- a * 0 != 0 -> 0 != 0",
+    "FL": "rw [mul_zero] at h",
+    "state": "case zero\na : \u2115\nh : 0 \u2260 0\n\u22a2 a \u2264 a * 0\ncase succ\na d : \u2115\nh : a * succ d \u2260 0\n\u22a2 a \u2264 a * succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_mul_right",
+    "NL": "-- 0 != 0 is false so the theorem doesn't hold for this case.",
+    "FL": "tauto",
+    "state": "case succ\na d : \u2115\nh : a * succ d \u2260 0\n\u22a2 a \u2264 a * succ d\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_mul_right",
+    "NL": "-- a <= a * succ d -> a <= a * d + a",
+    "FL": "rw [mul_succ]",
+    "state": "case succ\na d : \u2115\nh : a * succ d \u2260 0\n\u22a2 a \u2264 a * d + a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "succ_ne_zero",
+    "NL": "-- Theorem Declaration: Prove the Peano axiom that the successor of a natural number cannot be 0 for all natural numbers \"a\".",
+    "FL": "theorem succ_ne_zero_dev_2 (a : \u2115) : succ a \u2260 0 := by",
+    "state": "a : \u2115\n\u22a2 succ a \u2260 0\n",
+    "is_error": false
+  },
+  {
+    "theorem": "succ_ne_zero",
+    "NL": "-- assume succ a = 0",
+    "FL": "intro h",
+    "state": "a : \u2115\nh : succ a = 0\n\u22a2 False\n",
+    "is_error": false
+  },
+  {
+    "theorem": "succ_ne_zero",
+    "NL": "-- is_zero (succ 0) -> is_zero 0",
+    "FL": "rw [h]",
+    "state": "  succ a\na : \u2115\nh : succ a = 0\n\u22a2 False\n",
+    "is_error": true
+  },
+  {
+    "theorem": "succ_ne_zero",
+    "NL": "-- is_zero 0 -> True",
+    "FL": "rw [is_zero_zero]",
+    "state": "a : \u2115\nh : succ a = 0\n\u22a2 False\n",
+    "is_error": true
+  },
+  {
+    "theorem": "succ_ne_zero",
+    "NL": "-- clearly, True",
+    "FL": "trivial",
+    "state": "",
+    "is_error": true
+  },
+  {
+    "theorem": "exact_5",
+    "NL": "-- Theorem Declaration: For some x which is a natural number, given x + 1 = 4, prove that x = 3",
+    "FL": "theorem exact_5_dev_1 (x : \u2115) (h : x + 1 = 4) : x = 3 := by",
+    "state": "x : \u2115\nh : x + 1 = 4\n\u22a2 x = 3\n",
+    "is_error": false
+  },
+  {
+    "theorem": "exact_5",
+    "NL": "-- We replace 4 with succ 3 in x + 1 = 4.",
+    "FL": "rw [four_eq_succ_three] at h",
+    "state": "x : \u2115\nh : x + 1 = succ 3\n\u22a2 x = 3\n",
+    "is_error": false
+  },
+  {
+    "theorem": "exact_5",
+    "NL": "-- By the injectivity of succ, x = 3.",
+    "FL": "apply succ_inj at h", 
+    "state": "x : ℕ\nh : x + 1 = succ 3\n⊢ x = 3\n",
+    "is_error": true
+  },
+  {
+    "theorem": "exact_5",
+    "NL": "-- So, x = 3, which is exactly what we wanted to prove.",
+    "FL": "exact h",
+    "state": "",
+    "is_error": true
+  },
+  {
+    "theorem": "le_antisymm",
+    "NL": "-- Theorem Declaration: Prove that if x is less than or equal to y and y is less than or equal to x, then x equals y.",
+    "FL": "theorem le_antisymm1 (x y : \u2115) (hxy : x \u2264 y) (hyx : y \u2264 x) : x = y := by",
+    "state": "x y : \u2115\nhxy : x \u2264 y\nhyx : y \u2264 x\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_antisymm",
+    "NL": "-- We consider the case where x is less than or equal to y so y = x + some natural number a.",
+    "FL": "cases hxy with a ha",
+    "state": "case intro\nx y : \u2115\nhyx : y \u2264 x\na : \u2115\nha : y = x + a\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_antisymm",
+    "NL": "-- We consider the case where y is less than or equal to x so x = y + some natural number b.",
+    "FL": "cases hyx with b hb",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = y + b\n\u22a2 x = y\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_antisymm",
+    "NL": "-- We substitute y in the goal with x + a, changing our goal to prove that x equals x + a.",
+    "FL": "rw [ha]",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = y + b\n\u22a2 x = x + a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_antisymm",
+    "NL": "-- Using the equality y = x + a, we substitute y in the equation x = y + b with x + a. Then, we re-arrange the right side of the equation x = x + a + b to x = x + (a + b) using the property that addition is associative.",
+    "FL": "rw [ha, add_assoc] at hb",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x = x + (a + b)\n\u22a2 x = x + a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_antisymm",
+    "NL": "-- We flip the equation so that it reads 'x + (a + b) = x' instead of 'x = x + (a + b)'.",
+    "FL": "symm at hb",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : x + (a + b) = x\n\u22a2 x = x + a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_antisymm",
+    "NL": "-- If x + (a + b) = x, then a + b = 0 by since for all natural numbers a and n, n + a = n implies a = 0.",
+    "FL": "apply add_right_eq_self at hb",
+    "state": "case intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : a + b = 0\n\u22a2 x = x + a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "le_antisymm",
+    "NL": "-- We substitute a in the equation x = x + a with zero, as given shown above, changing our goal to prove that x equals x.",
+    "FL": "rw [hb, add_zero]",
+    "state": "  a + b\ncase intro.intro\nx y a : \u2115\nha : y = x + a\nb : \u2115\nhb : a + b = 0\n\u22a2 x = x + a\n",
+    "is_error": true
+  },
+  {
+    "theorem": "le_antisymm",
+    "NL": "-- The goal is now to prove that x equals x, which is true by reflexivity.",
+    "FL": "rfl",
+    "state": "",
+    "is_error": true
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "-- Theorem Declaration: Prove that multiplication is commutative, that is a * b = b * a for all natural numbers",
+    "FL": "theorem mul_comm_train2 (a b : \u2115) : a * b = b * a := by",
+    "state": "a b : \u2115\n\u22a2 a * b = b * a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "-- Induct on b, with d = 0 as the base case and the inductive hypothesis a * d = d * a.",
+    "FL": "induction b with d hd",
+    "state": "case zero\na : \u2115\n\u22a2 a * 0 = 0 * a\ncase succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * succ d = succ d * a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "-- First prove base case: a * 0 = 0 * a -> 0 = 0 * a by definition of multiplication",
+    "FL": "rw [mul_zero, zero_mul]",
+    "state": "case zero\na : \u2115\n\u22a2 0 = 0\ncase succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * succ d = succ d * a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "-- Next prove inductive step: a * succ d = succ d * a -> a * d + a = d * a + a by definition of multiplication",
+    "FL": "rw [mul_succ, succ_mul]",
+    "state": "  ?a * succ ?b\ncase zero\na : \u2115\n\u22a2 0 = 0\n",
+    "is_error": true
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "-- a * d + a = succ d * a -> a * d + a = d * a + a by the inductive hypothesis",
+    "FL": "rw [hd]",
+    "state": "  ?a * succ ?b\ncase zero\na : \u2115\n\u22a2 0 = 0\n",
+    "is_error": true
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "-- a * d + a = d * a + a -> d * a + a = d * a + a by the commutative property of addition",
+    "FL": "rw [add_comm]",
+    "state": "  ?a * succ ?b\ncase zero\na : \u2115\n\u22a2 0 = 0\n",
+    "is_error": true
+  },
+  {
+    "theorem": "mul_comm",
+    "NL": "-- LHS and RHS are equal, completing the proof.",
+    "FL": "rfl",
+    "state": "",
+    "is_error": true
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Theorem Declaration: Prove that a^1 = a",
+    "FL": "theorem pow_one_persona3 (a : \u2115) : a ^ 1 = a  := by",
+    "state": "a : \u2115\n\u22a2 a ^ 1 = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Using the fact that we defined 1 to be the successor of zero, we can write this as: a^succ(0) = a.",
+    "FL": "rw[one_eq_succ_zero]",
+    "state": "a : \u2115\n\u22a2 a ^ succ 0 = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- We defined the power function with the axiom such that for any natural numbers a,b, a^succ(b) = a^b * a. Using this, we can write our goal as: a^0 * a = a",
+    "FL": "rw[pow_succ]",
+    "state": "a : \u2115\n\u22a2 a ^ 0 * a = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Since anything to the power of zero is also zero, we can simplify our goal to: 1 * a = a",
+    "FL": "rw[pow_zero]",
+    "state": "a : \u2115\n\u22a2 1 * a = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Once again, we can use the fact that 1 is the successor 0, to write: succ(0) * a = a",
+    "FL": "rw[one_eq_succ_zero]",
+    "state": "a : \u2115\n\u22a2 succ 0 * a = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "pow_one",
+    "NL": "-- Using the axioms with which we defined multiplication, namely the fact that for any natural numbers a,b, succ(b) * a = b* a + a, we can simplify to: 0 * a + a = a.",
+    "FL": "rw[succ_mul]",
+    "state": "a : \u2115\n\u22a2 0 * a + a = a\n",
+    "is_error": false
+  },
+  {
+    "theorem": "succ_eq_add_one",
+    "NL": "-- Theorem Declaration: For natural number n, prove that succ n is equivalent to n + 1",
+    "FL": "theorem succ_eq_add_one_persona_1_d n : succ n = n + 1 := by",
+    "state": "n : \u2115\n\u22a2 succ n = n + 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "succ_eq_add_one",
+    "NL": "-- Rewrite on both RHS and LHS making n -> n + 0",
+    "FL": "rw [\u2190 add_zero n]",
+    "state": "n : \u2115\n\u22a2 succ (n + 0) = n + 0 + 1\n",
+    "is_error": false
+  },
+  {
+    "theorem": "succ_eq_add_one",
+    "NL": "-- Rewrite on RHS making 1 -> succ 0",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "n : \u2115\n\u22a2 succ (n + 0) = n + 0 + succ 0\n",
+    "is_error": false
+  },
+  {
+    "theorem": "succ_eq_add_one",
+    "NL": "-- Rewrite on RHS making n + 0 + succ(0) -> succ(n+0+0)",
+    "FL": "rw [add_succ]",
+    "state": "n : \u2115\n\u22a2 succ (n + 0) = succ (n + 0 + 0)\n",
+    "is_error": false
+  }
+]

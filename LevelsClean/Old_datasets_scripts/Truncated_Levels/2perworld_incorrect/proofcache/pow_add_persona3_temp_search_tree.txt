@@ -1,0 +1,8 @@
+rfl
+	rw [pow_succ]
+		rw [add_succ]
+			rw [pow_succ]
+				rw [hd]
+					rw [mul_assoc]
+						rfl
+						SYSTEM: QED

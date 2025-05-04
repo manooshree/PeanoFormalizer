@@ -1,0 +1,113 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Is Correct
+exact_2,  -- We simplify the hypothesis of 0 + x = 0 + y + 2 to x = x = y + 2.,rw [zero_add] at h,"  rw [zero_add, zero_add] at h","y x : ℕ
+h : x = y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,"  -- So, x = y + 2, which is exactly what we wanted to prove.",exact h,  exact h,,error,No
+exact_2,  -- 0 + x = 0 + y + 2 -> 0 + x = y + 2,"There is no transformation needed here, so the Lean code remains the same.",  rw [← zero_add x],"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ 0 + x = y + 2
+","y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- 0 + x = y + 2 -> 0 + x = 0 + y + 2,This statement is already in a formalized form so there's no need of conversion.,  rw [← zero_add y],"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ 0 + x = 0 + y + 2
+","y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- x = y + 2,"The formalized version of the natural language statement ""x = y + 2"" in Lean syntax is:
+
+exact h",  exact h,,"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- We simplify the hypothesis of 0 + x = 0 + y + 2 to x = x = y + 2.,rw [zero_add] at h,"  rw [zero_add, zero_add] at h","y x : ℕ
+h : x = y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,"  -- So, x = y + 2, which is exactly what we wanted to prove.",exact h,  exact h,,error,No
+exact_2,  -- 0 + x = 0 + y + 2 -> 0 + x = y + 2,"There is no transformation needed here, so the Lean code remains the same.",  rw [← zero_add x],"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ 0 + x = y + 2
+","y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- 0 + x = y + 2 -> 0 + x = 0 + y + 2,This statement is already in a formalized form so there's no need of conversion.,  rw [← zero_add y],"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ 0 + x = 0 + y + 2
+","y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- x = y + 2,"The formalized version of the natural language statement ""x = y + 2"" in Lean syntax is:
+
+exact h",  exact h,,"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- We simplify the hypothesis of 0 + x = 0 + y + 2 to x = x = y + 2.,rw [zero_add] at h,"  rw [zero_add, zero_add] at h","y x : ℕ
+h : x = y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,"  -- So, x = y + 2, which is exactly what we wanted to prove.",exact h,  exact h,,error,No
+exact_2,  -- 0 + x = 0 + y + 2 -> 0 + x = y + 2,"There is no transformation needed here, so the Lean code remains the same.",  rw [← zero_add x],"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ 0 + x = y + 2
+","y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- 0 + x = y + 2 -> 0 + x = 0 + y + 2,This statement is already in a formalized form so there's no need of conversion.,  rw [← zero_add y],"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ 0 + x = 0 + y + 2
+","y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- x = y + 2,"The formalized version of the natural language statement ""x = y + 2"" in Lean syntax is:
+
+exact h",  exact h,,"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- We simplify the hypothesis of 0 + x = 0 + y + 2 to x = x = y + 2.,rw [zero_add] at h,"  rw [zero_add, zero_add] at h","y x : ℕ
+h : x = y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,"  -- So, x = y + 2, which is exactly what we wanted to prove.",exact h,  exact h,,error,No
+exact_2,  -- 0 + x = 0 + y + 2 -> 0 + x = y + 2,"There is no transformation needed here, so the Lean code remains the same.",  rw [← zero_add x],"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ 0 + x = y + 2
+","y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- 0 + x = y + 2 -> 0 + x = 0 + y + 2,This statement is already in a formalized form so there's no need of conversion.,  rw [← zero_add y],"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ 0 + x = 0 + y + 2
+","y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No
+exact_2,  -- x = y + 2,"The formalized version of the natural language statement ""x = y + 2"" in Lean syntax is:
+
+exact h",  exact h,,"y x : ℕ
+h : 0 + x = 0 + y + 2
+⊢ x = y + 2
+",No

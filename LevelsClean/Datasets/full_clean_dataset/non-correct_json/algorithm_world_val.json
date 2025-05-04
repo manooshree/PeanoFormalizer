@@ -1,0 +1,242 @@
+{
+    "add_left_comm": {
+        "add_left_comm_dev_1": [
+            {
+                "theorem": "add_left_comm_dev_1",
+                "NL": "-- Theorem Declaration: Prove that for natural numbers a, b, and c, a + (b + c) = b + (a + c).",
+                "FL": "theorem add_left_comm_dev_1 (a b c : \u2115) : a + (b + c) = b + (a + c) := by",
+                "state": "a b c : \u2115\n\u22a2 a + (b + c) = b + (a + c)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_left_comm_dev_1",
+                "NL": "-- By associativity of addition, can change a + (b + c) into (a + b) + c",
+                "FL": "rw [\u2190 add_assoc]",
+                "state": "a b c : \u2115\n\u22a2 a + b + c = b + (a + c)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_left_comm_dev_1",
+                "NL": "-- So we just need to show b + (a + c) = b + (a + c), which is true by reflexivity.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "add_left_comm_dev_2": [
+            {
+                "theorem": "add_left_comm_dev_2",
+                "NL": "-- Theorem Declaration: Prove that for natural numbers a, b, and c, a + (b + c) = b + (a + c).",
+                "FL": "theorem add_left_comm_dev_2 (a b c : \u2115) : a + (b + c) = b + (a + c) := by",
+                "state": "a b c : \u2115\n\u22a2 a + (b + c) = b + (a + c)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_left_comm_dev_2",
+                "NL": "-- a + (b + c) = b + (a + c) -> (a + b) + c = b + (a + c)",
+                "FL": "rw [\u2190 add_assoc]",
+                "state": "a b c : \u2115\n\u22a2 a + b + c = b + (a + c)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "add_left_comm_dev_2",
+                "NL": "-- lhs = rhs",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "var_swap": {
+        "var_swap_dev_1": [
+            {
+                "theorem": "var_swap_dev_1",
+                "NL": "-- Theorem Declaration: Prove (a + b) + (c + d) = ((a + c) + d) + b for natural numbers a, b, c, d",
+                "FL": "theorem var_swap_dev_1 (a b c d : \u2115) : a + b + (c + d) = a + c + d + b := by",
+                "state": "a b c d : \u2115\n\u22a2 a + b + (c + d) = a + c + d + b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "var_swap_dev_1",
+                "NL": "-- Use associativity of addition to change a + b + (c + d) into a + (b + (c + d)) and a + c + d + b into a + (c + (d + b))",
+                "FL": "repeat rw [add_assoc]",
+                "state": "a b c d : \u2115\n\u22a2 a + (b + (c + d)) = a + (c + (d + b))\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "var_swap_dev_1",
+                "NL": "-- So we must show that a + (c + (d + b)) = a + (c + (d + b)), which is true by reflexivity.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "var_swap_dev_2": [
+            {
+                "theorem": "var_swap_dev_2",
+                "NL": "-- Theorem Declaration: Prove (a + b) + (c + d) = ((a + c) + d) + b for natural numbers a, b, c, d",
+                "FL": "theorem var_swap_dev_2 (a b c d : \u2115) : a + b + (c + d) = a + c + d + b := by",
+                "state": "a b c d : \u2115\n\u22a2 a + b + (c + d) = a + c + d + b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "var_swap_dev_2",
+                "NL": "-- a + b + (c + d) = a + c + d + b -> a + (b + (c + d)) = a + (c + (d + b))",
+                "FL": "repeat rw [add_assoc]",
+                "state": "a b c d : \u2115\n\u22a2 a + (b + (c + d)) = a + (c + (d + b))\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "var_swap_dev_2",
+                "NL": "-- lhs = rhs",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "succ_peano": {
+        "succ_peano_dev_1": [
+            {
+                "theorem": "succ_peano_dev_1",
+                "NL": "-- Theorem Declaration: Prove that for natural numbers a, b, a = b, given that succ a = succ b",
+                "FL": "theorem succ_peano_dev_1 (a b : \u2115) (h : succ a = succ b) : a = b := by",
+                "state": "a b : \u2115\nh : succ a = succ b\n\u22a2 a = b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_peano_dev_1",
+                "NL": "-- We can change a into pred (succ a) in the goal a = b",
+                "FL": "rw [\u2190 pred_succ a]",
+                "state": "a b : \u2115\nh : succ a = succ b\n\u22a2 pred (succ a) = b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_peano_dev_1",
+                "NL": "-- So we must show b = b, which is true by reflexivity.",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "succ_peano_dev_2": [
+            {
+                "theorem": "succ_peano_dev_2",
+                "NL": "-- Theorem Declaration: Prove that for natural numbers a, b, a = b, given that succ a = succ b",
+                "FL": "theorem succ_peano_dev_2 (a b : \u2115) (h : succ a = succ b) : a = b := by",
+                "state": "a b : \u2115\nh : succ a = succ b\n\u22a2 a = b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_peano_dev_2",
+                "NL": "-- a = b -> pred (succ a) = b",
+                "FL": "rw [\u2190 pred_succ a]",
+                "state": "a b : \u2115\nh : succ a = succ b\n\u22a2 pred (succ a) = b\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_peano_dev_2",
+                "NL": "-- lhs = rhs",
+                "FL": "rfl",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "succ_ne_zero": {
+        "succ_ne_zero_dev_1": [
+            {
+                "theorem": "succ_ne_zero_dev_1",
+                "NL": "-- Theorem Declaration: Prove the Peano axiom that the successor of a natural number cannot be 0 for all natural numbers \"a\".",
+                "FL": "theorem succ_ne_zero_dev_1 (a : \u2115) : succ a \u2260 0 := by",
+                "state": "a : \u2115\n\u22a2 succ a \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_ne_zero_dev_1",
+                "NL": "-- To show succ a \u2260 0, we need to assume succ a = 0 and derive a contradiction/falsehood.",
+                "FL": "intro h",
+                "state": "a : \u2115\nh : succ a = 0\n\u22a2 False\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_ne_zero_dev_1",
+                "NL": "-- False and is_zero (succ 0) are equivalent, so we chose to show the latter.",
+                "FL": "rw [\u2190 is_zero_succ a]",
+                "state": "a : \u2115\nh : succ a = 0\n\u22a2 is_zero (succ a)\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_ne_zero_dev_1",
+                "NL": "-- True has the trivial proof.",
+                "FL": "trivial",
+                "state": "",
+                "is_correct": false
+            }
+        ],
+        "succ_ne_zero_dev_2": [
+            {
+                "theorem": "succ_ne_zero_dev_2",
+                "NL": "-- Theorem Declaration: Prove the Peano axiom that the successor of a natural number cannot be 0 for all natural numbers \"a\".",
+                "FL": "theorem succ_ne_zero_dev_2 (a : \u2115) : succ a \u2260 0 := by",
+                "state": "a : \u2115\n\u22a2 succ a \u2260 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_ne_zero_dev_2",
+                "NL": "-- assume succ a = 0",
+                "FL": "intro h",
+                "state": "a : \u2115\nh : succ a = 0\n\u22a2 False\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_ne_zero_dev_2",
+                "NL": "-- is_zero (succ 0) -> is_zero 0",
+                "FL": "rw [h]",
+                "state": "a : \u2115\nh : succ a = 0\n\u22a2 is_zero 0\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_ne_zero_dev_2",
+                "NL": "-- clearly, True",
+                "FL": "trivial",
+                "state": "",
+                "is_correct": false
+            }
+        ]
+    },
+    "succ_ne_succ": {
+        "succ_ne_succ_dev_1": [
+            {
+                "theorem": "succ_ne_succ_dev_1",
+                "NL": "-- Theorem Declaration: Prove the Peano axiom that two numbers of which the successors are equal are themselves equal for natural numbers m, n",
+                "FL": "theorem succ_ne_succ_dev_1 (m n : \u2115) (h : m \u2260 n) : succ m \u2260 succ n := by",
+                "state": "m n : \u2115\nh : m \u2260 n\n\u22a2 succ m \u2260 succ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_ne_succ_dev_1",
+                "NL": "-- We use proof by contraposition. So, we assume succ m = succ n and show m = n.",
+                "FL": "contrapose! h",
+                "state": "m n : \u2115\nh : succ m = succ n\n\u22a2 m = n\n",
+                "is_correct": true
+            }
+        ],
+        "succ_ne_succ_dev_2": [
+            {
+                "theorem": "succ_ne_succ_dev_2",
+                "NL": "-- Theorem Declaration: Prove the Peano axiom that two numbers of which the successors are equal are themselves equal for natural numbers m, n",
+                "FL": "theorem succ_ne_succ_dev_2 (m n : \u2115) (h : m \u2260 n) : succ m \u2260 succ n := by",
+                "state": "m n : \u2115\nh : m \u2260 n\n\u22a2 succ m \u2260 succ n\n",
+                "is_correct": true
+            },
+            {
+                "theorem": "succ_ne_succ_dev_2",
+                "NL": "-- proof by contraposition",
+                "FL": "contrapose! h",
+                "state": "m n : \u2115\nh : succ m = succ n\n\u22a2 m = n\n",
+                "is_correct": true
+            }
+        ]
+    }
+}

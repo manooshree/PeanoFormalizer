@@ -1,0 +1,20 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Is Correct
+twoaddtwo,-- 4 -> succ(3) on the RHS to obtain 2 + 2 = succ(3),rw [four_eq_succ_three],rw [four_eq_succ_three],"⊢ 2 + 2 = succ 3
+","⊢ 2 + 2 = succ 3
+",Yes
+twoaddtwo,-- 3 -> succ(2) on the RHS to obtain 2 + 2 = succ(succ(2)),rw [three_eq_succ_two],rw [three_eq_succ_two],"⊢ 2 + 2 = succ (succ 2)
+","⊢ 2 + 2 = succ (succ 2)
+",Yes
+twoaddtwo,-- 2 -> succ(1) on the LHS and RHS to obtain succ(1) + succ(1) = succ(succ(succ(1))),rw [two_eq_succ_one],rw [two_eq_succ_one],"⊢ succ 1 + succ 1 = succ (succ (succ 1))
+","⊢ succ 1 + succ 1 = succ (succ (succ 1))
+",Yes
+twoaddtwo,--  succ(1) + succ(1) -> succ(succ(1) + 1) on the LHS to obtain succ(succ(1) + 1) = succ(succ(succ(1))),rw [add_succ],rw [add_succ],"⊢ succ (succ 1 + 1) = succ (succ (succ 1))
+","⊢ succ (succ 1 + 1) = succ (succ (succ 1))
+",Yes
+twoaddtwo,-- 1 -> succ(0) on the LHS and RHS to obtain succ(succ(succ(0) + succ(0))) = succ(succ(succ(0))),rw [one_eq_succ_zero],rw [one_eq_succ_zero],"⊢ succ (succ (succ 0) + succ 0) = succ (succ (succ (succ 0)))
+","⊢ succ (succ (succ 0) + succ 0) = succ (succ (succ (succ 0)))
+",Yes
+twoaddtwo,-- succ (succ (succ 0) + succ 0) -> succ(succ(succ((0))) + 0 on the LHS to obtain succ(succ(succ(0) + 0)) = succ(succ(succ(0))),rw [add_zero],rw [add_succ],"⊢ succ (succ (succ (succ 0) + 0)) = succ (succ (succ (succ 0)))
+",error,No
+twoaddtwo,-- succ(succ(succ((0))) + 0 -> succ(succ(succ((0))) on LHS to obtain succ(succ(succ(0))) = succ(succ(succ(0))),rfl,rw [add_zero],"⊢ succ (succ (succ (succ 0))) = succ (succ (succ (succ 0)))
+",error,No

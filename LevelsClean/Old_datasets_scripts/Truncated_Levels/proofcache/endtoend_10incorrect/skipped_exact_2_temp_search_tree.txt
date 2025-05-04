@@ -1,0 +1,5 @@
+rw [zero_add] at h
+	rw [h]
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		rfl
+		SYSTEM: QED

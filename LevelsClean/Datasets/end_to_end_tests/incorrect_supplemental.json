@@ -1,0 +1,6 @@
+{"addition_world_val": [{
+        "theorem": "add_right_comm_persona_2_d",
+        "proof_is_correct": true,
+        "full_proof": "theorem add_right_comm_persona_2_d_temp (a b c : \u2115) : a + b + c = a + c + b := by\nrw [add_assoc]\nrw [add_assoc]\nrfl-- error"
+    }]
+}

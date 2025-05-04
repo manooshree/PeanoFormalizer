@@ -1,0 +1,56 @@
+{
+    "implication_world_val": {
+        "correct_accuracy": "2 / 2 = 100.00%",
+        "incorrect_accuracy": "0 / 0 = N/A",
+        "proof_accuracy": "2 / 2 = 100.00%",
+        "correct_step_errored_accuracy": "2 / 2 = 100.00%"
+    },
+    "multiplication_world_val": {
+        "correct_accuracy": "3 / 3 = 100.00%",
+        "incorrect_accuracy": "4 / 4 = 100.00%",
+        "proof_accuracy": "2 / 2 = 100.00%",
+        "correct_step_errored_accuracy": "2 / 2 = 100.00%"
+    },
+    "AdvMultiplication_world_val": {
+        "correct_accuracy": "2 / 2 = 100.00%",
+        "incorrect_accuracy": "2 / 2 = 100.00%",
+        "proof_accuracy": "2 / 2 = 100.00%",
+        "correct_step_errored_accuracy": "2 / 2 = 100.00%"
+    },
+    "algorithm_world_val": {
+        "correct_accuracy": "0 / 2 = 0.00%",
+        "incorrect_accuracy": "2 / 2 = 100.00%",
+        "proof_accuracy": "0 / 2 = 0.00%",
+        "correct_step_errored_accuracy": "2 / 2 = 100.00%"
+    },
+    "less_or_equal_world_val": {
+        "correct_accuracy": "19 / 26 = 73.08%",
+        "incorrect_accuracy": "1 / 2 = 50.00%",
+        "proof_accuracy": "0 / 2 = 0.00%",
+        "correct_step_errored_accuracy": "1 / 2 = 50.00%"
+    },
+    "power_world_val": {
+        "correct_accuracy": "1 / 1 = 100.00%",
+        "incorrect_accuracy": "0 / 0 = N/A",
+        "proof_accuracy": "1 / 1 = 100.00%",
+        "correct_step_errored_accuracy": "1 / 1 = 100.00%"
+    },
+    "tutorial_world_val": {
+        "correct_accuracy": "2 / 4 = 50.00%",
+        "incorrect_accuracy": "3 / 3 = 100.00%",
+        "proof_accuracy": "0 / 2 = 0.00%",
+        "correct_step_errored_accuracy": "2 / 2 = 100.00%"
+    },
+    "AdvAddition_world_val": {
+        "correct_accuracy": "8 / 9 = 88.89%",
+        "incorrect_accuracy": "4 / 5 = 80.00%",
+        "proof_accuracy": "0 / 2 = 0.00%",
+        "correct_step_errored_accuracy": "1 / 2 = 50.00%"
+    },
+    "addition_world_val": {
+        "correct_accuracy": "5 / 6 = 83.33%",
+        "incorrect_accuracy": "2 / 2 = 100.00%",
+        "proof_accuracy": "1 / 2 = 50.00%",
+        "correct_step_errored_accuracy": "2 / 2 = 100.00%"
+    }
+}

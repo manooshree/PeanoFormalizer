@@ -1,0 +1,50 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Is Correct
+power_world_val,zero_pow_succ,"-- We know that 0^(succ m) = 0^m * 0, so our goal becomes 0^m * 0 = 0",rw [pow_succ],rw [pow_succ],"m : ℕ
+⊢ 0 ^ m * 0 = 0
+","m : ℕ
+⊢ 0 ^ m * 0 = 0
+",Yes
+power_world_val,zero_pow_succ,-- 0=0,rfl,rw [mul_zero],"m : ℕ
+⊢ 0 = 0
+",error,No
+power_world_val,zero_pow_succ,"-- lhs = rhs, so we are done.",rfl,rfl,,error,Yes
+power_world_val,zero_pow_succ,"-- We can use induction on m. For the base case, we want to show that 0^succ(0) = 0.","rw [pow_succ, mul_zero]",induction m with h hd,"case zero
+⊢ 0 ^ succ 0 = 0
+case succ
+h : ℕ
+hd : 0 ^ succ h = 0
+⊢ 0 ^ succ (succ h) = 0
+","m : ℕ
+⊢ 0 = 0
+",No
+power_world_val,zero_pow_succ,"-- Using the fact that 1 is the successor of zero, we write 0^1 = 0.",rw [pow_one],rw[← one_eq_succ_zero],"case zero
+⊢ 0 ^ 1 = 0
+case succ
+h : ℕ
+hd : 0 ^ succ h = 0
+⊢ 0 ^ succ (succ h) = 0
+",error,No
+power_world_val,zero_pow_succ,"-- We know that anything to the power of one is equal to itself, so our goal becomes: 0 = 0",rfl,rw[pow_one],"  ?a ^ 1
+case zero
+⊢ 0 ^ 1 = 0
+",error,No
+power_world_val,zero_pow_succ,"-- We can conclude the proof by reflexivity, as the LHS and RHS of our goal are identical.",rfl,rfl,"  ?a ^ 1
+case zero
+⊢ 0 ^ 1 = 0
+",error,Yes
+power_world_val,zero_pow_succ,"-- Next, we consider the inductive case, where we want to show that 0^succ(succ m) = 0. By the successor definition of the power function, we can write our goal as: 0^succ(m) * 0 = 0.",rw [pow_succ],rw[pow_succ],"  ?a ^ 1
+case zero
+⊢ 0 ^ 1 = 0
+",error,No
+power_world_val,zero_pow_succ,"-- We see that we can apply our inductive hypothesis, that 0^succ(m) = 0, and our goal becomes: 0*0 = 0","rw [pow_succ, mul_zero]",rw[hd],"  ?a ^ 1
+case zero
+⊢ 0 ^ 1 = 0
+",error,No
+power_world_val,zero_pow_succ,"-- Anything multiplied by zero is zero, so we simplify to: 0*0",rw [mul_zero],rw[mul_zero],"  ?a ^ 1
+case zero
+⊢ 0 ^ 1 = 0
+",error,No
+power_world_val,zero_pow_succ,"-- The lhs and rhs are identical, so we are done by reflexivity.",rfl,rfl,"  ?a ^ 1
+case zero
+⊢ 0 ^ 1 = 0
+",error,Yes

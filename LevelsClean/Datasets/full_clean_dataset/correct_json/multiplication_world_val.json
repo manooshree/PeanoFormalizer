@@ -1,0 +1,648 @@
+{
+    "mul_one": {
+        "mul_one_dev_1": [{
+            "theorem": "mul_one_dev_1",
+            "NL": "-- Theorem Declaration: Prove the multiplicative identity property, the multiplication of m * 1 is m, for all natural numbers",
+            "FL": "theorem mul_one_dev_1 (m : \u2115) : m * 1 = m := by",
+            "state": "m : \u2115\n\u22a2 m * 1 = m\n"
+        }, {
+            "theorem": "mul_one_dev_1",
+            "NL": "-- m * succ 0 = m",
+            "FL": "rw [one_eq_succ_zero]",
+            "state": "m : \u2115\n\u22a2 m * succ 0 = m\n"
+        }, {
+            "theorem": "mul_one_dev_1",
+            "NL": "-- m * succ 0 = m -> m * 0 + m = m",
+            "FL": "rw [mul_succ]",
+            "state": "m : \u2115\n\u22a2 m * 0 + m = m\n"
+        }, {
+            "theorem": "mul_one_dev_1",
+            "NL": "-- m * 0 + m = m -> 0 + m = m",
+            "FL": "rw [mul_zero]",
+            "state": "m : \u2115\n\u22a2 0 + m = m\n"
+        }, {
+            "theorem": "mul_one_dev_1",
+            "NL": "-- 0 + m = m -> 0 + (0 + m) = 0 + m",
+            "FL": "rw [\u2190 zero_add m]",
+            "state": "m : \u2115\n\u22a2 0 + (0 + m) = 0 + m\n"
+        }, {
+            "theorem": "mul_one_dev_1",
+            "NL": "-- 0 + (0 + m) = 0 + m -> 0 + m + 0 = 0 + m",
+            "FL": "rw [add_comm]",
+            "state": "m : \u2115\n\u22a2 0 + m + 0 = 0 + m\n"
+        }, {
+            "theorem": "mul_one_dev_1",
+            "NL": "-- 0 + m = 0 + m -> 0 + m + 0 = 0 + m",
+            "FL": "rw [add_zero]",
+            "state": "m : \u2115\n\u22a2 0 + m = 0 + m\n"
+        }, {
+            "theorem": "mul_one_dev_1",
+            "NL": "-- lhs = rhs",
+            "FL": "rfl",
+            "state": ""
+        }],
+        "mul_one_dev_2": [{
+            "theorem": "mul_one_dev_2",
+            "NL": "-- Theorem Declaration: ",
+            "FL": "theorem mul_one_dev_2 (m : \u2115) : m * 1 = m := by",
+            "state": "m : \u2115\n\u22a2 m * 1 = m\n"
+        }, {
+            "theorem": "mul_one_dev_2",
+            "NL": "-- We know that 1 is the successor of 0 so by definition of multiplication we have m * 1 = m * 0 + m",
+            "FL": "rw [one_eq_succ_zero, mul_succ]",
+            "state": "m : \u2115\n\u22a2 m * 0 + m = m\n"
+        }, {
+            "theorem": "mul_one_dev_2",
+            "NL": "-- By definition of multiplicationo and addition, we simplify m * 0 + m to m.",
+            "FL": "rw [mul_zero, zero_add]",
+            "state": "m : \u2115\n\u22a2 m = m\n"
+        }, {
+            "theorem": "mul_one_dev_2",
+            "NL": "-- The lhs and rhs are equal, completing the proof",
+            "FL": "rfl",
+            "state": ""
+        }]
+    },
+    "zero_mul": {
+        "zero_mul_dev_1": [{
+            "theorem": "zero_mul_dev_1",
+            "NL": "-- Theorem Declaration: Prove that 0 * m = m for all natural numbers",
+            "FL": "theorem zero_mul_dev_1 (m : \u2115) : 0 * m = 0 := by",
+            "state": "m : \u2115\n\u22a2 0 * m = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_1",
+            "NL": "-- Proof by induction on m with base case 0 * 0 = 0 and inductive step 0 * d + 1 = 0",
+            "FL": "induction m with d hd",
+            "state": "case zero\n\u22a2 0 * 0 = 0\ncase succ\nd : \u2115\nhd : 0 * d = 0\n\u22a2 0 * succ d = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_1",
+            "NL": "-- First prove base case. Simplify LHS 0 * 0 to 0",
+            "FL": "rw [mul_zero]",
+            "state": "case zero\n\u22a2 0 = 0\ncase succ\nd : \u2115\nhd : 0 * d = 0\n\u22a2 0 * succ d = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_1",
+            "NL": "-- The base case is not complete.",
+            "FL": "rfl",
+            "state": "case succ\nd : \u2115\nhd : 0 * d = 0\n\u22a2 0 * succ d = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_1",
+            "NL": "-- Now for the inductive step. Rewrite LHS 0 * succ (d) to 0 * d + 0, using the definition of multiplication",
+            "FL": "rw [mul_succ]",
+            "state": "case succ\nd : \u2115\nhd : 0 * d = 0\n\u22a2 0 * d + 0 = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_1",
+            "NL": "-- Simplify the LHS 0 * d + 0 to 0 + 0 using the definition of addition",
+            "FL": "rw [add_zero]",
+            "state": "case succ\nd : \u2115\nhd : 0 * d = 0\n\u22a2 0 * d = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_1",
+            "NL": "-- This is exactly the inductive hypothesis so we can complete the proof.",
+            "FL": "exact hd",
+            "state": ""
+        }],
+        "zero_mul_dev_2": [{
+            "theorem": "zero_mul_dev_2",
+            "NL": "-- Theorem Declaration: Prove that 0 * m = m for all natural numbers",
+            "FL": "theorem zero_mul_dev_2 (m : \u2115) : 0 * m = 0 := by",
+            "state": "m : \u2115\n\u22a2 0 * m = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_2",
+            "NL": "-- Proof by induction on m with base case 0 * 0 = 0 and inductive step 0 * d + 1 = 0",
+            "FL": "induction m with d hd",
+            "state": "case zero\n\u22a2 0 * 0 = 0\ncase succ\nd : \u2115\nhd : 0 * d = 0\n\u22a2 0 * succ d = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_2",
+            "NL": "-- 0 * 0 = 0 -> 0 = 0",
+            "FL": "rw [mul_zero]",
+            "state": "case zero\n\u22a2 0 = 0\ncase succ\nd : \u2115\nhd : 0 * d = 0\n\u22a2 0 * succ d = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_2",
+            "NL": "-- That proves the base case.",
+            "FL": "rfl",
+            "state": "case succ\nd : \u2115\nhd : 0 * d = 0\n\u22a2 0 * succ d = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_2",
+            "NL": "-- 0 * succ d = 0 -> 0 * d + 0 = 0 -> 0 * d = 0",
+            "FL": "rw [mul_succ, add_zero]",
+            "state": "case succ\nd : \u2115\nhd : 0 * d = 0\n\u22a2 0 * d = 0\n"
+        }, {
+            "theorem": "zero_mul_dev_2",
+            "NL": "-- This is exactly the inductive hypothesis so we can complete the proof.",
+            "FL": "exact hd",
+            "state": ""
+        }]
+    },
+    "succ_mul": {
+        "succ_mul_dev_1": [{
+            "theorem": "succ_mul_dev_1",
+            "NL": "-- Theorem Declaration: Prove that succ a * b = a * b + b for all natural numbers a, b",
+            "FL": "theorem succ_mul_dev_1 (a b : \u2115) : succ a * b = a * b + b := by",
+            "state": "a b : \u2115\n\u22a2 succ a * b = a * b + b\n"
+        }, {
+            "theorem": "succ_mul_dev_1",
+            "NL": "-- Induct on b, with d = 0 as the base case and the inductive hypothesis succ a * d = a * d + d. There are now two proof goals, prove base case: succ a * 0 = a * 0 + 0, and inductive step: succ a * succ d = a * succ d + succ d.",
+            "FL": "induction b with d hd",
+            "state": "case zero\na : \u2115\n\u22a2 succ a * 0 = a * 0 + 0\ncase succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * succ d = a * succ d + succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_1",
+            "NL": "-- First we prove base case. Simplify succ a * 0 = a * 0 + 0 to 0 = 0 by definition of multiplication and addition",
+            "FL": "rw [add_zero, mul_zero, mul_zero]",
+            "state": "case zero\na : \u2115\n\u22a2 0 = 0\ncase succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * succ d = a * succ d + succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_1",
+            "NL": "-- The base case is complete.",
+            "FL": "rfl",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * succ d = a * succ d + succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_1",
+            "NL": "-- Now prove inductive step. We rewrite LHS succ a * succ d to succ a * d + succ a",
+            "FL": "rw [mul_succ, mul_succ]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * d + succ a = a * d + a + succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_1",
+            "NL": "-- Expand the RHS from a * succ d + succ d to a * d + a + succ d",
+            "FL": "rw [add_succ, add_succ]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ (succ a * d + a) = succ (a * d + a + d)\n"
+        }, {
+            "theorem": "succ_mul_dev_1",
+            "NL": "-- Rewrite the LHS using the inductive hypothesis",
+            "FL": "rw [hd]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ (a * d + d + a) = succ (a * d + a + d)\n"
+        }, {
+            "theorem": "succ_mul_dev_1",
+            "NL": "-- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a",
+            "FL": "rw [add_right_comm]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ (a * d + a + d) = succ (a * d + a + d)\n"
+        }, {
+            "theorem": "succ_mul_dev_1",
+            "NL": "-- The inductive step is complete.",
+            "FL": "rfl",
+            "state": ""
+        }],
+        "succ_mul_dev_2": [{
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- Theorem Declaration: Prove that succ a * b = a * b + b for all natural numbers a, b",
+            "FL": "theorem succ_mul_dev_2 (a b : \u2115) : succ a * b = a * b + b := by",
+            "state": "a b : \u2115\n\u22a2 succ a * b = a * b + b\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- Proof by induction on b, with succ a * 0 = a * 0 + 0 as the base case and the inductive case as succ a * d + 1 = a * d + 1 + d + 1.",
+            "FL": "induction b with d hd",
+            "state": "case zero\na : \u2115\n\u22a2 succ a * 0 = a * 0 + 0\ncase succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * succ d = a * succ d + succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- succ a * 0 = a * 0 + 0 -> 0 = a * 0 + 0",
+            "FL": "rw [mul_zero]",
+            "state": "case zero\na : \u2115\n\u22a2 0 = a * 0 + 0\ncase succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * succ d = a * succ d + succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- 0 = a * 0 + 0 -> 0 = 0 + 0",
+            "FL": "rw [mul_zero]",
+            "state": "case zero\na : \u2115\n\u22a2 0 = 0 + 0\ncase succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * succ d = a * succ d + succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- 0 = 0 + 0 -> 0 = 0",
+            "FL": "rw [add_zero]",
+            "state": "case zero\na : \u2115\n\u22a2 0 = 0\ncase succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * succ d = a * succ d + succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- Base case is complete.",
+            "FL": "rfl",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * succ d = a * succ d + succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- succ a * succ d = a * succ d + succ d -> succ a * succ d = succ d + a * succ d",
+            "FL": "rw [add_comm]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * succ d = succ d + a * succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- succ a * succ d = succ d + a * succ d -> succ a * d + succ a = succ d + a * succ d",
+            "FL": "rw [mul_succ]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ a * d + succ a = succ d + a * succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- ucc a * d + succ a = succ d + a * succ d -> succ (succ a * d + a) = succ d + a * succ d",
+            "FL": "rw [add_succ]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ (succ a * d + a) = succ d + a * succ d\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- succ (succ a * d + a) = succ d + a * succ d -> succ (succ a * d + a) = succ d + (a * d + a)",
+            "FL": "rw [mul_succ]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ (succ a * d + a) = succ d + (a * d + a)\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- succ (succ a * d + a) = succ d + (a * d + a)-> succ (succ a * d + a) = succ (d + (a * d + a))",
+            "FL": "rw [succ_add]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ (succ a * d + a) = succ (d + (a * d + a))\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- succ (succ a * d + a) = succ (d + (a * d + a)) -> succ (a * d + d + a) = succ (d + (a * d + a))",
+            "FL": "rw [hd]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ (a * d + d + a) = succ (d + (a * d + a))\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- succ (a * d + d + a) = succ (d + (a * d + a)) -> succ (a * d + d + a) = succ (d + a * d + a)",
+            "FL": "rw [\u2190 add_assoc]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ (a * d + d + a) = succ (d + a * d + a)\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- succ (a * d + d + a) = succ (d + a * d + a) -> succ (a * d + d + a) = succ (a * d + d + a)",
+            "FL": "rw [add_comm d]",
+            "state": "case succ\na d : \u2115\nhd : succ a * d = a * d + d\n\u22a2 succ (a * d + d + a) = succ (a * d + d + a)\n"
+        }, {
+            "theorem": "succ_mul_dev_2",
+            "NL": "-- This completes the inductive step.",
+            "FL": "rfl",
+            "state": ""
+        }]
+    },
+    "mul_comm": {
+        "mul_comm_dev_1": [{
+            "theorem": "mul_comm_dev_1",
+            "NL": "-- Theorem Declaration: Prove that multiplication is commutative, that is a * b = b * a for all natural numbers",
+            "FL": "theorem mul_comm_dev_1 (a b : \u2115) : a * b = b * a := by",
+            "state": "a b : \u2115\n\u22a2 a * b = b * a\n"
+        }, {
+            "theorem": "mul_comm_dev_1",
+            "NL": "-- Induct on b, with d = 0 as the base case and the inductive hypothesis a * d = d * a.",
+            "FL": "induction b with d hd",
+            "state": "case zero\na : \u2115\n\u22a2 a * 0 = 0 * a\ncase succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * succ d = succ d * a\n"
+        }, {
+            "theorem": "mul_comm_dev_1",
+            "NL": "-- First prove base case: a * 0 = 0 * a -> 0 = 0 * a by definition of multiplication",
+            "FL": "rw [mul_zero, zero_mul]",
+            "state": "case zero\na : \u2115\n\u22a2 0 = 0\ncase succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * succ d = succ d * a\n"
+        }, {
+            "theorem": "mul_comm_dev_1",
+            "NL": "-- Prove LHS and RHS are equal, 0 = 0, completing base case.",
+            "FL": "rfl",
+            "state": "case succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * succ d = succ d * a\n"
+        }, {
+            "theorem": "mul_comm_dev_1",
+            "NL": "-- Next prove inductive step: a * succ d = succ d * a -> a * d + a = d * a + a by definition of multiplication",
+            "FL": "rw [mul_succ, succ_mul]",
+            "state": "case succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * d + a = d * a + a\n"
+        }, {
+            "theorem": "mul_comm_dev_1",
+            "NL": "-- a * d + a = succ d * a -> a * d + a = d * a + a by the inductive hypothesis",
+            "FL": "rw [hd]",
+            "state": "case succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 d * a + a = d * a + a\n"
+        }, {
+            "theorem": "mul_comm_dev_1",
+            "NL": "-- a * d + a = d * a + a -> d * a + a = d * a + a by the commutative property of addition",
+            "FL": "rw [add_comm]",
+            "state": "case succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a + d * a = a + d * a\n"
+        }, {
+            "theorem": "mul_comm_dev_1",
+            "NL": "-- LHS and RHS are equal, completing the proof.",
+            "FL": "rfl",
+            "state": ""
+        }],
+        "mul_comm_dev_2": [{
+            "theorem": "mul_comm_dev_2",
+            "NL": "-- Theorem Declaration: Prove that multiplication is commutative, that is a * b = b * a for all natural numbers",
+            "FL": "theorem mul_comm_dev_2 (a b : \u2115) : a * b = b * a := by",
+            "state": "a b : \u2115\n\u22a2 a * b = b * a\n"
+        }, {
+            "theorem": "mul_comm_dev_2",
+            "NL": "-- Induct on b, with d = 0 as the base case and the inductive hypothesis a * d = d * a.",
+            "FL": "induction b with d hd",
+            "state": "case zero\na : \u2115\n\u22a2 a * 0 = 0 * a\ncase succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * succ d = succ d * a\n"
+        }, {
+            "theorem": "mul_comm_dev_2",
+            "NL": "-- First prove base case: a * 0 = 0 * a -> 0 = 0 * a",
+            "FL": "rw [mul_zero]",
+            "state": "case zero\na : \u2115\n\u22a2 0 = 0 * a\ncase succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * succ d = succ d * a\n"
+        }, {
+            "theorem": "mul_comm_dev_2",
+            "NL": "-- Simplify RHS 0 = 0 * a -> 0 = 0",
+            "FL": "rw [zero_mul]",
+            "state": "case zero\na : \u2115\n\u22a2 0 = 0\ncase succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * succ d = succ d * a\n"
+        }, {
+            "theorem": "mul_comm_dev_2",
+            "NL": "-- Prove LHS and RHS are equal, 0 = 0, completing base case.",
+            "FL": "rfl",
+            "state": "case succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * succ d = succ d * a\n"
+        }, {
+            "theorem": "mul_comm_dev_2",
+            "NL": "-- Next prove inductive step: a * succ d = succ d * a -> a * d + a = succ d * a.",
+            "FL": "rw [mul_succ]",
+            "state": "case succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * d + a = succ d * a\n"
+        }, {
+            "theorem": "mul_comm_dev_2",
+            "NL": "-- a * d + a = succ d * a -> a * d + a = d * a + a",
+            "FL": "rw [succ_mul]",
+            "state": "case succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 a * d + a = d * a + a\n"
+        }, {
+            "theorem": "mul_comm_dev_2",
+            "NL": "-- a * d + a = d * a + a -> d * a + a = d * a + a",
+            "FL": "rw [hd]",
+            "state": "case succ\na d : \u2115\nhd : a * d = d * a\n\u22a2 d * a + a = d * a + a\n"
+        }, {
+            "theorem": "mul_comm_dev_2",
+            "NL": "-- Prove LHS and RHS are equal, a * d + a = a * d + a, completing the proof.",
+            "FL": "rfl",
+            "state": ""
+        }]
+    },
+    "one_mul": {
+        "one_mul_dev_1": [{
+            "theorem": "one_mul_dev_1",
+            "NL": "-- Theorem Declaration: Prove that 1 * m = m, for all natural numbers",
+            "FL": "theorem one_mul_dev_1 (m : \u2115): 1 * m = m := by",
+            "state": "m : \u2115\n\u22a2 1 * m = m\n"
+        }, {
+            "theorem": "one_mul_dev_1",
+            "NL": "-- 1 * m = m -> m * 1 = m -> m = m by the commutative property of multiplication",
+            "FL": "rw [mul_comm, mul_one]",
+            "state": "m : \u2115\n\u22a2 m = m\n"
+        }, {
+            "theorem": "one_mul_dev_1",
+            "NL": "-- Prove LHS and RHS are equal, m = m, completing the proof",
+            "FL": "rfl",
+            "state": ""
+        }],
+        "one_mul_dev_2": [{
+            "theorem": "one_mul_dev_2",
+            "NL": "-- Theorem Declaration: Prove that 1 * m = m, for all natural numbers",
+            "FL": "theorem one_mul_dev_2 (m : \u2115): 1 * m = m := by",
+            "state": "m : \u2115\n\u22a2 1 * m = m\n"
+        }, {
+            "theorem": "one_mul_dev_2",
+            "NL": "-- 1 * m = m -> m * 1 = m",
+            "FL": "rw [mul_comm]",
+            "state": "m : \u2115\n\u22a2 m * 1 = m\n"
+        }, {
+            "theorem": "one_mul_dev_2",
+            "NL": "-- m * 1 = m -> m = m",
+            "FL": "rw [mul_one]",
+            "state": "m : \u2115\n\u22a2 m = m\n"
+        }, {
+            "theorem": "one_mul_dev_2",
+            "NL": "-- Prove LHS and RHS are equal, m = m, completing the proof",
+            "FL": "rfl",
+            "state": ""
+        }]
+    },
+    "two_mul": {
+        "two_mul_dev_1": [{
+            "theorem": "two_mul_dev_1",
+            "NL": "-- Theorem Declaration: Prove that 2 * m = m + m for all natural numbers",
+            "FL": "theorem two_mul_dev_1 (m : \u2115): 2 * m = m + m := by",
+            "state": "m : \u2115\n\u22a2 2 * m = m + m\n"
+        }, {
+            "theorem": "two_mul_dev_1",
+            "NL": "-- Rewrite LHS from 2 * m to succ 1 * m and simplify to m * m using identity property of multiplication",
+            "FL": "rw [two_eq_succ_one, succ_mul, one_mul]",
+            "state": "m : \u2115\n\u22a2 m + m = m + m\n"
+        }, {
+            "theorem": "two_mul_dev_1",
+            "NL": "-- Prove LHS and RHS are equal, m + m = m + m, completing the proof",
+            "FL": "rfl",
+            "state": ""
+        }],
+        "two_mul_dev_2": [{
+            "theorem": "two_mul_dev_2",
+            "NL": "-- Theorem Declaration: Prove that 2 * m = m + m for all natural numbers",
+            "FL": "theorem two_mul_dev_2 (m : \u2115): 2 * m = m + m := by",
+            "state": "m : \u2115\n\u22a2 2 * m = m + m\n"
+        }, {
+            "theorem": "two_mul_dev_2",
+            "NL": "-- 2 * m = m + m -> succ 1 * m = m + m -> m + m = m + m",
+            "FL": "rw [two_eq_succ_one, succ_mul, one_mul]",
+            "state": "m : \u2115\n\u22a2 m + m = m + m\n"
+        }, {
+            "theorem": "two_mul_dev_2",
+            "NL": "-- LHS and RHS are equal, completing the proof",
+            "FL": "rfl",
+            "state": ""
+        }]
+    },
+    "mul_add": {
+        "mul_add_dev_1": [{
+            "theorem": "mul_add_dev_1",
+            "NL": "-- Theorem Declaration: Prove that multiplication is distributive over addition. In other words, for all natural numbers a * (b + c) = a * b + a * c",
+            "FL": "theorem mul_add_dev_1 (a b c : \u2115) : a * (b + c) = a * b + a * c := by",
+            "state": "a b c : \u2115\n\u22a2 a * (b + c) = a * b + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_1",
+            "NL": "-- Proof by induction on b, with a * (0 + c) = a * 0 + a * c as the base case and  a * (succ b + c) = a * succ b + a * c as the inductive step.",
+            "FL": "induction b with d hd",
+            "state": "case zero\na c : \u2115\n\u22a2 a * (0 + c) = a * 0 + a * c\ncase succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (succ d + c) = a * succ d + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_1",
+            "NL": "-- First prove base case. a * (0 + c) = a * 0 + a * c -> a * c = a * 0 + a * c -> a * c = 0 + a * c -> a * c = a * c",
+            "FL": "rw [zero_add, mul_zero, zero_add]",
+            "state": "case zero\na c : \u2115\n\u22a2 a * c = a * c\ncase succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (succ d + c) = a * succ d + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_1",
+            "NL": "-- The base case is complete.",
+            "FL": "rfl",
+            "state": "case succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (succ d + c) = a * succ d + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_1",
+            "NL": "-- Next prove inductive step. a * (succ b + c) = a * succ b + a * c -> a * succ (b + c) = a * succ b + a * c -> a * (b + c) + a = a * b + a * c + a",
+            "FL": "rw [succ_add, mul_succ]",
+            "state": "case succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (d + c) + a = a * succ d + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_1",
+            "NL": "-- a * (b + c) + a = a * b + a * c + a -> a * (b + c) + a = a * b + a + a * c -> a * (b + c) + a = a * b + a * c + a",
+            "FL": "rw [mul_succ, add_right_comm]",
+            "state": "case succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (d + c) + a = a * d + a * c + a\n"
+        }, {
+            "theorem": "mul_add_dev_1",
+            "NL": "-- a * (b + c) + a = a * b + a * c + a -> a * b + a * c + a = a * b + a * c + a using the inductive hypothesis",
+            "FL": "rw [hd]",
+            "state": "case succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * d + a * c + a = a * d + a * c + a\n"
+        }, {
+            "theorem": "mul_add_dev_1",
+            "NL": "-- The inductive step is complete. So the whole proof is complete.",
+            "FL": "rfl",
+            "state": ""
+        }],
+        "mul_add_dev_2": [{
+            "theorem": "mul_add_dev_2",
+            "NL": "-- Theorem Declaration: Prove that multiplication is distributive over addition. In other words, for all natural numbers a * (b + c) = a * b + a * c",
+            "FL": "theorem mul_add_dev_2 (a b c : \u2115) : a * (b + c) = a * b + a * c := by",
+            "state": "a b c : \u2115\n\u22a2 a * (b + c) = a * b + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_2",
+            "NL": "-- Proof by induction on b, with a * (0 + c) = a * 0 + a * c as the base case and  a * (succ b + c) = a * succ b + a * c as the inductive step.",
+            "FL": "induction b with d hd",
+            "state": "case zero\na c : \u2115\n\u22a2 a * (0 + c) = a * 0 + a * c\ncase succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (succ d + c) = a * succ d + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_2",
+            "NL": "-- First prove base case. a * (0 + c) = a * 0 + a * c -> a * c = a * c by definition of multiplication and addition",
+            "FL": "rw [zero_add, mul_zero, zero_add]",
+            "state": "case zero\na c : \u2115\n\u22a2 a * c = a * c\ncase succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (succ d + c) = a * succ d + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_2",
+            "NL": "-- The base case is complete.",
+            "FL": "rfl",
+            "state": "case succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (succ d + c) = a * succ d + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_2",
+            "NL": "-- Next prove inductive step. a * (succ b + c) = a * succ b + a * c -> a * (b + c) + a = a * b + a * c + a by definition of multiplication and addition",
+            "FL": "rw [succ_add, mul_succ]",
+            "state": "case succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (d + c) + a = a * succ d + a * c\n"
+        }, {
+            "theorem": "mul_add_dev_2",
+            "NL": "-- a * (b + c) + a = a * b + a * c + a -> a * (b + c) + a = a * b + a * c + a by the definition of multiplication and the commutative property of addition",
+            "FL": "rw [mul_succ, add_right_comm]",
+            "state": "case succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * (d + c) + a = a * d + a * c + a\n"
+        }, {
+            "theorem": "mul_add_dev_2",
+            "NL": "-- a * (b + c) + a = a * b + a * c + a -> a * b + a * c + a = a * b + a * c + a using the inductive hypothesis",
+            "FL": "rw [hd]",
+            "state": "case succ\na c d : \u2115\nhd : a * (d + c) = a * d + a * c\n\u22a2 a * d + a * c + a = a * d + a * c + a\n"
+        }, {
+            "theorem": "mul_add_dev_2",
+            "NL": "-- The inductive step is complete. So the whole proof is complete.",
+            "FL": "rfl",
+            "state": ""
+        }]
+    },
+    "add_mul": {
+        "add_mul_dev_1": [{
+            "theorem": "add_mul_dev_1",
+            "NL": "-- Theorem Declaration: Prove that multiplication is distributive over addition. In other words, for all natural numbers (a + b) * c = a * c + b * c",
+            "FL": "theorem add_mul_dev_1 (a b c : \u2115) : (a + b) * c = a * c + b * c := by",
+            "state": "a b c : \u2115\n\u22a2 (a + b) * c = a * c + b * c\n"
+        }, {
+            "theorem": "add_mul_dev_1",
+            "NL": "-- (a + b) * c = a * c + b * c -> c * (a + b) = a * c + b * c",
+            "FL": "rw [mul_comm]",
+            "state": "a b c : \u2115\n\u22a2 c * (a + b) = a * c + b * c\n"
+        }, {
+            "theorem": "add_mul_dev_1",
+            "NL": "-- c * (a + b) = a * c + b * c -> c * a + c * b = a * c + b * c",
+            "FL": "rw [mul_add]",
+            "state": "a b c : \u2115\n\u22a2 c * a + c * b = a * c + b * c\n"
+        }, {
+            "theorem": "add_mul_dev_1",
+            "NL": "-- c * a + c * b = a * c + b * c -> a * c + c * b = a * c + b * c",
+            "FL": "rw [mul_comm]",
+            "state": "a b c : \u2115\n\u22a2 a * c + c * b = a * c + b * c\n"
+        }, {
+            "theorem": "add_mul_dev_1",
+            "NL": "-- a * c + c * b = a * c + b * c -> a * c + b * c = a * c + b * c",
+            "FL": "rw [mul_comm b]",
+            "state": "a b c : \u2115\n\u22a2 a * c + c * b = a * c + c * b\n"
+        }, {
+            "theorem": "add_mul_dev_1",
+            "NL": "-- Prove LHS and RHS are equal, completing the proof",
+            "FL": "rfl",
+            "state": ""
+        }],
+        "add_mul_dev_2": [{
+            "theorem": "add_mul_dev_2",
+            "NL": "-- Theorem Declaration: Prove that multiplication is distributive over addition. In other words, for all natural numbers (a + b) * c = a * c + b * c",
+            "FL": "theorem add_mul_dev_2 (a b c : \u2115) : (a + b) * c = a * c + b * c := by",
+            "state": "a b c : \u2115\n\u22a2 (a + b) * c = a * c + b * c\n"
+        }, {
+            "theorem": "add_mul_dev_2",
+            "NL": "-- Rewrite LHS using the commutative property of multiplication and the distributive property of multiplication over addition.",
+            "FL": "rw [mul_comm, mul_add]",
+            "state": "a b c : \u2115\n\u22a2 c * a + c * b = a * c + b * c\n"
+        }, {
+            "theorem": "add_mul_dev_2",
+            "NL": "-- Apply the commutative property of multiplication everywhere to LHS",
+            "FL": "repeat rw [mul_comm c]",
+            "state": "a b c : \u2115\n\u22a2 a * c + b * c = a * c + b * c\n"
+        }, {
+            "theorem": "add_mul_dev_2",
+            "NL": "-- Prove LHS and RHS are equal, completing the proof",
+            "FL": "rfl",
+            "state": ""
+        }]
+    },
+    "mul_assoc": {
+        "mul_assoc_dev_1": [{
+            "theorem": "mul_assoc_dev_1",
+            "NL": "-- Theorem Declaration: Prove that multiplication is associative for all natural numbers, that is (a * b) * c = a * (b * c)",
+            "FL": "theorem mul_assoc_dev_1 (a b c : \u2115) : (a * b) * c = a * (b * c) := by",
+            "state": "a b c : \u2115\n\u22a2 a * b * c = a * (b * c)\n"
+        }, {
+            "theorem": "mul_assoc_dev_1",
+            "NL": "-- Induct on c, with (a * b) * 0 = a * (b * 0) as the base case and (a * b) * succ d = a * (b * succ d) as the inductive step.",
+            "FL": "induction c with d hd",
+            "state": "case zero\na b : \u2115\n\u22a2 a * b * 0 = a * (b * 0)\ncase succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * succ d = a * (b * succ d)\n"
+        }, {
+            "theorem": "mul_assoc_dev_1",
+            "NL": "-- a * b * 0 = a * (b * 0) -> 0 = a * 0 -> 0 = 0",
+            "FL": "rw [mul_zero, mul_zero, mul_zero]",
+            "state": "case zero\na b : \u2115\n\u22a2 0 = 0\ncase succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * succ d = a * (b * succ d)\n"
+        }, {
+            "theorem": "mul_assoc_dev_1",
+            "NL": "-- Prove LHS and RHS are equal, 0 = 0, completing base case",
+            "FL": "rfl",
+            "state": "case succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * succ d = a * (b * succ d)\n"
+        }, {
+            "theorem": "mul_assoc_dev_1",
+            "NL": "-- for the inductive case, a * b * succ d = a * (b * succ d) -> a * b * d + a * b = a * (b * succ d)",
+            "FL": "rw [mul_succ]",
+            "state": "case succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * d + a * b = a * (b * succ d)\n"
+        }, {
+            "theorem": "mul_assoc_dev_1",
+            "NL": "-- a * b * d + a * b = a * (b * succ d) -> a * b * d + a * b = a * (b * d + b)",
+            "FL": "rw [mul_succ]",
+            "state": "case succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * d + a * b = a * (b * d + b)\n"
+        }, {
+            "theorem": "mul_assoc_dev_1",
+            "NL": "-- a * b * d + a * b = a * (b * d + b) -> a * b * d + a * b = a * (b * d) + a * b",
+            "FL": "rw [mul_add]",
+            "state": "case succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * d + a * b = a * (b * d) + a * b\n"
+        }, {
+            "theorem": "mul_assoc_dev_1",
+            "NL": "-- a * b * d + a * b = a * (b * d) + a * b -> a * b * d + a * b = a * b * d + a * b",
+            "FL": "rw [\u2190 hd]",
+            "state": "case succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * d + a * b = a * b * d + a * b\n"
+        }, {
+            "theorem": "mul_assoc_dev_1",
+            "NL": "-- Prove LHS and RHS are equal, completing base case",
+            "FL": "rfl",
+            "state": ""
+        }],
+        "mul_assoc_dev_2": [{
+            "theorem": "mul_assoc_dev_2",
+            "NL": "-- Theorem Declaration: Prove that multiplication is associative for all natural numbers, that is (a * b) * c = a * (b * c)",
+            "FL": "theorem mul_assoc_dev_2 (a b c : \u2115) : (a * b) * c = a * (b * c) := by",
+            "state": "a b c : \u2115\n\u22a2 a * b * c = a * (b * c)\n"
+        }, {
+            "theorem": "mul_assoc_dev_2",
+            "NL": "-- Induct on c, with (a * b) * 0 = a * (b * 0) as the base case and (a * b) * succ d = a * (b * succ d) as the inductive step.",
+            "FL": "induction c with d hd",
+            "state": "case zero\na b : \u2115\n\u22a2 a * b * 0 = a * (b * 0)\ncase succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * succ d = a * (b * succ d)\n"
+        }, {
+            "theorem": "mul_assoc_dev_2",
+            "NL": "-- First prove base case. Rewrite LHS and RHS using the definition of multiplication with zero, simplifying the equation to 0 = 0",
+            "FL": "rw [mul_zero, mul_zero, mul_zero]",
+            "state": "case zero\na b : \u2115\n\u22a2 0 = 0\ncase succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * succ d = a * (b * succ d)\n"
+        }, {
+            "theorem": "mul_assoc_dev_2",
+            "NL": "-- Prove LHS and RHS are equal, 0 = 0, completing base case",
+            "FL": "rfl",
+            "state": "case succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * succ d = a * (b * succ d)\n"
+        }, {
+            "theorem": "mul_assoc_dev_2",
+            "NL": "-- For the inductive step, a * b * succ d = a * (b * succ d) simplifies to a * b * d + a * b = a * (b * d + b) using the definition of multiplication with succ",
+            "FL": "rw [mul_succ, mul_succ]",
+            "state": "case succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * b * d + a * b = a * (b * d + b)\n"
+        }, {
+            "theorem": "mul_assoc_dev_2",
+            "NL": "-- Use the inductive hypothesis to simplify this further to a * (b * d) + a * b = a * (b * d + b)",
+            "FL": "rw [hd]",
+            "state": "case succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * (b * d) + a * b = a * (b * d + b)\n"
+        }, {
+            "theorem": "mul_assoc_dev_2",
+            "NL": "-- simplify to a * (b * d) + a * b = a * (b * d) + a * b using the distributive property of multiplication over addition",
+            "FL": "rw [mul_add]",
+            "state": "case succ\na b d : \u2115\nhd : a * b * d = a * (b * d)\n\u22a2 a * (b * d) + a * b = a * (b * d) + a * b\n"
+        }, {
+            "theorem": "mul_assoc_dev_2",
+            "NL": "-- The LHS and RHS are equal, completing the proof",
+            "FL": "rfl",
+            "state": ""
+        }]
+    }
+}

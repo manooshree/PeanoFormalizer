@@ -1,0 +1,173 @@
+exact h
+	rw [add_succ]
+		intro h'
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			symm at h'
+				apply zero_ne_succ at h'
+					symm
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						apply zero_ne_succ at h'
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+						cases a with d
+							SYSTEM: Exceeded budget
+						apply succ_inj
+							SYSTEM: Exceeded budget
+					apply zero_ne_succ at h'
+						SYSTEM: Exceeded budget
+					cases a with d
+						SYSTEM: Exceeded budget
+					exact false.elim h'
+						SYSTEM: Exceeded budget
+					cases d with b
+						SYSTEM: Exceeded budget
+				apply add_zero at h'
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				symm
+					apply zero_ne_succ at h'
+						symm
+							SYSTEM: Exceeded budget
+						cases a with d
+							SYSTEM: Exceeded budget
+						apply succ_inj at h'
+							SYSTEM: Exceeded budget
+					rw [←add_succ] at h'
+						SYSTEM: Exceeded budget
+					symm at h'
+						SYSTEM: Exceeded budget
+					rw [h'] at *
+						SYSTEM: Exceeded budget
+					apply add_zero at h'
+						SYSTEM: Exceeded budget
+			cases a with a' h_a
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			rw [← h'] at h'
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				apply zero_ne_succ at h'
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				symm
+					SYSTEM: Exceeded budget
+				apply zero_ne_succ at h
+					SYSTEM: Exceeded budget
+				cases h' with h1
+					SYSTEM: Exceeded budget
+			cases d with d' h_d
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				symm
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					rw [add_zero] at h'
+						symm
+							SYSTEM: Exceeded budget
+						apply zero_ne_succ at h'
+							SYSTEM: Exceeded budget
+						apply succ_inj at h'
+							SYSTEM: Exceeded budget
+						cases a with a' h_a'
+							SYSTEM: Exceeded budget
+					cases a with a' h_a
+						SYSTEM: Exceeded budget
+				rw [add_zero] at h'
+					SYSTEM: Exceeded budget
+				apply zero_ne_succ at h'
+					SYSTEM: Exceeded budget
+				cases a with d'' h_d''
+					SYSTEM: Exceeded budget
+		symm
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+		cases a with c
+			apply zero_ne_succ at h
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			intro h
+				apply zero_ne_succ at h
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				symm at h
+					SYSTEM: Exceeded budget
+			symm
+				.
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: Could not find compiling tactics, dead end
+				.
+					SYSTEM: Exceeded budget
+				.
+					SYSTEM: Exceeded budget
+				.
+					SYSTEM: Exceeded budget
+				.
+					SYSTEM: Exceeded budget
+				.
+					SYSTEM: Exceeded budget
+				.
+					SYSTEM: Exceeded budget
+				.
+					SYSTEM: Exceeded budget
+		apply zero_ne_succ at h
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		intro a'
+			apply succ_inj at a'
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			symm
+				rw [← a']
+					SYSTEM: Exceeded budget
+				apply zero_ne_succ at h
+					SYSTEM: Exceeded budget
+			cases a' with e d
+			SYSTEM: QED

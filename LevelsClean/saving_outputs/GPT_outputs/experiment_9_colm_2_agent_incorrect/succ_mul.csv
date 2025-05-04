@@ -1,0 +1,417 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Tactics Match,Is Incorrect Tactic,Correctly Identified As Wrong
+succ_mul,succ_mul_dev_1,"-- Induct on b, with d = 0 as the base case and the inductive hypothesis succ a * d = a * d + d. There are now two proof goals, prove base case: succ a * 0 = a * 0 + 0, and inductive step: succ a * succ d = a * succ d + succ d.",induction b with d hd,induction b with d hd,"case zero
+a : ℕ
+⊢ succ a * 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ succ a * 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_1,-- First we prove base case. Simplify succ a * 0 = a * 0 + 0 to 0 = 0 by definition of multiplication and addition,"rw [mul_zero, mul_zero, add_zero]","rw [add_zero, mul_zero, mul_zero]","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_1,-- The base case is complete.,rfl,rfl,"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_1,-- Now prove inductive step. We rewrite LHS succ a * succ d to succ a * d + succ a,rw [mul_succ],"rw [mul_succ, mul_succ]","case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * d + succ a = a * d + a + succ d
+","case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * d + succ a = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_1,-- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a,rw [add_right_comm],rw [add_right_comm],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (a * d + a + d) = succ (a * d + a + d)
+",error,Yes,Yes,Yes
+succ_mul,succ_mul_dev_1,-- The inductive step is complete.,"The statement ""-- The inductive step is complete."" does not directly correspond to any Lean code. It is more like a comment to indicate the progress of the proof. However, if we want to indicate that the inductive step is complete in Lean, we might write it as a comment in the code like this:
+  -- The inductive step is complete.
+But this line is not doing anything to prove the theorem in the Lean code. It is just a comment for humans to read.",rfl,,error,No,Yes,Yes
+succ_mul,succ_mul_dev_2,"-- Proof by induction on b, with succ a * 0 = a * 0 + 0 as the base case and the inductive case as succ a * d + 1 = a * d + 1 + d + 1.",induction b with d hd,induction b with d hd,"case zero
+a : ℕ
+⊢ succ a * 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ succ a * 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- succ a * 0 = a * 0 + 0 -> 0 = a * 0 + 0,rw [mul_zero],rw [mul_zero],"case zero
+a : ℕ
+⊢ 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- 0 = a * 0 + 0 -> 0 = 0 + 0,rw [mul_zero],rw [mul_zero],"case zero
+a : ℕ
+⊢ 0 = 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- 0 = 0 + 0 -> 0 = 0,rw [add_zero],rw [add_zero],"case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- Base case is complete.,"Given that the natural language statement ""Base case is complete"" provides an analysis of the current state of the proof rather than an instruction for a next step, there is no direct Lean syntax to represent this statement.",rfl,"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_2,-- succ a * succ d = a * succ d + succ d -> succ a * succ d = succ d + a * succ d,rw [add_comm a succ d],rw [add_comm],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = succ d + a * succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_2,-- succ a * succ d = succ d + a * succ d -> succ a * d + succ a = succ d + a * succ d,"rw [mul_succ, add_comm]",rw [mul_succ],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * d + succ a = succ d + a * succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_2,-- ucc a * d + succ a = succ d + a * succ d -> succ (succ a * d + a) = succ d + a * succ d,rw [add_succ],rw [add_succ],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (succ a * d + a) = succ d + a * succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- succ (succ a * d + a) = succ d + a * succ d -> succ (succ a * d + a) = succ d + (a * d + a),rw [add_right_comm],rw [mul_succ],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (succ a * d + a) = succ d + (a * d + a)
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_2,-- succ (succ a * d + a) = succ (d + (a * d + a)) -> succ (a * d + d + a) = succ (d + (a * d + a)),rw [add_right_comm],rw [hd],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (a * d + d + a) = succ (d + (a * d + a))
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,Yes,No
+succ_mul,succ_mul_dev_2,-- succ (a * d + d + a) = succ (d + (a * d + a)) -> succ (a * d + d + a) = succ (d + a * d + a),rw [add_right_comm],rw [← add_assoc],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (a * d + d + a) = succ (d + a * d + a)
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,Yes,No
+succ_mul,succ_mul_dev_2,-- This completes the inductive step.,"The statement ""This completes the inductive step."" does not directly correspond to a line of Lean code. It indicates that the inductive step of a proof has been finished, but it does not carry out any specific action in the proof.",rfl,,"case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,Yes,No
+succ_mul,succ_mul_dev_1,"-- Induct on b, with d = 0 as the base case and the inductive hypothesis succ a * d = a * d + d. There are now two proof goals, prove base case: succ a * 0 = a * 0 + 0, and inductive step: succ a * succ d = a * succ d + succ d.",induction b with d hd,induction b with d hd,"case zero
+a : ℕ
+⊢ succ a * 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ succ a * 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_1,-- First we prove base case. Simplify succ a * 0 = a * 0 + 0 to 0 = 0 by definition of multiplication and addition,"rw [mul_zero, mul_zero, add_zero]","rw [add_zero, mul_zero, mul_zero]","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_1,-- The base case is complete.,rfl,rfl,"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_1,-- Now prove inductive step. We rewrite LHS succ a * succ d to succ a * d + succ a,rw [mul_succ],"rw [mul_succ, mul_succ]","case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * d + succ a = a * d + a + succ d
+","case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * d + succ a = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_1,-- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a,rw [add_right_comm],rw [add_right_comm],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (a * d + a + d) = succ (a * d + a + d)
+",error,Yes,Yes,Yes
+succ_mul,succ_mul_dev_1,-- The inductive step is complete.,"The statement ""-- The inductive step is complete."" does not directly correspond to any Lean code. It is more like a comment to indicate the progress of the proof. However, if we want to indicate that the inductive step is complete in Lean, we might write it as a comment in the code like this:
+  -- The inductive step is complete.
+But this line is not doing anything to prove the theorem in the Lean code. It is just a comment for humans to read.",rfl,,error,No,Yes,Yes
+succ_mul,succ_mul_dev_2,"-- Proof by induction on b, with succ a * 0 = a * 0 + 0 as the base case and the inductive case as succ a * d + 1 = a * d + 1 + d + 1.",induction b with d hd,induction b with d hd,"case zero
+a : ℕ
+⊢ succ a * 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ succ a * 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- succ a * 0 = a * 0 + 0 -> 0 = a * 0 + 0,rw [mul_zero],rw [mul_zero],"case zero
+a : ℕ
+⊢ 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = a * 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- 0 = a * 0 + 0 -> 0 = 0 + 0,rw [mul_zero],rw [mul_zero],"case zero
+a : ℕ
+⊢ 0 = 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = 0 + 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- 0 = 0 + 0 -> 0 = 0,rw [add_zero],rw [add_zero],"case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- Base case is complete.,"Given that the natural language statement ""Base case is complete"" provides an analysis of the current state of the proof rather than an instruction for a next step, there is no direct Lean syntax to represent this statement.",rfl,"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_2,-- succ a * succ d = a * succ d + succ d -> succ a * succ d = succ d + a * succ d,rw [add_comm a succ d],rw [add_comm],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = succ d + a * succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_2,-- succ a * succ d = succ d + a * succ d -> succ a * d + succ a = succ d + a * succ d,"rw [mul_succ, add_comm]",rw [mul_succ],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * d + succ a = succ d + a * succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_2,-- ucc a * d + succ a = succ d + a * succ d -> succ (succ a * d + a) = succ d + a * succ d,rw [add_succ],rw [add_succ],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (succ a * d + a) = succ d + a * succ d
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",Yes,No,Yes
+succ_mul,succ_mul_dev_2,-- succ (succ a * d + a) = succ d + a * succ d -> succ (succ a * d + a) = succ d + (a * d + a),rw [add_right_comm],rw [mul_succ],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (succ a * d + a) = succ d + (a * d + a)
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,No,Yes
+succ_mul,succ_mul_dev_2,-- succ (succ a * d + a) = succ (d + (a * d + a)) -> succ (a * d + d + a) = succ (d + (a * d + a)),rw [add_right_comm],rw [hd],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (a * d + d + a) = succ (d + (a * d + a))
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,Yes,No
+succ_mul,succ_mul_dev_2,-- succ (a * d + d + a) = succ (d + (a * d + a)) -> succ (a * d + d + a) = succ (d + a * d + a),rw [add_right_comm],rw [← add_assoc],"case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ (a * d + d + a) = succ (d + a * d + a)
+","case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,Yes,No
+succ_mul,succ_mul_dev_2,-- This completes the inductive step.,"The statement ""This completes the inductive step."" does not directly correspond to a line of Lean code. It indicates that the inductive step of a proof has been finished, but it does not carry out any specific action in the proof.",rfl,,"case zero
+a : ℕ
+⊢ 0 = 0
+case succ
+a d : ℕ
+hd : succ a * d = a * d + d
+⊢ succ a * succ d = a * succ d + succ d
+",No,Yes,No

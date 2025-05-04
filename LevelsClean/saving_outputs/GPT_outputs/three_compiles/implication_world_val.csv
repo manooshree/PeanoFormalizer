@@ -1,0 +1,35 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,True Goal State,Predicted Goal State,Is Correct
+implication_world_val,exact_2,-- We simplify the hypothesis of 0 + x = 0 + y + 2 to x = 0 + x + 2.,rw [zero_add] at h,rw [zero_add] at h,"y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+",Yes
+implication_world_val,exact_2,-- We simplify the hypothesis of x = 0 + y + 2 to x = y + 2.,rw [zero_add] at h,rw [zero_add] at h,"y x : ℕ
+h : x = y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = y + 2
+⊢ x = y + 2
+",Yes
+implication_world_val,exact_2,"-- So, x = y + 2, which is exactly what we wanted to prove.",exact h,exact h,,,Yes
+implication_world_val,exact_2,-- 0 + x = 0 + y + 2 -> x = 0 + y + 2,rw [zero_add] at h,rw [zero_add] at h,"y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = 0 + y + 2
+⊢ x = y + 2
+",Yes
+implication_world_val,exact_2,-- x = 0 + y + 2 -> x = y + 2,"rw [zero_add] at h,
+exact h",rw [zero_add] at h,"y x : ℕ
+h : x = y + 2
+⊢ x = y + 2
+","y x : ℕ
+h : x = y + 2
+⊢ x = y + 2
+",Yes
+implication_world_val,exact_2,-- x = y + 2,exact h,exact h,,"y x : ℕ
+h : x = y + 2
+⊢ x = y + 2
+",Yes

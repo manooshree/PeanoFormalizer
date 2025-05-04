@@ -1,0 +1,3 @@
+apply add_right_cancel at h
+	exact h
+	SYSTEM: QED

@@ -1,0 +1,11 @@
+rw [mul_succ]
+	rw [add_comm]
+		rw [add_right_comm]
+			rw [add_comm, ← hb]
+				rw [succ_add]
+					rw [mul_succ]
+						rw [add_comm]
+							rw [mul_comm]
+								SYSTEM: Exceeded max depth
+							rfl
+							SYSTEM: QED

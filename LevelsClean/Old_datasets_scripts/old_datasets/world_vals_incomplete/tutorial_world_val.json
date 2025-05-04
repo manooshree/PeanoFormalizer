@@ -1,0 +1,116 @@
+[
+  {
+    "theorem": "truncated_two_eq_ss0",
+    "NL": "-- Theorem Declaration: Prove that the succ (succ (0)) is 2.",
+    "FL": "theorem truncated_two_eq_ss0: 2 = succ (succ 0) := by",
+    "state": "x\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "truncated_two_eq_ss0",
+    "NL": "-- Use the fact that the successor of 1, succ 1, is 2, in the proof goal, changing the equation to 'succ 1 = succ (succ 0)'",
+    "FL": "rw [two_eq_succ_one]",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "truncated_two_eq_ss0",
+    "NL": "-- Use the fact that 1 = succ 0 and expand the LHS succ (succ 0), changing the equation to succ (succ 0) = succ (succ 0)",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "  _temp\nterm has type\n  ?m.4\n  2\nx\u271d : Sort u_1\n_temp : x\u271d\n\u22a2 sorryAx \u2115 true = succ (succ 0)\n"
+  },
+  {
+    "theorem": "truncated_rw_backwards",
+    "NL": "-- Theorem Declaration: Prove that 2 = succ (succ 0)",
+    "FL": "theorem truncated_rw_backwards : 2 = succ (succ 0) := by",
+    "state": "\u22a2 2 = succ (succ 0)\n"
+  },
+  {
+    "theorem": "truncated_rw_backwards",
+    "NL": "-- Simplify succ 0 to 1, changing RHS from succ (succ 0) to succ 1",
+    "FL": "rw [\u2190 one_eq_succ_zero]",
+    "state": "\u22a2 2 = succ 1\n"
+  },
+  {
+    "theorem": "truncated_rw_backwards",
+    "NL": "-- Simplify succ 1 to 2, changing RHS from succ 1 to 2",
+    "FL": "rw [\u2190 two_eq_succ_one]",
+    "state": "\u22a2 2 = 2\n"
+  },
+  {
+    "theorem": "truncated_add_zero_intro",
+    "NL": "-- Theorem Declaration: Prove that a + 0 = a for all natural numbers a",
+    "FL": "theorem truncated_add_zero_intro (a b c : \u2115) : a + (b + 0) + (c + 0) = a + b + c := by",
+    "state": "a b c : \u2115\n\u22a2 a + (b + 0) + (c + 0) = a + b + c\n"
+  },
+  {
+    "theorem": "truncated_add_zero_intro",
+    "NL": "-- Simplify the expression in the LHS (b + 0) to  b",
+    "FL": "rw [add_zero]",
+    "state": "a b c : \u2115\n\u22a2 a + b + (c + 0) = a + b + c\n"
+  },
+  {
+    "theorem": "truncated_add_zero_intro",
+    "NL": "-- Simplify the expression in the LHS (c + 0) to c",
+    "FL": "rw [add_zero]",
+    "state": "a b c : \u2115\n\u22a2 a + b + c = a + b + c\n"
+  },
+  {
+    "theorem": "truncated_add_zero_intro_2",
+    "NL": "-- Theorem Declaration: Prove that a + (b + 0) + (c + 0) = a + b + c",
+    "FL": "theorem truncated_add_zero_intro_2 (a b c : \u2115) : a + (b + 0) + (c + 0) = a + b + c := by",
+    "state": "a b c : \u2115\n\u22a2 a + (b + 0) + (c + 0) = a + b + c\n"
+  },
+  {
+    "theorem": "truncated_add_zero_intro_2",
+    "NL": "-- Simplify the expression in the LHS (c + 0) to  c",
+    "FL": "rw [add_zero c]",
+    "state": "a b c : \u2115\n\u22a2 a + (b + 0) + c = a + b + c\n"
+  },
+  {
+    "theorem": "truncated_add_zero_intro_2",
+    "NL": "-- Simplify the expression in the LHS (c + 0) to  c",
+    "FL": "rw [add_zero b]",
+    "state": "a b c : \u2115\n\u22a2 a + b + c = a + b + c\n"
+  },
+  {
+    "theorem": "trancated_succ_eq_add_one",
+    "NL": "-- Theorem Declaration: For natural number n, prove that succ n is equivalent to n + 1",
+    "FL": "theorem trancated_succ_eq_add_one n : succ n = n + 1 := by",
+    "state": "n : \u2115\n\u22a2 succ n = n + 1\n"
+  },
+  {
+    "theorem": "trancated_succ_eq_add_one",
+    "NL": "-- Rewrite RHS n + 1 as n + succ 0",
+    "FL": "rw [one_eq_succ_zero]",
+    "state": "n : \u2115\n\u22a2 succ n = n + succ 0\n"
+  },
+  {
+    "theorem": "trancated_succ_eq_add_one",
+    "NL": "-- Rewrite RHS from n + succ 0 to succ (n + 0)",
+    "FL": "rw [add_succ]",
+    "state": "n : \u2115\n\u22a2 succ n = succ (n + 0)\n"
+  },
+  {
+    "theorem": "trancated_succ_eq_add_one",
+    "NL": "-- Simplify RHS succ (n + 0) to succ n",
+    "FL": "rw [add_zero]",
+    "state": "n : \u2115\n\u22a2 succ n = succ n\n"
+  },
+  {
+    "theorem": "truncated_twoaddtwo",
+    "NL": "-- Theorem Declaration: Prove that 2 + 2 = 4",
+    "FL": "theorem truncated_twoaddtwo : (2 : \u2115) + 2 = 4 := by",
+    "state": "\u22a2 2 + 2 = 4\n"
+  },
+  {
+    "theorem": "truncated_twoaddtwo",
+    "NL": "-- Replace the second 2 in the LHS with succ 1, changing 2 + 2 to 2 + succ 1",
+    "FL": "nth_rewrite 2 [two_eq_succ_one]",
+    "state": "\u22a2 2 + succ 1 = 4\n"
+  },
+  {
+    "theorem": "truncated_twoaddtwo",
+    "NL": "-- Rewrite LHS from 2 + succ 1 to succ (2 + 1)",
+    "FL": "rw [add_succ]",
+    "state": "\u22a2 succ (2 + 1) = 4\n"
+  }
+]

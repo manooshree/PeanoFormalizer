@@ -1,0 +1,9 @@
+World Name,Theorem Name,Natural Language,Predicted Formalization,True Tactic,Is Correct
+AdvMultiplication_world_val,mul_left_ne_zero,-- Assume that b equals 0.,intro hd,intro hb,Yes
+AdvMultiplication_world_val,mul_left_ne_zero,-- Have to show that a * b = 0,apply h,apply h,Yes
+AdvMultiplication_world_val,mul_left_ne_zero,-- a * b = 0 -> a * 0 = 0 -> 0 = 0,"rw [hd, mul_zero]","rw [hb, mul_zero]",Yes
+AdvMultiplication_world_val,mul_left_ne_zero,-- We use reflexivity to prove the goal of 0 = 0.,rfl,rfl,Yes
+AdvMultiplication_world_val,mul_left_ne_zero,-- Assume that b equals 0.,intro hd,intro hd,Yes
+AdvMultiplication_world_val,mul_left_ne_zero,-- subtitute b with 0 which gives us a * 0 != 0,"rw [hd, mul_zero] at h",rw [hd] at h,No
+AdvMultiplication_world_val,mul_left_ne_zero,-- a * 0 != 0 -> 0 != 0,contrapose! h,rw [mul_zero] at h,Yes
+AdvMultiplication_world_val,mul_left_ne_zero,-- We have 0 != 0 which is a contradiction.,contrapose! h,tauto,No

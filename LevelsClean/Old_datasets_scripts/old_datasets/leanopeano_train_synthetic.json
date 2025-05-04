@@ -1,0 +1,27 @@
+[
+  {
+    "proof": "-- Proof Statement: Prove that succ (a) + b  = succ (a + b) for all natural numbers\ntheorem succ_add (a b : \u2115) : succ a + b = succ (a + b)  := by\n-- Induct on b, with d = 0 as the base case and the inductive hypothesis succ (a) + d = succ (a + d). There are now two proof goals, prove base case: succ (a) + 0 = succ (a + 0) and inductive step: succ (a) + succ (d) = succ (a + succ (d))\ninduction b with d hd\n-- First prove base case. Reduce LHS succ (a) + 0 = succ (a)\n\u00b7 rw [add_zero]\n-- Reduce RHS succ(a + 0) = succ (a)\nrw [add_zero]\n-- Prove succ (a) = succ (a), finishing the base case\nrfl\n-- Now prove the inductive step. Rewrite succ (a) + succ (d) = succ (succ a + d)\n\u00b7 rw [add_succ]\n-- Rewrite succ (a + succ d) = succ (succ (a + d))\nrw [add_succ]\n-- Rewrite RHS succ (succ a + d) to succ (succ (a + d)) using the inductive hypothesis\nrw [hd]\n-- Prove succ (succ (a + d)) = succ (succ (a + d)), completing the proof\nrfl\n",
+    "compiled": null,
+    "error": null
+  },
+  {
+    "proof": "---\n-- Induct on b, taking 0 as base case, and assuming succ (a) + d = succ (a + d) is true for the inductive step. We now need to prove two things: base case: succ (a) + 0 = succ (a + 0) and inductive step: succ (a) + succ (d) = succ (a + succ (d))\ninduction b with d hd\n-- Reduce the LHS of base case: succ (a) + 0 becomes succ (a)\n\u00b7 rw [add_zero]\n-- Reduce the RHS of base case: succ(a + 0) becomes succ (a)\nrw [add_zero]\n-- Base case is proven as succ (a) equals succ (a)\nrfl\n-- For inductive step, rewrite the LHS: succ (a) + succ (d) becomes succ (succ a + d)\n\u00b7 rw [add_succ]\n-- Rewrite the RHS of inductive step: succ (a + succ d) becomes succ (succ (a + d))\nrw [add_succ]\n-- Use inductive hypothesis to rewrite RHS: succ (succ a + d) becomes succ (succ (a + d))\nrw [hd]\n-- Inductive step is proven as succ (succ (a + d)) equals succ (succ (a + d))\nrfl",
+    "compiled": null,
+    "error": null
+  },
+  {
+    "proof": "-- Start the induction on b, with base case 0 and inductive hypothesis succ (a) + d = succ (a + d). Two cases to prove: base case: succ (a) + 0 = succ (a + 0) and inductive step: succ (a) + succ (d) = succ (a + succ (d))\ninduction b with d hd\n-- Simplify LHS of base case: succ (a) + 0 simplifies to succ (a)\n\u00b7 rw [add_zero]\n-- Simplify RHS of base case: succ(a + 0) simplifies to succ (a)\nrw [add_zero]\n-- Base case proved: succ (a) equals succ (a)\nrfl\n-- For inductive step, simplify LHS: succ (a) + succ (d) simplifies to succ (succ a + d)\n\u00b7 rw [add_succ]\n-- Simplify RHS of inductive step: succ (a + succ d) simplifies to succ (succ (a + d))\nrw [add_succ]\n-- Apply inductive hypothesis to simplify RHS: succ (succ a + d) simplifies to succ (succ (a + d))\nrw [hd]\n-- Inductive step proved: succ (succ (a + d)) equals succ (succ (a + d))\nrfl",
+    "compiled": null,
+    "error": null
+  },
+  {
+    "proof": "-- Begin induction on b. Base case is trivial, inductive case assumes succ (a) + d = succ (a + d). Need to prove base case: succ (a) + 0 = succ (a + 0) and inductive step: succ (a) + succ (d) = succ (a + succ (d))\ninduction b with d hd\n-- Simplify the LHS of base case: succ (a) + 0 to succ (a)\n\u00b7 rw [add_zero]\n-- Simplify the RHS of base case: succ(a + 0) to succ (a)\nrw [add_zero]\n-- Base case is shown: succ (a) equals succ (a)\nrfl\n-- In the inductive step, simplify LHS: succ (a) + succ (d) to succ (succ a + d)\n\u00b7 rw [add_succ]\n-- Simplify RHS of inductive step: succ (a + succ d) to succ (succ (a + d))\nrw [add_succ]\n-- Apply inductive hypothesis to simplify RHS: succ (succ a + d) to succ (succ (a + d))\nrw [hd]\n-- Inductive step is shown: succ (succ (a + d)) equals succ (succ (a + d))\nrfl",
+    "compiled": null,
+    "error": null
+  },
+  {
+    "proof": "-- We start by inducting on b, with base case 0 and inductive hypothesis succ (a) + d = succ (a + d). Have to show two things: base case: succ (a) + 0 = succ (a + 0) and inductive step: succ (a) + succ (d) = succ (a + succ (d))\ninduction b with d hd\n-- Simplify LHS of base case: from succ (a) + 0 to succ (a)\n\u00b7 rw [add_zero]\n-- Simplify RHS of base case: from succ(a + 0) to succ (a)\nrw [add_zero]\n-- Base case satisfied: succ (a) equals succ (a)\nrfl\n-- For the inductive step, simplify LHS: from succ (a) + succ (d) to succ (succ a + d)\n\u00b7 rw [add_succ]\n-- Simplify RHS of inductive step: from succ (a + succ d) to succ (succ (a + d))\nrw [add_succ]\n-- Use the inductive hypothesis to simplify RHS: from succ (succ a + d) to succ (succ (a + d))\nrw [hd]\n-- Inductive step satisfied: succ (succ (a + d)) equals succ (succ (a + d))\nrfl",
+    "compiled": null,
+    "error": null
+  }
+]

@@ -1,0 +1,651 @@
+rw [pow_zero]
+	rw [mul_zero]
+		exact pow_add
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+	rw [← pow_zero]
+		rw [mul_zero]
+			rfl
+				rw [pow_succ]
+					rw [Ht]
+						rw [mul_succ]
+							exact pow_add
+								SYSTEM: Exceeded max depth
+							rw [← Ht]
+								SYSTEM: Exceeded max depth
+						exact pow_add
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+						rw [Ht] at Ht
+							rw [mul_succ]
+								SYSTEM: Exceeded max depth
+							exact pow_add
+								SYSTEM: Exceeded max depth
+					rw [mul_succ]
+						rw [Ht]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+							rw [← add_zero (m * t)]
+								SYSTEM: Exceeded max depth
+							rw [← add_zero (m)]
+								SYSTEM: Exceeded max depth
+						exact pow_add
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+				rw [mul_succ]
+					rw [pow_succ]
+						rw [Ht]
+							rw [Ht] at Ht
+								SYSTEM: Exceeded max depth
+				exact pow_add
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					.
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+					.
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+			rw [← mul_zero]
+				rw [mul_zero]
+					rw [← mul_zero]
+						rw [← mul_zero]
+							rw [mul_zero]
+								SYSTEM: Exceeded max depth
+							rw [← mul_zero]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+							rw [mul_zero] at *
+								SYSTEM: Exceeded max depth
+							rw [mul_zero] at *
+								SYSTEM: Exceeded max depth
+						rw [mul_zero]
+							rw [pow_zero]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+						rfl
+							exact pow_add
+								SYSTEM: Exceeded max depth
+					rfl
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+				rw [← mul_zero]
+					rw [mul_zero]
+						exact pow_add
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+						rw [mul_zero]
+							SYSTEM: Exceeded budget
+						rfl
+							SYSTEM: Exceeded budget
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						rw [mul_zero]
+							SYSTEM: Exceeded budget
+						rfl
+							SYSTEM: Exceeded budget
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+					rfl
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+				rfl
+					exact pow_add
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						.
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+						.
+							SYSTEM: Exceeded budget
+						.
+							SYSTEM: Exceeded budget
+						.
+							SYSTEM: Exceeded budget
+						.
+							SYSTEM: Exceeded budget
+						.
+							SYSTEM: Exceeded budget
+						.
+							SYSTEM: Exceeded budget
+						.
+							SYSTEM: Exceeded budget
+		rw [← mul_zero]
+			rw [mul_zero]
+				rw [mul_zero]
+					rw [pow_zero]
+						rw [←pow_zero]
+							rw [pow_zero]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+							rw [←mul_zero]
+								SYSTEM: Exceeded max depth
+						rfl
+							exact pow_add
+								SYSTEM: Exceeded max depth
+				rw [← mul_zero]
+					rw [mul_zero]
+						rw [mul_zero]
+							rw [pow_zero]
+								SYSTEM: Exceeded max depth
+							rw [← mul_zero]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+						rw [pow_zero]
+							rw [mul_zero]
+								SYSTEM: Exceeded max depth
+							exact pow_add
+								SYSTEM: Exceeded max depth
+							rw [← mul_zero]
+								SYSTEM: Exceeded max depth
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						rw [mul_zero]
+							rw [mul_zero]
+								SYSTEM: Exceeded max depth
+							rw [← pow_succ]
+								SYSTEM: Exceeded max depth
+							rw [← mul_zero]
+								SYSTEM: Exceeded max depth
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+			rw [mul_comm]
+				rw [mul_succ]
+					rw [mul_succ]
+						rw [mul_succ]
+							rw [mul_succ]
+								SYSTEM: Exceeded max depth
+							rw [mul_zero]
+								SYSTEM: Exceeded max depth
+							exact (pow_add _ _ _)
+								SYSTEM: Exceeded max depth
+							rw [mul_comm]
+								SYSTEM: Exceeded max depth
+						rw [mul_zero]
+							SYSTEM: Exceeded budget
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+						rw [mul_comm]
+							SYSTEM: Exceeded budget
+					rw [mul_zero]
+						exact pow_add
+							SYSTEM: Exceeded budget
+					rw [mul_comm]
+						SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						SYSTEM: Exceeded budget
+				rw [← mul_zero]
+					rw [mul_succ]
+						rw [mul_succ]
+							rw [mul_succ]
+								SYSTEM: Exceeded max depth
+							rw [← mul_zero]
+								SYSTEM: Exceeded max depth
+							rw [mul_comm]
+								SYSTEM: Exceeded max depth
+						rw [mul_zero]
+							SYSTEM: Exceeded budget
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+					rw [mul_zero]
+						SYSTEM: Exceeded budget
+					rw [mul_comm]
+						SYSTEM: Exceeded budget
+					rw [← pow_succ]
+						SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						SYSTEM: Exceeded budget
+				rw [mul_comm]
+					rw [mul_zero]
+						rw [mul_zero]
+							rw [pow_zero]
+								SYSTEM: Exceeded max depth
+							rw [← mul_zero]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+						rw [pow_zero]
+							SYSTEM: Exceeded budget
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						SYSTEM: Exceeded budget
+rw [mul_zero]
+	rw [pow_zero]
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		rw [pow_zero]
+			rfl
+				rw [pow_succ]
+					rw [mul_succ]
+						rw [Ht]
+							rw [mul_comm]
+								SYSTEM: Exceeded max depth
+					rw [Ht]
+						rw [mul_succ]
+							rw [← Ht]
+								SYSTEM: Exceeded max depth
+					exact pow_add
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+					rw [mul_comm, Ht]
+						rw [mul_succ]
+							rw [←mul_comm]
+								SYSTEM: Exceeded max depth
+							exact (pow_add _ _ _)
+								SYSTEM: Exceeded max depth
+							rw [←Ht]
+								SYSTEM: Exceeded max depth
+						rw [mul_comm]
+							rw [mul_succ]
+								SYSTEM: Exceeded max depth
+							exact (pow_succ a m t)
+								SYSTEM: Exceeded max depth
+							rw [mul_comm m (succ t)]
+								SYSTEM: Exceeded max depth
+				rw [mul_succ]
+					rw [pow_succ]
+						rw [Ht]
+							rw [add_comm]
+								SYSTEM: Exceeded max depth
+			rw [←pow_zero]
+				rw [pow_zero]
+					rfl
+						exact pow_add
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+					rw [← pow_zero]
+						rw [pow_zero]
+							rw [←pow_zero]
+								SYSTEM: Exceeded max depth
+							rw [←pow_zero]
+								SYSTEM: Exceeded max depth
+							rfl
+								SYSTEM: Exceeded max depth
+						rfl
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+				rfl
+					exact pow_add
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+	exact pow_add
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: Could not find compiling tactics, dead end
+rw [← mul_zero]
+	rw [mul_zero]
+		rw [pow_zero]
+			rw [mul_zero]
+				rw [pow_zero]
+					rfl
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+				rw [pow_zero] at *
+					rfl
+						exact pow_add
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+					rw [← pow_zero]
+						SYSTEM: Exceeded budget
+			rw [mul_comm]
+				exact pow_add
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					SYSTEM: No compiling tactics found, asking GPT for more tactics...
+					.
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: No compiling tactics found, asking GPT for more tactics...
+						SYSTEM: Could not find compiling tactics, dead end
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+					.
+						SYSTEM: Exceeded budget
+				rw [← mul_zero]
+					rw [mul_comm]
+						SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						SYSTEM: Exceeded budget
+					rw [mul_zero]
+						SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						SYSTEM: Exceeded budget
+			rw [← mul_zero]
+				rw [mul_zero]
+					rw [← mul_zero]
+						rw [mul_zero]
+							SYSTEM: Exceeded budget
+						exact pow_add
+							SYSTEM: Exceeded budget
+					rw [mul_zero] at *
+						SYSTEM: Exceeded budget
+				rw [mul_zero] at *
+					SYSTEM: Exceeded budget
+			rw [← pow_zero]
+				rw [mul_zero]
+					rw [pow_zero]
+						rfl
+							SYSTEM: Exceeded budget
+					rfl
+						SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						SYSTEM: Exceeded budget
+				rw [mul_zero] at *
+					SYSTEM: Exceeded budget
+				rw [pow_zero] at *
+					SYSTEM: Exceeded budget
+				rw [←mul_zero] at *
+					SYSTEM: Exceeded budget
+		rw [mul_zero]
+			rw [pow_zero]
+				rw [← mul_zero]
+					rw [mul_zero]
+						rw [pow_zero]
+							rfl
+								SYSTEM: Exceeded max depth
+							rw [←pow_zero]
+								SYSTEM: Exceeded max depth
+							exact (pow_succ a m t)
+								SYSTEM: Exceeded max depth
+						exact pow_add
+							SYSTEM: Exceeded budget
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+						rw [mul_zero]
+							SYSTEM: Exceeded budget
+				rw [pow_zero]
+					rw [←pow_zero]
+						rw [pow_zero]
+							SYSTEM: Exceeded budget
+						rw [←mul_zero]
+							SYSTEM: Exceeded budget
+						rfl
+							SYSTEM: Exceeded budget
+						rfl
+							SYSTEM: Exceeded budget
+			rw [← mul_zero]
+				rw [mul_zero]
+					rw [pow_zero]
+						rw [pow_zero]
+							SYSTEM: Exceeded budget
+						rw [← pow_zero]
+							SYSTEM: Exceeded budget
+					exact pow_add
+						SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						SYSTEM: Exceeded budget
+				rw [mul_zero]
+					rw [pow_zero]
+						SYSTEM: Exceeded budget
+					exact pow_add
+						SYSTEM: Exceeded budget
+		exact pow_add
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+			.
+				SYSTEM: Exceeded budget
+		rw [←mul_zero]
+			rw [mul_zero]
+				rw [pow_zero]
+					rw [←mul_zero]
+						rw [mul_zero]
+							rw [mul_zero]
+								SYSTEM: Exceeded max depth
+							rw [← pow_zero]
+								SYSTEM: Exceeded max depth
+							rw [← mul_zero]
+								SYSTEM: Exceeded max depth
+							exact (pow_succ a m t)
+								SYSTEM: Exceeded max depth
+						rw [←mul_zero]
+							SYSTEM: Exceeded budget
+						rw [←pow_zero]
+							SYSTEM: Exceeded budget
+					rw [mul_zero]
+						SYSTEM: Exceeded budget
+					rw [←pow_zero]
+						SYSTEM: Exceeded budget
+					rw [←mul_zero]
+						SYSTEM: Exceeded budget
+				rw [mul_zero]
+					rw [pow_zero]
+						SYSTEM: Exceeded budget
+					rw [←mul_zero]
+						SYSTEM: Exceeded budget
+				rw [←mul_zero]
+					SYSTEM: Exceeded budget
+			rw [←mul_zero]
+				rw [mul_zero]
+					rw [mul_zero]
+						SYSTEM: Exceeded budget
+					rw [←mul_zero]
+						SYSTEM: Exceeded budget
+				rw [←mul_zero]
+					SYSTEM: Exceeded budget
+	exact pow_add
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: No compiling tactics found, asking GPT for more tactics...
+		SYSTEM: Could not find compiling tactics, dead end
+	rw [← mul_zero]
+		rw [mul_zero]
+			rw [mul_zero]
+				rw [pow_zero]
+					rw [mul_zero]
+						rw [mul_zero] at 1
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: No compiling tactics found, asking GPT for more tactics...
+							SYSTEM: Could not find compiling tactics, dead end
+						rw [mul_zero] at 0
+							SYSTEM: Exceeded budget
+						rw [pow_zero]
+							SYSTEM: Exceeded budget
+					rw [← pow_zero]
+						rw [mul_zero]
+							SYSTEM: Exceeded budget
+						rw [pow_zero]
+							SYSTEM: Exceeded budget
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+				rw [mul_zero]
+					rw [pow_zero]
+						SYSTEM: Exceeded budget
+					exact pow_add
+						SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						SYSTEM: Exceeded budget
+				exact pow_add
+					SYSTEM: Exceeded budget
+				rw [← mul_zero]
+					SYSTEM: Exceeded budget
+			exact pow_add
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: No compiling tactics found, asking GPT for more tactics...
+				SYSTEM: Could not find compiling tactics, dead end
+			rw [← pow_succ]
+				rw [pow_succ]
+					rw [pow_succ]
+						SYSTEM: Exceeded budget
+					rw [pow_zero]
+						SYSTEM: Exceeded budget
+					rw [mul_zero]
+						SYSTEM: Exceeded budget
+					exact pow_add
+						SYSTEM: Exceeded budget
+				rw [← mul_zero]
+					SYSTEM: Exceeded budget
+				exact pow_add
+					SYSTEM: Exceeded budget
+		exact pow_add
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: No compiling tactics found, asking GPT for more tactics...
+			SYSTEM: Could not find compiling tactics, dead end
+		rw [← mul_zero]
+			rw [mul_zero]
+				rw [mul_zero]
+					rw [mul_zero]
+						rw [pow_zero]
+							SYSTEM: Exceeded budget
+						rw [mul_zero]
+							SYSTEM: Exceeded budget
+						rw [← mul_zero]
+							SYSTEM: Exceeded budget
+					rw [← mul_zero]
+						SYSTEM: Exceeded budget
+					rw [← pow_succ]
+						SYSTEM: Exceeded budget
+					exact pow_add
+						SYSTEM: Exceeded budget
+				rw [← mul_zero]
+					SYSTEM: Exceeded budget
+			exact (pow_add)
+				SYSTEM: Exceeded budget
+			rw [← pow_succ]
+				SYSTEM: Exceeded budget
+			rw [mul_zero] at *
+				SYSTEM: Exceeded budget
+		rw [← pow_succ]
+			rw [pow_succ]
+				rw [pow_succ]
+					rw [pow_succ]
+						SYSTEM: Exceeded budget
+					rw [mul_zero]
+						SYSTEM: Exceeded budget
+					rw [pow_zero]
+						SYSTEM: Exceeded budget
+					rw [mul_zero] at *
+						SYSTEM: Exceeded budget
+					rw [← pow_succ]
+						SYSTEM: Exceeded budget
+				rw [mul_zero]
+					SYSTEM: Exceeded budget
+				rw [pow_zero]
+					SYSTEM: Exceeded budget
+				rw [mul_zero] at *
+					SYSTEM: Exceeded budget
+			rw [mul_zero]
+				SYSTEM: Exceeded budget
+			rw [← mul_zero]
+				SYSTEM: Exceeded budget
