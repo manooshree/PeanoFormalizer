@@ -1,0 +1,15 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_4,"  -- x = 37 → y = 42 and x = 37, so by modus ponens, y = 42",exact h2 h1,  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_4,"  -- So y = 42, which is exactly what we wanted to prove.",exact h2 h1,  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_4,"  -- Starting with the given statement that x = 37, use the given implication that x = 37 → y = 42, to deduce that y = 42","theorem exact_4_temp (x y : ℕ) (h1 : x = 37) (h2 : x = 37 → y = 42) : y = 42 := by
+  exact h2 h1",  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_4,"  -- We can exactly prove that y = 42 with our given facts, to complete the proof",exact h2 h1,  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_4,"  -- given x = 37 and x = 37 -> y = 42 , y = 42","theorem exact_4_dev_2_temp (x y : ℕ) (h1 : x = 37) (h2 : x = 37 → y = 42) : y = 42 := by
+  exact h2 h1",  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_4,  -- y = 42,exact h2 h1,  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

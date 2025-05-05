@@ -1,0 +1,33 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_eq_add_one,  -- Rewrite RHS n + 1 as n + succ 0,"rw [add_succ, add_zero]",  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,  -- Rewrite RHS from n + succ 0 to succ (n + 0),"rw [add_succ, add_zero]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,  -- Simplify RHS succ (n + 0) to succ n,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_eq_add_one,"  -- Prove LHS and RHS are equal, succ n = succ n, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_eq_add_one,  -- Rewrite RHS 1 -> succ(0),"rw [←add_succ, add_zero]",  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,  -- Rewrite both RHS and LHS n -> n + 0,rw [←add_zero n],  rw [← add_zero n],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,  -- Rewrite RHS n + 0 + succ(0) -> succ(n + 0 + 0),"rw [add_zero, add_zero]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,  -- Rewrite LHS and RHS n + 0 -> n,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_eq_add_one,  -- Rewrite RHS n + 0 -> n,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_eq_add_one,"  -- succ(n) = succ(n), QED","theorem succ_eq_add_one_dev_2_temp : succ n = n + 1 := by
+  rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,  -- Rewrite on both RHS and LHS making n -> n + 0,rw [←add_zero n],  rw [← add_zero n],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,  -- Rewrite on RHS making 1 -> succ 0,"rw [←add_succ, add_zero]",  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,  -- Rewrite on RHS making n + 0 + succ(0) -> succ(n+0+0),"rw [add_zero, add_zero]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,  -- Rewrite on RHS making n + 0 -> n,rw [add_zero],  rw [add_zero (n+0)],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_eq_add_one,"  -- succ(n+0) = succ(n+0), QED","theorem succ_eq_add_one_dev_1_temp n : succ n = n + 1 := by
+  rw [succ_eq_add_one]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

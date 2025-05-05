@@ -1,0 +1,103 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_assoc,-- intiate induction on b,induction b with,induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,-- We rewrite on the RHS 0 + c -> c to get a + 0 + c = a + c,rw [Nat.zero_add],rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,-- We rewrite on the LHS a + 0 -> a to get a + c = a + c,rw [Nat.add_zero],rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"-- a + c = a + c, completing the base case.",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,-- Now prove the inductive step.  a + succ d -> succ (a + d) giving us succ (a + d) + c = a + (succ d + c),"induction a with
+| zero => rfl
+| succ a' ih => rw [add_succ, ih, add_succ, add_succ, add_assoc]",rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,-- Now on the LHS we write succ(a + d) + c -> succ(a + d + c). This gives us succ (a + d + c) = a + succ (d + c),"rw [add_succ, add_assoc]",rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,-- Now we use the inductive hypothesis on LHS (a + d + c) -> a + (d + c) to get succ(a + (d + c)) = a + succ (d + c),rw [add_assoc],rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"--  Rewrite the RHS, succ (d) + c -> succ(d + c), to get succ (a + (d + c)) = a + succ (d + c)",rw [add_succ],rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"-- Rewrite on RHS, a + succ (d + c) -> succ (a + (d + c)) to get succ (a + (d + c)) = succ (a + (d + c))","rw [add_succ, add_assoc]",rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"-- succ (a + (d + c)) = succ (a + (d + c)), QED",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,-- Induct on b,induction b with,induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,-- First prove base case. we use properties of addition by 0 to rewrite 0 + c to c on the RHS,rw [Nat.zero_add],rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,-- using properties of addition by 0 we can rewrite a + 0 to a on the LHS,rw [Nat.add_zero],rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"-- both sides are equal, hence we are done with the base case",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,-- Now for the inductive case. we use properties of succession to rewrite (succ n + c) to succ (n + c) on the RHS,"rw [add_succ, add_succ]",rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,-- Now using properties of succession we rewrite a + succ n to succ (a + n) on the LHS,"rw [add_succ, add_succ]",rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,--  Again using properties of succession we rewrite succ (a + n) + c to succ (a + n + c) on the LHS,"rw [add_succ, add_succ]",rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,-- Again using properties of succession we rewrite a + succ(n + c) to succ(a + (n + c)) on the RHS,"rw [add_succ, add_succ, add_assoc]",rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,-- Using the induction hypothesis we rewrite succ(a + n + c) to succ(a + (n + c)) on the LHS,rw [add_assoc],rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"-- both sides are equal, hence we are done with the proof",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- intiate induction on b,induction b with,  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- We rewrite on the RHS 0 + c -> c to get a + 0 + c = a + c,rw [Nat.zero_add],  rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- We rewrite on the LHS a + 0 -> a to get a + c = a + c,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"    -- a + c = a + c, completing the base case.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- Now prove the inductive step.  a + succ d -> succ (a + d) giving us succ (a + d) + c = a + (succ d + c),"induction a with
+| zero => rfl
+| succ a' ih => rw [add_succ, ih, add_succ, add_succ, add_assoc]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- Now on the LHS we write succ(a + d) + c -> succ(a + d + c). This gives us succ (a + d + c) = a + succ (d + c),"rw [add_succ, add_assoc]",  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- Now we use the inductive hypothesis on LHS (a + d + c) -> a + (d + c) to get succ(a + (d + c)) = a + succ (d + c),rw [add_assoc],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"--  Rewrite the RHS, succ (d) + c -> succ(d + c), to get succ (a + (d + c)) = a + succ (d + c)",rw [add_assoc],  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"-- Rewrite on RHS, a + succ (d + c) -> succ (a + (d + c)) to get succ (a + (d + c)) = succ (a + (d + c))","rw [add_succ, add_assoc]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"-- succ (a + (d + c)) = succ (a + (d + c)), QED",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"  -- Induct on c, with d = 0 as the base case and the inductive hypothesis a + b + d = a + (b + d). There are now two proof goals, prove base case: a + b + 0 = a + (b + 0), and inductive step: a + b + succ (d) = a + (b + succ (d))",induction c with d hd,  induction c with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- First prove base case. Simplify LHS a + b + 0 = a + b,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,    -- Reduce RHS a + (b + 0) to a + b,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"    -- Prove LHS and RHS are equal, a + b = a + b, completing the base case.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- Now prove the inductive step. Rewrite the LHS expression a + b + succ d to succ (a + b + d),rw [add_succ],  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- Rewrite RHS a + (b + succ d) to a + succ (b + d),rw [add_succ],  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"  -- Use the inductive hypothesis to rewrite the left-hand side, changing succ (a + b + d) to succ (a + (b + d))",rw [add_assoc],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"--  Rewrite the RHS, a + succ (b + d) to succ (a + (b + d))",rw [add_succ],  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"-- Prove LHS and RHS are equal, succ (a + (b + d)) = succ (a + (b + d)), completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- Induct on b,induction b with,  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- First prove base case. we use properties of addition by 0 to rewrite 0 + c to c on the RHS,rw [Nat.zero_add],  rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- using properties of addition by 0 we can rewrite a + 0 to a on the LHS,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"  -- both sides are equal, hence we are done with the base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- Now for the inductive case. we use properties of succession to rewrite (succ n + c) to succ (n + c) on the RHS,"rw [add_succ, add_succ]",  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- Now using properties of succession we rewrite a + succ n to succ (a + n) on the LHS,"rw [add_succ, add_succ]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  --  Again using properties of succession we rewrite succ (a + n) + c to succ (a + n + c) on the LHS,"rw [add_succ, add_succ]",  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- Again using properties of succession we rewrite a + succ(n + c) to succ(a + (n + c)) on the RHS,"rw [add_succ, add_succ, add_assoc]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- Using the induction hypothesis we rewrite succ(a + n + c) to succ(a + (n + c)) on the LHS,rw [add_assoc],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"  -- both sides are equal, hence we are done with the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,0 +1,7 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+rfl_intro,"  -- Prove LHS and RHS are equal, 37 * x + q = 37 * x + q, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+rfl_intro,"  -- 37 * x + q = 37 * x + q, QED",theorem rfl_intro_dev_1_temp (x q : ℕ) : 37 * x + q = 37 * x + q := by rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rfl_intro,  -- both sides of the equation are equal hence we can complete the proof,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

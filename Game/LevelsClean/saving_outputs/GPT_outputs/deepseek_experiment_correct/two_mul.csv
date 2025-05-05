@@ -1,0 +1,20 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+two_mul,"  -- Rewrite 2 as succ(1), changing LHS from 2 * m to succ 1 * m",rw [two_mul],  rw [two_eq_succ_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_mul,  -- Rewrite the LHS succ 1 * m to 1 * m + m,"rw [succ_mul, one_mul]",  rw [succ_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_mul,  -- Simplify LHS from 1 * m + m to m + m by identity property of multiplication,rw [one_mul],  rw [one_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+two_mul,"  -- Prove LHS and RHS are equal, m + m = m + m, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+two_mul,  -- Rewrite LHS from 2 * m to succ 1 * m and simplify to m + m using identity property of multiplication,rw [two_mul],"  rw [two_eq_succ_one, succ_mul, one_mul]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_mul,"  -- Prove LHS and RHS are equal, m + m = m + m, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+two_mul,  -- 2 * m = m + m -> succ 1 * m = m + m -> m + m = m + m,"theorem two_mul_dev_2_temp (m : ℕ): 2 * m = m + m := by
+  rw [Nat.mul_comm]
+  rw [Nat.mul_succ]
+  rw [Nat.add_comm]","  rw [two_eq_succ_one, succ_mul, one_mul]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_mul,"  -- LHS and RHS are equal, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,0 +1,106 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_mul,"  -- Induct on b, with d = 0 as the base case and the inductive hypothesis succ a * d = a * d + d. There are now two proof goals, prove base case: succ a * 0 = a * 0 + 0, and inductive step: succ a * succ d = a * succ d + succ d.","-- Apply induction on b
+  induction b with
+  -- Base case: prove succ a * 0 = a * 0 + 0
+  case zero =>
+  -- Simplify using the definition of multiplication by zero
+  rw [mul_zero, mul_zero, zero_add]
+  -- Inductive step: prove succ a * succ d = a * succ d + succ d
+  case succ =>
+  -- Simplify using the definition of",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- First we prove base case. Simplify succ a * 0 = a * 0 + 0 to 0 = 0 by definition of multiplication and addition,"-- Base case: succ a * 0 = a * 0 + 0
+  rw [mul_zero, zero_add]","  rw [add_zero, mul_zero, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- The base case is complete.,done,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Now prove inductive step. We rewrite the equation to succ a * d + succ a = a * d + a + succ d,"rw [succ_mul, add_succ]
+     rw [add_succ]
+     rw [add_assoc]
+     rw [add_comm]
+     rw [add_assoc]
+     rw [add_comm]
+     rw [add_assoc]
+     rw [add_comm]
+     rw [add_assoc]
+     rw [add tauto]
+     rw [add_comm]
+     rw [add_assoc]","  rw [mul_succ, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Expand the equation to succ (succ a * d + a) = succ (a * d + a + d) using properties of the successor,"-- Apply the property of the successor to the left side of the equation
+  rw [succ_mul_dev_1_temp]
+  -- Apply the property of the successor to the right side of the equation
+  rw [succ_mul_dev_1_temp]
+  -- Apply the property of the successor to the right side of the equation
+  rw [succ_mul_dev_1_temp]
+  -- Apply the property of the successor to","  rw [add_succ, add_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Rewrite the LHS using the inductive hypothesis obtaining succ (a * d + d + a),"rw [mul_succ] at h
+  rw [add_succ] at h
+  rw [add_succ] at h
+  rw [add_succ] at h
+  rw [add_succ] at h
+  rw [add_succ] at h
+  rw [add_succ] at h
+  rw [add_succ] at h
+  rw [add_succ] at h
+  rw [add tauto] at h",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a,"rw [add_comm]
+  -- This line rewrites the LHS using the commutative property of addition, changing a * d + a + d to a * d + d + a.",  rw [add_right_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- LHS = RHS hence, The inductive step is complete.","FL: 
+  tauto
+
+FR: 
+  tauto",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- Induct on b, with d = 0 as the base case and the inductive hypothesis succ a * d = a * d + d. There are now two proof goals, prove base case: succ a * 0 = a * 0 + 0, and inductive step: succ a * succ d = a * succ d + succ d.",induction b with d hd                    -- [line 226],  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_mul,  -- First we prove base case. Simplify succ a * 0 = a * 0 + 0 to 0 = 0 by definition of multiplication and addition,"rw [mul_zero, zero_add] at hx -> 0 = 0
+
+!   -- Now we prove the inductive step. Simplify succ a * succ d = a * succ d + succ d to succ a * d + a + 1 = a * d + a + d + 1 by definition of multiplication and addition
+!   rw [mul_succ, add_succ, add_succ] at hx -> succ a * d +","  rw [add_zero, mul_zero, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- The base case is complete.,"exact hx at hx2 ⊢
+  ← hx2 at hx2� (done)
+
+   -- Simplify the hypothesis
+   -- 0 * y = 0 to y = 0
+   -- using the fact that 0 * y = 0
+   -- and the fact that 0 * y = 0
+   -- and the fact that 0 * y = 0
+   -- and the fact that 0",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Now prove inductive step. We rewrite the equation to succ a * d + succ a = a * d + a + succ d,"rw [mul_succ] at hb at hb ⊢
+  -- Now we use the inductive hypothesis to replace succ a * d with a * d + d
+FL:  rw [ih] at hb �
+  -- Now we use the commutative property of addition to rewrite a * d + d + succ a = a * d + a + succ d
+FL:  rw [add_comm] at hb ⊢","  rw [mul_succ, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Expand the equation to succ (succ a * d + a) = succ (a * d + a + d) using properties of the successor,"repeat rw [← two_mul] at hb ⊢ �turn
+   -- Rewrite the equation to succ (succ a * d + a) = succ (a * d + a + d) using the definition of multiplication
+   -- Rewrite the equation to succ (succ a * d + a) = succ (a * d + a + d) using the definition of multiplication
+   -- Rewrite the equation to succ (succ a * d + a) =","  rw [add_succ, add_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Rewrite the LHS using the inductive hypothesis obtaining succ (a * d + d + a),"rw [hd] at hx ⊢ by rw [hd] at hx �   -- Rewrite the LHS using the inductive hypothesis obtaining succ (a * d + d + a)
+
+The single line of Lean 4 code for this step is:
+
+-- Rewrite the LHS using the inductive hypothesis obtaining succ (a * d + d + a)
+rw [hd] at hx ⊢ by rw [hd] at h",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_mul,  -- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a,"rw [add_comm] at hb2
+
+* Simplify the given statement: a * d + a + d = 0 → a * d + d + a = 0
+
+  -- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a
+  -- Rewrite the hypothesis using the commutative property of addition
+  rw [add_comm] at hb2",  rw [add_right_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- LHS = RHS hence, The inductive step is complete.","eta_eq_succ_pred (succ t) = succ (pred (succ t)) → eta_eq_succ_pred (succ t) = succ (succ t) by
+  eta_eq_succ_pred (succ t) = succ (pred (succ t)) → eta_eq_succ_pred (succ t) = succ (succ t)
+  QED
+
+*   -- Prove the inductive step: succ (pred",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

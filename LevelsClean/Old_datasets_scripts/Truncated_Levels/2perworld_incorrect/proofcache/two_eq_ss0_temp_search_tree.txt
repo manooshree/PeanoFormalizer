@@ -1,3 +1,0 @@
-rw [one_eq_succ_zero]
-	rfl
-	SYSTEM: QED

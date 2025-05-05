@@ -1,0 +1,19 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_zero_intro,  -- Simplify the expression in the LHS (b + 0) to  b,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_zero_intro,  -- Simplify the expression in the LHS (c + 0) to c,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_zero_intro,"  -- Prove LHS and RHS are equal, a + b + c = a + b + c, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_zero_intro,"-- Using the properties of addition by 0, we can rewrite b + 0 to b","rw [add_zero, add_zero]",  rw [add_zero b],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_zero_intro,"-- Using the properties of addition by 0, we can rewrite c + 0 to c","rw [add_zero, add_zero]",  rw [add_zero c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_zero_intro,-- both sides of the equation are equal hence we can complete the proof,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_zero_intro,-- Substitute c + 0 -> c on the LHS,"rw [add_zero, add_zero]",  rw [add_zero c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_zero_intro,-- Substitute b + 0 -> b on the LHS,rw [add_zero],  rw [add_zero b],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_zero_intro,"--  a + b + c = a + b + c, QED",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

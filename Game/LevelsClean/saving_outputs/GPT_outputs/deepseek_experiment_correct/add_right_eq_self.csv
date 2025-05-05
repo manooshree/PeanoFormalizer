@@ -1,0 +1,52 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_right_eq_self,  -- initiate induction on x,induction x with,  induction x with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,  -- assume 0 + y = 0,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_eq_self,  -- y = 0 from our assumptiom,intro h,  rw [zero_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,  -- y = 0 as desired,"theorem add_right_eq_self_dev_1_temp (x y : ℕ) : x + y = x → y = 0 := by
+  intro h
+  rw [← Nat.add_zero x] at h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,  -- assume y + succ d = succ d,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_eq_self,  -- succ (y + d) = succ d from our assumption,"rw [Nat.add_succ, Nat.succ_inj]",  rw [succ_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,  -- y + d = d from our assumption,rw [add_comm] at h,  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,  -- y = 0 using the induction hypothesis,"intro h
+rw [← Nat.add_zero x] at h
+exact Nat.add_left_cancel h",  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,  -- y = 0 as desired,"theorem add_right_eq_self_dev_1_temp (x y : ℕ) : x + y = x → y = 0 := by
+  intro h
+  rw [← Nat.add_zero x] at h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,"  -- To show x + y = x → y = 0, we start by assuming x + y = x.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_eq_self,"  -- By the commutativity of addition, we know that y + x = x.",rw [add_comm],  rw [add_comm] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,  -- We apply the theorem that a + b = b implies that a = 0.,apply Nat.add_right_eq_self,  apply add_left_eq_self at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,"  -- So, y = 0, as desired.","theorem add_right_eq_self_dev_2_temp (x y : ℕ) : x + y = x → y = 0 := by
+  intro h
+  rw [← Nat.add_zero x] at h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,"  -- Assume that x + y = x is true, then we need to prove that y = 0.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_eq_self,"  -- Rewrite the expression in hypothesis h using the add_comm theorem, which states that addition is commutative i.e., for all natural numbers a and b, a + b = b + a.",rw add_comm at h,  rw [add_comm] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,"  -- For any natural numbers x, y: x + y = y implies x = 0. So, in our case, it implies that if y = 0.","theorem add_right_eq_self_temp (x y : ℕ) : x + y = x → y = 0 := by
+  intro h
+  rw [← Nat.add_zero x] at h
+  exact Nat.add_left_cancel h",  apply add_left_eq_self at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_self,  -- h proves the goal y = 0 so we can use it to finish the proof,"theorem add_right_eq_self_temp (x y : ℕ) : x + y = x → y = 0 := by
+  intro h
+  rw [← Nat.add_zero x] at h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

@@ -1,0 +1,40 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_le_succ,  -- We consider the case where the successor of x is less than or equal to the successor of y. This implies that the successor of y is equal to the successor of x plus some natural number d.,rw [succ_le_succ_iff] at hx,  cases hx with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,  -- We assume d as the difference such that when added to x results in y. The goal now is to prove that y is equal to x plus d.,"rw [← Nat.add_one] at hx
+rw [← Nat.add_one]
+exact Nat.le_of_succ_le_succ hx",  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,  -- We rewrite the right-hand side of succ y = succ x + d using the theorem that states the the successor of a sum of two natural numbers is the same as the successor of the first number added to the second number.,rw [succ_add] at hx,  rw [succ_add] at hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,"  -- We apply the property that if two natural numbers with successors are equal, then the original numbers are also equal.",rw [succ_le_succ_iff] at hx,  apply succ_inj at hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,"  -- We have shown that x = y + d, so we can use this to prove the goal.","rw [← Nat.succ_le_succ_iff] at hx
+exact hx",  exact hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,  -- succ x ≤ succ y -> succ y = succ x + d for some natural number d,rw [succ_le_succ_iff] at hx,  cases hx with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,  -- x ≤ y -> y = x + d,"rw [← Nat.add_one] at hx
+rw [← Nat.add_one]
+exact Nat.le_of_succ_le_succ hx",  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,  -- succ y = succ x + d -> succ y = succ (x + d),"rw [succ_eq_add_one, succ_eq_add_one] at hx",  rw [succ_add] at hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,  -- succ y = succ (x + d) -> y = x + d,"theorem succ_le_succ_dev_2_temp (x y : ℕ) (hx : succ x ≤ succ y) : x ≤ y := by
+  rw [succ_le_succ_iff] at hx
+  exact hx",  apply succ_inj at hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,"  -- thus, y = x + d, so we are done","theorem succ_le_succ_dev_2_temp (x y : ℕ) (hx : succ x ≤ succ y) : x ≤ y := by
+  exact Nat.le_of_succ_le_succ hx",  exact hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,"  -- Using the definition of ≤, we have that succ y = succ x + d for some natural number d",rw [Nat.succ_le_succ_iff] at hx,  cases hx with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,"  -- Using the definition of ≤, to prove x ≤ y, it suffices to show that y = x + d",rw [Nat.succ_le_succ_iff] at hx,  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,"  -- Since succ y = succ x + d, we have succ y = succ (x + d)",rw [succ_eq_add_one] at hx,  rw [succ_add] at hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,"  -- Using the injectivity of succ, we have that y = x + d.",rw [succ_le_succ_iff] at hx,  apply succ_inj at hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_le_succ,"  -- Thus, we know y = x + d, which is exactly what we wanted to prove.","theorem succ_le_succ_dev_1_temp (x y : ℕ) (hx : succ x ≤ succ y) : x ≤ y := by
+  exact Nat.le_of_succ_le_succ hx",  exact hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

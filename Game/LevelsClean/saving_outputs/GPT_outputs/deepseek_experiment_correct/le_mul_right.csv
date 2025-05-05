@@ -1,0 +1,53 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_mul_right,"  -- We are given that the product of a and b is not zero. Therefore, we can conclude that b is not zero.","have hb : b ≠ 0 := by
+  intro hb
+  rw [hb, mul_zero] at h
+  contradiction",  apply mul_left_ne_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,"  -- We showed that b is not zero, so we can use this to show that b is at least 1.","have hb : b ≠ 0 := by
+  intro hb
+  rw [hb] at h
+  simp at h",  apply one_le_of_ne_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,"  -- We showed that b is at least 1, so we can use this to show that a * 1 <= a * b.",apply Nat.le_mul_of_pos_right,  apply mul_le_mul_right 1 b a at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,"  -- We showed that a * 1 <= a * b. We can change 1 * a to just a. Then we switch the order of the multiplication on the right side, changing b * a to a * b. Now our assumption states that a <= a * b",rw [mul_one],"  rw [one_mul, mul_comm] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,"  -- We have that a times b = a times b, so we can use reflexivity to prove the goal.",rfl,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,  -- proof by induction on b,induction b with,  induction b with d _,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,"  -- for the base case, a * 0 != 0 -> 0 != 0",rw [mul_zero] at h,  apply mul_left_ne_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,  -- 0 != 0 is false so the theorem doesn't hold for this case.,"theorem le_mul_right_dev_2_temp (a b : ℕ) (h : a * b ≠ 0) : a ≤ a * b := by
+  cases b with
+  | zero => contradiction
+  | succ b' => exact Nat.le_mul_of_pos_right (Nat.pos_of_ne_zero h)",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,"  -- For the inductive step, we have a <= a * succ d -> a <= a * d + a by the definition of multiplication.",rw [mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_mul_right,"  -- a <= a * d + a -> a * d + a = a + a * d by the definition of inequality, if we set a * d to be a.","rw [← add_mul, mul_comm]",  use a * d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,  -- a * d + a = a + a * d -> a * d + a = a + a * d by the commutative property of addition.,rw [add_comm],  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_mul_right,"  -- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_mul_right,  -- b is either 0 or the successor of some natural number d.,"cases b with
+| zero => exact Nat.zero_le (a * 0)
+| succ d => exact Nat.le_mul_of_pos_left (Nat.pos_of_ne_zero h)",  cases b with d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,  -- a * 0 != 0 -> 0 != 0,rw [mul_zero] at h,  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_mul_right,  -- 0 != 0 is false so the theorem doesn't hold for this case.,"theorem le_mul_right_dev_1_temp (a b : ℕ) (h : a * b ≠ 0) : a ≤ a * b := by
+  cases b with
+  | zero => contradiction
+  | succ b' => exact Nat.le_mul_of_pos_right (Nat.pos_of_ne_zero h)",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,  -- a <= a * succ d -> a <= a * d + a,rw [mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_mul_right,  -- a <= a * d + a ->  * d + a = a + a * d,rw [add_comm],  use a * d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,  -- a * d + a = a + a * d -> a * d + a = a + a * d,rw [mul_comm],  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_mul_right,"  -- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

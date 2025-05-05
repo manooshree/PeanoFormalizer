@@ -1,0 +1,63 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_mul,"  -- Induct on b, with d = 0 as the base case and the inductive hypothesis succ a * d = a * d + d. There are now two proof goals, prove base case: succ a * 0 = a * 0 + 0, and inductive step: succ a * succ d = a * succ d + succ d.","induction b with d hd generalizing a where
+  -- Prove base case: succ a * 0 = a * 0 + 0
+  case zero => 
+    nlinarith
+  -- Prove inductive step: succ a * succ d = a * succ d + succ d
+  case succ => 
+    nlinarith
+
+  -- Apply the inductive hypothesis to complete the proof
+  apply hd",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_mul,  -- First we prove base case. Simplify succ a * 0 = a * 0 + 0 to 0 = 0 by definition of multiplication and addition,"rw [mul_zero, add_zero] at hx -> hx = 0
+
+-- Correct the single line of Lean 4 code for this step
+
+
+
+
+FL:  rw [mul_zero, add_zero] at hx -> hx = 0","  rw [add_zero, mul_zero, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- The base case is complete.,"exact hx at hx in hx ⊢
+
+-- The base case is complete.",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Now prove inductive step. We rewrite the equation to succ a * d + succ a = a * d + a + succ d,"（rw [add_succ] at h）[← add_succ] at h
+
+-- Now prove inductive step. We rewrite the equation to succ a * d + succ a = a * d + a + succ d
+-- （rw [add_succ] at h）[← add_succ] at h","  rw [mul_succ, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Expand the equation to succ (succ a * d + a) = succ (a * d + a + d) using properties of the successor,"rw [add_succ, mul_succ, mul_succ] at hb
+
+-- Successfully completed
+-- Successfully completed","  rw [add_succ, add_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Rewrite the LHS using the inductive hypothesis obtaining succ (a * d + d + a),"rw [hd] at hx ⊢
+   at hx ⊢
+
+     -- Prove the goal succ (a * d + d + a) = succ (a * d + d + a) using the reflexivity of equality
+     rfl
+
+     -- Prove the goal succ (a * d + d + a) = succ (a * d + d + a) using the reflexivity of equality
+     rfl",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_mul,  -- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a,"rw [add_comm] at hb
+
+-- Successfully generated
+
+--   -- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a
+--   rw [add_comm] at hb
+
+--   -- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a
+--   rw [add_comm] at hb",  rw [add_right_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- LHS = RHS hence, The inductive step is complete.","exact hx1 * x + x * x = x + x * x at a ^ succ n = a ^ n + a ^ n * a
+
+-- Correct the inductive step
+-- Prove: a ^ succ n = a ^ n + a ^ n * a
+-- using: a ^ n = a ^ n + a ^ n * a
+-- by: a ^ n + a ^ n * a = a ^ n + a ^ n * a
+
+--",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

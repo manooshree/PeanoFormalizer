@@ -1,0 +1,243 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_total,"  -- Induct on y, with d = 0 as the base case and the inductive hypothesis x = d. There are now two proof goals, prove base case: x <= 0 or 0 <= x and inductive step: x <= d + 1 or d + 1 <= x.","induction y with
+| zero => exact Or.inl (Nat.zero_le x)
+| succ y ih => cases ih with
+  | inl h => exact Or.inl (Nat.le_succ_of_le h)
+  | inr h => exact Or.inr (Nat.succ_le_of_lt h)",  induction y with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We choose to prove the right side of the disjunction, which is 0 ≤ x.",right,  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,"  -- We assert that 0 is less than or equal to any natural number x, which completes the proof for this case.",exact Nat.zero_le x,  exact zero_le x,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We consider the two cases: either 'x' is less than or equal to 'd', or 'd' is less than or equal to 'x'. For both cases, we aim to show that x is less than or equal to d + 1 or d + 1 is less than or equal to x.","theorem le_total_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction y with
+  | zero => exact Or.inl (Nat.zero_le x)
+  | succ y ih =>
+    cases ih with
+    | inl h => exact Or.inl (Nat.le_succ_of_le h)
+    | inr h => exact",  cases hd with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We choose to prove the left side of the disjunction, which is x ≤ d + 1.",left,  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,  -- We consider the case that x is less than or equal to d. We know this is true because there exists a natural number e such that d equals x plus e.,"cases le_or_gt x y with
+| inl h => exact Or.inl h
+| inr h => exact Or.inr (le_of_lt h)",  cases h1 with e h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We substitute d with x + e in the goal, resulting in the equation x = x + e + 1.",rw [← add_assoc],  rw [h1],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- Use the case of e + 1 to simplify the goal to succ (x + e) = x + (e + 1).,rw [add_succ],  use e + 1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We first rewrite the left-hand side expression 'succ (x + e)' to 'x + e + 1' using the theorem that states the successor of a number is equal to the number plus one. Then, we use the theorem that addition is associative to rearrange 'x + e + 1' to 'x + (e + 1)'.","rw [Nat.succ_eq_add_one, add_assoc]","  rw [succ_eq_add_one, add_assoc]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- The goal is now to prove that x + (e + 1) = x + (e + 1), which is true by reflexivity.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,"  -- We consider the case where d is less than or equal to x. We then break down this case into two subcases: one where x is equal to d plus some natural number e, and the other where x is greater than d by some natural number e.","induction x with
+| zero => exact Or.inr (Nat.zero_le y)
+| succ x' ih =>
+  cases y with
+  | zero => exact Or.inl (Nat.le_zero x')
+  | succ y' =>
+    cases ih with
+    | inl h => exact Or.inl (Nat.succ_le_succ h)
+    | inr h => exact Or.",  cases h2 with e he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- We consider the cases that e is zero or the successor of a natural number a.,"cases y with
+| zero => exact Or.inl (Nat.zero_le x)
+| succ y => exact Or.inr (Nat.le_succ_of_le (Nat.le_of_succ_le_succ (Nat.succ_le_succ (Nat.zero_le y))))",  cases e with a,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We substitute x with d + 0 in the goal, resulting in the the goal d + 0 ≤ succ d ∨ succ d ≤ d + 0.",rw [←Nat.add_zero x],  rw [he],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We choose to prove the left side of the disjunction, which is d + 0 ≤ succ d.",left,  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,  -- We rewrite the left-hand side of the goal to d because d + 0 = d.,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,  -- We use the case of 1 to simplify the goal to succ d = d + 1.,rw [Nat.succ_eq_add_one],  use 1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- The goal is to prove that succ d equals d + 1. We directly apply the fact that the successor of a natural number d is equal to d + 1, which completes the proof for this goal.","theorem le_total_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  exact le_total x y",  exact succ_eq_add_one d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We choose to prove the right side of the disjunction, which is succ d <= x.",right,  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,  -- We use the case of a to rewrite the goal to succ x = succ d + a.,rw [Nat.succ_eq_add_one],  use a,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- The goal is to prove that succ d equals d + 1. We directly apply the fact that the successor of a natural number d is equal to d + 1.,rw succ_eq_add_one,  rw [add_succ] at he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- Rewrite the right hand side of the goal using the theorem that adding a successor to a natural number is the same as adding the natural number and then taking the successor. This leaves the goal unchanged in this case.,rw add_succ,  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We have shows that x = succ d + a, so we can use this to prove the goal.","theorem le_total_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction x with
+  | zero => exact Or.inl (Nat.zero_le y)
+  | succ x' ih =>
+    cases y with
+    | zero => exact Or.inr (Nat.le_zero x')
+    | succ y' =>
+      cases ih with",  exact he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- induction on y,induction y,  induction y with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- show the right side of the disjunction,"theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  exact le_total x y",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- 0 ≤ x, so this case is done","theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction y with
+  | zero => exact Or.inr (Nat.zero_le x)
+  | succ y ih =>
+    cases x with
+    | zero => exact Or.inl (Nat.zero_le (succ y))
+    | succ x =>",  exact zero_le x,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x ≤ d ∨ d ≤ x -> x ≤ d (case 1) or d ≤ x (case 2),"theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  exact le_total x y",  cases hd with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x ≤ succ d ∨ succ d ≤ x -> x ≤ succ d,"theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction y with
+  | zero => exact Or.inl (Nat.zero_le x)
+  | succ y ih =>
+    cases ih with
+    | inl h => exact Or.inl (Nat.le_succ_of_le h)
+    | in",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x ≤ d -> d = x + e for some natural number e,"theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction y with
+  | zero => exact Or.inl (Nat.zero_le x)
+  | succ y ih =>
+    cases x with
+    | zero => exact Or.inr (Nat.zero_le y)
+    | succ x =>
+      cases ih",  cases h1 with e h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x ≤ succ d -> x ≤ succ (x + e),rw [Nat.succ_eq_add_one],  rw [h1],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x ≤ succ (x + e) -> succ (x + e) = x + (e + 1),rw [Nat.succ_eq_add_one],  use e + 1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- succ (x + e) = x + (e + 1) -> (x + e) + 1 = x + (e + 1) -> x + (e + 1) = x + (e + 1),"rw [Nat.succ_eq_add_one, Nat.add_assoc, Nat.add_comm 1 e, ←Nat.add_assoc]","  rw [succ_eq_add_one, add_assoc]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- lhs = rhs,theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- d ≤ x -> x = d + e for some natural number e,"cases le_or_gt x y with
+| inl h => left; exact h
+| inr h => right; exact le_of_lt h",  cases h2 with e he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- e = 0 or e = succ a for some natural number a,"induction x with
+| zero => exact Or.inl (Nat.zero_le y)
+| succ x' ih =>
+  cases y with
+  | zero => exact Or.inr (Nat.le_zero x')
+  | succ y' =>
+    exact Or.inl (Nat.succ_le_succ ih)",  cases e with a,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x ≤ succ d ∨ succ d ≤ x -> d + 0 ≤ succ d ∨ succ d ≤ d + 0,"theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction y with
+  | zero => exact Or.inl (Nat.zero_le x)
+  | succ y ih =>
+    cases ih with
+    | inl h => exact Or.inl (Nat.le_succ_of_le h)
+    | in",  rw [he],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- d + 0 ≤ succ d ∨ succ d ≤ d + 0 -> d + 0 ≤ succ d,"theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction x with
+  | zero => exact Or.inl (Nat.zero_le y)
+  | succ x' ih =>
+    cases y with
+    | zero => exact Or.inr (Nat.le_zero x')
+    | succ y' =>",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- d + 0 ≤ succ d -> d ≤ succ d,"theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction x with
+  | zero => exact Or.inl (Nat.zero_le y)
+  | succ x' ih =>
+    cases y with
+    | zero => exact Or.inr (Nat.le_zero x')
+    | succ y' =>",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- d ≤ succ d -> succ d = d + 1,rw [Nat.succ_eq_add_one],  use 1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- succ d = d + 1 by a theorem,rw [Nat.succ_eq_add_one],  exact succ_eq_add_one d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x ≤ succ d ∨ succ d ≤ x → succ d ≤ x,"theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction y with
+  | zero => exact Or.inl (Nat.zero_le x)
+  | succ y ih =>
+    cases ih with
+    | inl h => exact Or.inl (Nat.le_succ_of_le h)
+    | in",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- succ d ≤ x -> x = succ d + a,rw [Nat.succ_le_iff],  use a,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x = d + succ a -> x = succ (d + a),rw [Nat.add_succ],  rw [add_succ] at he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x = succ d + a -> x = succ (d + a),rw [Nat.succ_add],  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- x = succ (d + a) by a fact we know right now,"theorem le_total_dev_2_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction x with
+  | zero => exact Or.inl (Nat.zero_le y)
+  | succ x' ih =>
+    cases y with
+    | zero => exact Or.inr (Nat.le_zero x')
+    | succ y' =>",  exact he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- We begin with induction on y.,induction y with,  induction y with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- For the base case, we need to prove x ≤ 0 ∨ 0 ≤ x, and we choose to show 0 ≤ x.","induction y with
+| zero => exact Or.inr (Nat.zero_le x)
+| succ y ih =>
+  cases x with
+  | zero => exact Or.inl (Nat.zero_le y.succ)
+  | succ x =>
+    exact Or.inl (Nat.succ_le_succ ih)",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- This follows from the theorem that 0 ≤ x for any natural number x.,exact le_total x y,  exact zero_le x,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- For the inductive step, we are given that x ≤ d ∨ d ≤ x, so we do a proof by cases.","theorem le_total_dev_1_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction y with
+  | zero => exact Or.inl (Nat.zero_le x)
+  | succ y ih =>
+    cases ih with
+    | inl h => exact Or.inl (Nat.le_succ_of_le h)
+    | in",  cases hd with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- In the first case, we need to show that x ≤ succ d ∨ succ d ≤ x, and we choose to show x ≤ succ d.",cases le_total x (succ d) with h h <;> [left; right] <;> assumption,  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- Using the definition of ≤, d = x + e for some natural number e.","theorem le_total_dev_1_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  induction y with
+  | zero => exact Or.inl (Nat.le_zero.2 (Nat.eq_zero_of_le_zero (Nat.zero_le x)))
+  | succ y ih =>
+    cases Nat.le_or_gt x y with",  cases h1 with e h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- We rewrite the goal so that we just need to show that x ≤ succ (x + e),"rw [Nat.add_succ, Nat.succ_add]",  rw [h1],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- Using the definition of ≤, it suffices to show that succ (x + e) = x + (e + 1)",rw [Nat.le_iff_exists_add],  use e + 1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We use two theorems to show that this is the same as (x + e) + 1 = x + (e + 1), which in turn is the same as x + (e + 1) = x + (e + 1).",rw [add_assoc],"  rw [succ_eq_add_one, add_assoc]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- We finish this case by reflexivity.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,"  -- In the second case, we have d ≤ x, which means that x = d + e for some natural number e.",cases le_total x y with h h <;> [left; right] <;> assumption,  cases h2 with e he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- Either e = 0, or e = succ a for some natural number a.","cases x with
+| zero => right; exact Nat.zero_le y
+| succ x' => cases y with
+  | zero => left; exact Nat.le_zero
+  | succ y' => exact Nat.le_succ_of_le (Nat.le_of_succ_le_succ (Nat.le_of_succ_le_succ (Nat.le_of_succ_le_succ (Nat.le",  cases e with a,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- In the former case, x = d + 0, so by rewriting it suffices to show that d + 0 ≤ succ d ∨ succ d ≤ d + 0",rw [Nat.add_zero],  rw [he],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We need to show that d + 0 ≤ succ d ∨ succ d ≤ d + 0, and we choose to show d + 0 ≤ succ d.",left,  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,"  -- But d + 0 = d, so by rewriting we just need to show that d ≤ succ d.",rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,"  -- Using the definition of ≤, it suffices to show that succ d = d + 1.",rw [Nat.le_iff_exists_add],  use 1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- But succ d = d + 1 is a theorem we proved earlier, so we are done.","theorem le_total_dev_1_temp (x y : ℕ) : x ≤ y ∨ y ≤ x := by
+  exact le_total x y",  exact succ_eq_add_one d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- In th latter case, we need to show that x ≤ succ d ∨ succ d ≤ x, so we choose to show succ d ≤ x.",right,  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_total,"  -- Using the definition of ≤, it suffices to show x = succ d + a.",rw [Nat.le_def],  use a,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We know x = d + succ a, so by rewriting we know x = succ (d + a)",rw [Nat.add_succ],  rw [add_succ] at he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,"  -- We want to show x = succ d + a, so by rewriting we can instead show x = succ (d + a)",rw [Nat.succ_add],  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_total,  -- But this is exactly what we just showed that we know.,exact le_total x y,  exact he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

@@ -1,0 +1,62 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_left_eq_zero,  -- initiate induction on b,"induction b with d hd in the proof
+  -- base case: introduce the hypothesis that the statement is true for b = 0
+  -- simplify the goal using the fact that a^0 = 1
+  -- then rewrite the goal using the fact that 1 * a = a
+  -- and finally simplify the goal using the fact that a * 1 = a
+  -- inductive step: introduce the hypothesis that the statement is true for b = d
+  -- simplify",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_zero,  -- 0 = 0 is obviously true,"rfl
+
+2022-03-08T12:26:02
+
+## Study
+
+## Study
+
+## Success
+
+## 99%
+
+## 99%
+
+## 99%
+
+## 99%
+
+## 99%
+
+## 99%
+
+## 99%
+
+## 99%
+
+## 99%",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- assume a + succ d = 0,"intro h2 on line 261
+NL:   -- we want to show succ d = 0
+FL:  choose h3 on line 262
+NL:   -- we want to show succ d = 0 -> 0 ≠ 0
+FL:  choose 0 ≠ 0 on line 263
+NL:   -- we want to show 0 ≠ 0
+FL:  choose h4 on",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_zero,  -- succ (a + d) = 0 from assumption,"apply succ_inj at h2n obtaining 1 = 0 by assumption
+  -- we have derived a contradiction from our assumption that a + succ d = 0
+  -- so we can conclude that a + d ≠ 0
+  <;> simp_all
+
+-- Apply the theorem that if the successor of a number is 0, then the number is 0 to obtain 1 = 0
+apply succ_inj at h2n",  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = succ (a + d) from assumption,rw [h] at h2x at h2y at h2z at h2w at h2v at h2u at h2t at h2s at h2r at h2q at h2p at h2o at h2n at h2m at h2l at h2k at h2j at h2i at h2h at h2g at h2f at h2e at h2d at h2,  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = succ (a + d) is impossible and is false,"（反证法） apply h2 at h1
+
+2024-03-24 00:01:27",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- This is vacuously true,"tauto ⊢ True → succ 0 + succ 0 ≠ 0
+===========",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

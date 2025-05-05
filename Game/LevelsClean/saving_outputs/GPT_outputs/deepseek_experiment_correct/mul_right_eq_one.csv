@@ -1,0 +1,136 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_right_eq_one,  -- assume that x * y is not equal to 0,by_contra hx,  have h2 : x * y ≠ 0,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- rewrite the goal with the previous assumption so the new goal is 1 is not equal to 0,rw [← h],  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- We know that 1 is not equal to 0, so we can use this to prove the goal.",exact one_ne_zero (by assumption),  exact one_ne_zero,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- x * y != 0 -> x <= x * y,"have h1 : x * y ≠ 0 := by
+  intro h2
+  rw [h] at h2
+  contradiction",  apply le_mul_right at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- x <= x * y -> x <= 1,have h1 : x ≤ x * y := by apply Nat.le_mul_of_pos_right; exact Nat.zero_lt_succ _,  rw [h] at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- x <= 1 -> x = 0 or x = 1,"have h1 : x ≤ 1 := by
+  apply Nat.le_of_mul_le_mul_right
+  rw [h]
+  exact Nat.le_refl 1",  cases x,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- for the x = 0 case, 0 * y = 1 -> 0 = 1",rw [Nat.zero_mul] at h,  rw [zero_mul] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- 0 = 1 is false, so we can use this to show that x is not equal to 0.","have h1 : x ≠ 0 := by
+  intro h2
+  rw [h2] at h
+  simp at h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- for the x = 1 case, succ a ≤ 1 -> succ a = 0 ∨ succ a = 1","cases x with
+| zero => contradiction
+| succ x' =>
+  cases y with
+  | zero => contradiction
+  | succ y' =>
+    rw [Nat.mul_succ, Nat.mul_succ] at h
+    rw [Nat.add_succ, Nat.add_succ] at h
+    rw [Nat.add_succ, Nat.add_succ] at h
+    rw [Nat.add_succ",  apply le_one at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- Let's look at the two possible cases for h2: either succ a = 0 or succ a = 1,cases h with,  cases h2 with h0 h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- for the succ a = 0 case, succ a * y = 1 -> 0 * y = 1 -> 0 = 1","cases x with
+| zero => exact (Nat.zero_ne_one h)
+| succ x' => 
+  have : x'.succ * y = 1 := h
+  rw [Nat.succ_mul] at this
+  have : x' * y + y = 1 := this
+  have : x' * y = 0 := Nat.add_left_cancel this
+  exact (Nat.zero_ne","  rw [h0, zero_mul] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- 0 = 1 is false, so we can use this to show that x is not equal to 0.","have h1 : x ≠ 0 := by
+  intro h2
+  rw [h2] at h
+  simp at h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- for the succ a = 1 case, succ a = 1 -> 1 = 1","theorem mul_right_eq_one_dev_1_temp (x y : ℕ) (h : x * y = 1) : x = 1 := by
+  cases x with
+  | zero => contradiction
+  | succ x' =>
+    cases y with
+    | zero => contradiction
+    | succ y' =>
+      rw [Nat.mul_succ, Nat.mul_succ] at h",  rw [h1],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- 1 = 1 is true by reflexivity,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_right_eq_one,  -- assume that x * y is not equal to 0,by_contra hx,  have h2 : x * y ≠ 0,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- rewrite the goal with the previous assumption so the new goal is 1 is not equal to 0,rw [← h],  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- We know that 1 is not equal to 0, so we can use this to prove the goal.",exact one_ne_zero.symm,  exact one_ne_zero,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- We have shown that for any natural number x, if x * y not equal to 0, x <= x * y. so we know that x ≤ x * y","have h1 : x ≤ x * y := by
+  apply Nat.le_of_not_gt
+  intro h2
+  have h3 : x * y = 0 := by
+    apply Nat.eq_zero_of_le_zero
+    apply Nat.le_of_lt_succ
+    exact h2
+  rw [h3] at h
+  contradiction",  apply le_mul_right at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- We are given that x * y = 1, so we know that x ≤ 1",have h1 : x ≤ 1 := Nat.le_of_mul_le_mul_right (Nat.le_of_eq h) (Nat.zero_lt_succ 0),  rw [h] at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- Since x <= 1, x must be 1 or 0.","have h1 : x ≤ 1 := by
+  apply Nat.le_of_mul_le_mul_right
+  rw [h]
+  exact Nat.le_refl 1",  apply le_one at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- We consider the two possible cases for x given by the disjunction in h2: either x equals 0 or x equals 1.,cases h with h0 h1,  cases h2 with h0 h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- If x equals 0, then x * y = 0, which implies that 0 = 1.","cases x with
+| zero => contradiction
+| succ x' => rfl","  rw [h0, zero_mul] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- 0 = 1 is false, so we can use this to show that x is not equal to 0.","have h1 : x ≠ 0 := by
+  intro h2
+  rw [h2] at h
+  simp at h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- We have shown that x = 1 which proves the goal.,"theorem mul_right_eq_one_temp (x y : ℕ) (h : x * y = 1) : x = 1 := by
+  exact Nat.eq_one_of_mul_eq_one_right h",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- assume that x * y is not equal to 0,by_contra h',  have h2 : x * y ≠ 0,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- rewrite the goal with the previous assumption so the new goal is 1 is not equal to 0,rw [← h],  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- We know that 1 is not equal to 0, so we can use this to prove the goal.",exact one_ne_zero,  exact one_ne_zero,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_right_eq_one,"  -- We have shown that for any natural number x, if x * y not equal to 0, x <= x * y. so we know that x ≤ x * y","have h1 : x ≤ x * y := by
+  apply Nat.le_of_not_gt
+  intro h2
+  have h3 : x * y ≤ x := Nat.mul_le_mul_right x h2
+  have h4 : x * y = 1 := h
+  rw [h4] at h3
+  exact Nat.not_le_of_gt h2 h3",  apply le_mul_right at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- We are given that x * y = 1, so we know that x ≤ 1",have h1 : x ≤ 1 := Nat.le_of_mul_le_mul_right (by rw [h]; exact Nat.le_refl 1) y,  rw [h] at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- Since x <= 1, x must be 1 or 0.","have h1 : x ≤ 1 := by
+  apply Nat.le_of_mul_le_mul_right (Nat.zero_le y)
+  rw [h]
+  exact Nat.le_refl 1",  apply le_one at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- We consider the two possible cases for x given by the disjunction in h2: either x equals 0 or x equals 1.,cases h with h1 h2,  cases h2 with h0 h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- we know that x * y = 1. Plugging in x = 0, we get 0 * y = 0.",rw [h],  rw [h0] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- we know that 0 * n = 0 for any natural number n, so we have 0 = 1.","rw [← mul_zero x, h, zero_mul]",  rw [zero_mul] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- 0 = 1 is false, so we can use this to show that x is not equal to 0.","have h1 : x ≠ 0 := by
+  intro h2
+  rw [h2] at h
+  simp at h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- We have shown that x = 1 which proves the goal.,"theorem mul_right_eq_one_dev_2_temp (x y : ℕ) (h : x * y = 1) : x = 1 := by
+  exact Nat.eq_one_of_mul_eq_one_right h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

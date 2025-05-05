@@ -1,0 +1,54 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_mul,"-- Perform induction on m, with d = 0 as the base case and the inductive hypothesis 0 * d = 0. There are now two proof goals, prove base case: 0 * 0 = 0, and inductive step: 0 * succ (d) = 0","use 0
+  split_ifs
+  · rfl
+  · simp [mul_succ, h] at hd
+    linarith
+
+-- Prove the inductive step: 0 * succ (d) = 0
+  case h
+  d : ℕ
+  h : ¬(0 * d = 0)
+  ⊢ 0 * succ d = 0
+
+-- Prove the base case: 0 *",  induction m with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- First prove base case. Simplify LHS 0 * 0 to 0,"rw [mul_zero] at hb by assumption
+
+-- Generate the single line of Lean 4 code for this step",  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case","rfl
+
+-- Move to the inductive step
+case succ
+-- Simplify the LHS and RHS
+  -- x + 0 = x
+  -- 0 + x = x
+  -- x + succ 0 = succ (x + 0)
+  -- succ (x + 0) = succ x
+  -- succ x + 0 = succ (x + 0)
+  -- succ (x + 0) = succ x",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,"  -- Now prove inductive step. Rewrite LHS 0 * succ (d) to 0 * d + 0, using the definition of multiplication","rw [mul_succ] at hd => hd = 0 * d + 0
+  -- Now prove inductive step. Rewrite LHS 0 * d + 0 to 0 * d + 1 - 1, using the definition of addition
+  -- This is incorrect, so we correct it to:
+  -- Now prove inductive step. Rewrite LHS 0 * d + 0 to 0 * d + 1, using the definition of addition",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,  -- Simplify the LHS 0 * d + 0 to 0 + 0 using the inductive hypothesis,"rw [hd] at hb by rw [mul_succ] at hb; exact hb
+
+-- Simplify the LHS 0 * d + 0 to 0 + 0 using the inductive hypothesis
+rw [hd] at hb by rw [mul_succ] at hb; exact hb",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,  -- Simplify the LHS o 0 + 0 to 0,"rw [add_zero] at hb2 at hb1 ⊢
+
+-- Apply the theorem that states that if the sum of two natural numbers is zero, then the second number must be zero
+apply zero_add_eq at hb2
+
+-- Simplify the LHS and RHS of the fact that b = 0 to b + 0 = 0
+rw [hb2, add_zero] at hb1
+
+-- Simpl",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing the proof","rfl [_x, n, hn] at hn
+FL:   rfl [_x, n, hn] at hn",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

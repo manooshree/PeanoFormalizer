@@ -1,0 +1,60 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+pow_add,"  -- We can use induction on n, making the inductive hypothesis that a ^ (m + d) = a ^ m * a ^ d. Then, the base case is a ^ (m + 0) = a ^ m * a ^ 0, and the inductive case is: a ^ (m + succ d) = a ^ m * a ^ succ d","theorem pow_add_dev_1_temp (a m n : ℕ) : a ^ (m + n) = a ^ m * a ^ n := by
+  induction n with
+  | zero => rw [Nat.add_zero, Nat.pow_zero, Nat.mul_one]
+  | succ n ih => rw [Nat.add_succ, Nat.pow_succ, Nat.pow_succ, Nat",  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- Simplify the base case to a^m = a^m * a^0,rw [pow_add],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a^m = a^m * 1,rw [pow_add],  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a^m = a^m,rfl,  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- lhs = rhs, so we are done with the base case.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_add,"  -- For the inductive case we have to show that a ^ (m + succ d) = a ^ m * a ^ succ d, which can be simplified to a ^ succ (m + d) = a ^ m * a ^ succ d","rw [pow_succ, pow_succ, mul_assoc]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ (m + d) * a = a ^ m * a ^ succ d,rw [pow_add],  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ (m + d) * a = a ^ m * (a ^ d * a),rw [pow_add],  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ m * a ^ d * a = a ^ m * (a ^ d * a) by the inductive hypothesis,rw [pow_add],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ m * (a ^ d * a) = a ^ m * (a ^ d * a),rw [pow_add],  rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- lhs = rhs, so we are done.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_add,"  -- Induct on n, with d = 0 as the base case and the inductive hypothesis a^(m + d) = a^m * a^d. There are now two proof goals, prove base case: a^(m + 0) = a^m * a^0 and inductive step: a^(m + d) = a^m * a^d implies a^(m + succ d) = a^m * a^(succ d).",induction n with d hd,  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_add,  -- Rewrite the left hand side using the identity that the sum of any natural number and 0 is equal to that natural number,rw [Nat.add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1,rw pow_zero,  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- Rewrite the right hand side using the identity that any natural number multiplied by 1 is equal to that natural number,rw [pow_add],  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- The goal is now to prove that a^m = a^m, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_add,  -- Rewrite the left hand side using the identity that the sum of any natural number and the successor of another natural number is equal to the successor of the sum of the two natural numbers,rw [Nat.add_succ],  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",rw pow_succ,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- Rewrite the right hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",rw pow_succ,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- Rewrite the left hand side using the induction hypothesis,rw pow_add,  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- Rewrite the left hand side using the identity that any natural number multiplied by the product of two natural numbers is equal to the product of the first natural number multiplied by the second natural number multiplied by the third natural number,rw [pow_add],  rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- The goal is now to prove that a^m * (a^d * a) = a^m * a^(d + 1), which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_add,"  -- Induct on n, with t = 0 as the base case and the inductive hypothesis a^(m + t) = a^m * a^t. There are now two proof goals, prove base case: a^(m + 0) = a^m * a^0 and inductive step: a^(m + t) = a^m * a^t implies a^(m + succ t) = a^m * a^(succ t).","induction n with
+| zero => rfl
+| succ n ih => rw [Nat.add_succ, pow_succ, ih, pow_succ, mul_assoc]",  induction n with t ht,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- Rewrite the goal by first simplifying the expression m + 0 to m, then simplifying a raised to the power of 0 to 1, and finally simplifying any number multiplied by 1 to the number itself. This results in the goal a^m = a^m.","rw [Nat.add_zero, pow_zero, mul_one]","  rw [add_zero, pow_zero, mul_one]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- The goal is now to prove that a^m = a^m, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_add,"  -- Rewrite the expression a^(m + succ t) as a^m * (a^t * a) using the fact that (m + succ t) is the same as (succ (m + t)), and that a raised to the power (succ (m + t)) is the same as (a^(m + t) * a). Also, use the inductive hypothesis that a^(m + t) is equivalent to a^m * a^t, and the fact that multiplication is associative","rw [add_succ, pow_succ, pow_succ, mul_assoc]","  rw [add_succ, pow_succ, pow_succ, ht, mul_assoc]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- The goal is now to prove that a^m * (a^d * a) = a^m * a^(d + 1), which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,5 +1,0 @@
-rw [add_assoc]
-	rw [add_comm]
-		rw [add_assoc]
-			rfl
-			SYSTEM: QED

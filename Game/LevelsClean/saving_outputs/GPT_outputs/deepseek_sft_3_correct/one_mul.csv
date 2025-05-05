@@ -1,0 +1,10 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+one_mul,  -- m * 1 = m,"rw [mul_one] at hb -> hb = m * 1 at hb
+  rw [mul_one] at hb",  rw [mul_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_mul,  --  m = m,"exact hm inr hm as a disjunction as a disjunction at hm
+
+-- Replace the 'sorry' with 'exact hm'",  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_mul,"  -- m = m, completing the proof",rfl where m = m is our base case.,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

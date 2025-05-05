@@ -1,0 +1,74 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_2,  -- proof goal 0 + x = y + 2,"FLT:
+  -- proof goal 0 + x = y + 2
+  rw [zero_add] at h
+  exact h
+  -- proof goal x = y + 2
+  rw [zero_add] at h
+  exact h
+  -- proof goal x = y + 2
+  rw [zero_add] at h
+  exact h
+  -- proof goal x = y + 2
+  rw [zero_add",  rw [← zero_add x],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- proof goal 0 + x = 0 + y + 2,"FLT:
+  -- proof goal 0 + x = 0 + y + 2
+  rw [zero_add] at h
+  -- proof goal x = 0 + y + 2
+  rw [zero_add] at h
+  -- proof goal x = y + 2
+  exact h",  rw [← zero_add y],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- hypothesis (0 + x = 0 + y + 2) = proof goal (0 + x = 0 + y + 2),"FLT: 0 + x = 0 + y + 2 → x = y + 2
+
+  -- 0 + x = 0 + y + 2 → x = y + 2
+  exact h
+
+  -- 0 + x = 0 + y + 2 → x = y + 2
+  exact h
+
+  -- 0 + x = 0 + y + 2 → x =",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- proof goal 0 + x = y + 2,"rw [add_comm] at hb ⊢
+   -- proof goal 0 + x = 2 + y
+FL:   rw [add_comm] at hb
+   -- proof goal x = 2 + y
+FL:   rw [add_comm] at hb
+   -- proof goal x = y + 2
+FL:   rw [add ←hb] at hb
+   -- proof goal x = y +",  rw [← zero_add x],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- proof goal 0 + x = 0 + y + 2,"rw [zero_add] at hx ⊢
+   -- proof goal 0 + x = y + 2
+FL:   rw [zero_add] at hx �FL:   -- proof goal 0 + x = y + 2
+   -- proof goal x = y + 2
+FL:   rw [zero_add] at hx ⊢
+   -- proof goal x = y + 2
+FL",  rw [← zero_add y],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- hypothesis (0 + x = 0 + y + 2) = proof goal (0 + x = 0 + y + 2),"rw [zero_add] at hx ⊢
+
+-- Rewrite the hypothesis and proof goal using the identity that adding zero to any number results in the same number.",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- proof goal 0 + x = y + 2,"rw [add_comm] at hb ⊢
+   -- proof goal 0 + x = 2 + y
+FL:   rw [add_comm] at hb
+   -- proof goal x = 2 + y
+FL:   rw [add_comm] at hb
+   -- proof goal x = y + 2
+FL:   rw [add ←hb] at hb
+   -- proof goal 0 + x =",  rw [← zero_add x],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- proof goal 0 + x = 0 + y + 2,"rw [zero_add] at hx ⊢
+   -- proof goal 0 + x = y + 2
+FL:   rw [zero_add] at hx �FL:   -- proof goal 0 + x = y + 2
+   -- proof goal x = y + 2
+FL:   rw [zero_add] at hx ⊢
+   -- proof goal x = y + 2
+FL",  rw [← zero_add y],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- hypothesis (0 + x = 0 + y + 2) = proof goal (0 + x = 0 + y + 2),"rw [zero_add] at hx ⊢
+
+-- Rewrite the hypothesis and the proof goal using the fact that adding zero to any number results in the same number.",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

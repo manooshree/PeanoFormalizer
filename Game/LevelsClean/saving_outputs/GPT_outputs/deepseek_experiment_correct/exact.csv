@@ -1,0 +1,9 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact,"-- We can prove x + y = 37, using our given statement, which says exactly that x + y = 37, and complete the proof",exact h1,  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact,"  -- We are given that x + y = 37, so we are done.","theorem exact_dev_1_temp (x y z : ℕ) (h1 : x + y = 37) (h2 : 3 * x + z = 42) : x + y = 37 := by
+  exact h1",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact,  -- x + y = 37,"theorem exact_dev_2_temp (x y z : ℕ) (h1 : x + y = 37) (h2 : 3 * x + z = 42) : x + y = 37 := by
+  exact h1",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

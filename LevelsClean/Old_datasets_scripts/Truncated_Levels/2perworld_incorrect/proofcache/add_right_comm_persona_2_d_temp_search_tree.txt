@@ -1,3 +1,0 @@
-rw [add_comm b c]
-	rfl
-	SYSTEM: QED

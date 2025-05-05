@@ -1,0 +1,20 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+rw_backwards,  -- Substitute succ(0) -> 1 on the RHS,"rw [← one_eq_succ_zero] at hx
+
+The new goal is to prove 1 <= x.",  rw [← one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+rw_backwards,  -- Substitute succ(1) -> 2 on the RHS,"rw [succ_one_eq_two] at hx
+
+-- Apply the theorem that if the successor of a natural number is equal to 2, then the original number is equal to 1
+apply succ_eq_two_iff at hx
+
+-- Use the assumption that x is not equal to 0 and the assumption that x is not equal to 1 to derive a contradiction
+exact hx.elim hx0 hx1",  rw [← two_eq_succ_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_backwards,"  -- 2 = 2, QED","rfl
+
+1 line of L4, commented, by rfl
+
+   -- Apply reflexivity to conclude the proof
+   rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

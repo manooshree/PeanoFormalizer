@@ -1,0 +1,62 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_add,"    -- Induct on b, with b = 0 as the base case and the inductive hypothesis a * b = a * b + a * c. There are now two proof goals, prove base case: a * (0 + c) = a * 0 + a * c, and inductive step: a * (succ b + c) = a * succ b + a * c","induction b with
+| zero => rfl
+| succ b ih => rw [add_succ, mul_succ, ih, add_assoc]",    induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- First prove base case. Simplify LHS a * (0 + c) to a * c and RHS a * 0 + a * c to 0 + a * c and then simplify to a * c,"rw [Nat.zero_add, Nat.mul_zero, Nat.zero_add]","    rw [zero_add, mul_zero, zero_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,"    -- Prove LHS and RHS are equal, a * c = a * c, completing the base case",rfl,    rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_add,    -- Next prove the inductive step. Rewrite LHS a * (succ b + c) to a * succ (b + c) and then to  a * (b + c) + a,"rw [add_succ, mul_succ, add_assoc]","    rw [succ_add, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- Rewrite RHS from a * succ b + a * c to a * b + a + a * c and then rearrange terms to a * b + a * c + a,"rw [mul_succ, add_assoc]","    rw [mul_succ, add_right_comm]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- Rewrite the LHS a * (b + c) + a to a * b + a * c + a using the inductive hypothesis,rw [mul_add],    rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,"    -- Prove LHS and RHS are equal, a * b + a * c + a = a * b + a * c + a, completing the proof",rfl,    rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_add,"    -- Proof by induction on b, with a * (0 + c) = a * 0 + a * c as the base case and  a * (succ b + c) = a * succ b + a * c as the inductive step.","theorem mul_add_dev_2_temp (a b c : ℕ) : a * (b + c) = a * b + a * c := by
+  induction b with
+  | zero => rw [Nat.zero_add, Nat.mul_zero, Nat.zero_add]
+  | succ b' ih => rw [Nat.succ_add, Nat.mul_succ, Nat.add_assoc,",    induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- First prove base case. a * (0 + c) = a * 0 + a * c becomes a * c = a * c by definition of multiplication and addition,rw [Nat.zero_add],"    rw [zero_add, mul_zero, zero_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- The base case is complete.,theorem mul_add_dev_2_temp (a b c : ℕ) : a * (b + c) = a * b + a * c := by,    rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- Next prove inductive step. a * (succ b + c) = a * succ b + a * c becomes a * (b + c) + a = a * succ b + a * c + a by definition of multiplication and addition,"rw [mul_succ, add_assoc, add_comm (a * b) a, ←add_assoc]","    rw [succ_add, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- a * (b + c) + a = a * b + a * c + a becomes a * (b + c) + a = a * b + a * c + a by the definition of multiplication and the commutative property of addition,"rw [mul_add, add_assoc]","    rw [mul_succ, add_right_comm]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- a * (b + c) + a = a * b + a * c + a becomes a * b + a * c + a = a * b + a * c + a using the inductive hypothesis,rw [mul_add],    rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- The inductive step is complete. So the whole proof is complete.,"theorem mul_add_dev_2_temp (a b c : ℕ) : a * (b + c) = a * b + a * c := by
+  induction c with
+  | zero => rw [add_zero, mul_zero, add_zero]
+  | succ c ih => rw [add_succ, mul_succ, ih, add_assoc, add_comm (a * c), ←add",    rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- Proof by induction on b,"induction b with
+| zero =>
+  rw [Nat.add_zero, Nat.mul_zero, Nat.add_zero]
+| succ b' ih =>
+  rw [Nat.add_succ, Nat.mul_succ, Nat.add_succ, ih, Nat.add_assoc]",    induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- Begin the base case: a * c = a * 0 + a * c,"rw [mul_zero, zero_add]",    rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- a * c = 0 + a * c,rw [zero_add],    rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- a * c = a * c,rfl,    rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- The base case is complete.,theorem mul_add_dev_1_temp (a b c : ℕ) : a * (b + c) = a * b + a * c := by,    rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- Next prove inductive step. a * (b + c) + a = a * succ b + a * c,"rw [mul_succ, add_assoc]","    rw [succ_add, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- a * (b + c) + a = a * b + a * c + a,rw [mul_add],"    rw [mul_succ, add_right_comm]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    --  a * b + a * c + a = a * b + a * c + a using the inductive hypothesis,rw [mul_add],    rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_add,    -- The inductive step is complete. So the whole proof is complete.,"theorem mul_add_dev_1_temp (a b c : ℕ) : a * (b + c) = a * b + a * c := by
+  induction c with
+  | zero => rw [add_zero, mul_zero, add_zero]
+  | succ c ih => rw [add_succ, mul_succ, ih, add_assoc, add_comm (a * c), ←add",    rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

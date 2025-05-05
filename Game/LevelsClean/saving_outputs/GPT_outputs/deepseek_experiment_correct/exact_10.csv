@@ -1,0 +1,13 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_10,"  -- We have x ≠ y (which really means x = y -> False), and we know x = y, so by modus ponens, we know False",exact False.elim (h1.symm ▸ h2),  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,"  -- So we have a falsehood/contradiction, which is exactly what we wanted to show.",exact False.elim (h1.symm ▸ h2),  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,"  -- We apply the assumption x ≠ y to the given statement that x = y, which contradicts and results in a falsehood",exact h2 h1,  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,"  -- We have proven that both x = y and x ≠ y cannot be true, completing the proof",exact False.elim (h1.symm ▸ h2),  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,  -- x = y AND x ≠ y is False,exact False.elim (h1.symm ▸ h2),  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,  -- False,exact False.elim (h1.symm ▸ h2),  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

@@ -1,0 +1,17 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_pow_zero,"  -- We define the power operation such that a^0 = 1 for any natural number a, so we can write 0^0 = 1.","use 1 as the proof for the goal of showing 0^0 = 1.
+
+- -- (end of line)",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_zero,"  -- The goal we are left with is now to prove that 1 = 1, which is true by reflexivity","rfl → rfl at hx ⊢
+
+-- Correctly formalizing this step into a single line of Lean 4 code is:
+
+-- FL: rfl → rfl at hx ⊢
+
+-- Correctly formalizing this step into a single line of Lean 4 code is:
+
+-- FL: rfl → rfl at hx ⊢
+
+-- Correctly formalizing this step into a",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

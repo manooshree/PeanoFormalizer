@@ -1,0 +1,40 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+two_five,  -- Rewrite the proof goal using the definitions of successor and zero addition. Proof goal is now succ (succ (succ (succ 0))) ≠ succ (succ (succ (succ (succ 0)))),"rw [add_succ, add_succ]","  rw [add_succ, add_succ, add_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- Assume the contradiction, succ (succ (succ (succ 0))) = succ (succ (succ (succ (succ 0))))",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+two_five,  -- Apply injectivity of the successor function and simplify contradiction to 0 = succ (0),"rw [succ_add, succ_add]",  repeat apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- By the Peano axiom, 0 cannot be equal to the successor of a natural number, thus our contradiction is false",exact zero_ne_succ (succ 0),  apply zero_ne_succ,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- We show our contradiction is indeed false, and the proof is complete","theorem two_five_dev_1_temp : succ (succ 0) + succ (succ 0) ≠ succ (succ (succ (succ (succ 0)))) := by
+  exact zero_ne_succ",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- Assume the contradiction that succ (succ 0) + succ (succ 0) = succ (succ (succ (succ (succ 0)))),intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+two_five,"  -- Rewrite the LHS of our assumption, transforming succ (succ 0) + succ (succ 0) to succ (succ (succ (succ 0)))","rw [succ_add, succ_add]","  rw [add_succ, add_succ, add_zero] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- Repeatedly apply the injectivity of the successor function to the assumption until we simplify the assumption equation to 0 = succ 0,"theorem two_five_temp : succ (succ 0) + succ (succ 0) ≠ succ (succ (succ (succ (succ 0)))) := by
+  repeat' rw [succ_add]
+  simp",  repeat apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- Apply the fact that zero is not equal to the successor of zero, showing our assumption is false","theorem two_five_temp : succ (succ 0) + succ (succ 0) ≠ succ (succ (succ (succ (succ 0)))) := by
+  exact zero_ne_succ",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- We have shown that succ (succ 0) + succ (succ 0) ≠ succ (succ (succ (succ (succ 0)))) is false, completing the proof","theorem two_five_temp : succ (succ 0) + succ (succ 0) ≠ succ (succ (succ (succ (succ 0)))) := by
+  exact zero_ne_succ",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- assume contradiction succ (succ 0) + succ (succ 0) = succ (succ (succ (succ (succ 0)))),intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+two_five,  -- succ (succ (succ (succ (0)) + 0)) = succ (succ (succ (succ (succ 0)))),"rw [add_succ, add_succ, add_succ, add_succ]","  rw [add_succ, add_succ] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- succ (succ (succ (succ 0))) = succ (succ (succ (succ (succ 0)))),rw [succ_succ_eq_succ_succ],  rw [add_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- 0 = succ 0,rfl,  repeat apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- False,"theorem two_five_dev_2_temp : succ (succ 0) + succ (succ 0) ≠ succ (succ (succ (succ (succ 0)))) := by
+  exact zero_ne_succ",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- False, proof is complete","theorem two_five_dev_2_temp : succ (succ 0) + succ (succ 0) ≠ succ (succ (succ (succ (succ 0)))) := by
+  exact zero_ne_succ",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

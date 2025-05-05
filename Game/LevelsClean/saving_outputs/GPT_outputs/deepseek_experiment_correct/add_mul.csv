@@ -1,0 +1,23 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_mul,  -- Rewrite LHS using the commutative property of multiplication and the distributive property of multiplication over addition. This changes (a + b) * c to c * a + c * b.,"rw [mul_comm, mul_add]","  rw [mul_comm, mul_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_mul,"  -- Apply the commutative property of multiplication everywhere to LHS, changing c * a + c * b to a * c + b * c","rw [mul_comm c a, mul_comm c b]",  repeat rw [mul_comm c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_mul,"  -- Prove LHS and RHS are equal, a * c + b * c = a * c + b * c, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_mul,  -- c * (a + b) = a * c + b * c,rw [Nat.mul_add],  rw [mul_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_mul,  -- c * a + c * b = a * c + b * c,"rw [mul_comm c a, mul_comm c b]",  rw [mul_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_mul,  -- a * c + c * b = a * c + b * c,rw [mul_comm c b],  rw [mul_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_mul,  -- a * c + c * b = a * c + c * b,rw [add_mul],  rw [mul_comm b],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_mul,"  -- Prove LHS and RHS are equal, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_mul,  -- Rewrite LHS using the commutative property of multiplication and the distributive property of multiplication over addition.,"rw [mul_comm, mul_add]","  rw [mul_comm, mul_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_mul,  -- Apply the commutative property of multiplication everywhere to LHS,"rw [mul_comm (a + b) c, mul_comm a c, mul_comm b c]",  repeat rw [mul_comm c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_mul,"  -- Prove LHS and RHS are equal, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,0 +1,39 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_ne_zero,  -- Introduce the statement that succ a = 0 is false,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_ne_zero,  -- Rewrite the proof goal to succ a = 0 if succ (a) is 0,rw [← succ_eq_add_one],  rw [← is_zero_succ a],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,  -- Rewrite the proof goal to showing that succ a = 0 if 0 is zero,rw [← succ_zero],  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,  -- Simplify the if 0 is zero condition to true,rw [Nat.succ_ne_zero],  rw [is_zero_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,"  -- We prove that our initial statement, of succ a = 0 is false, is indeed a true statement, completing the proof","theorem succ_ne_zero_temp (a : ℕ) : succ a ≠ 0 := by
+  exact succ_ne_zero a",  trivial,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,"  -- To show succ a ≠ 0, we need to assume succ a = 0 and derive a contradiction/falsehood.","theorem succ_ne_zero_dev_1_temp (a : ℕ) : succ a ≠ 0 := by
+  intro h
+  cases h",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,"  -- False and is_zero (succ 0) are equivalent, so we chose to show the latter.","theorem succ_ne_zero_dev_1_temp (a : ℕ) : succ a ≠ 0 := by
+  exact succ_ne_zero a",  rw [← is_zero_succ a],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,"  -- By assumption, we can change succ a into 0.",intro h,  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,"  -- is_zero 0 is equivalent to True, so we can show True instead.","theorem succ_ne_zero_dev_1_temp (a : ℕ) : succ a ≠ 0 := by
+  exact succ_ne_zero a",  rw [is_zero_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,  -- True has the trivial proof.,trivial,  trivial,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_ne_zero,  -- assume succ a = 0,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_ne_zero,  -- False -> is_zero (succ 0),exact succ_ne_zero 0,  rw [← is_zero_succ a],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,  -- is_zero (succ 0) -> is_zero 0,rw [Nat.succ_zero],  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,  -- is_zero 0 -> True,"theorem succ_ne_zero_dev_2_temp (a : ℕ) : succ a ≠ 0 := by
+  intro h
+  cases h",  rw [is_zero_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,"  -- clearly, True","theorem succ_ne_zero_dev_2_temp (a : ℕ) : succ a ≠ 0 := by
+  exact succ_ne_zero a",  trivial,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

@@ -1,0 +1,21 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_refl,  -- x <= x -> x + 0 = x,rw [Nat.add_zero],  use 0,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_refl,  -- x + 0 = x -> 0 + x = x,rw [Nat.add_comm],  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_refl,  -- 0 + x = x -> x = x,rfl,  rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_refl,  -- LHS = RHS,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_refl,"  -- By the definition of less than, x + n = x where n is some natural number. We set n to be 0",rw [Nat.le_iff_exists_add],  use 0,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_refl,  -- simplify the RHS using properties of addition to x = x,rw [Nat.add_comm],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_refl,"  -- The LHS = RHS, so we can conclude the proof.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_refl,  -- We claim that x is equal to x plus zero.,rw [← Nat.add_zero x],  use 0,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_refl,"  -- The goal is to prove that x equals x plus zero. By applying the theorem that states that adding zero to any natural number results in the original number, the goal simplifies to proving that x equals x.",rw [←Nat.add_zero x],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_refl,"  -- The goal is now to prove that x equals x, which is true by reflexivity.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

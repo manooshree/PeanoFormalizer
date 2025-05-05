@@ -1,0 +1,80 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_right_eq_zero,"  -- Split the natural number 'b' into two cases: 'b' is zero, and 'b' is the successor of another natural number 'd'.","cases b with
+| zero => intro h; rw [Nat.add_zero] at h; exact h
+| succ d => intro h; rw [Nat.add_succ] at h; exact Nat.succ_ne_zero (a + d) h",  cases b with d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,"  -- Assume that the hypothesis 'h' is true, that is, a + 0 = 0. The goal now is to prove that a = 0.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_eq_zero,  -- Repeatedly apply the theorem that adding zero to any number does not change its value to the hypothesis h.,intro h,  rw [add_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- We use the hypothesis 'h' which is a proof that 'a = 0' to close the current goal. The new goal is now to prove that 'a + succ d = 0' implies 'a = 0'.,"theorem add_right_eq_zero_temp (a b : ℕ) : a + b = 0 → a = 0 := by
+  intro h
+  rw [← Nat.add_zero a] at h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,"  -- Assume that the hypothesis 'h' is true, that is, a + succ d = 0. The goal now is to prove that a = 0.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_eq_zero,"  -- For any natural numbers x and y, x + succ y = succ (x + y). Applying this repeatedly simplifies the hypothesis but leaves the goal state a = 0 unchanged.",rw [add_succ] at *,  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- Swap the left-hand side and the right-hand side of the equality in the hypothesis.,rw [add_comm] at h,  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- Apply the theorem that states that the successor of any natural number cannot equal 0 to our hypothesis h which shows that h is false.,intro h,  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,"  -- Since h is a proof of False, and there are no ways to construct False so we have our contradiction and can close the proof","theorem add_right_eq_zero_temp (a b : ℕ) : a + b = 0 → a = 0 := by
+  intro h
+  cases a with
+  | zero => rfl
+  | succ a' => 
+    have : succ a' + b ≠ 0 := Nat.succ_ne_zero (a' + b)
+    contradiction",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- Proof by induction on b,"induction b with
+| zero => intro h; exact h
+| succ b' ih => intro h; exact ih (Nat.add_right_cancel h)",  induction a with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- 0 = 0 is trivially true,rfl,  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- assume that succ d + b = 0,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_eq_zero,  -- succ (d + b) = 0,rw [Nat.succ_eq_add_one],  rw [succ_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- 0 = succ (a + d),rw [Nat.add_comm],  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- 0 = succ (a + d) is impossible as its false,intro h,  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- This is vacuously true,"theorem add_right_eq_zero_dev_1_temp (a b : ℕ) : a + b = 0 → a = 0 := by
+  intro h
+  rw [← Nat.add_zero a] at h
+  exact Nat.add_left_cancel h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- use the theorem that a + b = b + a to obtain b + a = 0 implies a = 0,rw add_comm,  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- initiate induction on b,induction b with,  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- Assume the hypothesis 0 + a = 0 for the base case,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_eq_zero,  -- use the theorem that 0 + n = 0 to obtain a = 0,"intro h
+rw [← Nat.zero_add b] at h
+exact Nat.add_left_cancel h",  rw [zero_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- a = 0 is what was desired,"theorem add_right_eq_zero_dev_2_temp (a b : ℕ) : a + b = 0 → a = 0 := by
+  intro h
+  rw [← Nat.add_zero a] at h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- Assume hypothesis succ d + a = 0,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_eq_zero,  -- use the theorem that succ a + b = succ (a + d) to obtain succ (d + a) = 0,"rw [add_succ, add_comm]",  rw [succ_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- Use the fact that a = b implies b = a to obtain 0 = succ (d + a),rw [add_comm],  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,  -- Apply the theorem that states that the successor of any natural number cannot equal 0 to our hypothesis h which shows that h is false.,intro h,  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_eq_zero,"  -- Since h is a proof of False, and there are no ways to construct False so we have our contradiction and can close the proof","theorem add_right_eq_zero_dev_2_temp (a b : ℕ) : a + b = 0 → a = 0 := by
+  intro h
+  cases a with
+  | zero => rfl
+  | succ a' => 
+    have : succ a' + b ≠ 0 := Nat.succ_ne_zero (a' + b)
+    contradiction",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

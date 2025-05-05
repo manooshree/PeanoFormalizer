@@ -1,0 +1,23 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_2,  -- proof goal 0 + x = y + 2,"rw [zero_add] at hx ⊢
+     -- new proof goal x = y + 2
+FL:   exact hx at hx ⊢
+     -- new proof goal y + 2 = y + 2
+FL:   rfl at hx ⊢
+     -- new proof goal y + 2 = y + 2
+FL:   exact hx at hx ⊢
+     --",  rw [← zero_add x],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- proof goal 0 + x = 0 + y + 2,"rw [zero_add] at hx ⊢
+   -- new proof goal x = 0 + y + 2
+FL:   rw [zero_add] at hx ⊢
+   -- new proof goal x = y + 2
+FL:   rw [zero_add] at hx ⊢
+   -- new proof goal x = y + 2
+FL:   rw [zero_add] at hx",  rw [← zero_add y],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- hypothesis (0 + x = 0 + y + 2) = proof goal (0 + x = 0 + y + 2),"exact hx at h3
+
+- -- Apply the hypothesis (0 + x = 0 + y + 2) to the fact (x = y + 2) to obtain (0 + x = 0 + y + 2).
+  exact hx at h3",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

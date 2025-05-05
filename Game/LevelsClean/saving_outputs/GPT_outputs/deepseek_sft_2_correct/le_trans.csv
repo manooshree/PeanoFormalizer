@@ -1,0 +1,62 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_trans,  -- y = x + a,"rw [add_comm] at hx ⊢
+  -- y = a + x
+  -- y = x + a
+
+202 next step
+-- y = x + a
+-- x = y + (-a)
+-- x = x + a + (-a)
+-- 0 = a + (-a)
+-- 0 = 0
+-- QED
+
+-- Rewrite the hypothesis and the goal using the commutative property of addition",  cases hxy with a ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = y + b,"rw [add_comm] at hb2 ⊢
+  -- z = b + y
+FL:   rw [←hb2] at hb1
+  -- a + (b + y) = a + (b + b)
+FL:   rw [hb1] at hb2
+  -- a + b + y = a + b + b
+FL:   rw [add_assoc] at hb2
+  -- a",  cases hyz with b hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b),"rw [add_comm] at hb ⊢
+  -- z = x + (b + a)
+FL:  rw [add_comm] at hb
+  -- z = x + (b + a)
+FL:  rw [add ← add_assoc] at hb
+  -- z = x + (b + a)
+FL:  rw [add_comm] at hb
+  -- z = x + (",  use a + b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b) -> y + b = x + (a + b),"rw [h] at h2 ⊢ at h2
+
+-- Successfully completed
+
+-- Prove: z = x + (a + b) -> y + b = x + (a + b)
+
+-- Given: z = x + (a + b)
+-- Given: y + b = z
+-- Goal: y + b = x + (a + b)
+
+-- Substitute z with x + (a + b)",  rw [hb],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- y + b = x + (a + b) -> (x + a) + b = x + (a + b),"rw [← add_assoc] at hb2 -> (x + a) + b = x + (a + b)
+
+-- Rewrite the goal using the fact that y + b = x + (a + b) to (x + a) + b = x + (a + b)
+
+
+Complete the formalization:
+
+-- Goal: Prove x + a = y + b → a = b
+
+theorem succ_inj' (",  rw [ha],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- (x + a) + b = x + (a + b) by associativity,"（假设）写成另一种方式，即 (x + a) + b = x + (a + b) 。
+
+The single line of Lean 4 code for this step is:
+
+* tauto -> （假设）写成另一种方式，即 (x + a) + b = x + (a + b) 。*",  exact add_assoc x a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

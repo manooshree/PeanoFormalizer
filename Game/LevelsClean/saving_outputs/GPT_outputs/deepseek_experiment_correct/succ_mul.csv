@@ -1,0 +1,82 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_mul,"  -- Induct on b, with d = 0 as the base case and the inductive hypothesis succ a * d = a * d + d. There are now two proof goals, prove base case: succ a * 0 = a * 0 + 0, and inductive step: succ a * succ d = a * succ d + succ d.","induction b with
+| zero => rfl
+| succ d hd => rw [mul_succ, add_succ, hd]",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- First we prove base case. Simplify succ a * 0 = a * 0 + 0 to 0 = 0 by definition of multiplication and addition,"rw [Nat.mul_zero, Nat.add_zero]","  rw [add_zero, mul_zero, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- The base case is complete.,"theorem succ_mul_dev_1_temp (a b : ℕ) : succ a * b = a * b + b := by
+  rw [Nat.succ_mul]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Now prove inductive step. We rewrite the equation to succ a * d + succ a = a * d + a + succ d,"rw [succ_mul, add_comm]","  rw [mul_succ, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Expand the equation to succ (succ a * d + a) = succ (a * d + a + d) using properties of the successor,"rw [succ_mul, add_comm]","  rw [add_succ, add_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Rewrite the LHS using the inductive hypothesis obtaining succ (a * d + d + a),"rw [mul_succ, add_assoc]",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a,rw add_comm,  rw [add_right_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- LHS = RHS hence, The inductive step is complete.","theorem succ_mul_dev_1_temp (a b : ℕ) : succ a * b = a * b + b := by
+  rw [Nat.succ_mul, Nat.add_comm]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- Induct on b, with d = 0 as the base case and the inductive hypothesis succ a * d = a * d + d. There are now two proof goals, prove base case: succ a * 0 = a * 0 + 0, and inductive step: succ a * succ d = a * succ d + succ d.","```Lean4
+induction b with d hd",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- First we prove base case. Simplify the LHS from succ a * 0 to 0 using the fact that a * 0 = 0,"rw [Nat.mul_zero, Nat.zero_add]",  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Simplify LHS a * 0 = 0 hence we obtain 0 = 0 + 0,"rw [mul_zero, zero_add]",  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,-- Simplify RHS 0 + 0 to 0 hence we obtain 0 = 0,rw [zero_add],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_mul,  -- Now prove inductive step. We rewrite LHS succ a * succ d to succ a * d + succ a,"rw [succ_mul, add_comm]",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Expand the RHS from a * succ d + succ d to a * d + a + succ d,rw [mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_mul,  -- Rewrite the LHS  succ a * d + succ a to a * d + d + succ a using the inductive hypothesis,rw [succ_mul],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Rewrite the LHS  a * d + d + succ a to succ (a * d + d + a),"rw [mul_succ, add_assoc]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- Rewrite RHS, changing a * d + a + succ d to succ (a * d + a + d)","rw [←add_assoc, add_succ, add_assoc]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Apply the fact that a + b + c = a + c + b on LHS obtaining a * d + d + a to a * d + a + d,rw [add_comm],  rw [add_right_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- Prove LHS and RHS are equal, succ (a * d + a + d) = succ (a * d + a + d), completing the proof","theorem succ_mul_temp (a b : ℕ) : succ a * b = a * b + b := by
+  rw [Nat.succ_mul, Nat.add_comm]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- Proof by induction on b, with succ a * 0 = a * 0 + 0 as the base case and the inductive case as succ a * d + 1 = a * d + 1 + d + 1.","```Lean4
+induction b with
+| zero => rfl
+| succ d hd => rw [mul_succ, add_succ, hd, add_assoc]",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- 0 = a * 0 + 0,"rw [mul_zero, zero_add]",  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- 0 = 0 + 0,rfl,  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- 0 = 0,rfl,  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Base case is complete.,"theorem succ_mul_dev_2_temp (a b : ℕ) : succ a * b = a * b + b := by
+  rw [Nat.succ_mul]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- succ a * succ d = succ d + a * succ d,rw [Nat.succ_mul],  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- succ a * d + succ a = succ d + a * succ d,"theorem succ_mul_dev_2_temp (a b : ℕ) : succ a * b = a * b + b := by
+  rw [Nat.succ_mul, Nat.add_comm]",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- succ (succ a * d + a) = succ d + a * succ d,"theorem succ_mul_dev_2_temp (a b : ℕ) : succ a * b = a * b + b := by
+  rw [Nat.mul_succ, Nat.add_comm]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- succ (succ a * d + a) = succ d + (a * d + a),"rw [succ_mul, add_comm]",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- succ (succ a * d + a) = succ (d + (a * d + a)),"rw [succ_mul, add_comm]",  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- succ (a * d + d + a) = succ (d + (a * d + a)),"rw [mul_comm, add_comm, add_assoc]",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- succ (a * d + d + a) = succ (d + a * d + a),"rw [mul_comm, add_comm]",  rw [← add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- succ (a * d + d + a) = succ (a * d + d + a),"rw [succ_mul, add_assoc]",  rw [add_comm d],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- This completes the inductive step.,"theorem succ_mul_dev_2_temp (a b : ℕ) : succ a * b = a * b + b := by
+  rw [Nat.mul_succ, Nat.add_comm]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

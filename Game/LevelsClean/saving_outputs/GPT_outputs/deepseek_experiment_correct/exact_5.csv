@@ -1,0 +1,33 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_5,"  -- Rewrite 4 as succ 3 in the given statement x + 1 = 4, changing it to x + 1 = succ 3",rw [← succ_eq_add_one] at h,  rw [four_eq_succ_three] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_5,"  -- Rewrite LHS in the given hypothesis such that x + 1 is succ x, then given statement is succ x = succ 3.",rw [←succ_eq_add_one] at h,  rw [←succ_eq_add_one] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_5,"  -- Apply the injectivity of the successor function to the given succ x = succ 3, simplifying to x = 3.","theorem exact_5_temp (x : ℕ) (h : x + 1 = 4) : x = 3 := by
+  rw [← Nat.succ_eq_add_one] at h
+  exact Nat.succ_inj h",  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_5,"  -- We can exactly prove that x = 3 with our given facts, to complete the proof",exact h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_5,  -- We replace 4 with succ 3 in x + 1 = 4 in the given statement.,rw [←succ_eq_add_one] at h,  rw [four_eq_succ_three] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_5,  -- We replace x + 1 with succ x in the given statement (x + 1 = 4).,rw [← Nat.succ_eq_add_one] at h,  rw [←succ_eq_add_one] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_5,"  -- By the injectivity of successor function, x = 3.",exact (Nat.succ_inj h).symm,  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_5,"  -- So, x = 3, which is exactly what we wanted to prove.",exact h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_5,  -- given statement x + 1 = succ 3,"theorem exact_5_dev_2_temp (x : ℕ) (h : x + 1 = 4) : x = 3 := by
+  rw [← Nat.succ_eq_add_one] at h
+  exact Nat.succ_inj h",  rw [four_eq_succ_three] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_5,  -- given statement succ x = succ 3,"theorem exact_5_dev_2_temp (x : ℕ) (h : x + 1 = 4) : x = 3 := by
+  rw [← Nat.succ_eq_add_one] at h
+  exact Nat.succ_inj h",  rw [←succ_eq_add_one] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_5,  -- given statement x = 3,"theorem exact_5_dev_2_temp (x : ℕ) (h : x + 1 = 4) : x = 3 := by
+  rw [← h]
+  simp",  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_5,  -- x = 3,exact h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,0 +1,35 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+one_ne_zero,  -- Rewrite our proof goal to 0 ≠ 1,rw [ne_comm],  symm,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,"  -- Apply the proof that 0 ≠ 1 exactly to our proof goal, completing the proof",exact Nat.one_ne_zero,  exact zero_ne_one,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,"  -- Assume 1 = 0, we will prove this is a contradiction and false",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_ne_zero,"  -- Use the fact that 1 is the successor of zero in our assumption, which is now succ 0 = 0","theorem one_ne_zero_dev_1_temp : (1 : ℕ) ≠ 0 := by
+  exact Nat.one_ne_zero",  rw [one_eq_succ_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,  -- Use the definition of the successor function to rewrite the assumption as 0 + 1 = 0,rw [Nat.succ_eq_add_one],  rw [succ_eq_add_one] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,"  -- Instead of proving 0 + 1 = 0, we will prove the equal statement that 0 = 0 + 1","theorem one_ne_zero_dev_1_temp : (1 : ℕ) ≠ 0 := by
+  intro h
+  rw [← Nat.zero_add 1] at h
+  contradiction",  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,  -- Simplify 0 + 1 to 0 via the zero property of addition. Assumption is now 0 = 1,rw [Nat.zero_add],  rw [zero_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,"  -- 0 = 1 is false, our assumption is false","theorem one_ne_zero_dev_1_temp : (1 : ℕ) ≠ 0 := by
+  exact Nat.one_ne_zero",  apply zero_ne_one at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,  -- We have proven our assumption false and completed the proof,"theorem one_ne_zero_dev_1_temp : (1 : ℕ) ≠ 0 := by
+  exact one_ne_zero",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,"  -- Assume contradiction, 1 = 0",by_contra h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,  -- Rewrite contradiction 0 = 1,rw [← one_ne_zero],  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,  -- 0 ≠ 1,"theorem one_ne_zero_dev_2_temp : (1 : ℕ) ≠ 0 := by
+  exact Nat.one_ne_zero",  apply zero_ne_one at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_ne_zero,  -- False,"theorem one_ne_zero_dev_2_temp : (1 : ℕ) ≠ 0 := by
+  exact Nat.one_ne_zero",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

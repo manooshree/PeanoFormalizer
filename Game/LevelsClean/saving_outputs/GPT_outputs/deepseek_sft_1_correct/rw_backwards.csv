@@ -1,0 +1,83 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+rw_backwards,  -- Substitute succ(0) -> 1 on the RHS,"FL: 1
+FM: 2 = succ (succ 0)
+BL: 2 = succ (succ 0)
+BM: 2 = succ (succ 0)
+FL: 0
+FM: 2 = succ (succ 0)
+BL: 2 = succ (succ 0)
+BM: 2 = succ (succ 0)
+FL: 0
+FM: 2 = succ (succ 0)",  rw [← one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_backwards,  -- Substitute succ(1) -> 2 on the RHS,"FL: 1
+FD: 1
+
+    ←rw_backwards_dev_1_temp
+
+    2 = succ (succ 0)
+
+    =>
+
+    2 = 2
+
+    QED
+
+    ←rw_backends_dev_1_temp
+
+    2 = succ (succ 0)
+
+    =>
+
+    2 = 2
+
+    QED
+
+    ←rw_backends_dev",  rw [← two_eq_succ_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_backwards,"  -- 2 = 2, QED","FLT: -- 2 = 2, QED
+
+FLT: 2 = succ (succ 0)
+
+FLT: 2 = succ (succ 0)
+
+FLT: 2 = succ (succ 0)
+
+FLT: 2 = succ (succ 0)
+
+FLT: 2 = succ (succ 0)
+
+FLT: 2 = succ (succ 0)
+
+FLT",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_backwards,  -- Substitute succ(0) -> 1 on the RHS,"rw [← one_eq_succ_zero] at hx2
+
+-- Substitute succ(0) -> 1 on the RHS",  rw [← one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_backwards,  -- Substitute succ(1) -> 2 on the RHS,"rw [two_eq_succ_one] at hb
+
+-- Rewrite the goal using the fact that 2 is equal to the successor of 1",  rw [← two_eq_succ_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_backwards,"  -- 2 = 2, QED","rfl as the proof of the base case
+
+   -- Now we proceed with the inductive step
+   -- 0 * a + b = 0 * a + b
+   -- 0 * a + b = 0 * a + b
+   -- 0 * a + b = 0 * a + b
+   -- 0 * a + b = 0 * a + b
+   -- 0 * a + b = 0 * a +",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_backwards,  -- Substitute succ(0) -> 1 on the RHS,"rw [← one_eq_succ_zero] at hx2
+
+-- Substitute succ(0) -> 1 on the RHS",  rw [← one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+rw_backwards,  -- Substitute succ(1) -> 2 on the RHS,"rw [two_eq_succ_one] at hb
+
+-- Rewrite the goal using the fact that 2 is equal to the successor of 1",  rw [← two_eq_succ_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_backwards,"  -- 2 = 2, QED","rfl as the proof is complete
+
+  -- Correct the goal to 2 = 2
+  rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

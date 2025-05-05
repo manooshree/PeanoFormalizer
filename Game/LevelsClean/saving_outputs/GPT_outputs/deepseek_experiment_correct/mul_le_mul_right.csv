@@ -1,0 +1,27 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_le_mul_right,"  -- We know that a ≤ b, so we can express b as a + d for some natural number d.","rw [← add_mul, ← add_mul]",  cases h with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,  -- Rewrite b as a + d using the previous statement,rw [← Nat.add_sub_of_le h],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,  -- simplify to a * t ≤ a * t + d * t using the distributive property of multiplication over addition,rw [mul_add],  rw [add_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,  -- Use d * t as a specific natural number that can be used to rewrite a * t ≤ b * t as b * t = a * t + d * t.,"rw [← add_mul, ← add_mul, add_le_add_iff_right]",  use d * t,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,"  -- The LHS and RHS are equal, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_le_mul_right,"  -- We know that a ≤ b, so we can express b as a + d for some natural number d.",rw [← Nat.add_sub_of_le h],  cases h with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,  -- set d to be d * t and simplify the inequality to b * t = a * t + d * t,"rw [mul_comm a t, mul_comm b t]",  use d * t,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,  -- subsitute b with a + d using what we haven shown above and apply the distributive property of multiplication over addition,"rw [← add_mul, ← add_mul]","  rw [hd, add_mul]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,"  -- The LHS and RHS are equal, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_le_mul_right,  -- We consider the case where the inequality a ≤ b can be expressed as b being equal to a plus some natural number d.,rw [← add_le_add_iff_right t],  cases h with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,  -- We use d * t as a specific natural number that can be used to rewrite a * t ≤ b * t as b * t = a * t + d * t.,"rw [← add_mul, ← add_mul, add_le_add_iff_left]",  use d * t,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,"  -- We know that b = a + d, so we can substitute b with a + d in the goal. Then rewrite the goal as a * t + d * t ≤ a * t + d * t by the distributive property of multiplication over addition.","rw [← add_mul, ← add_mul]","  rw [hd, add_mul]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_le_mul_right,"  -- We have that a * t + d * t = a * t + d * t, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

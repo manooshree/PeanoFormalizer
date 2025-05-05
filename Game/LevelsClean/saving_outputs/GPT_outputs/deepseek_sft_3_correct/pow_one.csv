@@ -1,0 +1,35 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+pow_one,  -- a^succ(0) = a,"eta_expand tgt = a * b -> tgt = a * b
+   eta_expand tgt = a * b",  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a^0 * a = a,"rw [pow_zero] at hx -> hx = a at hx
+   -- a = a
+   -- Now we have that a = a, which is our goal.",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- 1 * a = a,"rw [mul_one] at hb -> hb = a
+   -- a = 1 * a
+FL:   rw [one_mul] at hb -> hb = a
+
+   -- a = a
+   rw [←hb] at hb",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a = a,"rfl -> rfl = a -> a = a by injectivity of equality
+
+-- Injectivity of equality: a = b → (a = a ↔ b = a)
+apply eq_inj at h
+
+-- Rewrite using the fact that a = a
+rw [h] at h2
+
+-- Simplify to obtain b = a
+simp at h2
+
+-- Conclude that a = b
+conclude",  rw [one_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,"  -- lhs = rhs, so we are done.","exact hx iny inx ⟹ x = y by assumption
+
+Answer:
+```lean4
+exact hx iny inx ⟹ x = y by assumption",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

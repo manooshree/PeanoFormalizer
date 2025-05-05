@@ -1,0 +1,7 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_10,"  -- We have x ≠ y (which really means x = y -> False), and we know x = y, so by modus ponens, we know False",exact h1 hx at hy ⊢,  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,"  -- So we have a falsehood/contradiction, which is exactly what we wanted to show.","exact h2y forall_not_not a
+
+-- Reply to FL: So, we can complete the proof with 'exact forall_not_not a'",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

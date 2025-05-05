@@ -1,0 +1,81 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_comm,-- Start by inducting on b,induction b with,induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- 0 + a -> a on RHS giving us a + 0 = a,rw [Nat.zero_add],rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,--  a + 0 -> a into the LHS to get a = a,rw [Nat.add_zero],rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- a=a, we are done with the base case",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- a + succ d -> succ (a + d) on LHS giving us succ (a + d) = succ (d + a) on LHS,"rw [add_succ, add_succ, add_comm]",rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- succ d + a -> succ (d + a) on RHS giving us succ (a + d) = succ (d + a) on RHS,"rw [add_succ, add_succ, add_comm]",rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- using the induction hypothesis, succ (a + d) -> succ (d + a) on the LHS giving us succ (d + a) = succ (d + a)","rw [add_succ, add_succ, add_comm]",rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- succ (n + a) = succ (n + a), we are done.",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- Start by inducting on b,induction b with,induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- We start with the base case. using properties of addition by 0 we can rewrite a + 0 to a on the LHS,rw [add_zero],rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- using properties of addition by 0 we can rewrite 0 + a to a on the RHS,rw [Nat.zero_add],rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- since both sides are equal, we are done with the base case",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,"-- Now to the (n+1) step. using properties of successors, succ (n) + a -> succ (n + a) and substitute this into the RHS","rw [succ_add, add_succ]",rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- using properties of succession, we substitute a + succ(n) -> succ(a+n) on the RHS","rw [add_succ, add_succ]",rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- Use the induction hypothesis on the LHS to substitute succ (a + n) -> succ (n + a),rw add_succ,rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- since both sides are equal, we are done with the proof",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,"-- Induct on b, with d = 0 as the base case and the inductive hypothesis a + d = d + a. There are now two proof goals, prove base case: a + 0 = 0 + a and the inductive step: a + succ d = succ d + a",induction b with d hd,  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- First prove base case. Simplify LHS a + 0 = a.,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- Simplify RHS 0 + a = a,rw [Nat.zero_add],  rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- Prove LHS and RHS are equal, a = a, completing the base case.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- Now prove the inductive step. Rewrite LHS a + succ (d) = succ (a + d),rw add_succ,  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- Rewrite RHS succ (d) + a = succ (d + a),"rw [Nat.add_succ, Nat.succ_add]",  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- Rewrite LHS succ (a + d) to succ (d + a) using the inductive hypothesis,rw add_comm,  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- Prove succ LHS and RHS are equal, (d + a) = succ (d + a), completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- Start by inducting on b,induction b with,  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- 0 + a -> a on RHS giving us a + 0 = a,rw [Nat.zero_add],  rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,--  a + 0 -> a into the LHS to get a = a,rw [Nat.add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- a=a, we are done with the base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- a + succ d -> succ (a + d) on LHS giving us succ (a + d) = succ (d + a) on LHS,"rw [add_succ, add_succ, add_comm]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- succ d + a -> succ (d + a) on RHS giving us succ (a + d) = succ (d + a) on RHS,"rw [add_succ, add_succ, add_comm]",  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- using the induction hypothesis, succ (a + d) -> succ (d + a) on the LHS giving us succ (d + a) = succ (d + a)","rw [add_succ, add_succ, add_comm]",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- succ (n + a) = succ (n + a), we are done.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- Start by inducting on b,induction b with,  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- We start with the base case. using properties of addition by 0 we can rewrite a + 0 to a on the LHS,rw [add_zero],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,-- using properties of addition by 0 we can rewrite 0 + a to a on the RHS,rw [Nat.zero_add],  rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- since both sides are equal, we are done with the base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_comm,"-- Now to the (n+1) step. using properties of successors, succ (n) + a -> succ (n + a) and substitute this into the RHS",rw [Nat.succ_add],  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- using properties of succession, we substitute a + succ(n) -> succ(a+n) on the RHS","rw [add_succ, add_succ]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,-- Use the induction hypothesis on the LHS to substitute succ (a + n) -> succ (n + a),rw add_succ,  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_comm,"-- since both sides are equal, we are done with the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

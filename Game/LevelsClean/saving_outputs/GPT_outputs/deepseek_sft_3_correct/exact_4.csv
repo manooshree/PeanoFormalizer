@@ -1,0 +1,9 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_4,"  -- x = 37 → y = 42 and x = 37, so by modus ponens, y = 42","exact hx at hx'
+FL:   exact hx' at hx",  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_4,"  -- So y = 42, which is exactly what we wanted to prove.","exact hx at hx
+
+NL:   -- So we have proven that for all natural numbers x, if x = 42 then y = 42.
+FL:  exact hx at hx",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

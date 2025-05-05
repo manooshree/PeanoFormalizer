@@ -1,0 +1,32 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_7,  -- We assume that x = 37,"have h : x = 37 := by assumption
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h
+    ← h",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_7,"  -- We can use this to prove x = 37, completing the proof","exact h2 at h1
+
+-- Apply the previously proven fact that if y = 37, then x = 37, to our current assumption that y = 37
+exact h2 at h1
+
+-- This completes the proof that x = 37",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

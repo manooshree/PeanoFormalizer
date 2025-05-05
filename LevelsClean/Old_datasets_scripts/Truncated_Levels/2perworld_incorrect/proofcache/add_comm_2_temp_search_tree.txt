@@ -1,5 +1,0 @@
-rw [add_succ]
-	rw [hd]
-		rw [succ_add]
-			rfl
-			SYSTEM: QED

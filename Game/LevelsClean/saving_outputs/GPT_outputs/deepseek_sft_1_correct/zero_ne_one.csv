@@ -1,0 +1,71 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_ne_one,"  -- Assume that 0 = 1, which is false","intro h
+  rw [← one_ne_zero] at h
+  contradiction
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- Apply the Peano axiom that zero is not the successor of any natural number to our assumption that 0 = 1, making it false","apply zero_ne_succ at h
+  exact h
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- We have proven that 0 = 1 is false or that 0 ≠ 1, completing the proof","FLT 1 0 ≠ 1
+
+On my own, I generated:
+
+exact zero_ne_one",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- Assume that 0 = 1, which is false","intro h
+   -- Prove that 0 = 1 is false
+  rfl at h
+
+  -- Apply the contradiction to complete the proof
+  contradiction",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- Apply the Peano axiom that zero is not the successor of any natural number to our assumption that 0 = 1, making it false","（假设） 0 ≠ 1 at heq ⊢
+  -- Contradiction
+  contradiction",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- We have proven that 0 = 1 is false or that 0 ≠ 1, completing the proof",tauto (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- Assume that 0 = 1, which is false","intro h
+   -- Prove that 0 = 1 is false
+  rfl at h
+
+  -- Apply the contradiction to complete the proof
+  contradiction",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_ne_one,"  -- Apply the Peano axiom that zero is not the successor of any natural number to our assumption that 0 = 1, making it false","（假设） 0 ≠ 1 at heq ⊢
+  -- Prove that 0 = 1 is false
+  (假设) heq → False at heq �FL:  （假设） heq → False at heq ⊢
+  -- Apply the contradiction to prove the goal
+  contradiction at heq ⊢FL:  contradiction at heq ⊢
+  --",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- We have proven that 0 = 1 is false or that 0 ≠ 1, completing the proof",tauto (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h) (h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

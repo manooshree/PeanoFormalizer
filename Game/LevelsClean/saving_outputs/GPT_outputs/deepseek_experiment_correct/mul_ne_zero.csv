@@ -1,0 +1,72 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_ne_zero,"  -- We are given that a != 0. So, there exists a natural number 'n' such that 'a' equals 'n' plus 1, given that 'a' is not equal to zero.",rw [← Nat.succ_ne_zero] at ha,  apply eq_succ_of_ne_zero at ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- We are given that b != 0. So, there exists a natural number 'n' such that 'b' equals n plus 1, given that 'b' is not equal to zero.","cases b with
+| zero => contradiction
+| succ n => exact Nat.mul_ne_zero ha (Nat.succ_ne_zero n)",  apply eq_succ_of_ne_zero at hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- There exists a natural number 'c' such that 'a' is equal to the successor of 'c'.,"cases a with
+| zero => contradiction
+| succ c => exact Nat.succ_ne_zero c",  cases ha with c hc,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- There exists a natural number 'd' such that 'b' is equal to the successor of 'd'.,"```Lean4
+cases b with
+| zero => contradiction
+| succ d => exact Nat.mul_ne_zero ha (Nat.succ_ne_zero d)",  cases hb with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- We substitute the variable 'a' with 'succ c' in the goal.,rw [← Nat.succ_ne_zero],  rw [hc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- We substitute the variable 'b' with 'succ d' in the goal.,rw [Nat.mul_succ],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- Rewrite the succ c * succ d as succ c * d + succ c.,rw [mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_ne_zero,  -- Rewrite succ c * d + succ c as succ (succ c * d + c).,"rw [mul_succ, add_succ]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- flip the sides of the goal so that the new goal is 0 is not equal to succ (succ c * d + c),rw [Nat.mul_comm],  symm,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- We know that 0 is not equal to the successor of any natural number, so we can use this to prove the goal.",exact Nat.mul_ne_zero ha hb,  apply zero_ne_succ,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- Since a is a natural number, it is either 0 or the successor of some natural number.","cases a with
+| zero => contradiction
+| succ a' => exact Nat.mul_ne_zero (Nat.succ_ne_zero a') hb",  cases a with a,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- If a is 0, this theorem doesn't hold.",intro h,  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- succ a * succ b ≠ 0 -> succ a * b + succ a ≠ 0 by the definition of multiplication,rw [Nat.mul_succ],  rw [succ_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- Since b is a natural number, it is either 0 or the successor of some natural number.","cases b with
+| zero => contradiction
+| succ b' => exact Nat.mul_ne_zero ha (Nat.succ_ne_zero b')",  cases b with b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- If b is 0, this theorem doesn't hold.","cases b with
+| zero => contradiction
+| succ b' => exact Nat.mul_ne_zero ha (Nat.succ_ne_zero b')",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- succ a * b + succ a ≠ 0 -> succ (succ a * b + a) ≠ 0 by the definition of addition,"rw [Nat.mul_succ, Nat.add_succ, Nat.add_succ]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- succ (succ a * b + a) ≠ 0 -> 0 ≠ succ (succ a * b + a) by the symmetry property of inequality,"rw [mul_succ, add_succ, add_succ]",  symm,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- We know that 0 is not equal to the successor of any natural number, so we can use this to prove the goal.",exact mul_ne_zero ha hb,  apply zero_ne_succ,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- Since a is a natural number, it is either 0 or the successor of some natural number.","cases a with
+| zero => contradiction
+| succ a' => exact Nat.mul_ne_zero (Nat.succ_ne_zero a') hb",  cases a with a,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- If a is 0, this theorem doesn't hold.",intro h,  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- Since b is a natural number, it is either 0 or the successor of some natural number.","cases b with
+| zero => contradiction
+| succ b' => exact Nat.mul_ne_zero ha (Nat.succ_ne_zero b')",  cases b with b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- If b is 0, this theorem doesn't hold.","cases b with
+| zero => contradiction
+| succ b' => exact Nat.mul_ne_zero ha (Nat.succ_ne_zero b')",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- succ a * succ b ≠ 0 -> succ a * b + succ a ≠ 0,rw [mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_ne_zero,  -- succ a * b + succ a ≠ 0 -> succ (succ a * b + a) ≠ 0,"rw [Nat.mul_succ, Nat.add_succ, Nat.add_succ]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,  -- succ (succ a * b + a) ≠ 0 -> 0 ≠ succ (succ a * b + a),rw [ne_comm],  symm,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_ne_zero,"  -- We know that 0 is not equal to the successor of any natural number, so we can use this to prove the goal.",exact mul_ne_zero ha hb,  apply zero_ne_succ,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

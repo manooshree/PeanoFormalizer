@@ -1,0 +1,20 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+eq_succ_of_ne_zero,  -- We consider two cases for a: when a is zero and when a is the successor of another natural number.,"（Consider two cases for a: when a is zero and when a is the successor of another natural number）
+  cases a with a
+  -- In the first case, a is zero. We simplify the goal using this assumption.
+  -- In the first case, a is zero. We simplify the goal using this assumption.
+  -- We simplify the goal using this assumption.
+  <;> simp_all
+  -- In the second case, a is the",  cases a with d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,"  -- By logical reasoning, we know that 0 cannot be equal to 0, which is a contradiction. Therefore, there is no natural number such that 0 is the successor of that number so we can close the case where a is 0.",tauto *,  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+eq_succ_of_ne_zero,  -- We provide an example where the natural number 'd' satisfies the condition that 'succ d' equals 'succ n'.,"use d where
+     tauto",  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+eq_succ_of_ne_zero,  -- We use reflexivity to prove that 'succ d' equals 'succ d'.,"rfl ⊢ succ d = succ d
+
+10d
+  -- We use reflexivity to prove that 'succ d' equals 'succ d'.
+  rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,0 +1,48 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_add,-- Begin by initiating induction on n,"apply nat.induction_on n (fun h -> 0 * d + 0 = 0 * d + 0) at h
+  break",  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- Using the properties of addition by 0 we can rewrite 0 + 0 to 0 on the LHS,"rw [add_zero] at hb
+ NL: -- Now we have that 0 = 0 + a, which is our updated hypothesis
+ FL:  at hb
+ NL: -- Using the properties of addition by 0 we can rewrite 0 + a to 0
+ FL:  rw [add_zero] at hb
+ NL: -- Now we have that 0 = a, which is our final hypothesis
+ FL:  at hb
+
+--",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,"-- Since both sides are equal, we are done with the base case","0 * 0 = 0 = 0
+  1 * 0 = 0 = 0
+  0 + 0 = 0 = 0
+  0 = 0
+  0 = 0
+  0 = 0
+  0 = 0
+  0 = 0
+  0 = 0
+  0 = 0
+  0 = 0
+  0 = 0
+  0 = 0
+  0 = 0",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- Now using properties of successors we can rewrite 0 + succ d to succ (0 + d) on the LHS getting succ (0 + d) = succ d,"rw [add_succ, zero_add] at hx at hx
+
+## Proof Step
+
+We are given that the successor of the sum of 0 and a natural number \( d \) is equal to the successor of \( d \). Our goal is to show that this implies that the sum of 0 and \( d \) is equal to \( d \). Using properties of successors, we can rewrite the left-hand side of the equation as the successor of the sum of",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- Using the induction hypothesis we can rewrite succ (0 + d) to succ d,rw [hd] at h2n at h2m at h2n ⊢ at h2m ⊢ at h2n ⊢ at h2m ⊢ at h2n ⊢ at h2m ⊢ at h2n ⊢ at h2m ⊢ at h2n ⊢ at h2m ⊢ at h2n ⊢,  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,"-- Since both sides are equal, we are done with the proof","done
+
+NL: -- Prove that succ(0) + succ(0) = succ(succ(0)) + 0
+FL:  rw [add_succ, add_zero] at h
+
+-- Prove that succ(succ(0)) + 0 = succ(succ(0))
+FL:  rw [add_zero] at h
+
+-- Since both sides are equal, we are done with the proof
+FL:  exact h",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

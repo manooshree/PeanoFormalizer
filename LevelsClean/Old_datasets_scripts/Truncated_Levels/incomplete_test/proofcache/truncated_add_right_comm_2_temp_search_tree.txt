@@ -1,3 +1,0 @@
-rw [add_assoc]
-	rfl
-	SYSTEM: QED

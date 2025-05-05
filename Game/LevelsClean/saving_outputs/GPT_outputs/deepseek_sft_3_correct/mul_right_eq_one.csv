@@ -1,0 +1,89 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_right_eq_one,  -- assume that x * y is not equal to 0,"intro hxy (hxy : x * y ≠ 0) at hxy
+    -- it follows that x is not equal to 0
+    have hx: x ≠ 0 := by
+    -- we will prove this by contraposition
+    contrapose! hxy
+    -- if x is equal to 0, then x * y is equal to 0
+    rw [hx, zero_mul] at hxy
+    --",  have h2 : x * y ≠ 0,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- rewrite the goal with the previous assumption so the new goal is 1 is not equal to 0,rw [h] at h2n at h3n at h4n at h5n at h6n at h7n at h8n at h9n at h10n at h11n at h12n at h13n at h1FL:  rw [h] at h2n at h3n at h4n at h5n at h6n at h7n at h8n at h9n at,  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_right_eq_one,"  -- We know that 1 is not equal to 0, so we can use this to prove the goal.","（有）1 ≠ 0 以证明目标。
+  exact one_ne_zero",  exact one_ne_zero,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_right_eq_one,  -- x * y != 0 -> x <= x * y,"apply le_of_not_gt at h2
+    ⊢ x ≤ x * y
+FL:  apply le_of_not_gt at h2
+    ⊢ x ≤ x * y
+FL:  apply le_of_not_gt at h2
+    ⊢ x ≤ x * y
+FL:  apply le_of_not_gt at h2
+    ⊢ x ≤ x * y",  apply le_mul_right at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- x <= x * y -> x <= 1,"exact hxy
+
+NL:   -- 1 <= y -> x <= 1
+FL:    exact hy1
+
+We have split the proof into two cases. In the first case, we have that x is less than or equal to x times y, and our goal is to show that x is less than or equal to 1. In the second case, we have that 1 is less than or equal to y, and our goal is to show that x",  rw [h] at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- x <= 1 -> x = 0 or x = 1,"tauto ⊢ (x = 0 ∨ x = 1) at hx
+
+NL:   -- x = 0 or x = 1 -> x * a <= a -> x = 0
+FL:  cases hx with hx0 hx1 at hx
+
+NL:   -- x = 0 -> x * a <= a
+FL:  rw [hx0] at hx
+
+NL:   -- x",  cases x,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- for the x = 0 case, 0 * y = 1 -> 0 = 1","tauto asinh asinh_zero [h] at h ⊢
+NL:   -- for the x = 1 case, 1 * y = 1 -> y = 1
+FL:    tauto asinh asinh_one [h] at h ⊢
+
+-- for the x = 0 case, 0 * y = 1 -> 0 = 1
+tauto asinh as",  rw [zero_mul] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- 0 = 1 is false, so we can use this to show that x is not equal to 0.","(succ 0) = 0 → 0 = 1 at line 112 by a previous theorem or assumption
+FL:  (succ 0) = 0 → 0 = 1 at line 112, completing the proof
+
+-- Using a previous theorem or assumption, show that x is not equal to 0.
+
+-- (succ 0) = 0 → 0 = 1 at line 112",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- for the x = 1 case, succ a ≤ 1 -> succ a = 0 ∨ succ a = 1","have h2 : succ a = 0 ∨ succ a = 1 := by rw [h1] at h2
+  -- for the x = 1 case, succ a = 0 -> a = 0
+NL:   -- for the x = 1 case, a = 0
+FL:  have h3 : a = 0 := by rw [h2] at h3
+  -- for the x = 1 case,",  apply le_one at h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- Let's look at the two possible cases for h2: either succ a = 0 or succ a = 1,"cases h2 with h2 h3
+     -- In the first case, succ a = 0, we want to show that this implies 0 <= a
+     -- In the second case, succ a = 1, we want to show that this implies 0 <= a
+     -- In either case, we want to show that 0 <= a
+     -- We use the fact that if succ a = 0 or succ a = 1, then 0 <= a",  cases h2 with h0 h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- for the succ a = 0 case, succ a * y = 1 -> 0 * y = 1 -> 0 = 1","tauto at hb -> hb' was succ a * y = 1 -> 0 * y = 1 -> 0 = 1
+
+-- Replace tauto at hb with the appropriate line of code
+  rw [hb'] at hb","  rw [h0, zero_mul] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- 0 = 1 is false, so we can use this to show that x is not equal to 0.","(succ 0) = 0 → 0 = 1 at line 261 by contradiction or using the fact that the successor of any natural number is not equal to 0.
+
+-- Using the fact that the successor of any natural number is not equal to 0, we can show that x is not equal to 0.",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,"  -- for the succ a = 1 case, succ a = 1 -> 1 = 1","rw [succ_eq_one] at hx -> 1 = 1
+NL:   -- for the 1 = succ a case, 1 = succ a -> succ a = 1
+FL:    rw [succ_eq_one] at hx -> succ a = 1
+
+-- Rearrange the equation 1 = succ a to succ a = 1
+rw [one_eq_succ_zero] at hx
+
+--",  rw [h1],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_one,  -- 1 = 1 is true by reflexivity,"（refl） -> 1 = 1
+
+1 = 1 is true by reflexivity, completing the proof",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

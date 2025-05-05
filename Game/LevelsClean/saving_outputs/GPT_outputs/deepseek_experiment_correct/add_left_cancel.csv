@@ -1,0 +1,59 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_left_cancel,"  -- Rewrite the goal by repeatedly swapping the addition operands in the left side of both equations, changing n + a = n + b to a + n = b + n.","rw [add_comm n a, add_comm n b]",  repeat rw [add_comm n],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,"  -- Assume that the statement 'a + n = b + n' is true and denote it as 'h'. Then, our new goal is to prove that 'a = b'.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_cancel,"  -- Simplify the hypothesis 'h' using the theorem 'add_right_cancel' assuming the theorem is true, which leaves the goal state unchanged as 'a = b'","theorem add_left_cancel_temp (a b n : ℕ) : n + a = n + b → a = b := by
+  intro h
+  rw [← add_right_cancel h]",  apply add_right_cancel at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- h proves the goal a = b so we can use it to finish the proof,intro h; exact h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- a + n = n + b implies a = b,"rw [add_comm n a, add_comm n b]",  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- initiate induction on n,induction n with,  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- assume a + 0 = 0 + b,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_cancel,  -- a + 0 = b in the hypothesis,"rw [← Nat.add_zero a, ← Nat.add_zero b] at h",  rw [zero_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- a = b in the hypthesis,"theorem add_left_cancel_dev_1_temp (a b n : ℕ) : n + a = n + b → a = b := by
+  intro h
+  rw [← Nat.add_left_cancel h]",  rw [add_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- a = b as desired,"theorem add_left_cancel_dev_1_temp (a b n : ℕ) : n + a = n + b → a = b := by
+  intro h
+  rw [← Nat.add_left_cancel h]",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- assume a + succ d = succ d + b,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_cancel,  --  a + succ d = succ (d + b) in the hypothesis,"rw [add_succ, add_succ] at h",  rw [succ_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- succ (a + d) = succ (d + b) in the hypothesis,"rw [add_comm a d, add_comm d b]",  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- a + d = d + b in the hypothesis,"rw [add_comm n a, add_comm n b]",  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- a = b by using the inductive hypotheis,intro h; rw [←Nat.add_left_cancel h],  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- a = b as desired,"theorem add_left_cancel_dev_1_temp (a b n : ℕ) : n + a = n + b → a = b := by
+  intro h
+  rw [← Nat.add_left_cancel h]",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- We start with induction on n.,induction n with,  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,"  -- For the base case, we assume the hypothesis 0 + a = 0 + b.","rw [Nat.zero_add, Nat.zero_add] at *",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- Using the theorem 0 + d = d we obtain a = b,rw [←Nat.add_left_cancel],  repeat rw [zero_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- applying the hypothesis we conclude the base case,intro h; rw [←Nat.add_left_cancel h],  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,"  -- For the inductive case, we assume the hypothesis succ d + a = succ d + b",induction n with d hd,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- Using the theorem succ a + b = succ (a + b) we obtain succ (d + a) = succ (d + b) as the hypothesis,"rw [add_succ, add_succ] at h",  repeat rw [succ_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- By the injectivity of succ we obtain d + a = d + b in the hypothesis,rw [←Nat.add_left_cancel],  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- using the induction hypothesis in the current hypothesis we obtain a = b,apply Nat.add_left_cancel,  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_cancel,  -- applying the hypothesis we conclude,intro h; exact h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

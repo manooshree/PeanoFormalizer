@@ -1,0 +1,47 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_right_comm,-- a + b + c -> a + (b + c) on the LHS giving us a + (b + c) = a + c + b,rw [Nat.add_assoc],rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,-- a + c + b -> a + (c + b) on the RHS giving us a + (b + c) = a + (c + b),rw [Nat.add_assoc],rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,-- b + c -> c + b on the LHS giving us a + (c + b) = a + (c + b),"rw [add_assoc, add_comm b c, ←add_assoc]",rw [add_comm b c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,"-- a + (c + b) = a + (c + b), QED","theorem add_right_comm__dev_1_temp (a b c : ℕ) : a + b + c = a + c + b := by
+  rw [add_assoc, add_comm b c, ←add_assoc]",rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,-- Apply the associative property of addition to rewrite the LHS: a + b + c to a + (b + c).,rw [add_assoc],rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,-- Write the RHS using the associative property: a + c + b to a + (c + b).,rw [add_assoc],rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,"-- use the commutative property of addition to rewrite c + b to b + c on the RHS, a + (b + c) = a + (b + c)",rw [add_comm c b],rw [add_comm c b],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,"-- since both sides are equal, we are done with the proof",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,  -- a + b + c -> a + (b + c) on the LHS giving us a + (b + c) = a + c + b,rw [Nat.add_assoc],  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,  -- a + c + b -> a + (c + b) on the RHS giving us a + (b + c) = a + (c + b),rw [Nat.add_assoc],  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,  -- b + c -> c + b on the LHS giving us a + (c + b) = a + (c + b),"rw [add_assoc, add_comm b c, ←add_assoc]",  rw [add_comm b c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,"  -- a + (c + b) = a + (c + b), QED","theorem add_right_comm_dev_1_temp (a b c : ℕ) : a + b + c = a + c + b := by
+  rw [add_assoc, add_comm b c, ←add_assoc]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,"  -- Apply the associative property of addition to rewrite the LHS of the equation, changing a + b + c to a + (b + c)",rw [add_assoc],  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,"  -- Rewrite the LHS of the equation by applying the commutative property of addition to b and c, LHS is now a + (c + b)",rw [add_comm b c],  rw [add_comm b c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,  -- Rewrite the RHS using the associative property: a + c + b to a + (c + b).,rw [add_assoc],  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,"  -- Prove LHS and RHS are equal, a + (c + b) = a + (c + b), completing the proof","theorem add_right_comm_temp (a b c : ℕ) : a + b + c = a + c + b := by
+  rw [add_assoc, add_comm b c, ←add_assoc]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,  -- Apply the associative property of addition to rewrite the LHS: a + b + c to a + (b + c).,rw [add_assoc],  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,  -- Write the RHS using the associative property: a + c + b to a + (c + b).,rw [add_assoc],  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,"  -- use the commutative property of addition to rewrite c + b to b + c on the RHS, a + (b + c) = a + (b + c)",rw [add_comm c b],  rw [add_comm c b],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,"  -- since both sides are equal, we are done with the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,,"theorem add_right_comm_dev_2_temp (a b c : ℕ) : a + b + c = a + c + b := by
+  rw [add_assoc, add_comm b c, ←add_assoc]",end MyNat,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

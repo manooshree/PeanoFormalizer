@@ -1,0 +1,201 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+pow_one,  -- a^succ(0) = a,"FL:  rw [pow_succ]
+
+  -- a^0 * a = a
+  -- 1 * a = a
+  -- a = a
+  -- QED
+
+Final line of proof:
+  rfl
+
+  -- QED
+
+  -- a^1 = a
+  -- a^succ(0) = a
+  -- a^0 * a = a
+  -- 1 * a = a
+  -- a =",  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a^0 * a = a,"-- Use the theorem that a^0 = 1 for any natural number a
+  rw [pow_zero]
+  -- Rewrite the goal using the fact that 1 * a = a
+  rw [one_mul]
+  -- The goal is now proven
+  rfl",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- 1 * a = a,"FL:  rw [pow_one]
+
+  -- a = a
+  rfl
+
+  -- a ^ 1 = a
+  exact pow_one a
+
+  -- a ^ 1 = a
+  exact pow_one a
+
+  -- a ^ 1 = a
+  exact pow_one a
+
+  -- a ^ 1 = a
+  exact pow_one a",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a = a,"FL: 
+  rfl
+
+MM: 
+  exact rfl
+
+  (a ^ 1 = a)
+
+  (a ^ 1 = a)
+
+  (a ^ 1 = a)
+
+  (a ^ 1 = a)
+
+  (a ^ 1 = a)
+
+  (a ^ 1 = a)
+
+  (a ^ 1 = a)
+
+  (a",  rw [one_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,"  -- lhs = rhs, so we are done.",tauto,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a^succ(0) = a,"repeat rw [pow_succ] at hx -> a * a ^ 0 = a
+   -- a * a^0 = a
+   -- a * 1 = a
+   -- a = a
+   -- QED
+  exact hx
+
+The single line of Lean 4 code for this step is:
+
+FL:  repeat rw [pow_succ] at hx -> a * a ^ 0 = a
+
+Answer:
+
+Generate the",  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a^0 * a = a,"rw [pow_zero] at hx -> a = a
+
+* Rewrite the hypothesis using the identity that any natural number to the power of 0 is 1, resulting in a = a.",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- 1 * a = a,"rw [one_mul] at hx -> hx: a = a
+   -- a = a
+   -- QED
+   exact hx
+
+   -- for the base case, we are done
+   done
+
+   -- for the inductive step, we have
+   -- 1 * a = a
+   -- so we can use the inductive hypothesis
+   -- to show that a = a
+   -- so we can use the inductive hypothesis
+   -- to",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a = a,"rfl at hx ⊢ ⊢ a = a
+   -- QED
+   exact hx
+
+   -- a = a
+
+   -- QED
+   exact hx
+
+   -- a = a
+
+   -- QED
+   exact hx
+
+   -- a = a
+
+   -- QED
+   exact hx
+
+   -- a = a
+
+   -- QED
+   exact hx
+
+   -- a =",  rw [one_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,"  -- lhs = rhs, so we are done.","exact hx in eq_zero_of_mul_eq_zero at hx ⊢
+
+   -- (end of proof)
+
+   -- 1 = 0 ∨ 0 = 0 -> 1 = 0
+
+   -- 1 = 0
+
+   -- 0 = 0
+
+   -- 1 = 0 ∨ 0 = 0
+
+   -- 1 = 0 �",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a^succ(0) = a,"repeat rw [pow_succ] at hx -> a * a ^ 0 = a
+   -- a * a^0 = a
+   -- a * 1 = a
+   -- a = a
+   -- QED
+  exact hx
+
+The single line of Lean 4 code for this step is:
+
+FL:  repeat rw [pow_succ] at hx -> a * a ^ 0 = a
+
+Answer:
+
+Generate the",  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a^0 * a = a,"rw [pow_zero] at hx -> a = a
+
+* Rewrite the hypothesis using the identity that any natural number to the power of 0 is 1, resulting in a = a.",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- 1 * a = a,"rw [one_mul] at hx -> hx: a = a
+   -- a = a
+   -- QED
+   exact hx
+
+   -- for the base case, we are done
+   done
+
+   -- for the inductive step, we have
+   -- 1 * a = a
+   -- 1 * a = a
+   -- 1 * a = a
+   -- 1 * a = a
+   -- 1 *",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,  -- a = a,"rfl at hb ⊢
+   -- QED
+   done
+
+   -- Rewrite the hypothesis a = b to b = a
+   rw [hb] at ha
+
+   -- Prove that b = a
+   exact ha",  rw [one_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_one,"  -- lhs = rhs, so we are done.","exact hx in eq_zero_of_mul_eq_zero at hx ⊢
+
+   -- (end of proof)
+
+   -- 1 = 0 ∨ 0 = 0 -> 1 = 0
+
+   -- 1 = 0
+
+   -- 0 = 0
+
+   -- 0 = 0
+
+   -- 0 = 0
+
+   -- 0 = 0",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

@@ -1,0 +1,19 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_ne_succ,  -- proof by contraposition,by contrapose,  contrapose! h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,  -- succ m = succ n -> m = n,rw [succ_inj] at h,  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,  -- m = n by hypothesis,intro h_eq,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,"  -- Introduce the contrapositive, proving that m = n, given that succ m = succ n",intro h_succ_eq,  contrapose! h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,"  -- Simplify succ m = succ n to m = n, using the injectivity of the successor",rw [succ_inj] at h,  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,"  -- We can exactly prove that m = n, with our given fact, to complete the proof",exact h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_ne_succ,"  -- We use proof by contraposition. So, we assume succ m = succ n and show m = n.",by contrapose!; intro h; exact h,  contrapose! h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,"  -- By the injectivity of succ, we have m = n.",exact succ_inj.mp,  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,"  -- So, m = n, which is exactly what we wanted to show.",exact h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

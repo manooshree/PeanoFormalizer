@@ -1,0 +1,69 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_sq,  -- (a + b) * (a + b) = a ^ 2 + b ^ 2 + 2 * a * b,"rw [Nat.pow_two, Nat.add_mul_self_eq]",  rw [pow_two],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- (a + b) * (a + b) = a * a + b ^ 2 + 2 * a * b,"rw [Nat.pow_two, Nat.add_mul_self_eq]",  rw [pow_two],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- (a + b) * (a + b) = a * a + b * b + 2 * a * b,"rw [Nat.pow_two, Nat.pow_two, Nat.pow_two, Nat.mul_add, Nat.add_mul, Nat.add_mul, Nat.mul_comm b a, Nat.mul_assoc]",  rw [pow_two],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- (a + b) * (a + b) = a * a + 2 * a * b + b * b,"rw [Nat.pow_two, Nat.pow_two, Nat.pow_two, Nat.mul_add, Nat.add_mul, Nat.add_mul, Nat.mul_comm b a, Nat.mul_assoc]",  rw [add_right_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- (a + b) * a + (a + b) * b = a * a + 2 * a * b + b * b,"rw [Nat.pow_two, Nat.pow_two, Nat.pow_two, Nat.mul_add, Nat.add_mul, Nat.add_mul, Nat.mul_comm b a, Nat.mul_assoc]",  rw [mul_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- a * a + b * a + (a + b) * b = a * a + 2 * a * b + b * b,"rw [Nat.pow_two, Nat.pow_two, Nat.pow_two, Nat.mul_add, Nat.add_mul, Nat.add_mul, Nat.mul_comm b a, Nat.mul_assoc]",  rw [add_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- a * a + b * a + (a * b + b * b) = a * a + 2 * a * b + b * b,"rw [add_mul, mul_add, mul_add, ←add_assoc, add_assoc (a * a) (a * b) (a * b), add_comm (a * b) (b * b), ←add_assoc]",  rw [add_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- a * a + b * a + (a * b + b * b) = a * a + (a + a) * b + b * b,"rw [add_mul, mul_add, mul_add]",  rw [two_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- a * a + b * a + (a * b + b * b) = a * a + (a * b + a * b) + b * b,"rw [add_mul, mul_add, mul_add]",  rw [add_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- a * a + a * b + (a * b + b * b) = a * a + (a * b + a * b) + b * b,"rw [add_assoc, add_assoc, add_comm (a * b) (b * b), add_assoc]",  rw [mul_comm b a],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- a * a + a * b + a * b + b * b = a * a + (a * b + a * b) + b * b,"rw [add_assoc, add_assoc]",  rw [← add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- a * a + a * b + a * b + b * b = a * a + a * b + a * b + b * b,"rw [pow_two, pow_two, pow_two, mul_add, add_mul, add_mul, ←add_assoc, ←add_assoc, add_assoc (a * a) (a * b) (a * b), add_assoc (a * a + a * b) (a * b) (b * b)]",  rw [← add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- lhs = rhs,theorem add_sq_dev_1_temp (a b : ℕ) : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b := by,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,"  -- Rewrite the expression for the square of (a + b), a^2, and b^2 to be (a + b) * (a + b), a * a, and b * b respectively.","rw [pow_two, pow_two, pow_two]","  rw [pow_two, pow_two, pow_two]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_sq,"  -- Rearrange the terms on the right hand side of the equation, swapping the order of b * b and 2 * a * b. This is based on the commutative property of addition, which states that the order of the terms does not change the result of the addition.",rw [add_comm],  rw [add_right_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- rewrite the left-hand side of the equation using the distributive property of multiplication over addition. This expands (a + b) * (a + b) to a * a + b * a + a * b + b * b.,"rw [pow_two, add_mul, mul_add, mul_add]","  rw [mul_add, add_mul, add_mul]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,"  -- Rewrite the term 2 * a * b in the goal as (a * b + a * b) using the theorem that 2 times a number is the same as the number added to itself. Also, rewrite the term a * b + b * b as (a * b + a * b) + b * b using the theorem that the product of a sum is the sum of the products.","rw [two_mul, add_mul, add_mul]","  rw [two_mul, add_mul]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,"  -- We rewrite the expression a * b as b * a in the goal. This is based on the commutative property of multiplication, which states that the order of the factors does not change the product. This results in the new goal: a * a + a * b + (a * b + b * b) = a * a + (a * b + a * b) + b * b.",rw [mul_comm a b],  rw [mul_comm b a],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- We use the theorem that states the associativity of addition twice to rearrange the left-hand side of the equation. This changes the goal to proving that a * a + a * b + a * b + b * b equals a * a + a * b + a * b + b * b.,"rw [add_assoc, add_assoc]","  rw [← add_assoc, ← add_assoc]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,"  -- The goal is now to prove that a * a + a * b + a * b + b * b = a * a + a * b + a * b + b * b, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_sq,,"rw [Nat.pow_two, Nat.pow_two, Nat.pow_two, Nat.mul_add, Nat.add_mul, Nat.add_mul, Nat.mul_comm b a, Nat.mul_assoc]",end MyNat,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- Rewrite (a + b)^2 as (a + b) * (a + b) using the theorem that x^2 = x * x,rw [pow_two],  rw [pow_two],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_sq,  -- Rewrite a^2 as a * a using the theorem that x^2 = x * x,rw [pow_two],  rw [pow_two],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_sq,  -- Rewrite b^2 as b * b using the theorem that x^2 = x * x,rw [pow_two],  rw [pow_two],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_sq,"  -- Rearrange the terms on the right hand side of the equation, swapping the order of b * b and 2 * a * b using the commutative property of addition",rw [add_comm],  rw [add_right_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- Use the distributive property of multiplication over addition to expand (a + b) * (a + b) to a * (a + b) + b * (a + b),"rw [pow_two, add_mul, mul_add, mul_add, add_assoc, add_assoc, add_assoc]",  rw [mul_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- Use the distributive property to expand a * (a + b) to a * a + a * b,rw [Nat.mul_add],  rw [add_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- Use the distributive property to expand b * (a + b) to b * a + b * b,rw [Nat.mul_add],  rw [add_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- Rewrite 2 * a * b as a * b + a * b using the theorem that 2 * x = x + x,rw [two_mul],  rw [two_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_sq,  -- Use the distributive property to expand (a * b + a * b) to a * b + a * b,"rw [pow_two, add_mul, mul_add, mul_add, add_assoc, add_assoc, add_assoc]",  rw [add_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- Rewrite b * a as a * b using the commutative property of multiplication,rw mul_comm,  rw [mul_comm b a],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- Use the associative property of addition to rearrange a * a + a * b + (a * b + b * b) to a * a + a * b + a * b + b * b,rw [add_assoc],  rw [← add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,  -- Use the associative property of addition again to rearrange a * a + (a * b + a * b) + b * b to a * a + a * b + a * b + b * b,rw [add_assoc],  rw [← add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_sq,"  -- The goal is now to prove that a * a + a * b + a * b + b * b = a * a + a * b + a * b + b * b, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

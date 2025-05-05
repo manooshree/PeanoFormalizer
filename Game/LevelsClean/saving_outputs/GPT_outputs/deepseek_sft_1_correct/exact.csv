@@ -1,0 +1,11 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact,"-- We can prove x + y = 37, using our given statement, which says exactly that x + y = 37, and complete the proof",exact h1,  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact,"-- We can prove x + y = 37, using our given statement, which says exactly that x + y = 37, and complete the proof","exact hx at h ⊢
+
+* Rewrite the hypothesis `hx` in the goal using the given statement `h`.",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact,"-- We can prove x + y = 37, using our given statement, which says exactly that x + y = 37, and complete the proof","exact hx at h ⊢
+
+* Rewrite the hypothesis `hx` in the goal using the given statement `h`.",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

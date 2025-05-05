@@ -1,0 +1,49 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_assoc,  -- Induct on c,induction c with,  induction c with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- The base case becomes 0 = 0 using properties of multiplication by zero,"rw [mul_zero, zero_mul]",  repeat rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,"  -- for the inductive case, we obtain a * b * d + a * b = a * (b * succ d)","rw [mul_succ, mul_add]",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- a * b * d + a * b = a * (b * d + b),rw [mul_add],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- a * b * d + a * b = a * (b * d) + a * b,rw [mul_assoc],  rw [mul_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- a * b * d + a * b = a * b * d + a * b,rw [mul_assoc],  rw [← hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,"  -- Induct on c, with d = 0 as the base case and the inductive hypothesis a * b * d = a * (b * d). There are now two proof goals, prove base case: a * b * 0 = a * (b * 0), and inductive step: a * b * succ d = a * (b * succ d).",induction c with d hd,  induction c with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,"  -- First prove base case. Rewrite LHS and RHS using the fact that any natural number multiplied by zero equals zero, simplifying the equation to 0 = 0","rw [mul_zero, mul_zero]",  repeat rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,  -- Next prove inductive step. Rewrite LHS from a * b * succ d to a * b * d + a * b,rw [mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,  -- Rewrite RHS from a * (b * succ d) to a * (b * d + b),rw [mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,  -- Rewrite LHS a * b * d + a * b using the inductive hypothesis to a * (b * d) + a * b,rw mul_assoc,  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Rewrite RHS using the distributive property of multiplication over addition, changing a * (b * d + b) to a * (b * d) + a * b",rw [mul_add],  rw [mul_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,"  -- Prove LHS and RHS are equal, a * (b * d) + a * b = a * (b * d) + a * b, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,"  -- Induct on c, with (a * b) * 0 = a * (b * 0) as the base case and (a * b) * succ d = a * (b * succ d) as the inductive step.","induction c with
+| zero => rfl
+| succ d hd => rw [mul_succ, mul_succ, hd, mul_add]",  induction c with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- First prove base case. Rewrite LHS and RHS using the definition of multiplication with zero, simplifying the equation to 0 = 0","rw [mul_zero, mul_zero]",  repeat rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,"  -- For the inductive step, a * b * succ d = a * (b * succ d) simplifies to a * b * d + a * b = a * (b * d + b) using the definition of multiplication with succ","rw [mul_succ, mul_add, mul_comm b c, mul_assoc]",  repeat rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- Use the inductive hypothesis to simplify this further to a * (b * d) + a * b = a * (b * d + b),rw [mul_add],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- simplify to a * (b * d) + a * b = a * (b * d) + a * b using the distributive property of multiplication over addition,rw [mul_assoc],  rw [mul_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- The LHS and RHS are equal, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

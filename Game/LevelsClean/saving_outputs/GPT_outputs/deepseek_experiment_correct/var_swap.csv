@@ -1,0 +1,26 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+var_swap,  -- Use associativity of addition to change a + b + (c + d) into a + (b + (c + d)) and a + c + d + b into a + (c + (d + b)),"rw [add_assoc, add_assoc]",  repeat rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+var_swap,  -- Change b + (c + d) into c + (b + d) using a previous theorem.,"rw [add_assoc, add_comm b c, ←add_assoc]",  rw [add_left_comm b c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+var_swap,  -- Use commutativity of addition to change b + d into d + b,rw [add_comm b d],  rw [add_comm b d],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+var_swap,"  -- So we must show that a + (c + (d + b)) = a + (c + (d + b)), which is true by reflexivity.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+var_swap,  -- a + b + (c + d) = a + c + d + b -> a + (b + (c + d)) = a + (c + (d + b)),"rw [add_assoc, add_assoc, add_comm b c]",  repeat rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+var_swap,  -- a + (b + (c + d)) = a + (c + (d + b)) -> a + (c + (b + d)) = a + (c + (d + b)),"rw [add_assoc, add_comm b d, ←add_assoc]",  rw [add_left_comm b c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+var_swap,  -- a + (c + (b + d)) = a + (c + (d + b)) -> a + (c + (d + b)) = a + (c + (d + b)),"rw [add_assoc, add_comm b d, ←add_assoc]",  rw [add_comm b d],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+var_swap,  -- lhs = rhs,"theorem var_swap_dev_2_temp (a b c d : ℕ) : a + b + (c + d) = a + c + d + b := by
+  rw [add_assoc, add_comm b (c + d), ←add_assoc]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+var_swap,  -- Apply the associative property of addition to both sides of the equation to regroup the terms to a + (b + (c + d)) = a + (c + (d + b)),"rw [add_assoc, add_assoc]",  repeat rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+var_swap,"  -- Rewrite LHS, swapping b and c in the term b + c, to get a + (c + (b + d))","rw [add_assoc, add_comm b c, ←add_assoc]",  rw [add_left_comm b c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+var_swap,  -- Rewrite LHS from a + (c + (b + d)) to a + (c + (d + b)),"rw [add_assoc, add_comm b d, ←add_assoc]",  rw [add_comm b d],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+var_swap,"  -- Prove LHS and RHS are equal, a + (c + (d + b)) = a + (c + (d + b)), completing the proof","rw [add_assoc, add_comm b c, ←add_assoc]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

@@ -1,0 +1,71 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_right_cancel,  -- induct on n,induction n with,  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- assume a + 0 = b + 0,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_cancel,  -- a = b at hypothesis,intro h,  repeat rw [add_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,"  -- a = b, as desired","theorem add_right_cancel_dev_1_temp (a b n : ℕ) : a + n = b + n → a = b := by
+  intro h
+  rw [← Nat.add_left_cancel h]",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- assume a + succ d = b + succ d,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_cancel,  -- succ(a + d) = b + succ d at hypothesis,"rw [add_succ, add_succ] at h",  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- succ(a + d) = succ(b + d) at hypothesis,"rw [add_succ, add_succ] at *",  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- a + d = b + d at hypothesis,rw [←Nat.add_left_cancel_iff] at *,  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- a = b by inductive hypothesis,"theorem add_right_cancel_dev_1_temp (a b n : ℕ) : a + n = b + n → a = b := by
+  intro h
+  rw [← Nat.add_left_cancel h]",  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- a = b from the inductive hypothesis,intro h,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- We start with induction on n.,induction n with,  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,"  -- For the base case, to show that a + 0 = b + 0 → a = b, we first assume a + 0 = b + 0.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_cancel,  -- we simplify the LHS in the hypothesis using the theorem that n + 0 = 0,rw [Nat.add_zero] at h,  rw [add_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- we simplify the RHS in the hypothesis using the theorem that n + 0 = 0,rw [add_zero] at h,  rw [add_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_cancel,"  -- So a = b, which concludes the base case.",rfl,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,"  -- For the inductive step, we must show that a + succ d = b + succ d → a = b, so we start by assuming a + succ d = b + succ d.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_cancel,  -- We use the theorem that n + succ m = succ (n + m) to change a + succ d = b + succ d into succ (a + d) = succ (b + d).,"rw [add_succ, add_succ]",  repeat rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,"  -- So, succ (a + d) = succ (b + d), but because succ is injective, we have that a + d = b + d.","theorem add_right_cancel_dev_2_temp (a b n : ℕ) : a + n = b + n → a = b := by
+  intro h
+  rw [← Nat.add_left_cancel h]",  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,"  -- The inductive hypothesis states that a + d = b + d → a = b and we know a + d = b + d, so by modus ponens, a = b.","theorem add_right_cancel_dev_2_temp (a b n : ℕ) : a + n = b + n → a = b := by
+  intro h
+  rw [←Nat.add_left_cancel h]",  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,"  -- So a = b, which concludes the inductive step.",rfl,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,"  -- Induct on n, with d = 0 as the base case and the inductive hypothesis a + d = b + d. There are now two proof goals, prove base case: a + 0 = b + 0 and inductive step: a + succ (d) = b + succ (d) implies a = b.",induction n with d hd,  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_cancel,"  -- Assume that the hypothesis 'h' is true, that is, a + 0 = b + 0. The goal now is to prove that a = b.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_cancel,"  -- Repeatedly apply the rewrite rule add_zero to the hypothesis h, which simplifies any terms of the form x + 0 in h to x. In this case we get a = b",rw [add_zero] at h,  repeat rw [add_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,"  -- Apply the hypothesis 'h' to the goal which is a = b, hence this concludes the base case.","theorem add_right_cancel_temp (a b n : ℕ) : a + n = b + n → a = b := by
+  intro h
+  rw [← Nat.add_left_cancel h]",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- Introduce a hypothesis h: a + succ d = b + succ d. Now the goal is to prove a = b given this hypothesis.,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_cancel,"  -- For any natural numbers x and y, x + succ y = succ (x + y). Applying this repeatedly simplifies the hypothesis but leaves the goal state a = b unchanged.","rw [add_succ, add_succ] at *",  repeat rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,"  -- If succ a = succ b, then a = b which simplifies the hypotheses.",rw [←succ_inj],  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- Apply the inductive hypothesis 'hd' at the hypothesis 'h'. This simplifies the hypothesis to a = b.,apply Nat.add_right_cancel,  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_cancel,  -- h proves the goal a = b so we can use it to finish the proof,"theorem add_right_cancel_temp (a b n : ℕ) : a + n = b + n → a = b := by
+  intro h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

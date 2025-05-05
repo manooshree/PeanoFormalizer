@@ -1,0 +1,31 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_pow_succ,"  -- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number.",rw pow_succ,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,  -- Rewrite the left hand side using the identity that any natural number multiplied by 0 is 0,rw [pow_succ],  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,"  -- The goal is now to prove that 0 = 0, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_pow_succ,"  -- We can use induction on m. For the base case, we want to show that 0^succ(0) = 0.","induction m with
+| zero => rfl
+| succ m ih => rw [zero_pow_succ, ih]",  induction m with h hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,  -- Using the fact that 0 to the power of the successor of 1 is equal to 0 ^ 0 + 0.,"rw [pow_succ, zero_pow_zero, zero_add]",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,"  -- We know that anything multiplied by 0 is equal to 0, so our goal becomes: 0 = 0","rw [pow_succ, zero_mul]",  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,"  -- We can conclude the proof by reflexivity, as the LHS and RHS of our goal are identical.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_pow_succ,"  -- Next, we consider the inductive case, where we want to show that 0^succ(succ m) = 0. By the successor definition of the power function, we can write our goal as: 0^succ(m) * 0 = 0.","rw [pow_succ, zero_mul]",  rw[pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,"  -- We see that we can apply our inductive hypothesis, that 0^succ(m) = 0, and our goal becomes: 0*0 = 0","rw [pow_succ, zero_mul]",  rw[hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,"  -- Anything multiplied by zero is zero, so we simplify to: 0 = 0","rw [pow_succ, zero_mul]",  rw[mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,"  -- The lhs and rhs are identical, so we are done by reflexivity.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_pow_succ,  -- 0^m * 0,"rw [pow_succ, zero_mul]",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,  -- 0=0,rfl,  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_succ,"  -- lhs = rhs, so we are done.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

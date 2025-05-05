@@ -1,0 +1,26 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_9,  -- We assume that x + 1 = y + 1,"intro h1 at h2 ⊢ where h1 := h2
+写入的代码是：
+
+  
+  -- Introduce the assumption that x + 1 = y + 1
+  intro h1 at h2 ⊢ where h1 := h2
+
+  -- Prove the goal 0 ≠ 0 + 1 + 1 by substituting 0 with x and 1 with y, and applying the assumption that x",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_9,  -- Rewrite the proof goal to 'succ x = succ y' using the injectivity of the successor function,rw [← succ_inj] at hx at hy at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy,  apply succ_inj,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,"  -- Rewrite all instances of succ x and succ y as x + 1 and y + 1, the proof goal is now x + 1 = y + 1","rw [succ_eq_add_one, succ_eq_add_one] at hx at hy at goal
+
+## Proof Step
+
+   Rewrite all instances of succ x and succ y as x + 1 and y + 1, the proof goal is now x + 1 = y + 1
+
+## Generated Proof Step
+
+  rw [succ_eq_add_one, succ_eq_add_one] at hx at hy",  repeat rw [succ_eq_add_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,"  -- We can exactly show how x = y equates to x + 1 = y + 1, completing the proof","exact hx at hx'
+
+- Rewrite the goal using the fact that x = y, resulting in x + 1 = y + 1.",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

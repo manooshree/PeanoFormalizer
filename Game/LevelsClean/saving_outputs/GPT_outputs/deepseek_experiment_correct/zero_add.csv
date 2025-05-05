@@ -1,0 +1,65 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_add,-- Induct on n,"induction n with
+| zero => rfl
+| succ n ih => rw [zero_add, ih]",induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- substitute 0 -> 0 + 0 into the RHS giving us 0 + 0 = 0 + 0,rw [←zero_add],nth_rewrite 3 [← add_zero 0],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- 0 + 0 = 0 + 0, completing base case",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,-- 0 + succ d -> succ (0 + d) on LHS giving us succ (0 + d) = succ d,rw [zero_add],rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- 0 + d -> d on LHS -> succ d = succ d,rw [zero_add],rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- succ d = succ d, QED",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,-- Begin by initiating induction on n,induction n with,induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- Using the properties of addition by 0 we can rewrite 0 + 0 to 0 on the LHS,rw [zero_add],rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- Since both sides are equal, we are done with the base case",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,-- Now using properties of successors we can rewrite 0 + succ d to succ (0 + d) on the LHS getting succ (0 + d) = succ d,rw [zero_add],rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- Using the induction hypothesis we can rewrite succ (0 + d) to succ d,rw [zero_add],rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- Since both sides are equal, we are done with the proof",rfl,rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,-- Begin by initiating induction on n,induction n with,  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- Using the properties of addition by 0 we can rewrite 0 + 0 to 0 on the LHS,rw [zero_add],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- Since both sides are equal, we are done with the base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,-- Now using properties of successors we can rewrite 0 + succ d to succ (0 + d) on the LHS getting succ (0 + d) = succ d,rw [zero_add],  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- Using the induction hypothesis we can rewrite succ (0 + d) to succ d,rw [zero_add],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- Since both sides are equal, we are done with the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,"-- Induct on n, with d = 0 as the base case and the inductive hypothesis 0 + d = d. There are now two proof goals, prove base case: 0 + 0 = 0, and inductive step: 0 + succ (d) = succ (d)","induction n with
+| zero => rfl
+| succ n ih => rw [zero_add, ih]",  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- First prove base case. Reduce LHS 0 + 0 = 0.,rw zero_add,  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- Prove LHS and RHS are equal, 0 = 0, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,-- Now prove inductive step. Rewrite 0 + succ d = succ (0 + d),rw [zero_add],  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- Simplify RHS succ (0 + d) = succ(d) using the inductive hypothesis.,rw zero_add,  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- Prove LHS and RHS are equal, succ(d) = succ(d), completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,-- Induct on n,induction n_temp with,  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- substitute 0 -> 0 + 0 into the RHS giving us 0 + 0 = 0 + 0,rw [←zero_add 0],  nth_rewrite 3 [← add_zero 0],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- 0 + 0 = 0 + 0, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_add,-- 0 + succ d -> succ (0 + d) on LHS giving us succ (0 + d) = succ d,rw [zero_add],  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,-- 0 + d -> d on LHS -> succ d = succ d,rw [Nat.zero_add],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_add,"-- succ d = succ d, QED",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

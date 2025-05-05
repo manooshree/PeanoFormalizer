@@ -1,0 +1,203 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_mul,"-- Perform induction on m, with d = 0 as the base case and the inductive hypothesis 0 * d = 0. There are now two proof goals, prove base case: 0 * 0 = 0, and inductive step: 0 * succ (d) = 0","FLT:
+  -- Perform induction on m, with d = 0 as the base case and the inductive hypothesis 0 * d = 0. There are now two proof goals, prove base case: 0 * 0 = 0, and inductive step: 0 * succ (d) = 0
+  induction m with
+  | zero =>
+    -- Prove base case: 0 * 0 = 0
+    rfl
+  |",  induction m with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- First prove base case. Simplify LHS 0 * 0 to 0,"-- Base case: 0 * 0 = 0
+  rfl
+  -- Inductive step: Assume 0 * m = 0, prove 0 * succ m = 0
+  rw [zero_mul, zero_mul]
+  -- Apply inductive hypothesis
+  exact h
+  -- Complete proof
+  trivial",  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case","FL:  rfl
+
+RR:  rfl
+
+  -- Prove inductive step
+  -- Assume 0 * m = 0
+  -- We need to show 0 * succ m = 0
+  -- 0 * succ m = 0 * m + 0
+  -- 0 * m = 0 by inductive hypothesis
+  -- 0 * succ m = 0 + 0 = 0
+  -- Therefore, 0",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"  -- Now prove inductive step. Rewrite LHS 0 * succ (d) to 0 * d + 0, using the definition of multiplication","-- 0 * succ (d) = 0 * d + 0
+  rw [zero_mul]
+  -- 0 * d + 0 = 0
+  rw [add_zero]
+  -- 0 = 0
+  rfl",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- Simplify the LHS 0 * d + 0 to 0 + 0 using the inductive hypothesis,"-- 0 * m = 0 * (d + 1)
+  rw [mul_succ, zero_mul, zero_add]
+  -- 0 * d + 0 = 0
+  exact h
+  -- 0 = 0
+  rfl",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- Simplify the LHS o 0 + 0 to 0,"FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1
+FL: 1",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing the proof","FL: 0 * m = 0
+FL: 0 = 0
+FL: 0 * m = 0
+FL: 0 = 0
+FL: 0 * m = 0
+FL: 0 = 0
+FL: 0 * m = 0
+FL: 0 = 0
+FL: 0 * m = 0
+FL: 0 = 0
+FL: 0 * m = 0",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"-- Perform induction on m, with d = 0 as the base case and the inductive hypothesis 0 * d = 0. There are now two proof goals, prove base case: 0 * 0 = 0, and inductive step: 0 * succ (d) = 0","induction m with
+  | zero => 
+    -- Prove base case: 0 * 0 = 0
+    simp
+  | succ m =>
+    -- Prove inductive step: 0 * succ (m) = 0
+    simp [mul_succ, mul_zero, add_zero]
+    assumption",  induction m with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- First prove base case. Simplify LHS 0 * 0 to 0,"rw [mul_zero] at hb -> hb = 0
+
+* Correct line of code:
+
+     -- First prove base case. Simplify LHS 0 * 0 to 0
+     rw [mul_zero] at hb
+     -> hb = 0",  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case","rfl [succ_inj'] at hb -> 0 = 0 = 0
+
+! Incorrect
+
+   -- Correct single line of FL:
+   --   rfl [succ_inj'] at hb -> 0 = 0 = 0
+   --   rfl [succ_inj'] at hb
+   --   rfl [succ_inj'] at hb
+   --   rfl [succ_inj'] at hb",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"  -- Now prove inductive step. Rewrite LHS 0 * succ (d) to 0 * d + 0, using the definition of multiplication","rw [mul_succ] at hb at hb1 ⊢
+  -- Now prove inductive step. Rewrite LHS 0 * d + 0 to 0 * d + 0 + 0, using the definition of addition
+FL:  rw [add_zero] at hb at hb1 ⊢
+
+The goal is to generate this line from the case:
+
+""Now prove inductive step. Rewrite LHS 0",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- Simplify the LHS 0 * d + 0 to 0 + 0 using the inductive hypothesis,"rw [hd] at hx ⊢
+   -- Simplify the LHS 0 + 0 to 0 using the identity property of addition
+   -- Simplify the RHS 0 to 0 using the identity property of addition
+   -- Prove 0 = 0, completing the inductive case
+   repeat rw [zero_add] at hx ⊢
+   -- Prove 0 = 0, completing the inductive case",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- Simplify the LHS o 0 + 0 to 0,"rw [zero_add] at hb at hb ⊢
+
+-- Correctly complete the proof
+
+-- Correctly complete the proof
+
+-- Correctly complete the proof
+
+-- Correctly complete the the proof
+
+-- Correctly complete the proof
+
+-- Correctly complete the proof
+
+-- Correctly complete the proof
+
+-- Correctly complete the proof
+
+-- Correctly complete the proof
+
+-- Correctly complete the proof",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing the proof","rfl [succ_inj'] at hx -> 0 = 0 = 0 * y + 0 * y
+
+-- Rewrite LHS and RHS to 0 = 0, completing the proof
+rfl at hx -> 0 = 0 = 0 * y + 0 * y",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"-- Perform induction on m, with d = 0 as the base case and the inductive hypothesis 0 * d = 0. There are now two proof goals, prove base case: 0 * 0 = 0, and inductive step: 0 * succ (d) = 0","induction m with
+  | zero => 
+    -- Prove base case: 0 * 0 = 0
+    simp
+  | succ m =>
+    -- Prove inductive step: 0 * succ (m) = 0
+    simp [mul_succ, mul_zero, add_zero]
+    assumption",  induction m with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- First prove base case. Simplify LHS 0 * 0 to 0,"rw [mul_zero] at hb -> hb = 0
+
+* Correct line of code:
+
+     -- First prove base case. Simplify LHS 0 * 0 to 0
+     rw [mul_zero] at hb
+     -> hb = 0",  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case","rfl [succ_inj'] at hb -> 0 = 0 = 0
+
+!   -- Apply inductive hypothesis to simplify LHS
+  rw [hb] at hb
+
+  -- Simplify LHS and RHS to 0
+  rw [hb] at hb
+
+  -- Prove LHS and RHS are equal, 0 = 0, completing base case
+  rfl [succ_inj'] at hb -> 0 =",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,"  -- Now prove inductive step. Rewrite LHS 0 * succ (d) to 0 * d + 0, using the definition of multiplication","rw [mul_succ] at hb at hb2 ⊢
+  -- Now prove inductive step. Rewrite LHS 0 * d + 0 to 0 * d + 0 + 0, using the definition of addition
+FL:  rw [add_zero] at hb at hb2 ⊢
+
+The goal is to have the following line:
+
+-- Now prove inductive step. Rewrite LHS 0 * succ",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,  -- Simplify the LHS 0 * d + 0 to 0 + 0 using the inductive hypothesis,"rw [hd] at hx ⊢
+   -- Simplify the LHS 0 + 0 to 0 using the identity property of addition
+   -- Simplify the RHS 0 to 0 using the identity property of addition
+   -- Prove 0 = 0, completing the inductive case
+   repeat rw [zero_add] at hx ⊢
+   exact hx
+
+   -- The base case is trivial
+   exact",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,  -- Simplify the LHS o 0 + 0 to 0,"rw [zero_add] at hb at hb ⊢
+
+-- Correctly complete the proof
+
+-- Correctly complete the proof
+
+-- Correctly complete the proof",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing the proof","rfl [succ_inj'] at hx -> 0 = 0 = 0 * y + 0 * 0
+FL:  rfl [succ_inj'] at hx -> 0 = 0 = 0 * y + 0 * 0",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,0 +1,18 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_one,  -- We know that 1 is the successor of 0 so by definition of multiplication we have m * 1 = m * 0 + m,"rw [one_eq_succ_zero, mul_succ, mul_zero, zero_add] at hx by rw [one_eq_succ_zero, mul_succ, mul 0, zero_add] at hx
+
+-- Rewrite using the definition of 1 as the successor of 0, the definition of multiplication with a successor, the definition of multiplication by zero, and the definition of addition with zero on the hypothesis hx.","  rw [one_eq_succ_zero, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- By the fact that 1 = succ 0 and that 0 + n = n, we obtain m","have h2 : m = n + 1 := by rw [← one_eq_succ_zero, ← h1]
+
+-- Reply
+FL:   exact h2","  rw [mul_zero, zero_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- The lhs and rhs are equal, completing the proof","exact h1 in h2 at h1; exact h2
+
+17. The goal is now to prove that x = y + d, given that x = y + d and y = x + d.
+FL:  exact h1 at h2; exact h2 in h1
+
+20. The goal is now to prove that y = x + d, given that x = y + d and y = x + d.
+FL:  exact h",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

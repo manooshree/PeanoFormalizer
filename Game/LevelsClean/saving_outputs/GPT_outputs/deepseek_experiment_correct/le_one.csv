@@ -1,0 +1,141 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_one,  -- Either x = 0 or x = succ y for some natural number y.,"cases x with
+| zero => left; rfl
+| succ y => right; exact Nat.succ_le_succ_iff.mp hx",  cases x with y,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- To prove 0 = 0 ∨ 0 = 1, we choose to prove 0 = 0.","theorem le_one_dev_1_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    have : x' = 0 := Nat.le_zero.mp (Nat.le_of_succ_le_succ h",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- by reflexivity, 0 = 0",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_one,  -- We substitute 1 for succ 0 in both what we know and what we are trying to show,"rw [← Nat.succ_zero, ← Nat.succ_zero] at hx ⊢",  rw [one_eq_succ_zero] at hx ⊢,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Using a theorem, since succ y ≤ succ 0, we have y ≤ 0","theorem le_one_dev_1_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    have : x' = 0 := by linarith
+    rw [this]
+    exact Or.inr rfl",  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Using another theorem, since y ≤ 0, y = 0.","theorem le_one_dev_1_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    have : x' = 0 := Nat.le_zero.mp (Nat.le_of_succ_le_succ h",  apply le_zero at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Thus, our goal to show succ y = 0 ∨ succ y = succ 0 is really just succ 0 = 0 ∨ succ 0 = succ 0.","theorem le_one_dev_1_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    cases x' with
+    | zero => exact Or.inr rfl
+    | succ x'' => 
+      have :",  rw [hx],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- To show succ 0 = 0 ∨ succ 0 = succ 0, we choose to show succ 0 = succ 0.","theorem le_one_dev_1_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    have : x' = 0 := Nat.le_zero.mp (Nat.le_of_succ_le_succ h",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- But this just follows from reflexivity.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_one,"  -- We consider the case where x is a natural number. We then break down this case into two subcases: one where x is equal to 0, and the other where x is equal to the successor of another natural number y.","cases x with
+| zero => left; rfl
+| succ y => right; exact Nat.succ_le_succ_iff.mp hx",  cases x with y,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- We choose to prove the left side of the disjunction, which is 0 = 0.","theorem le_one_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    have : x' = 0 := Nat.le_zero.mp (Nat.le_of_succ_le_succ hx)",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- We are given that 0 equals 0, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_one,"  -- Replace 1 with the successor of 0. This means we are given that the succ y <= succ 0, and the updated goal is that the succ y = 0 or the succ y = succ 0.",rw [← Nat.succ_eq_add_one] at hx,  rw [one_eq_succ_zero] at hx ⊢,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- We use the property that if one natural number is less than or equal to another, then their successors also maintain this relationship. This means that y <= 0.",rw [Nat.le_succ] at hx,  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- We apply the property that if x is less than or equal to 0, then x must be equal to 0 so y = 0.","theorem le_one_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    have : x' = 0 := Nat.le_zero.mp (Nat.le_of_succ_le_succ hx)",  apply le_zero at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- We substitute y with 0 in the goal, resulting in the goal succ 0 = 0 ∨ succ 0 = succ 0.",rw [← Nat.succ_eq_add_one] at hx,  rw [hx],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- We choose to prove the right side of the disjunction, which is succ 0 = succ 0.","theorem le_one_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    cases x' with
+    | zero => exact Or.inr rfl
+    | succ x'' => 
+      have : succ (succ x",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- We are given that succ 0 equals succ 0, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_one,  -- x = 0 (case 1) or x = succ y (case 2) for some natural number y,"cases x with
+| zero => left; rfl
+| succ y => right; exact Nat.succ_le_succ_iff.mp hx",  cases x with y,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- 0 = 0 ∨ 0 = 1 -> 0 = 0,"theorem le_one_dev_2_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    have : x' = 0 := Nat.le_zero.mp (Nat.le_of_succ_le_succ h",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- lhs = rhs,"theorem le_one_dev_2_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    cases x' with
+    | zero => exact Or.inr rfl
+    | succ x'' => 
+      have :",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- succ y ≤ 1 -> succ y ≤ succ 0; succ y = 0 ∨ succ y = 1 -> succ y = 0 ∨ succ y = succ 0,"theorem le_one_dev_2_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    have : x' = 0 := Nat.le_zero.mp (Nat.le_of_succ_le_succ h",  rw [one_eq_succ_zero] at hx ⊢,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- succ y ≤ succ 0 -> y ≤ 0,rw [Nat.succ_le_succ_iff] at hx,  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- y ≤ 0 -> y = 0,"theorem le_one_dev_2_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    have : x' = 0 := Nat.le_zero.mp (Nat.le_of_succ_le_succ h",  apply le_zero at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- succ y = 0 ∨ succ y = succ 0 -> succ 0 = 0 ∨ succ 0 = succ 0,"theorem le_one_dev_2_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    cases x' with
+    | zero => exact Or.inr rfl
+    | succ x'' => 
+      have :",  rw [hx],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- succ 0 = 0 ∨ succ 0 = succ 0 -> succ 0 = succ 0,"theorem le_one_dev_2_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    cases x' with
+    | zero => exact Or.inr rfl
+    | succ x'' => 
+      have :",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- lhs = rhs,"theorem le_one_dev_2_temp (x : ℕ) (hx : x ≤ 1) : x = 0 ∨ x = 1 := by
+  cases x with
+  | zero => exact Or.inl rfl
+  | succ x' => 
+    cases x' with
+    | zero => exact Or.inr rfl
+    | succ x'' => 
+      have :",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

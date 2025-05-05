@@ -1,0 +1,31 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+eq_succ_of_ne_zero,  -- We consider two cases for a: when a is zero and when a is the successor of another natural number.,"（Consider two cases for a: when a is zero and when a is the successor of another natural number）
+  induction a with d hd
+  -- Case 1: a is 0
+  -- Prove the base case: 0^succ(0) = 0
+  case zero =>
+    nth_rewrite 1 [pow_succ]
+    simp
+  -- Case 2: a is the successor of another natural number
+  --",  cases a with d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,"  -- By logical reasoning, we know that 0 cannot be equal to 0, which is a contradiction. Therefore, there is no natural number such that 0 is the successor of that number so we can close the case where a is 0.",tauto as a false statement → false as the contradiction.,  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+eq_succ_of_ne_zero,  -- We provide an example where the natural number 'd' satisfies the condition that 'succ d' equals 'succ n'.,"use d where
+     -- We show that 'succ d' equals 'succ n' by reflexivity.
+     rfl
+
+     -- We generate the proof of the inductive step.
+     -- We introduce the assumption that 'succ d' equals 'succ n'.
+     -- We show that 'd' equals 'n' by applying the injectivity of the successor function.
+     -- We conclude that 'd' equals 'n'.
+     -- We generate the proof of",  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+eq_succ_of_ne_zero,  -- We use reflexivity to prove that 'succ d' equals 'succ d'.,"rfl ⊔ rfl → rfl = rfl at hx ⊔ rfl = rfl → rfl = rfl at hx ⊢
+
+-- Rewrite the hypothesis 'hx' using the fact that 'succ d' equals 'succ d'.
+rw [hx] at hx
+
+-- The goal is now to prove that 'succ d' equals 'succ d'.
+goal ⊢ succ d = succ",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

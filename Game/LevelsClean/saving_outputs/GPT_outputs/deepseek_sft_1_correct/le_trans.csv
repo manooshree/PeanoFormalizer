@@ -1,0 +1,151 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_trans,  -- y = x + a,"-- use x + a, y + b, z + c
+  use y, z, x, a, b, c
+  -- rw [add_assoc, add_assoc]
+  rw [add_assoc, add tauto]",  cases hxy with a ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = y + b,"-- Use the fact that y ≤ z to obtain a natural number b such that z = y + b
+  obtain ⟨b, hb⟩ := exists_eq_add_of_le hyz
+  -- Rewrite z as y + b in the goal
+  rw [hb] at hyz
+  -- Rewrite the goal x ≤ z as x ≤ y + b
+  rw [hb]
+  -- Apply the trans",  cases hyz with b hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b),"-- y = x + a
+  rw [← add_assoc] at hyz
+  rw [← add_assoc] at hxy
+  rw [← add_assoc] at hyz
+  rw [← add_assoc] at hxy
+  rw [← add_assoc] at hyz
+  rw [← add_assoc] at hxy
+  rw [← add_assoc] at hyz
+  rw [← add_assoc",  use a + b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b) -> y + b = x + (a + b),"-- Use the fact that y ≤ z to rewrite z as y + b
+  rw [← add_assoc] at hyz
+  rw [← hyz] at hxy
+  exact hxy",  rw [hb],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- y + b = x + (a + b) -> (x + a) + b = x + (a + b),"-- Use the theorem add_assoc to rewrite the left-hand side of the equation
+  rw [add_assoc] at hxy
+  rw [add_assoc] at hyz
+  rw [add_assoc] at hxy
+  rw [add_assoc] at hyz
+  rw [add_assoc] at hxy
+  rw [add_assoc] at hyz
+  rw [add_assoc] at hxy
+  rw [add",  rw [ha],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- (x + a) + b = x + (a + b) by associativity,"-- Use the associativity of addition to rewrite the left-hand side of the goal
+  rw [add_assoc] at hxy
+  rw [add_assoc] at hyz
+  rw [add_assoc] at hxy
+  rw [add_assoc] at hyz
+  rw [add_assoc] at hxy
+  rw [add_assoc] at hyz
+  rw [add_assoc] at hxy
+  rw [add",  exact add_assoc x a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- y = x + a,"rw [add_comm] at hx ⊢
+  -- y = a + x
+  -- y = x + a
+
+  ← hy
+  ⊢ x + a = x + a
+
+  ← hy
+  �   -- y = x + a
+  �   -- y = a + x
+  �   -- y = x + a
+  -- y = a + x
+  -- y = x +",  cases hxy with a ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = y + b,"rw [← add_zero y] at hb ⊢
+   at hb we have z = y + b + 0 � 0 = b
+   at hb we have z = y + b + 0 ⊢ z = y + b
+
+   -- we have z = y + b + 0 ⊢ z = y + b
+
+    -- so we can conclude that z = y + b",  cases hyz with b hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b),"rw [add_comm] at hb ⊢
+  -- z = (a + b) + x
+
+  → z = a + b + x",  use a + b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b) -> y + b = x + (a + b),"rw [h] at h2 ⊢ at h2 �   by rw [h] at h2 ⊢ at h2 ⊤
+
+-- Step 3: Rewrite the goal using the hypothesis that z = x + (a + b)
+-- y + b = x + (a + b)",  rw [hb],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- y + b = x + (a + b) -> (x + a) + b = x + (a + b),"rw [← add_assoc] at hb2 -> (x + a) + b = x + (a + b) at hb2
+
+-- Correctly generate the single line of Lean 4 code for this step:
+
+-- Generate the single line of Lean 4 code for this step:
+FL:  rw [← add_assoc] at hb2
+
+-- Correctly generate the single line of Lean 4 code for this step:",  rw [ha],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- (x + a) + b = x + (a + b) by associativity,"rw [add_assoc] at hb2 ⊢
+
+*   -- Prove LHS and RHS are equal, completing the proof
+   exact hb2",  exact add_assoc x a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- y = x + a,"rw [add_comm] at hx ⊢
+   at hx we have y = x + a and at the goal we have y = a + x
+
+The single line of Lean 4 code is:
+
+                    -- y = x + a
+                    -- y = a + x
+                    rw [add_comm] at hx ⊢
+                    -- y = a + x
+                    -- y = x + a
+                    --",  cases hxy with a ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = y + b,"rw [← add_zero y] at hb ⊢
+   at hb we have z = y + b + 0 � 0 = b
+   at hb we have z = y + b + 0 ⊢ z = y + b
+   at hb we have z = y + b + 0 ⊢ z = y + b
+   at hb we have z = y + b +",  cases hyz with b hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b),"rw [add_comm] at hb ⊢
+  -- z = a + (x + b)
+
+   -- z = a + (b + x)
+
+   -- z = a + (b + x)
+
+   -- z = a + (b + x)
+
+   -- z = a + (b + x)
+
+   -- z = a + (b + x)
+
+   -- z = a + (",  use a + b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b) -> y + b = x + (a + b),"rw [h] at h2 ⊢ at h2 �   by rw [h] at h2 ⊢ at h2 ⊤
+
+-- Step: Rewrite the goal using the hypothesis that z = x + (a + b)
+-- New goal: y + b = x + (a + b)
+
+The single line of Lean 4 code for this step is:
+
+-- [single line of code]",  rw [hb],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- y + b = x + (a + b) -> (x + a) + b = x + (a + b),"rw [← add_assoc] at hb2 -> (x + a) + b = x + (a + b) at hb2
+
+-- Correctly generate the single line of Lean 4 code for this step:
+
+-- Generate the single line of Lean 4 code for this step:
+FL:  rw [← add_assoc] at hb2
+
+-- Correctly generate the single line of Lean 4 code for this step:",  rw [ha],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- (x + a) + b = x + (a + b) by associativity,"rw [add_assoc] at hb2 ⊢
+
+*   -- Prove LHS and RHS are equal, completing the proof
+   exact hb2",  exact add_assoc x a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

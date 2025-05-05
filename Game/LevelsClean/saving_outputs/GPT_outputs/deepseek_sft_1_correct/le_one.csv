@@ -1,0 +1,150 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_one,  -- Either x = 0 or x = succ y for some natural number y.,"-- Use the theorem that states that for any natural number x, x is either 0 or the successor of some natural number y.
+  apply eq_zero_or_eq_succ_of_le_one",  cases x with y,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- To prove 0 = 0 ∨ 0 = 1, we choose to prove 0 = 0.","-- Choose to prove 0 = 0
+  left
+  rfl",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- by reflexivity, 0 = 0","FLT: 
+  -- by reflexivity, 0 = 0
+  rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- We substitute 1 for succ 0 in both what we know and what we are trying to show,"rw [one_eq_succ_zero] at hx
+  rw [one_eq_succ_zero]
+  rw [one_eq_succ_zero] at hx
+  rw [one_eq_succ_zero]
+  rw [one_eq_succ_zero] at hx
+  rw [one_eq_succ_zero]
+  rw [one_eq_succ_zero] at hx
+  rw [one",  rw [one_eq_succ_zero] at hx ⊢,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Using a theorem, since succ y ≤ succ 0, we have y ≤ 0","-- Using a theorem, since succ y ≤ succ 0, we have y ≤ 0
+  rw [le_succ_iff] at hx
+  induction x with
+  | zero =>
+    -- Base case: x = 0
+    left
+    rfl
+  | succ x' ih =>
+    -- Inductive step: x = succ x'
+    right
+    rfl",  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Using another theorem, since y ≤ 0, y = 0.","-- Using another theorem, since y ≤ 0, y = 0.
+  rw [le_zero] at hx
+  exact hx",  apply le_zero at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Thus, our goal to show succ y = 0 ∨ succ y = succ 0 is really just succ 0 = 0 ∨ succ 0 = succ 0.","-- Use the fact that succ 0 = 1 to rewrite the goal
+  rw [succ_zero_eq_one] at hx
+  -- Now, we have x ≤ 1, and we want to show x = 0 ∨ x = 1.
+  -- We can use the fact that if x ≤ 1, then x must be either 0 or 1.
+  -- This is because the only natural numbers less",  rw [hx],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- To show succ 0 = 0 ∨ succ 0 = succ 0, we choose to show succ 0 = succ 0.","-- Choose to show succ 0 = succ 0
+  right
+  rfl",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- But this just follows from reflexivity.,"rfl
+  -- This completes the proof.",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- Either x = 0 or x = succ y for some natural number y.,"eta_zero x (by tauto) at hx ⊢ with hx
+
+The goal is to prove that x = 0 or x = succ y for some natural number y, given that x = 0 or x = succ y.",  cases x with y,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- To prove 0 = 0 ∨ 0 = 1, we choose to prove 0 = 0.","left
+     rfl",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- by reflexivity, 0 = 0","eta_zero = 0 → 0 = 0 at line 226, changing goal to 0 = 0
+
+-- Your goal is to prove 0 = 0, which is true by reflexivity.
+
+Change line 226 to:
+
+apply eq_zero_of_zero_eq_succ at h
+-- This line changes the goal to proving 0 = 0, which is true by reflexivity.",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- We substitute 1 for succ 0 in both what we know and what we are trying to show,"udecl (1 -> succ 0) at h ⊢
+
+The single line of Lean 4 code is:
+
+udecl (1 -> succ 0) at h ⊢",  rw [one_eq_succ_zero] at hx ⊢,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Using a theorem, since succ y ≤ succ 0, we have y ≤ 0","apply succ_le_succ_iff at hx ⊢
+  -- Using a theorem, we know that y ≤ 0
+  apply le_zero at hx
+  -- Rewrite 0 as succ 0
+  rw [zero_eq_succ] at hx
+  -- Simplify to get y = 0
+  simp at hx
+  -- Rewrite y as 0
+  rw [hx] at hx",  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Using another theorem, since y ≤ 0, y = 0.","eta_zero at hx ⊢ ⊢ with hx -> y = 0 * 0 = 0
+
+-- The goal is now to prove 0 * 0 = 0.",  apply le_zero at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Thus, our goal to show succ y = 0 ∨ succ y = succ 0 is really just succ 0 = 0 ∨ succ 0 = succ 0.","left
+     rfl
+
+     -- Now we consider the case where x = 0.
+     -- We need to show succ 0 = 0 ∨ succ 0 = succ 0.
+     -- We choose the right side of the disjunction: succ 0 = succ 0.
+     -- This is true by reflexivity.
+     -- So we have shown succ 0 = succ 0.",  rw [hx],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- To show succ 0 = 0 ∨ succ 0 = succ 0, we choose to show succ 0 = succ 0.","left
+  rfl",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- But this just follows from reflexivity.,rfl as the proof step.,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- Either x = 0 or x = succ y for some natural number y.,"eta_zero x (by tauto) at hx ⊢ with hx
+
+The goal is to prove that x = 0 or x = succ y for some natural number y, given that x = 0 or x = succ y.",  cases x with y,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- To prove 0 = 0 ∨ 0 = 1, we choose to prove 0 = 0.","left
+     rfl",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_one,"  -- by reflexivity, 0 = 0","eta_zero = 0 → 0 = 0 at line 226, changing the goal to 0 = 0
+
+-- Your goal is to prove 0 = 0 from the hypothesis eta_zero = 0.
+-- This is a straightforward case of reflexivity, so you can use the 'rfl' tactic to complete the proof.
+
+-- Change the goal to 0 = 0 using the hypothesis eta_zero =",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_one,  -- We substitute 1 for succ 0 in both what we know and what we are trying to show,"udecl (1 -> succ 0) at h ⊢
+
+The single line of Lean 4 code is:
+
+udecl (1 -> succ 0) at h ⊢",  rw [one_eq_succ_zero] at hx ⊢,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Using a theorem, since succ y ≤ succ 0, we have y ≤ 0","apply succ_le_succ_iff at hx ⊢
+  -- Using a theorem, we know that y ≤ 0
+  apply le_zero at hx
+  -- Rewrite 0 as succ 0
+  rw [zero_eq_succ] at hx
+  -- Simplify to get y = 0
+  simp at hx
+  -- Rewrite y as 0
+  rw [hx] at hx",  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Using another theorem, since y ≤ 0, y = 0.","eta_zero at hx ⊢ ⊢ with hx -> y = 0 * 0 = 0
+
+-- The goal is now to prove 0 * 0 = 0.",  apply le_zero at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- Thus, our goal to show succ y = 0 ∨ succ y = succ 0 is really just succ 0 = 0 ∨ succ 0 = succ 0.","left
+     rfl
+
+     -- Now, we prove the case succ y = succ 0.
+
+     -- Now, we prove succ y = succ 0.
+     -- We know that succ y = succ 0.
+     -- We can use the fact that succ y = succ 0 to show that y = 0.
+     -- We can use the fact that succ y = succ 0 to show that y = 0.
+     --",  rw [hx],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,"  -- To show succ 0 = 0 ∨ succ 0 = succ 0, we choose to show succ 0 = succ 0.","left
+  rfl",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_one,  -- But this just follows from reflexivity.,rfl as the proof step.,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

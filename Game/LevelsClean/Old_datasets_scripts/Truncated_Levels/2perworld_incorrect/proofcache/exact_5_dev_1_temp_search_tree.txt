@@ -1,3 +1,0 @@
-apply succ_inj at h
-	exact h
-	SYSTEM: QED

@@ -1,0 +1,61 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_10,"  -- We have x ≠ y (which really means x = y -> False), and we know x = y, so by modus ponens, we know False","FL: 
+  -- We have x ≠ y (which really means x = y -> False), and we know x = y, so by modus ponens, we know False
+  exact h2 h1",  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,"  -- So we have a falsehood/contradiction, which is exactly what we wanted to show.","FLT: 
+  tauto
+
+FLT: 
+  tauto
+
+FLT: 
+  tauto
+
+FLT: 
+  tauto
+
+FLT: 
+  tauto
+
+FLT: 
+  tauto
+
+FLT: 
+  tauto
+
+FLT: 
+  tauto
+
+FLT: 
+  tauto
+
+FLT: 
+  tauto",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,"  -- We have x ≠ y (which really means x = y -> False), and we know x = y, so by modus ponens, we know False","tauto ⊢ False -> False
+
+   -- The goal is now to prove False -> False, which we can do by applying the fact that x = y to our assumption x ≠ y
+   -- Now, we have x = y, and we know x ≠ y, so we can apply the fact that x = y to our assumption x 
+   -- This gives us False, which completes the proof
+   tauto ⊢ False",  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,"  -- So we have a falsehood/contradiction, which is exactly what we wanted to show.","exact h2y as false
+
+The single line of Lean 4 code is:
+
+-- Correctly complete the inductive step
+  exact h2y as false",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,"  -- We have x ≠ y (which really means x = y -> False), and we know x = y, so by modus ponens, we know False","tauto ⊢ False -> False
+
+   -- The goal is now to prove False -> False, which we can do by applying the fact that x = y to the hypothesis x ≠ y
+   -- This is a contradiction, so we can use the contradiction tactic to finish the proof
+   contradiction",  apply h2 at h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_10,"  -- So we have a falsehood/contradiction, which is exactly what we wanted to show.","exact h2y as false
+
+*   -- Prove that y = 0 from the assumption that y is not equal to 0
+   -- (a single line of code)
+   exact h2y as false",  exact h1,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

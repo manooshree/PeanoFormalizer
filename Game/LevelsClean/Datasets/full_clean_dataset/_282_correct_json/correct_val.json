@@ -1,0 +1,1778 @@
+{
+    "rfl_intro": {
+        "rfl_intro_dev_2": [
+            {
+                "theorem": "rfl_intro_dev_2",
+                "NL": "-- Proof Statement: Prove for natural numbers x, q, that 37 * x + q = 37 * x + q",
+                "FL": "theorem rfl_intro_dev_2 (x q : \u2115) : 37 * x + q = 37 * x + q := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "rfl_intro_dev_2",
+                "NL": "  -- both sides of the equation are equal hence we can complete the proof",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "two_eq_ss0:": {
+        "two_eq_ss0:": [
+            {
+                "theorem": "two_eq_ss0:",
+                "NL": "-- Proof Statement: Prove that the succ (succ (0)) is 2.",
+                "FL": "theorem two_eq_ss0: 2 = succ (succ 0) := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "two_eq_ss0:",
+                "NL": "   -- Use the fact that the successor of 1, succ 1, is 2, in the proof goal, changing the equation to 'succ 1 = succ (succ 0)'",
+                "FL": "  rw [two_eq_succ_one]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "two_eq_ss0:",
+                "NL": "  -- Use the fact that 1 = succ 0 and expand the LHS succ (succ 0), changing the equation to succ (succ 0) = succ (succ 0)",
+                "FL": "  rw [one_eq_succ_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "two_eq_ss0:",
+                "NL": "  -- LHS and RHS are equal, succ (succ 0) = succ (succ 0), completing the proof",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_zero_intro": {
+        "add_zero_intro_dev_1": [
+            {
+                "theorem": "add_zero_intro_dev_1",
+                "NL": "-- Proof Statement: Prove for natural numbers a, b, and c, that a + (b + 0) + (c + 0) is equal to a + b + c",
+                "FL": "theorem add_zero_intro_dev_1 (a b c : \u2115) : a + (b + 0) + (c + 0) = a + b + c := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_zero_intro_dev_1",
+                "NL": "-- Substitute c + 0 -> c on the LHS",
+                "FL": "  rw [add_zero c]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_zero_intro_dev_1",
+                "NL": "-- Substitute b + 0 -> b on the LHS",
+                "FL": "  rw [add_zero b]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_zero_intro_dev_1",
+                "NL": "--  a + b + c = a + b + c, QED",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "succ_eq_add_one": {
+        "succ_eq_add_one_dev_1": [
+            {
+                "theorem": "succ_eq_add_one_dev_1",
+                "NL": "-- Proof Statement: For natural number n, prove that succ n is equivalent to n + 1",
+                "FL": "theorem succ_eq_add_one_dev_1 n : succ n = n + 1 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_eq_add_one_dev_1",
+                "NL": "  -- Rewrite on both RHS and LHS making n -> n + 0",
+                "FL": "  rw [\u2190 add_zero n]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_eq_add_one_dev_1",
+                "NL": "  -- Rewrite on RHS making 1 -> succ 0",
+                "FL": "  rw [one_eq_succ_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_eq_add_one_dev_1",
+                "NL": "  -- Rewrite on RHS making n + 0 + succ(0) -> succ(n+0+0)",
+                "FL": "  rw [add_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_eq_add_one_dev_1",
+                "NL": "  -- Rewrite on RHS making n + 0 -> n",
+                "FL": "  rw [add_zero (n+0)]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_eq_add_one_dev_1",
+                "NL": "  -- succ(n+0) = succ(n+0), QED",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "twoaddtwo": {
+        "twoaddtwo": [
+            {
+                "theorem": "twoaddtwo",
+                "NL": "-- Proof Statement: Prove 2 + 2 = 4",
+                "FL": "theorem twoaddtwo : (2 : \u2115) + 2 = 4 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "twoaddtwo",
+                "NL": "  -- Replace the second 2 in the LHS with succ 1, changing 2 + 2 to 2 + succ 1",
+                "FL": "  nth_rewrite 2 [two_eq_succ_one]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "twoaddtwo",
+                "NL": "  -- Rewrite LHS from 2 + succ 1 to succ (2 + 1)",
+                "FL": "  rw [add_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "twoaddtwo",
+                "NL": "  -- Rewrite 1 as succ 0, so LHS changes from succ (2 + 1) to succ (2 + succ 0)",
+                "FL": "  rw [one_eq_succ_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "twoaddtwo",
+                "NL": "  -- Rewrite the LHS from succ (2 + succ 0) to succ (succ (2 + 0))",
+                "FL": "  rw [add_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "twoaddtwo",
+                "NL": "  -- Simplify 2 + 0 to 2, changing LHS from succ (succ (2 + 0)) to succ (succ (2))",
+                "FL": "  rw [add_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "twoaddtwo",
+                "NL": "  -- Rewrite 4 as succ 3, changing RHS from 4 to succ 3",
+                "FL": "  rw [four_eq_succ_three]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "twoaddtwo",
+                "NL": "  -- Rewrite 3 to succ 2, changing RHS from succ 3 to succ (succ (2))",
+                "FL": "  rw [three_eq_succ_two]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "twoaddtwo",
+                "NL": "  -- Prove LHS and RHS are equal, succ (succ 2) = succ (succ 2), completing the proof",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "exact_5": {
+        "exact_5_dev_2": [
+            {
+                "theorem": "exact_5_dev_2",
+                "NL": "-- Proof Statement: For some x which is a natural number, given x + 1 = 4, prove that x = 3",
+                "FL": "theorem exact_5_dev_2 (x : \u2115) (h : x + 1 = 4) : x = 3 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "exact_5_dev_2",
+                "NL": "  -- given statement x + 1 = succ 3",
+                "FL": "  rw [four_eq_succ_three] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "exact_5_dev_2",
+                "NL": "  -- given statement succ x = succ 3",
+                "FL": "  rw [\u2190succ_eq_add_one] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "exact_5_dev_2",
+                "NL": "  -- given statement x = 3",
+                "FL": "  apply succ_inj at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "exact_5_dev_2",
+                "NL": "  -- x = 3",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "exact_8": {
+        "exact_8_dev_2": [
+            {
+                "theorem": "exact_8_dev_2",
+                "NL": "-- Proof Statement: For some x and which are natural numbers, prove that x + 1 = y + 1 implies x = y",
+                "FL": "theorem exact_8_dev_2 (x : \u2115) : x + 1 = y + 1 \u2192 x = y := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "exact_8_dev_2",
+                "NL": "  -- given that x + 1 = y + 1",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "exact_8_dev_2",
+                "NL": "  -- succ x = y + 1",
+                "FL": "  rw [\u2190 succ_eq_add_one x] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "exact_8_dev_2",
+                "NL": "  -- succ x = succ y",
+                "FL": "  rw [\u2190 succ_eq_add_one y] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "exact_8_dev_2",
+                "NL": "  -- x = y",
+                "FL": "  apply succ_inj at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "exact_8_dev_2",
+                "NL": "  -- x = y",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "one_ne_zero": {
+        "one_ne_zero_dev_2": [
+            {
+                "theorem": "one_ne_zero_dev_2",
+                "NL": "-- Proof Statement: Given that 1 is a natural number, prove that 1 \u2260 0",
+                "FL": "theorem one_ne_zero_dev_2 : (1 : \u2115) \u2260 0 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_ne_zero_dev_2",
+                "NL": "  -- Assume contradiction, 1 = 0",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_ne_zero_dev_2",
+                "NL": "  -- Rewrite contradiction 0 = 1",
+                "FL": "  symm at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_ne_zero_dev_2",
+                "NL": "  -- 0 \u2260 1",
+                "FL": "  apply zero_ne_one at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_ne_zero_dev_2",
+                "NL": "  -- False",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_comm": {
+        "add_comm_dev_2": [
+            {
+                "theorem": "add_comm_dev_2",
+                "NL": "-- Proof Statement: Prove that addition is commutative, that is a + b  = b + a for all natural numbers",
+                "FL": "theorem add_comm_dev_2 (a b : \u2115) : a + b = b + a := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_comm_dev_2",
+                "NL": "-- Start by inducting on b",
+                "FL": "  induction b with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_comm_dev_2",
+                "NL": "-- We start with the base case. using properties of addition by 0 we can rewrite a + 0 to a on the LHS",
+                "FL": "  rw [add_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_comm_dev_2",
+                "NL": "-- using properties of addition by 0 we can rewrite 0 + a to a on the RHS",
+                "FL": "  rw [zero_add]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_comm_dev_2",
+                "NL": "-- since both sides are equal, we are done with the base case",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_comm_dev_2",
+                "NL": "-- Now to the (n+1) step. using properties of successors, succ (n) + a -> succ (n + a) and substitute this into the RHS",
+                "FL": "  rw [succ_add]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_comm_dev_2",
+                "NL": "-- using properties of succession, we substitute a + succ(n) -> succ(a+n) on the RHS",
+                "FL": "  rw [add_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_comm_dev_2",
+                "NL": "-- Use the induction hypothesis on the LHS to substitute succ (a + n) -> succ (n + a)",
+                "FL": "  rw [hd]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_comm_dev_2",
+                "NL": "-- since both sides are equal, we are done with the proof",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "le_refl": {
+        "le_refl": [
+            {
+                "theorem": "le_refl",
+                "NL": "-- Proof Statement: Prove that x \u2264 x for any natural number x",
+                "FL": "theorem le_refl (x : \u2115) : x \u2264 x := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_refl",
+                "NL": "  -- We claim that x is equal to x plus zero.",
+                "FL": "  use 0",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_refl",
+                "NL": "  -- The goal is to prove that x equals x plus zero. By applying the theorem that states that adding zero to any natural number results in the original number, the goal simplifies to proving that x equals x.",
+                "FL": "  rw [add_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_refl",
+                "NL": "  -- The goal is now to prove that x equals x, which is true by reflexivity.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "zero_le": {
+        "zero_le_dev_2": [
+            {
+                "theorem": "zero_le_dev_2",
+                "NL": "-- Proof Statement: Prove that 0 \u2264 x for any natural number x",
+                "FL": "theorem zero_le_dev_2 (x : \u2115) : 0 \u2264 x := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "zero_le_dev_2",
+                "NL": "  -- x = 0 + x",
+                "FL": "  use x",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "zero_le_dev_2",
+                "NL": "  -- x = 0 + x -> x = x",
+                "FL": "  rw [zero_add]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "zero_le_dev_2",
+                "NL": "  -- lhs = rhs",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "le_succ_self": {
+        "le_succ_self": [
+            {
+                "theorem": "le_succ_self",
+                "NL": "-- Proof Statement: Prove that x \u2264 succ x for any natural number x",
+                "FL": "theorem le_succ_self (x : \u2115) : x \u2264 succ x := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_succ_self",
+                "NL": "  -- We simplify the claim to being succ x = x + 1 by using the case of 1.",
+                "FL": "  use 1",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_succ_self",
+                "NL": "  -- Rewrite the left-hand side of the goal using the theorem that states that the successor of a number is equal to that number plus one. The goal now becomes proving that x + 1 equals x + 1.",
+                "FL": "  rw [succ_eq_add_one]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_succ_self",
+                "NL": "  -- The goal is now to prove that x + 1 equals x + 1, which is true by reflexivity.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "le_zero": {
+        "le_zero": [
+            {
+                "theorem": "le_zero",
+                "NL": "-- Proof Statement: Prove that if x \u2264 0, then x = 0 for any natural number x",
+                "FL": "theorem le_zero (x : \u2115) (hx : x \u2264 0) : x = 0 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_zero",
+                "NL": "  -- The goal is to prove that x equals 0 given that x is less than or equal to 0. We then consider the case where x is the sum of 0 and some natural number y. This gives us the equation 0 = x + y. Our goal now is to show that x equals 0 given this equation.",
+                "FL": "  cases hx with y hy",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_zero",
+                "NL": "  -- Flip the equation so that it reads 'x + y = 0' instead of '0 = x + y'.",
+                "FL": "  symm at hy",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_zero",
+                "NL": "  -- The sum of x and y is zero implies that y is zero because for all natural numbers a and n, n + a = 0 implies a = 0.",
+                "FL": "  apply add_right_eq_zero at hy",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_zero",
+                "NL": "  -- The goal is now to prove that x = 0, which can be proven by applying hy to the goal.",
+                "FL": "  exact hy",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "orr_symm": {
+        "orr_symm_dev_1": [
+            {
+                "theorem": "orr_symm_dev_1",
+                "NL": "-- Proof Statement: Prove that if x equals 37 or y equals 42, then y equals 42 or x equals 37.",
+                "FL": "theorem orr_symm_dev_1 (x y : \u2115) (h : x = 37 \u2228 y = 42) : y = 42 \u2228 x = 37 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "orr_symm_dev_1",
+                "NL": "  -- We have that either x = 37 or y = 42.",
+                "FL": "  cases h with hx hy",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "orr_symm_dev_1",
+                "NL": "  -- In the first case, since we have to prove a disjunction, we choose to prove the right side.",
+                "FL": "  right",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "orr_symm_dev_1",
+                "NL": "  -- We need to show x = 37, but this is exactly what we already know.",
+                "FL": "  exact hx",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "orr_symm_dev_1",
+                "NL": "  -- In the second case, since we have to prove a disjunction, we choose to prove the left side.",
+                "FL": "  left",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "orr_symm_dev_1",
+                "NL": "  -- We need to show y = 42, but this is exactly what we already know.",
+                "FL": "  exact hy",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "le_total": {
+        "le_total_dev_1": [
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "-- Proof Statement: Prove that for any natural numbers x and y, either x is less than or equal to y or y is less than or equal to x.",
+                "FL": "theorem le_total_dev_1 (x y : \u2115) : x \u2264 y \u2228 y \u2264 x := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- We begin with induction on y.",
+                "FL": "  induction y with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- For the base case, we need to prove x \u2264 0 \u2228 0 \u2264 x, and we choose to show 0 \u2264 x.",
+                "FL": "  right",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- This follows from the theorem that 0 \u2264 x for any natural number x.",
+                "FL": "  exact zero_le x",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- For the inductive step, we are given that x \u2264 d \u2228 d \u2264 x, so we do a proof by cases.",
+                "FL": "  cases hd with h1 h2",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- In the first case, we need to show that x \u2264 succ d \u2228 succ d \u2264 x, and we choose to show x \u2264 succ d.",
+                "FL": "  left",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- Using the definition of \u2264, d = x + e for some natural number e.",
+                "FL": "  cases h1 with e h1",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- We rewrite the goal so that we just need to show that x \u2264 succ (x + e)",
+                "FL": "  rw [h1]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- Using the definition of \u2264, it suffices to show that succ (x + e) = x + (e + 1)",
+                "FL": "  use e + 1",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- We use two theorems to show that this is the same as (x + e) + 1 = x + (e + 1), which in turn is the same as x + (e + 1) = x + (e + 1).",
+                "FL": "  rw [succ_eq_add_one, add_assoc]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- We finish this case by reflexivity.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- In the second case, we have d \u2264 x, which means that x = d + e for some natural number e.",
+                "FL": "  cases h2 with e he",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- Either e = 0, or e = succ a for some natural number a.",
+                "FL": "  cases e with a",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- In the former case, x = d + 0, so by rewriting it suffices to show that d + 0 \u2264 succ d \u2228 succ d \u2264 d + 0",
+                "FL": "  rw [he]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- We need to show that d + 0 \u2264 succ d \u2228 succ d \u2264 d + 0, and we choose to show d + 0 \u2264 succ d.",
+                "FL": "  left",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- But d + 0 = d, so by rewriting we just need to show that d \u2264 succ d.",
+                "FL": "  rw [add_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- Using the definition of \u2264, it suffices to show that succ d = d + 1.",
+                "FL": "  use 1",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- But succ d = d + 1 is a theorem we proved earlier, so we are done.",
+                "FL": "  exact succ_eq_add_one d",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- In th latter case, we need to show that x \u2264 succ d \u2228 succ d \u2264 x, so we choose to show succ d \u2264 x.",
+                "FL": "  right",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- Using the definition of \u2264, it suffices to show x = succ d + a.",
+                "FL": "  use a",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- We know x = d + succ a, so by rewriting we know x = succ (d + a)",
+                "FL": "  rw [add_succ] at he",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- We want to show x = succ d + a, so by rewriting we can instead show x = succ (d + a)",
+                "FL": "  rw [succ_add]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_total_dev_1",
+                "NL": "  -- But this is exactly what we just showed that we know.",
+                "FL": "  exact he",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "succ_le_succ": {
+        "succ_le_succ_dev_1": [
+            {
+                "theorem": "succ_le_succ_dev_1",
+                "NL": "-- Proof Statement: Prove that if the successor of x is less than or equal to the successor of y, then x is less than or equal to y.",
+                "FL": "theorem succ_le_succ_dev_1 (x y : \u2115) (hx : succ x \u2264 succ y) : x \u2264 y := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_le_succ_dev_1",
+                "NL": "  -- Using the definition of \u2264, we have that succ y = succ x + d for some natural number d",
+                "FL": "  cases hx with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_le_succ_dev_1",
+                "NL": "  -- Using the definition of \u2264, to prove x \u2264 y, it suffices to show that y = x + d",
+                "FL": "  use d",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_le_succ_dev_1",
+                "NL": "  -- Since succ y = succ x + d, we have succ y = succ (x + d)",
+                "FL": "  rw [succ_add] at hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_le_succ_dev_1",
+                "NL": "  -- Using the injectivity of succ, we have that y = x + d.",
+                "FL": "  apply succ_inj at hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_le_succ_dev_1",
+                "NL": "  -- Thus, we know y = x + d, which is exactly what we wanted to prove.",
+                "FL": "  exact hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_right_cancel": {
+        "add_right_cancel": [
+            {
+                "theorem": "add_right_cancel",
+                "NL": "-- Proof Statement: Prove that a + n = b + n implies a = b for all natural numbers",
+                "FL": "theorem add_right_cancel (a b n : \u2115) : a + n = b + n \u2192 a = b := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_cancel",
+                "NL": "  -- Induct on n, with d = 0 as the base case and the inductive hypothesis a + d = b + d. There are now two proof goals, prove base case: a + 0 = b + 0 and inductive step: a + succ (d) = b + succ (d) implies a = b.",
+                "FL": "  induction n with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_cancel",
+                "NL": "  -- Assume that the hypothesis 'h' is true, that is, a + 0 = b + 0. The goal now is to prove that a = b.",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_cancel",
+                "NL": "  -- Repeatedly apply the rewrite rule add_zero to the hypothesis h, which simplifies any terms of the form x + 0 in h to x. In this case we get a = b",
+                "FL": "  repeat rw [add_zero] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_cancel",
+                "NL": "  -- Apply the hypothesis 'h' to the goal which is a = b, hence this concludes the base case.",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_cancel",
+                "NL": "  -- Introduce a hypothesis h: a + succ d = b + succ d. Now the goal is to prove a = b given this hypothesis.",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_cancel",
+                "NL": "  -- For any natural numbers x and y, x + succ y = succ (x + y). Applying this repeatedly simplifies the hypothesis but leaves the goal state a = b unchanged.",
+                "FL": "  repeat rw [add_succ] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_cancel",
+                "NL": "  -- If succ a = succ b, then a = b which simplifies the hypotheses.",
+                "FL": "  apply succ_inj at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_cancel",
+                "NL": "  -- Apply the inductive hypothesis 'hd' at the hypothesis 'h'. This simplifies the hypothesis to a = b.",
+                "FL": "  apply hd at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_cancel",
+                "NL": "  -- h proves the goal a = b so we can use it to finish the proof",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_left_cancel": {
+        "add_left_cancel_dev_2": [
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "-- Proof Statement: Prove that a + n = b + n implies a = b for all natural numbers",
+                "FL": "theorem add_left_cancel_dev_2 (a b n : \u2115) : n + a = n + b \u2192 a = b := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "  -- We start with induction on n.",
+                "FL": "  induction n with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "  -- For the base case, we assume the hypothesis 0 + a = 0 + b.",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "  -- Using the theorem 0 + d = d we obtain a = b",
+                "FL": "  repeat rw [zero_add] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "  -- applying the hypothesis we conclude the base case",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "  -- For the inductive case, we assume the hypothesis succ d + a = succ d + b",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "  -- Using the theorem succ a + b = succ (a + b) we obtain succ (d + a) = succ (d + b) as the hypothesis",
+                "FL": "  repeat rw [succ_add] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "  -- By the injectivity of succ we obtain d + a = d + b in the hypothesis",
+                "FL": "  apply succ_inj at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "  -- using the induction hypothesis in the current hypothesis we obtain a = b",
+                "FL": "  apply hd at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_cancel_dev_2",
+                "NL": "  -- applying the hypothesis we conclude",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_left_eq_self": {
+        "add_left_eq_self": [
+            {
+                "theorem": "add_left_eq_self",
+                "NL": "-- Proof Statement: Prove that x + y = y implies x = 0 for all natural numbers",
+                "FL": "theorem add_left_eq_self (x y : \u2115) : x + y = y \u2192 x = 0 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_eq_self",
+                "NL": "  -- Assume that x + y = y as our hypothesis h, and then prove that x = 0.",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_eq_self",
+                "NL": "  -- Rewrite the second occurrence of the theorem 'zero_add y' in reverse in the hypothesis 'h', but the goal 'x = 0' remains unchanged.",
+                "FL": "  nth_rewrite 2 [\u2190 zero_add y] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_eq_self",
+                "NL": "  -- If a + n = b + n, then a = b. So, in our case, if x + y = 0 + y, then x = 0.",
+                "FL": "  apply add_right_cancel at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_eq_self",
+                "NL": "  -- h proves the goal x = 0 so we can use it to finish the proof",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_right_eq_self": {
+        "add_right_eq_self": [
+            {
+                "theorem": "add_right_eq_self",
+                "NL": "-- Proof Statement: Prove that x + y = x implies y = 0 for all natural numbers",
+                "FL": "theorem add_right_eq_self (x y : \u2115) : x + y = x \u2192 y = 0 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_self",
+                "NL": "  -- Assume that x + y = x is true, then we need to prove that y = 0.",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_self",
+                "NL": "  -- Rewrite the expression in hypothesis h using the add_comm theorem, which states that addition is commutative i.e., for all natural numbers a and b, a + b = b + a.",
+                "FL": "  rw [add_comm] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_self",
+                "NL": "  -- For any natural numbers x, y: x + y = y implies x = 0. So, in our case, it implies that if y = 0.",
+                "FL": "  apply add_left_eq_self at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_self",
+                "NL": "  -- h proves the goal y = 0 so we can use it to finish the proof",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_right_eq_zero": {
+        "add_right_eq_zero_dev_2": [
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "-- Proof Statement: Prove that a + b = 0 implies a = 0 for all natural numbers",
+                "FL": "theorem add_right_eq_zero_dev_2 (a b : \u2115) : a + b = 0 \u2192 a = 0 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- use the theorem that a + b = b + a to obtain b + a = 0 implies a = 0",
+                "FL": "  rw [add_comm]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- initiate induction on b",
+                "FL": "  induction b with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- Assume the hypothesis 0 + a = 0 for the base case",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- use the theorem that 0 + n = 0 to obtain a = 0",
+                "FL": "  rw [zero_add] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- a = 0 is what was desired",
+                "FL": "  exact h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- Assume hypothesis succ d + a = 0",
+                "FL": "  intro h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- use the theorem that succ a + b = succ (a + d) to obtain succ (d + a) = 0",
+                "FL": "  rw [succ_add] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- Use the fact that a = b implies b = a to obtain 0 = succ (d + a)",
+                "FL": "  symm at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- Apply the theorem that states that the successor of any natural number cannot equal 0 to our hypothesis h which shows that h is false.",
+                "FL": "  apply zero_ne_succ at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_right_eq_zero_dev_2",
+                "NL": "  -- Since h is a proof of False, and there are no ways to construct False so we have our contradiction and can close the proof",
+                "FL": "  tauto",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "zero_pow_succ": {
+        "zero_pow_succ_dev_1": [
+            {
+                "theorem": "zero_pow_succ_dev_1",
+                "NL": "-- Proof Statement: Prove that 0^(succ m) = 0",
+                "FL": "theorem zero_pow_succ_dev_1 (m : \u2115) : (0 : \u2115) ^ (succ m) = 0 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "zero_pow_succ_dev_1",
+                "NL": "  -- 0^m * 0",
+                "FL": "  rw [pow_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "zero_pow_succ_dev_1",
+                "NL": "  -- 0=0",
+                "FL": "  rw [mul_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "zero_pow_succ_dev_1",
+                "NL": "  -- lhs = rhs, so we are done.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "one_pow": {
+        "one_pow_dev_2": [
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "-- Proof Statement: Prove that 1^m = 1",
+                "FL": "theorem one_pow_dev_2 (m : \u2115) : (1 : \u2115) ^ m = 1 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- We can begin by inducting on m.",
+                "FL": "  induction m with h hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- First, we prove the base case, which states that 1^0 = 1. To do so, we use the fact that anything to the power of zero is zero, so 1^0 = 1.",
+                "FL": "  rw[pow_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- Thus, we have simplified our statement to 1=1, so our proof is complete by reflexivity.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- Next, we can consider the inductive hypothesis, which states that 1^succ(h) = 1. To do so, we can induct on h again, with a variable k.",
+                "FL": "  induction h with k hk",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- Our new base case is 1^succ(0) = 1. To prove this, we can begin by simplifying using the successor axiom for the power operation, so 1^succ(0) = 1^0*1, and our goal becomes 1^0 *1 = 1.",
+                "FL": "  rw [pow_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- We can use the fact that anything to the power of zero is one, and simplify to: 1 * 1 =1.",
+                "FL": "  rw[pow_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- Simplifying with the fact that multiplication by one is equivalent to the identity operation, we know that 1*1=1, and thus our goal state becomes 1=1.",
+                "FL": "  rw[mul_one]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- Finally, by reflexivity, we are done with the base case.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- Next, we can consider the inductive case, which states that 1^succ(succ(k)) = 1. Using the successor axiom for powers, we can write our goal as: 1^succ(k) * 1 = 1.",
+                "FL": "  rw[pow_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- We can simplify the LHS using the fact that multiplication by one is the identity operation, and get: 1^succ(k) = 1.",
+                "FL": "  rw[mul_one]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_pow_dev_2",
+                "NL": "  -- Thus, we see that our goal state 1^succ(k) = 1 is precisely the same as our hypothesis hd, so we are done",
+                "FL": "  exact hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "pow_two": {
+        "pow_two_dev_1": [
+            {
+                "theorem": "pow_two_dev_1",
+                "NL": "-- Proof Statement: Prove that a^2 = a * a",
+                "FL": "theorem pow_two_dev_1 (a : \u2115) : a ^ 2 = a * a := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_two_dev_1",
+                "NL": "  -- a^1* a = a*a",
+                "FL": "  rw [two_eq_succ_one, pow_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_two_dev_1",
+                "NL": "  -- a^1* a = a*a",
+                "FL": "  rw [pow_one]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_two_dev_1",
+                "NL": "  -- lhs=rhs, so we are done.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "mul_pow": {
+        "mul_pow_dev_2": [
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "-- Proof Statement: Prove that (a * b)^n = a^n * b^n",
+                "FL": "theorem mul_pow_dev_2 (a b n : \u2115) : (a * b) ^ n = a ^ n * b ^ n := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "  -- Induct on n, with d = 0 as the base case and the inductive hypothesis (a * b)^d = a^d * b^d. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^d = a^d * b^d implies (a * b)^(succ d) = a^(succ d) * b^(succ d).",
+                "FL": "  induction n with t Ht",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "  -- Rewrite the left-hand side of the goal using the theorem that x^0 = 1, then simplify a^0 * b^0 to 1 * 1, and finally simplify 1 * 1 to 1",
+                "FL": "  rw [pow_zero, pow_zero, pow_zero, mul_one]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "  -- The goal is now to prove that 1 = 1, which is true by reflexivity",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "  -- We rewrite the goal using the property that (a * b)^(t+1) = (a * b)^t * (a * b). We use the inductive hypothesis that (a * b)^t = a^t * b^t.",
+                "FL": "  rw [pow_succ, pow_succ, pow_succ, Ht]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "  -- Rewrite the left-hand side of the equation to move the multiplication of b and a inside the parentheses, changing b^d * b * a to b^d * (b * a).",
+                "FL": "  repeat rw [mul_assoc]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "  -- Rearrange the terms on the right side of the equation using commutativity and associativity of multiplication. Specifically, swap a and (b * t), then regroup terms, and finally swap b and a.",
+                "FL": "  rw [mul_comm a (_ * b), mul_assoc, mul_comm b a]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_pow_dev_2",
+                "NL": "  -- The goal is now to prove that a^t * (b^t * (a * b)) = a^t * (b^t * (a * b)), which is true by reflexivity",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "pow_pow": {
+        "pow_pow_dev_2": [
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "-- Proof Statement: Prove that any natural number to the power of the power of another natural number is equal to that natural number to the power of the first natural number, multiplied by that natural number to the power of the second natural number",
+                "FL": "theorem pow_pow_dev_2 (a m n : \u2115) : (a ^ m) ^ n = a ^ (m * n) := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "  -- Induct on n, with d = 0 as the base case and the inductive hypothesis (a ^ m) ^ t = a ^ (m * t).",
+                "FL": "  induction n with t Ht",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "  -- for the base case, simplify the LHS by the properties of powers and the RHS by the properties of multiplication to 1 = a ^ 0",
+                "FL": "  rw [pow_zero, mul_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "  -- further simplify the RHS by the properties of powers to 1 = 1",
+                "FL": "  rw [pow_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "  -- LHS = RHS, so we have shown the base case",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "  -- simplify the LHS by the properties of powers to (a ^ m) ^ t * a ^ m = a ^ (m * succ t)",
+                "FL": "  rw [pow_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "  -- use the inductive hypothesis to simplify the LHS",
+                "FL": "  rw [Ht]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "  -- simplify the LHS by the properties of multiplication and power to a ^ (m * t) * a ^ m = a ^ (m * t) * a ^ m",
+                "FL": "  rw[mul_succ, pow_add]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "pow_pow_dev_2",
+                "NL": "  -- LHS = RHS, so we complete the proof by induction",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_sq": {
+        "add_sq": [
+            {
+                "theorem": "add_sq",
+                "NL": "-- Proof Statement: Prove that (a + b)^2 = a^2 + b^2 + 2 * a * b",
+                "FL": "theorem add_sq (a b : \u2115) : (a + b) ^ 2 = a ^ 2 + b ^ 2 + 2 * a * b := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Rewrite (a + b)^2 as (a + b) * (a + b) using the theorem that x^2 = x * x",
+                "FL": "  rw [pow_two]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Rewrite a^2 as a * a using the theorem that x^2 = x * x",
+                "FL": "  rw [pow_two]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Rewrite b^2 as b * b using the theorem that x^2 = x * x",
+                "FL": "  rw [pow_two]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Rearrange the terms on the right hand side of the equation, swapping the order of b * b and 2 * a * b using the commutative property of addition",
+                "FL": "  rw [add_right_comm]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Use the distributive property of multiplication over addition to expand (a + b) * (a + b) to a * (a + b) + b * (a + b)",
+                "FL": "  rw [mul_add]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Use the distributive property to expand a * (a + b) to a * a + a * b",
+                "FL": "  rw [add_mul]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Use the distributive property to expand b * (a + b) to b * a + b * b",
+                "FL": "  rw [add_mul]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Rewrite 2 * a * b as a * b + a * b using the theorem that 2 * x = x + x",
+                "FL": "  rw [two_mul]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Use the distributive property to expand (a * b + a * b) to a * b + a * b",
+                "FL": "  rw [add_mul]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Rewrite b * a as a * b using the commutative property of multiplication",
+                "FL": "  rw [mul_comm b a]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Use the associative property of addition to rearrange a * a + a * b + (a * b + b * b) to a * a + a * b + a * b + b * b",
+                "FL": "  rw [\u2190 add_assoc]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- Use the associative property of addition again to rearrange a * a + (a * b + a * b) + b * b to a * a + a * b + a * b + b * b",
+                "FL": "  rw [\u2190 add_assoc]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_sq",
+                "NL": "  -- The goal is now to prove that a * a + a * b + a * b + b * b = a * a + a * b + a * b + b * b, which is true by reflexivity",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "mul_comm": {
+        "mul_comm_dev_2": [
+            {
+                "theorem": "mul_comm_dev_2",
+                "NL": "  -- Proof Statement: Prove that multiplication is commutative, that is a * b = b * a for all natural numbers",
+                "FL": "theorem mul_comm_dev_2 (a b : \u2115) : a * b = b * a := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_comm_dev_2",
+                "NL": "  -- Induct on b, with d = 0 as the base case and the inductive hypothesis a * d = d * a.",
+                "FL": "  induction b with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_comm_dev_2",
+                "NL": "  -- First prove base case: 0 = 0 by definition of multiplication",
+                "FL": "  rw [mul_zero, zero_mul]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_comm_dev_2",
+                "NL": "  -- 0 = 0, completing base case.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_comm_dev_2",
+                "NL": "  -- Next prove inductive step: we obtain a * d + a = d * a + a by definition of multiplication",
+                "FL": "  rw [mul_succ, succ_mul]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_comm_dev_2",
+                "NL": "  -- d * a + a = d * a + a by the inductive hypothesis",
+                "FL": "  rw [hd]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_comm_dev_2",
+                "NL": "  -- a + d * a = a + d * a by the commutative property of addition",
+                "FL": "  rw [add_comm]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_comm_dev_2",
+                "NL": "  -- LHS and RHS are equal, completing the proof.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "two_mul": {
+        "two_mul_dev_2": [
+            {
+                "theorem": "two_mul_dev_2",
+                "NL": "-- Proof Statement: Prove that 2 * m = m + m for all natural numbers",
+                "FL": "theorem two_mul_dev_2 (m : \u2115): 2 * m = m + m := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "two_mul_dev_2",
+                "NL": "  -- 2 * m = m + m -> succ 1 * m = m + m -> m + m = m + m",
+                "FL": "  rw [two_eq_succ_one, succ_mul, one_mul]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "two_mul_dev_2",
+                "NL": "  -- LHS and RHS are equal, completing the proof",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "mul_add": {
+        "mul_add_dev_1": [
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "-- Proof Statement: Prove that multiplication is distributive over addition. In other words, for all natural numbers a * (b + c) = a * b + a * c",
+                "FL": "theorem mul_add_dev_1 (a b c : \u2115) : a * (b + c) = a * b + a * c := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "    -- Proof by induction on b",
+                "FL": "    induction b with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "    -- Begin the base case: a * c = a * 0 + a * c",
+                "FL": "    rw [zero_add]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "    -- a * c = 0 + a * c",
+                "FL": "    rw [mul_zero]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "    -- a * c = a * c",
+                "FL": "    rw [zero_add]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "    -- The base case is complete.",
+                "FL": "    rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "    -- Next prove inductive step. a * (b + c) + a = a * succ b + a * c",
+                "FL": "    rw [succ_add, mul_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "    -- a * (b + c) + a = a * b + a * c + a",
+                "FL": "    rw [mul_succ, add_right_comm]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "    --  a * b + a * c + a = a * b + a * c + a using the inductive hypothesis",
+                "FL": "    rw [hd]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_add_dev_1",
+                "NL": "    -- The inductive step is complete. So the whole proof is complete.",
+                "FL": "    rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_mul": {
+        "add_mul_dev_2": [
+            {
+                "theorem": "add_mul_dev_2",
+                "NL": "-- Proof Statement: Prove that multiplication is distributive over addition. In other words, for all natural numbers (a + b) * c = a * c + b * c",
+                "FL": "theorem add_mul_dev_2 (a b c : \u2115) : (a + b) * c = a * c + b * c := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_mul_dev_2",
+                "NL": "  -- Rewrite LHS using the commutative property of multiplication and the distributive property of multiplication over addition.",
+                "FL": "  rw [mul_comm, mul_add]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_mul_dev_2",
+                "NL": "  -- Apply the commutative property of multiplication everywhere to LHS",
+                "FL": "  repeat rw [mul_comm c]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_mul_dev_2",
+                "NL": "  -- Prove LHS and RHS are equal, completing the proof",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "add_left_comm": {
+        "add_left_comm": [
+            {
+                "theorem": "add_left_comm",
+                "NL": "-- Proof Statement: Prove that for natural numbers a, b, and c, a + (b + c) = b + (a + c).",
+                "FL": "theorem add_left_comm (a b c : \u2115) : a + (b + c) = b + (a + c) := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_comm",
+                "NL": "  -- Rewrite LHS using the commutative property of addition, changing a + (b + c) to a + b + c",
+                "FL": "  rw [\u2190 add_assoc]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_comm",
+                "NL": "  -- Rewrite LHS, swapping the order of a and b, changing a + b + c to b + a + c",
+                "FL": "  rw [add_comm a b]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_comm",
+                "NL": "  -- Rewrite LHS b + a + c as b + (a + c)",
+                "FL": "  rw [add_assoc]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "add_left_comm",
+                "NL": "  -- Prove LHS and RHS are equal, b + (a + c) = b + (a + c), completing the proof",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "var_swap": {
+        "var_swap": [
+            {
+                "theorem": "var_swap",
+                "NL": "-- Proof Statement: Prove (a + b) + (c + d) = ((a + c) + d) + b for natural numbers a, b, c, d",
+                "FL": "theorem var_swap (a b c d : \u2115) : a + b + (c + d) = a + c + d + b := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "var_swap",
+                "NL": "  -- Apply the associative property of addition to both sides of the equation to regroup the terms to a + (b + (c + d)) = a + (c + (d + b))",
+                "FL": "  repeat rw [add_assoc]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "var_swap",
+                "NL": "  -- Rewrite LHS, swapping b and c in the term b + c, to get a + (c + (b + d))",
+                "FL": "  rw [add_left_comm b c]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "var_swap",
+                "NL": "  -- Rewrite LHS from a + (c + (b + d)) to a + (c + (d + b))",
+                "FL": "  rw [add_comm b d]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "var_swap",
+                "NL": "  -- Prove LHS and RHS are equal, a + (c + (d + b)) = a + (c + (d + b)), completing the proof",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "succ_peano": {
+        "succ_peano": [
+            {
+                "theorem": "succ_peano",
+                "NL": "-- Proof Statement: Prove that for natural numbers a, b, a = b, given that succ a = succ b",
+                "FL": "theorem succ_peano (a b : \u2115) (h : succ a = succ b) : a = b := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_peano",
+                "NL": "-- Rewrite a = b using the fact that the predecessor of the successor is itself, equation is now pred (succ a) = b",
+                "FL": "rw [\u2190 pred_succ a]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_peano",
+                "NL": "-- Rewrite the LHS pred (succ a) with the given statement that succ a = succ b, LHS is now pred (succ b)",
+                "FL": "rw [h]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_peano",
+                "NL": "-- Rewrite LHS from pred (succ b) succ b to using the fact that the predecessor of the successor of a number is the number itself",
+                "FL": "rw [pred_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "succ_peano",
+                "NL": "-- Prove LHS and RHS are equal, b = b, completing the proof",
+                "FL": "rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "mul_le_mul_right": {
+        "mul_le_mul_right": [
+            {
+                "theorem": "mul_le_mul_right",
+                "NL": "-- Proof Statement: Prove that if a is less than or equal to b, then a times t is less than or equal to b times t.",
+                "FL": "theorem mul_le_mul_right (a b t : \u2115) (h : a \u2264 b) : a * t \u2264 b * t := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_le_mul_right",
+                "NL": "  -- We consider the case where the inequality a \u2264 b can be expressed as b being equal to a plus some natural number d.",
+                "FL": "  cases h with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_le_mul_right",
+                "NL": "  -- We use d * t as a specific natural number that can be used to rewrite a * t \u2264 b * t as b * t = a * t + d * t.",
+                "FL": "  use d * t",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_le_mul_right",
+                "NL": "  -- We know that b = a + d, so we can substitute b with a + d in the goal. Then rewrite the goal as a * t + d * t \u2264 a * t + d * t by the distributive property of multiplication over addition.",
+                "FL": "  rw [hd, add_mul]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_le_mul_right",
+                "NL": "  -- We have that a * t + d * t = a * t + d * t, so we can use reflexivity to prove the goal.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "one_le_of_ne_zero": {
+        "one_le_of_ne_zero": [
+            {
+                "theorem": "one_le_of_ne_zero",
+                "NL": "-- Proof Statement: Prove that if a is not equal to 0, then 1 is less than or equal to a.",
+                "FL": "theorem one_le_of_ne_zero (a : \u2115) (ha : a \u2260 0) : 1 \u2264 a := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_le_of_ne_zero",
+                "NL": "  -- We use the previous lemma to express a as the successor of some natural number n since a is not equal to 0.",
+                "FL": "  apply eq_succ_of_ne_zero at ha",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_le_of_ne_zero",
+                "NL": "  -- Simplify the hypothesis to say that a is the successor of some natural number n.",
+                "FL": "  cases ha with d hd",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_le_of_ne_zero",
+                "NL": "  -- 1 <= a means that there exists some natural number m such that 1 + m = a. We use n as the natural number m.",
+                "FL": "  use d",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_le_of_ne_zero",
+                "NL": "  -- We showed that a = succ n, so we can rewrite the goal as succ n = 1 + n.",
+                "FL": "  rw [hd]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_le_of_ne_zero",
+                "NL": "  -- Rewrite 'succ n' as '1 + n'",
+                "FL": "  rw [succ_eq_add_one]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_le_of_ne_zero",
+                "NL": "  -- Switch the order of addition to match the goal '1 + n = 1 + n'",
+                "FL": "  rw [add_comm]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "one_le_of_ne_zero",
+                "NL": "  -- We have that 1 + n = 1 + n, so we can use reflexivity to prove the goal.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "le_mul_right": {
+        "le_mul_right_dev_1": [
+            {
+                "theorem": "le_mul_right_dev_1",
+                "NL": "-- Proof Statement: Prove that if a times b is not equal to 0, then a is less than or equal to a times b.",
+                "FL": "theorem le_mul_right_dev_1 (a b : \u2115) (h : a * b \u2260 0) : a \u2264 a * b := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_mul_right_dev_1",
+                "NL": "  -- b is either 0 or the successor of some natural number d.",
+                "FL": "  cases b with d",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_mul_right_dev_1",
+                "NL": "  -- a * 0 != 0 -> 0 != 0",
+                "FL": "  rw [mul_zero] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_mul_right_dev_1",
+                "NL": "  -- 0 != 0 is false so the theorem doesn't hold for this case.",
+                "FL": "  tauto",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_mul_right_dev_1",
+                "NL": "  -- a <= a * succ d -> a <= a * d + a",
+                "FL": "  rw [mul_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_mul_right_dev_1",
+                "NL": "  -- a <= a * d + a ->  * d + a = a + a * d",
+                "FL": "  use a * d",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_mul_right_dev_1",
+                "NL": "  -- a * d + a = a + a * d -> a * d + a = a + a * d",
+                "FL": "  rw [add_comm]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "le_mul_right_dev_1",
+                "NL": "  -- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",
+                "FL": "  rfl",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "mul_ne_zero": {
+        "mul_ne_zero_dev_2": [
+            {
+                "theorem": "mul_ne_zero_dev_2",
+                "NL": "-- Proof Statement: Prove that if a is not equal to 0 and b is not equal to 0, then a times b is not equal to 0.",
+                "FL": "theorem mul_ne_zero_dev_2 (a b : \u2115) (ha : a \u2260 0) (hb : b \u2260 0) : a * b \u2260 0 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_ne_zero_dev_2",
+                "NL": "  -- Since a is a natural number, it is either 0 or the successor of some natural number.",
+                "FL": "  cases a with a",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_ne_zero_dev_2",
+                "NL": "  -- If a is 0, this theorem doesn't hold.",
+                "FL": "  tauto",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_ne_zero_dev_2",
+                "NL": "  -- Since b is a natural number, it is either 0 or the successor of some natural number.",
+                "FL": "  cases b with b",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_ne_zero_dev_2",
+                "NL": "  -- If b is 0, this theorem doesn't hold.",
+                "FL": "  tauto",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_ne_zero_dev_2",
+                "NL": "  -- succ a * succ b \u2260 0 -> succ a * b + succ a \u2260 0",
+                "FL": "  rw [mul_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_ne_zero_dev_2",
+                "NL": "  -- succ a * b + succ a \u2260 0 -> succ (succ a * b + a) \u2260 0",
+                "FL": "  rw [add_succ]",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_ne_zero_dev_2",
+                "NL": "  -- succ (succ a * b + a) \u2260 0 -> 0 \u2260 succ (succ a * b + a)",
+                "FL": "  symm",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_ne_zero_dev_2",
+                "NL": "  -- We know that 0 is not equal to the successor of any natural number, so we can use this to prove the goal.",
+                "FL": "  apply zero_ne_succ",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    },
+    "mul_right_eq_self": {
+        "mul_right_eq_self_dev_2": [
+            {
+                "theorem": "mul_right_eq_self_dev_2",
+                "NL": "-- Proof Statement: Prove that if a is not equal to 0 and a times b equals a, then b equals 1.",
+                "FL": "theorem mul_right_eq_self_dev_2 (a b : \u2115) (ha : a \u2260 0) (h : a * b = a) : b = 1 := by",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_right_eq_self_dev_2",
+                "NL": "  --  a * b = a -> a * 1 * b = a * 1",
+                "FL": "  rw [\u2190 mul_one a] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_right_eq_self_dev_2",
+                "NL": "  -- a * 1 * b = a * 1 -> a * (1 * b) = a * 1",
+                "FL": "  rw [mul_assoc] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_right_eq_self_dev_2",
+                "NL": "  -- a * (1 * b) = a * 1 -> a * b = a * 1",
+                "FL": "  rw [one_mul b] at h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_right_eq_self_dev_2",
+                "NL": "  -- Apply the the theorem that states that for all natural numbers a and b, a times b is equal to a times c, then b is equal to c which shows that b = 1.",
+                "FL": "  exact mul_left_cancel a b 1 ha h",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            },
+            {
+                "theorem": "mul_right_eq_self_dev_2",
+                "NL": "",
+                "FL": "end MyNat",
+                "state": "You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor\n"
+            }
+        ]
+    }
+}

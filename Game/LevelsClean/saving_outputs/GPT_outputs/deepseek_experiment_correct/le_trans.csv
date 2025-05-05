@@ -1,0 +1,35 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_trans,  -- y = x + a,"rw [← Nat.add_zero x, ← Nat.add_assoc, Nat.add_comm a, Nat.add_assoc]",  cases hxy with a ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = y + b,rw [← Nat.add_zero y] at hyz,  cases hyz with b hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b),rw [← add_assoc],  use a + b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- z = x + (a + b) -> y + b = x + (a + b),rw [←add_assoc],  rw [hb],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- y + b = x + (a + b) -> (x + a) + b = x + (a + b),rw [add_assoc],  rw [ha],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- (x + a) + b = x + (a + b) by associativity,rw [add_assoc],  exact add_assoc x a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- Break down the assumption that x is less than or equal to y into a specific case where there exists a natural number 'a' such that y equals x plus 'a'.,rw [le_iff_exists_add] at hxy,  cases hxy with a ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- Break down the assumption that y is less than or equal to z into a specific case where there exists a natural number 'b' such that z equals y plus 'b'.,cases hyz with b hb,  cases hyz with b hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_trans,  -- Use the case of a + b to simplify the goal to equal z = x + (a + b).,rw [←add_assoc],  use a + b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,"  -- Substitute z with y + b and y with x + a in the goal, resulting in the equation x + a + b = x + (a + b).",rw [← add_assoc],"  rw [hb, ha]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,"  -- The goal is now to prove that x + a + b = x + (a + b), which can be proven by applying the theorem that states that addition is associative to the left-hand side of the goal.",rw [add_assoc],  exact add_assoc x a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- Break down the assumption that x is less than or equal to y into a specific case where there exists a natural number 'a' such that y equals x plus 'a'.,rw [le_iff_exists_add] at hxy,  cases hxy with a ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- Break down the assumption that y is less than or equal to z into a specific case where there exists a natural number 'b' such that z equals y plus 'b'.,cases hyz with b hb,  cases hyz with b hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_trans,  -- Use the case of a + b to simplify the goal to equal z = x + (a + b).,rw [← add_assoc],  use a + b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- Substitute z with y + b resulting in the equation y + b = x + (a + b).,rw [←add_assoc],  rw [hb],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,  -- Substitute y with x + a resulting in the equation x + a + b = x + (a + b).,rw [←add_assoc],  rw [ha],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_trans,"  -- The goal is now to prove that x + a + b = x + (a + b), which can be proven by applying the theorem that states that addition is associative to the left-hand side of the goal.",rw add_assoc,  exact add_assoc x a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

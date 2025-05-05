@@ -1,0 +1,81 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_pow,"  -- Induct on n, with d = 0 as the base case and the inductive hypothesis (a * b)^d = a^d * b^d. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^d = a^d * b^d implies (a * b)^(succ d) = a^(succ d) * b^(succ d).","induction n with
+| zero => rfl
+| succ n ih => rw [pow_succ, pow_succ, pow_succ, ih, mul_assoc, mul_assoc, mul_comm b, mul_assoc]",  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1,rw pow_zero,  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- Rewrite the right hand side using the identity that any natural number to the power of 0 is 1,rw [pow_zero],  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_pow,  -- Rewrite the right hand side using the identity that any natural number to the power of 0 is 1,rw [pow_zero],  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_pow,  -- Rewrite the right hand side using the identity that any natural number multiplied by 1 is equal to that natural number,rw [mul_one],  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_pow,"  -- The goal is now to prove that 1 = 1, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_pow,"  -- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",rw pow_succ,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- Rewrite the right hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",rw pow_succ,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- Rewrite the right hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number",rw pow_succ,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- Rewrite the left hand side using the induction hypothesis,rw pow_succ,  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- Rearrange the multiplication in both sides of the equation to group them in a different order using the associative property of multiplication.,"rw [mul_assoc, mul_assoc, mul_comm b a]",  repeat rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- Rearrange the multiplication in the right-hand side of the equation, changing 'a * (b^d * b)' to 'b^d * b * a'",rw [mul_comm],  rw [mul_comm a (_ * b)],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- Rewrite the right-hand side of the equation to move the multiplication of b and a inside the parentheses, changing b^d * b * a to b^d * (b * a).",rw [mul_assoc],  rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_pow,"  -- We rewrite the expression to swap the order of multiplication in b * a to a * b, since multiplication is commutative for natural numbers.",rw mul_comm b a,  rw [mul_comm b a],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- The goal is now to prove that a^d * (b^d * (a * b)) = a^d * (b^d * (a * b)), which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_pow,"  -- We can use induction on n. We begin with the base case, which is: 1 = a ^ 0 * b ^ 0","induction n with
+| zero => rfl
+| succ n ih => rw [pow_succ, pow_succ, pow_succ, ih, mul_assoc, mul_comm b, ←mul_assoc, mul_assoc a, mul_comm b, ←mul_assoc]",  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  --1 = a ^ 0 * b ^ 0,"rw [pow_zero, pow_zero, mul_one]",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- 1 = 1 * b^0,"rw [pow_zero, mul_one]",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- 1 = 1*1,rfl,  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- 1=1,rfl,  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- lhs = rhs, so we have proven the base case.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_pow,"  -- Next, we proceed with the inductive case, which states that: (a * b) ^ succ d = a ^ succ d * b ^ succ d. Thus becomes: (a * b) ^ d * (a * b) = a ^ succ d * b ^ succ d","rw [pow_succ, pow_succ, pow_succ, mul_assoc, mul_assoc, mul_comm b, mul_assoc, mul_assoc, mul_comm b, mul_assoc]",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- (a * b) ^ d * (a * b) = a ^ d * a * b ^ succ d,"rw [pow_succ, mul_assoc, mul_comm (a * b) (a ^ d), mul_assoc, mul_comm b (a ^ d), mul_assoc]",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- (a * b) ^ d * (a * b) = a ^ d * a * (b ^ d * b),"rw [pow_succ, mul_assoc, mul_comm b, ←mul_assoc, ←pow_succ, ←pow_succ]",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- With the inductive hypothesis hd, we get: a ^ d * b ^ d * (a * b) = a ^ d * a * (b ^ d * b)","rw [pow_succ, pow_succ, mul_assoc, mul_assoc, mul_comm b, ←mul_assoc, ←mul_assoc, hd]",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- a ^ d * (b ^ d * (a * b)) = a ^ d * (a * (b ^ d * b)),"rw [mul_assoc, mul_comm b, ←mul_assoc a, mul_assoc (a ^ d), mul_comm (b ^ d), ←mul_assoc (a ^ d)]",  repeat rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * b * a),"rw [mul_assoc, mul_comm b a, ←mul_assoc]",  rw [mul_comm a (_ * b)],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (b * a)),rw [mul_comm b a],  rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,  -- a ^ d * (b ^ d * (a * b)) = a ^ d * (b ^ d * (a * b)),rw [mul_pow],  rw [mul_comm b a],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- lhs = rhs, so we are done.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_pow,"  -- Induct on n, with d = 0 as the base case and the inductive hypothesis (a * b)^d = a^d * b^d. There are now two proof goals, prove base case: (a * b)^0 = a^0 * b^0 and inductive step: (a * b)^d = a^d * b^d implies (a * b)^(succ d) = a^(succ d) * b^(succ d).","induction n with
+| zero => rfl
+| succ n ih => rw [pow_succ, pow_succ, pow_succ, ih, mul_assoc, mul_assoc, mul_comm b, mul_assoc]",  induction n with t Ht,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- Rewrite the left-hand side of the goal using the theorem that x^0 = 1, then simplify a^0 * b^0 to 1 * 1, and finally simplify 1 * 1 to 1","rw [pow_zero, pow_zero, pow_zero, one_mul, one_mul, one_mul]","  rw [pow_zero, pow_zero, pow_zero, mul_one]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- The goal is now to prove that 1 = 1, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_pow,  -- We rewrite the goal using the property that (a * b)^(t+1) = (a * b)^t * (a * b). We use the inductive hypothesis that (a * b)^t = a^t * b^t.,"rw [pow_succ, mul_assoc, ←pow_succ, ←pow_succ, mul_comm b a, mul_assoc]","  rw [pow_succ, pow_succ, pow_succ, Ht]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- Rewrite the left-hand side of the equation to move the multiplication of b and a inside the parentheses, changing b^d * b * a to b^d * (b * a).",rw [mul_assoc],  repeat rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- Rearrange the terms on the right side of the equation using commutativity and associativity of multiplication. Specifically, swap a and (b * t), then regroup terms, and finally swap b and a.","rw [mul_comm a b, mul_assoc, mul_comm b a]","  rw [mul_comm a (_ * b), mul_assoc, mul_comm b a]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_pow,"  -- The goal is now to prove that a^t * (b^t * (a * b)) = a^t * (b^t * (a * b)), which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

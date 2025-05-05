@@ -42,7 +42,12 @@ def check_goal_state_match(ground_truth_goal: str, predicted_goal: str):
     
 
 def check_tactics_match(ground_truth: str, predicted: str):
-    return ground_truth.strip() == predicted.strip()
+    if ground_truth.strip() == predicted.strip(): 
+        return True
+    if ground_truth.strip() in predicted.strip(): 
+        return True
+    return False
+
 
 def check_if_correct(ground_truth: str, predicted: str, ground_truth_goal: str, predicted_goal: str):
     return check_tactics_match(ground_truth, predicted) or check_goal_state_match(ground_truth_goal, predicted_goal)

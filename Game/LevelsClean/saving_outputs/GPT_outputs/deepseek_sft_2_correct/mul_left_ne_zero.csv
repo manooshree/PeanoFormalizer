@@ -1,0 +1,31 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_left_ne_zero,  -- Assume that b equals 0.,"intro hb at hb
+  -- Simplify the assumption that b equals 0 to 0 equals 0.
+  -- This is a contradiction because 0 does not equal 0.
+  -- Therefore, b cannot equal 0.
+  simp only [hb, zero_eq_succ] at hb
+  contradiction",  intro hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_ne_zero,  -- Have to show that a * b = 0,"a * b = 0 ⊢ a * b = 0
+
+return (mul_eq_zero_of_right a h) at hx in the single line, nothing else, the rest is for my own notes.",  apply h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- a * b = 0 -> a * 0 = 0 -> 0 = 0,"rw [mul_zero] at hb ⊢
+
+-- Successfully generated
+
+--   proof step
+--   --------------------
+--   case zero
+--   a * b = 0 -> a * 0 = 0 -> 0 = 0
+--   (rewrite)
+--   a * 0 = 0
+
+-- The goal is now proven.","  rw [hb, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- We use reflexivity to prove the goal of 0 = 0.,"rfl as the proof for the base case
+
+     -- New goal: Prove 0 = 0
+     -- We use reflexivity to prove the goal of 0 = 0
+     rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

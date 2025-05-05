@@ -1,0 +1,62 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_mul,"  -- Induct on b, with d = 0 as the base case and the inductive hypothesis succ a * d = a * d + d. There are now two proof goals, prove base case: succ a * 0 = a * 0 + 0, and inductive step: succ a * succ d = a * succ d + succ d.","induction b with d hd generalizing a where
+    · apply h
+    · rw [hd] at h
+    · rw [mul_succ, add_succ, hd] at h
+    · linarith
+
+-- Prove base case: succ a * 0 = a * 0 + 0
+FL:   case zero
+    · apply h
+
+-- Prove inductive step: succ a * succ d = a * succ d + succ d",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_mul,  -- First we prove base case. Simplify succ a * 0 = a * 0 + 0 to 0 = 0 by definition of multiplication and addition,"rw [mul_zero, add_zero] at hx ⊢ where hx is the hypothesis that succ a * 0 = a * 0 + 0
+
+-- My answer is:
+--   rw [mul_zero, add_zero] at hx ⊢
+--   exact hx","  rw [add_zero, mul_zero, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- The base case is complete.,"rfl where 0 * y = 0 is the base case
+
+-- Introduce the inductive hypothesis
+-- a * y = a + (a * y)
+-- 0 * y = 0 + (0 * y)
+-- 0 * y = 0
+-- The inductive step is complete.
+-- The theorem is proven by induction.
+
+-- Introduce the inductive hypothesis
+-- a * y = a + (a * y)
+--",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_mul,  -- Now prove inductive step. We rewrite the equation to succ a * d + succ a = a * d + a + succ d,"rw [succ_mul, add_succ] at hb by assumption
+
+-- Now prove inductive step. We rewrite the equation to succ a * d + succ a = a * d + a + succ d
+rw [succ_mul, add_succ] at hb by assumption","  rw [mul_succ, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Expand the equation to succ (succ a * d + a) = succ (a * d + a + d) using properties of the successor,"rw [add_succ] at hb ⊢ where ⊢ succ (a * d + a) = succ (a * d + a + d)
+
+-- Rewrite the goal using the fact that the successor of a number is equal to the successor of another number if and only if the numbers are equal
+rw [succ_inj] at hb ⊢
+
+-- Simplify the goal using properties of addition
+rw [add_succ","  rw [add_succ, add_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,  -- Rewrite the LHS using the inductive hypothesis obtaining succ (a * d + d + a),"rw [hd] at h2 ⊢
+     -- The new goal is to prove that succ (a * d + d + a) = succ (a * d + d + a)
+     -- which is true by reflexivity
+     rfl",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_mul,  -- Apply the commutative property of addition in LHS: a * d + a + d to a * d + d + a,"rw [add_comm] at h1
+
+*   Rewrite the LHS of the equation in the hypothesis from a * d + a + d to a * d + d + a
+*   This is done using the commutative property of addition
+*   The new hypothesis is now a * d + d + a = a * (d + d) + a
+*   This completes the proof",  rw [add_right_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_mul,"  -- LHS = RHS hence, The inductive step is complete.","exact h1 x y t1 t2 t3 at h
+
+-- Reply to comment (Copy)
+-- The goal is to prove that a + (b + c) = a + b + c. We are given a hypothesis h1 that states that a + (b + c) = a + b + c. We also have a hypothesis h2 that states that a + b = a + b. We are given that a + b = a + b, and we",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

@@ -1,0 +1,63 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_assoc,  -- intiate induction on b,"induction b with d hd in the proof
+  -- base case: pred (a + d) = a + pred d
+  -- base case: a + pred d = pred (a + d)
+  -- hyp: pred (a + d) = a + pred d
+  -- goal: a + pred d = pred (a + d)
+  -- goal: pred (a + d) = a + pred d
+  -- hyp: pred (a + d",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- We rewrite on the RHS 0 + c -> c to get a + 0 + c = a + c,"rw [zero_add] at hx2
+
+## Proof Step
+
+   The goal is now to prove a + 0 + c = a + c.
+   Rewrite 0 + c -> c on the RHS of the goal, resulting in a + c = a + c.",  rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- We rewrite on the LHS a + 0 -> a to get a + c = a + c,"rw [add_zero] at hx -> hx : a + c = a + c
+
+* Replace the placeholder with the single line of Lean 4 code:
+
+```lean4
+rw [add_zero] at hx",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"    -- a + c = a + c, completing the base case.","rfl where h1 : b + c = a + c ∧ h2 : a + c = a + c
+
+1 line of Tactic Code:
+
+```lean4
+rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- Now prove the inductive step.  a + succ d -> succ (a + d) giving us succ (a + d) + c = a + (succ d + c),"rw [add_succ, add_succ, add_succ] at hx at hd at hx ⊢
+
+[Reformatted Proof]
+
+Prove the inductive step. We change the goal to: a + succ d + c = a + (succ d + c). We use the fact that the addition of the successor of a number is equal to the successor of the sum of that number and the other number.",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- Now on the LHS we write succ(a + d) + c -> succ(a + d + c). This gives us succ (a + d + c) = a + succ (d + c),rw [add_succ] at hb,  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- Now we use the inductive hypothesis on LHS (a + d + c) -> a + (d + c) to get succ(a + (d + c)) = a + succ (d + c),"rw [hd] at h2
+     -- Now we simplify the goal to succ(a + (d + c)) = succ(a + (d + c))
+     -- Now we use the property that the successor of a number is equal to the successor of another number if and only if the numbers are equal
+     -- to get a + (d + c) = a + (d + c)
+     -- Finally, we use the property that a number is equal to",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"--  Rewrite the RHS, succ (d) + c -> succ(d + c), to get succ (a + (d + c)) = a + succ (d + c)","rw [add_succ] at hx at hx ⊢
+
+[Reformatted]",  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"-- Rewrite on RHS, a + succ (d + c) -> succ (a + (d + c)) to get succ (a + (d + c)) = succ (a + (d + c))","rw [add_succ] at hx at hy ⊢
+
+[Reassign]",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"-- succ (a + (d + c)) = succ (a + (d + c)), QED","rfl
+
+-- Reply to comment (Copy)
+-- Generate the single line of Lean 4 code for this step:
+-- NL: -- succ (a + (d + c)) = succ (a + (d + c)), QED
+-- FL:  rfl
+
+-- Generate the single line of Lean 4 code for this step:
+-- succ (a + (d + c)) = succ (a + (d + c))
+-- QED",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

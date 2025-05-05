@@ -1,0 +1,72 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_ne_succ,  -- proof by contraposition,"contrapose
+  intro h1
+  apply h
+  rw [h1]
+  rfl",  contrapose! h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,  -- succ m = succ n -> m = n,FLT: succ m = succ n -> m = n,  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,  -- m = n by hypothesis,"FL: 
+  intro h1
+  apply h
+  rw [←h1]
+  rfl
+
+MM: 
+  intro h1
+  apply h
+  rw [←h1]
+  rfl
+
+New goal state:
+  m = n by hypothesis
+  succ m = succ n
+  m = n
+  succ m = succ n
+  m = n
+  succ m = succ n
+  m = n",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_succ,  -- proof by contraposition,"contrapose! hx at hx -> hx = 0
+
+-- 1 -> 1
+-- 0 = 0
+-- 0 = 0
+-- 0 = 0
+-- 0 = 0
+-- 0 = 0
+-- 0 = 0
+-- 0 = 0
+-- 0 = 0
+-- 0 = 0
+-- 0 = 0
+-- 0 = 0",  contrapose! h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_ne_succ,  -- succ m = succ n -> m = n,"apply succ_inj at hx ⊢
+
+   -- new goal: m = n
+   -- new hypothesis: succ m = succ n
+   -- new goal: m = n
+   -- new hypothesis: succ m = succ n
+
+   -- new goal: m = n
+   -- new hypothesis: succ m = succ n
+
+   -- new goal: m = n
+   -- new hypothesis: succ m = succ n
+
+   -- new",  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_ne_succ,  -- m = n by hypothesis,"rw [h] at h2 ⊢
+   at h2 ⊢
+   -> m = n
+
+   -- Step 1: Rewrite m = n in h2 and the goal
+   -- using the hypothesis h: m = n
+   -- Now we have:
+   -- h2: n + 0 = n
+   -- Goal: n = n
+   -- Step 2: Simplify h2 and the goal
+   --",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

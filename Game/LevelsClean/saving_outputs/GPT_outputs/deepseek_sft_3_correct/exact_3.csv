@@ -1,0 +1,14 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_3,"  -- Rewrite 0 + x in the LHS of our given statement, 0 + x = 0 + y + 3, to x and 0 + y + 3 to y + 3 in the RHS of the given statement","（Rewrite 0 + x = 0 + y + 3, changing it to x = 0 + y + 3 and 0 + y + 3 = y + 3）
+  rw [zero_add] at hx at hy ⊢
+
+- Rename x and y to something else to avoid confusion
+  rename ⟨x, hx⟩ to hx'
+  rename ⟨y,",  repeat rw [zero_add] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_3,"  -- Our simplified hypothesis is now x = y + 3, we can use this exactly to complete the proof","exact hx  at hx'
+
+The new line of code is:
+
+1. exact hx at hx'",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

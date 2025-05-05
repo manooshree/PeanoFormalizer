@@ -1,0 +1,48 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_left_eq_zero,  -- initiate induction on b,"induction b with d hd at hb for the next [a ^ d * a ^ e -> a ^ d * a ^ e + a ^ d]
+  -- the goal is now to prove a ^ d * a ^ e + a ^ d = a ^ d * a ^ e + a ^ d
+  -- simplify the goal using the inductive hypothesis a ^ d * a ^ e = a ^ d * a ^ e + a ^ d
+  -- the goal now is",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_zero,  -- 0 = 0 is obviously true,"rfl as the proof
+
+1 line
+  -- 0 = 0 is obviously true
+  rfl as the proof",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- assume a + succ d = 0,"intro h2 in the opposite case, assume a + succ d = 0
+
+112   -- prove succ d = 0
+113   -- prove succ d = 0
+114   -- prove succ d = 0
+115   -- prove succ d = 0
+116   -- prove succ d = 0
+117   -- prove succ d = 0
+118   -- prove succ d =",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_zero,  -- succ (a + d) = 0 from assumption,"apply succ_inj at hx ⊢
+FL:  -- a + d = 0 from assumption
+FL:  -- a + d = 0 from assumption
+  exact hx
+
+- -- (a + d) = 0 from assumption
+  apply succ_inj at hx ⊢
+  exact hx",  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = succ (a + d) from assumption,rw [h] at h2 at h3 at h4 at h5 at h6 at h7 at h8 at h9 at h10 at h11 at h12 at h13 at h14 at h15 at h16 at h17 at h18 at h19 at h20 at h21 at h22 at h23 at h24 at h25 at h26 at h2,  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = succ (a + d) is impossible and is false,"apply zero_ne_succ at hx
+
+-- -- 0 = succ (a + d) is impossible and is false
+-- apply zero_ne_succ at hx
+
+-- -- 0 = succ (a + d) is impossible and is false
+-- apply zero_ne_succ at hx
+
+-- -- 0 = succ (a + d) is impossible and is false
+-- apply zero_ne_succ at hx
+
+--",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_zero,  -- This is vacuously true,t = 0 ∨ t = succ 0 ∨ t = succ (succ 0) ∨ t = succ (succ (succ 0)) ∨ t = succ (succ (succ (succ 0))) ∨ t = succ (succ (succ (succ (succ 0)))) ∨ t = succ (succ (succ (succ (succ (succ 0))))) ∨ t = succ (succ (succ (succ,  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

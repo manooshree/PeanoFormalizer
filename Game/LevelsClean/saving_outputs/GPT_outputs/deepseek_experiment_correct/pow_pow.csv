@@ -1,0 +1,54 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+pow_pow,"  -- Induct on n, with d = 0 as the base case and the inductive hypothesis (a ^ m) ^ t = a ^ (m * t). There are now two proof goals, prove base case: (a ^ m) ^ 0 = a ^ (m * 0) and inductive step: (a ^ m) ^ t = a ^ (m * t) implies (a ^ m) ^ succ t = a ^ (m * succ t).",induction n with d hd,  induction n with t Ht,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- Rewrite m * 0 to 0 in the right side,rw [mul_zero],  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_pow,  -- Rewrite (a ^ m) ^ 0 to 1 in the left side,rw pow_zero,  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- Rewrite a ^ 0 to 1 in the right side,rw [pow_zero],  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_pow,"  -- The goal is now to prove that 1 = 1, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_pow,  -- Rewrite the left-hand side using the theorem that states (x^n)^(succ t) = (x^n)^t * (x^n),rw pow_succ,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- Use the induction hypothesis to replace (a^m)^t with a^(m*t),"induction n with
+| zero => rfl
+| succ n ih => rw [pow_succ, ih, mul_succ, pow_add]",  rw [Ht],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- Rewrite the right-hand side using the theorem that states m*(succ t) = m*t + m,rw [Nat.mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- Rewrite the right-hand side using the theorem that states x^(a+b) = x^a * x^b,rw pow_add,  rw [pow_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,"  -- The goal is now to prove that a^(m\*t) * a^m = a^(m*t) * a^m, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_pow,"  -- Induct on n, with (a ^ m) ^ 0 = a ^ (m * 0) as the base case and (a ^ m) ^ succ t = a ^ (m * succ t) as the inductive case.","induction n with
+| zero => rfl
+| succ t ih => rw [pow_succ, ih, mul_succ, pow_add]",  induction n with t Ht,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- 1 = 1,rfl,"  rw [mul_zero, pow_zero, pow_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- LHS = RHS,theorem pow_pow_dev_1_temp (a m n : ℕ) : (a ^ m) ^ n = a ^ (m * n) := by,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- (a ^ m) ^ succ t = a ^ (m * succ t),"rw [pow_succ, mul_succ, pow_add]","  rw [pow_succ, Ht, mul_succ, pow_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- LHS = RHS,theorem pow_pow_dev_1_temp (a m n : ℕ) : (a ^ m) ^ n = a ^ (m * n) := by,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,"  -- Induct on n, with d = 0 as the base case and the inductive hypothesis (a ^ m) ^ t = a ^ (m * t).",induction n with d hd,  induction n with t Ht,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,"  -- for the base case, simplify the LHS by the properties of powers and the RHS by the properties of multiplication to 1 = a ^ 0","rw [pow_zero, mul_zero, pow_zero]","  rw [pow_zero, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- further simplify the RHS by the properties of powers to 1 = 1,rw [pow_mul],  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,"  -- LHS = RHS, so we have shown the base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_pow,  -- simplify the LHS by the properties of powers to (a ^ m) ^ t * a ^ m = a ^ (m * succ t),"rw [pow_succ, mul_comm]",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- use the inductive hypothesis to simplify the LHS,rw pow_mul,  rw [Ht],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,  -- simplify the LHS by the properties of multiplication and power to a ^ (m * t) * a ^ m = a ^ (m * t) * a ^ m,rw [pow_mul],"  rw[mul_succ, pow_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_pow,"  -- LHS = RHS, so we complete the proof by induction","theorem pow_pow_dev_2_temp (a m n : ℕ) : (a ^ m) ^ n = a ^ (m * n) := by
+  induction n with
+  | zero => simp
+  | succ n ih => rw [pow_succ, ih, mul_succ, pow_add]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

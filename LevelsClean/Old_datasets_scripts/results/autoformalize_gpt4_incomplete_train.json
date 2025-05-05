@@ -1,9 +1,0 @@
-{"implication_world_val": {"accuracy": "17 / 18 = 94.44%", "proof_accuracy": "6 / 7 = 85.71%"}, 
-"multiplication_world_val": {"accuracy": "37 / 38 = 97.37%", "proof_accuracy": "11 / 12 = 91.67%"}, 
-"AdvMultiplication_world_val": {"accuracy": "41 / 47 = 87.23%", "proof_accuracy": "9 / 12 = 75.00%"}, 
-"algorithm_world_val": {"accuracy": "12 / 12 = 100.00%", "proof_accuracy": "5 / 5 = 100.00%"}, 
-"less_or_equal_world_val": {"accuracy": "46 / 46 = 100.00%", "proof_accuracy": "13 / 13 = 100.00%"}, 
-"power_world_val": {"accuracy": "49 / 57 = 85.96%", "proof_accuracy": "8 / 12 = 66.67%"}, 
-"tutorial_world_val": {"accuracy": "13 / 13 = 100.00%", "proof_accuracy": "6 / 6 = 100.00%"},
-"AdvAddition_world_val": {"accuracy": "16 / 16 = 100.00%", "proof_accuracy": "6 / 6 = 100.00%"}, 
-"addition_world_val": {"accuracy": "35 / 38 = 92.11%", "proof_accuracy": "11 / 14 = 78.57%"}}

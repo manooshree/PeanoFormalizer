@@ -1,0 +1,19 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_7,  -- We assume that x = 37,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_7,"  -- We can use this to prove x = 37, completing the proof","theorem exact_7_temp (x : ℕ) : x = 37 → x = 37 := by
+  intro h
+  exact h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_7,  -- Consider the hypothesis x = 37.,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_7,"  -- So, x = 37, which is what we want to show.","theorem exact_7_dev_1_temp (x : ℕ) : x = 37 → x = 37 := by
+  intro h
+  exact h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_7,  -- assume x = 37,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_7,  -- x = 37,"theorem exact_7_dev_2_temp (x : ℕ) : x = 37 → x = 37 := by
+  intro h
+  exact h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

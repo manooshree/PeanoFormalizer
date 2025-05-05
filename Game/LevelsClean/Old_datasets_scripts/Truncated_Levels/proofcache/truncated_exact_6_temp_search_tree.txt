@@ -1,5 +1,0 @@
-rw [four_eq_succ_three] at h
-	rw [h]
-		rw [four_eq_succ_three]
-			rfl
-			SYSTEM: QED

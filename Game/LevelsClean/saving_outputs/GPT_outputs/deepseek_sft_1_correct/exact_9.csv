@@ -1,0 +1,118 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_9,  -- We assume that x + 1 = y + 1,"-- Assume that x + 1 = y + 1
+  intro h
+  rw [←h]
+  rw [add_succ, add_succ]
+  apply add_left_cancel
+  rw [←h]
+  rw [add_succ, add_succ]
+  apply add_left_cancel
+  exact h
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,  -- Rewrite the proof goal to 'succ x = succ y' using the injectivity of the successor function,"rw [succ_inj] at h
+  exact h
+
+  -- Rewrite the proof goal to 'succ x = succ y' using the injectivity of the successor function
+  -- Now we have 'x = y' as the proof goal
+  -- The proof is complete
+  exact h
+
+Final line of Lean 4 code:
+  rw [succ_inj] at h
+  exact h",  apply succ_inj,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,"  -- Rewrite all instances of succ x and succ y as x + 1 and y + 1, the proof goal is now x + 1 = y + 1","rw [succ_eq_add_one, succ_eq_add_one] at h
+  -- Now the proof goal is x + 1 = y + 1
+  exact h
+  -- Now the proof goal is x = y
+  <;> assumption
+  -- Now the proof goal is x = y
+  <;> assumption
+  -- Now the proof goal is x = y
+  <;> assumption
+  -- Now the proof goal",  repeat rw [succ_eq_add_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,"  -- We can exactly show how x = y equates to x + 1 = y + 1, completing the proof","FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT: 1
+FLT:",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,  -- We assume that x + 1 = y + 1,"intro hxy at hxy
+   -- We want to show that x = y
+   -- We know that x + 1 = y + 1
+   -- We can use the injectivity of addition on natural numbers to show that x = y
+   apply hxy at hxy
+   -- We have shown that x = y
+   -- Thus, we have completed the proof
+   exact hxy",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,  -- Rewrite the proof goal to 'succ x = succ y' using the injectivity of the successor function,"repeat apply succ_inj at hx ⊢ �turn at hx ⊢ done
+  -- Now the goal is to prove 'x = y'
+  -- Now the goal is to prove 'x = y'
+  -- Now the goal is to prove 'x = y'
+  -- Now the goal is to prove 'x = y'
+  -- Now the goal is to prove 'x = y'
+  -- Now the goal",  apply succ_inj,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,"  -- Rewrite all instances of succ x and succ y as x + 1 and y + 1, the proof goal is now x + 1 = y + 1","rw [← add_succ, ← add_succ] at hx ⊢
+
+*   -- Now the goal is x + 1 = y + 1
+*   -- Now the goal is x + 1 = y + 1
+
+Complete the single line of Lean 4 code:
+
+```lean4
+-- Rewrite all instances of succ x and succ y as x + 1 and y + 1, the proof goal is now",  repeat rw [succ_eq_add_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,"  -- We can exactly show how x = y equates to x + 1 = y + 1, completing the proof","exact h ⟨x, rfl⟩ at hy at h ⟨y, rfl⟩ at hy
+
+! Incorrect
+  -- Incorrect: 
+  -- 1 * x = 1 * y → x = y
+  -- 1 * x = 1 * y → x + 1 = y + 1
+  -- 1 * x = 1 * y → x = y
+  --",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,  -- We assume that x + 1 = y + 1,"intro hxy at hxy
+   -- We want to show that x = y
+   -- We know that x + 1 = y + 1
+   -- We can use the injectivity of addition to show that x = y
+   apply add_left_cancel at hxy
+   -- Now we have x = y
+   exact hxy",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_9,  -- Rewrite the proof goal to 'succ x = succ y' using the injectivity of the successor function,repeat apply succ_inj at hx ⊢ �turn at hx ⊢ ⊥ at hx ⊢ ⊥ at hx ⊢ ⊥ at hx ⊢ ⊥ at hx ⊢ ⊥ at hx ⊢ ⊥ at hx ⊢ ⊥ at hx ⊢,  apply succ_inj,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_9,"  -- Rewrite all instances of succ x and succ y as x + 1 and y + 1, the proof goal is now x + 1 = y + 1","rw [← add_succ, ← add_succ] at hx ⊢
+
+* -- Rewrite all instances of succ x and succ y as x + 1 and y + 1, the proof goal is now x + 1 = y + 1
+
+  -- Rewrite all instances of succ x and succ y as x + 1 and y + 1, the proof goal is now x + 1 = y + 1
+  rw",  repeat rw [succ_eq_add_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_9,"  -- We can exactly show how x = y equates to x + 1 = y + 1, completing the proof","exact hx at hx ⊢
+
+*   -- Rewrite the hypothesis x = y to x + 1 = y + 1 in the goal
+   -- using the fact that x = y implies x + 1 = y + 1
+   -- (x + 1 = y + 1)
+   -- (x = y)
+   -- (x + 1 = y + 1)
+   -- (x = y)",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,0 +1,37 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+eq_succ_of_ne_zero,  -- We consider two cases for a: when a is zero and when a is the successor of another natural number.,"cases a with
+| zero => contradiction
+| succ n => use n",  cases a with d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,"  -- By logical reasoning, we know that 0 cannot be equal to 0, which is a contradiction. Therefore, there is no natural number such that 0 is the successor of that number so we can close the case where a is 0.","exact ⟨0, rfl⟩",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,  -- We provide an example where the natural number 'd' satisfies the condition that 'succ d' equals 'succ n'.,use a.pred,  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,  -- We use reflexivity to prove that 'succ d' equals 'succ d'.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+eq_succ_of_ne_zero,  -- We use induction on a.,"induction a with
+| zero => contradiction
+| succ n ih => use n",  induction a with d _,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,"  -- For the base case, a = 0, the theorem doesn't hold because we know a != 0.","cases a with
+| zero => contradiction
+| succ n => use n",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,"  -- For the inductive step, we set n to be d.",use a.pred,  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,  -- We use reflexivity to prove that 'succ d' equals 'succ d'.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+eq_succ_of_ne_zero,  -- We use induction on a.,"induction a with
+| zero => contradiction
+| succ n ih => use n",  induction a with d _,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,"  -- For the base case, a = 0, the theorem doesn't hold because we know a != 0.","cases a with
+| zero => contradiction
+| succ n => use n",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,"  -- For the inductive step, we set n to be d which gives us succ d = succ d","theorem eq_succ_of_ne_zero_dev_2_temp (a : ℕ) (ha : a ≠ 0) : ∃ n, a = succ n := by
+  use a.pred
+  rw [Nat.succ_pred_eq_of_pos (Nat.pos_of_ne_zero ha)]",  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+eq_succ_of_ne_zero,"  -- Since the LHS and RHS are equal, we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

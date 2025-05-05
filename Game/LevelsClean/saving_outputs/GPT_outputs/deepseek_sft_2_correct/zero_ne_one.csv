@@ -1,0 +1,29 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_ne_one,"  -- Assume that 0 = 1, which is false",x = 0 ∨ x = 1 ∨ x = 2 ∨ x = 3 ∨ x = 4 ∨ x = 5 ∨ x = 6 ∨ x = 7 ∨ x = 8 ∨ x = 9 ∨ x = 10 ∨ x = 11 ∨ x = 12 ∨ x = 13,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- Apply the Peano axiom that zero is not the successor of any natural number to our assumption that 0 = 1, making it false","（） (zero_ne_one) at hx -> False
+
+-- Apply the Peano axiom that zero is not the successor of any natural number to our assumption that 0 = 1, making it false
+
+-- Correctly formalizes the step into:
+
+-- tauto
+
+-- Correctly formalizes the step into:
+
+-- tauto
+
+-- Correctly formalizes the step into:
+
+-- tauto
+
+-- Correctly formal",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- We have proven that 0 = 1 is false or that 0 ≠ 1, completing the proof","exact hx at hx
+
+
+* Complete the single line of Lean 4 code for this step:
+
+```lean4
+exact hx at hx",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

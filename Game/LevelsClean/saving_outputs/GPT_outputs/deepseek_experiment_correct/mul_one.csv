@@ -1,0 +1,33 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_one,  -- We know that 1 is the successor of 0 so by definition of multiplication we have m * 1 = m * 0 + m,"rw [mul_succ, mul_zero, zero_add]","  rw [one_eq_succ_zero, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- By the fact that 1 = succ 0 and that 0 + n = n, we obtain m","rw [mul_succ, mul_zero, add_zero]","  rw [mul_zero, zero_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- The lhs and rhs are equal, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_one,"  -- Rewrite 1 as succ 0, using the axiom that succ 0 = 1",rw [←Nat.succ_zero_eq_one],  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- Rewrite LHS m * succ 0 to m * 0 + m using the definition of multiplication with a successor.,rw [mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_one,  -- Simplify m * 0 + m to 0 + m on LHS,"rw [mul_zero, zero_add]",  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- Rewrite the LHS 0 + m = m,rw [mul_one],  rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- Prove LHS and RHS are equal, m = m, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_one,  -- m * succ 0 = m,"rw [mul_succ, mul_zero, add_zero]",  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- m * 0 + m = m,"rw [mul_zero, zero_add]",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- 0 + m = m,rw [Nat.zero_add],  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- 0 + (0 + m) = 0 + m,"rw [zero_add, zero_add]",  rw [← zero_add m],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- 0 + m + 0 = 0 + m,"rw [zero_add, add_zero]",  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- 0 + m = 0 + m,rfl,  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- lhs = rhs,"theorem mul_one_dev_1_temp (m : ℕ) : m * 1 = m := by
+  rw [mul_comm]
+  rw [mul_one]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

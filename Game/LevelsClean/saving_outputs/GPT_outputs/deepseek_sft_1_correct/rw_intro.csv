@@ -1,0 +1,48 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+rw_intro,  -- Rewrite LHS: 2 * y -> 2 * (x + 7) using our hypothesis that y = x + 7,"FL: 
+  rw [h]
+  -- Rewrite LHS: 2 * y -> 2 * (x + 7) using our hypothesis that y = x + 7
+  -- This completes the proof
+  -- 2 * y = 2 * (x + 7)
+  -- QED
+
+FL: 
+  rw [h]
+  -- Rewrite LHS: 2 * y -> 2 * (x + 7",  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_intro,"  -- 2 * (x + 7) = 2 * (x + 7), QED","FLT
+
+### One single line of Lean 4 code:
+
+```lean4
+rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_intro,  -- Rewrite LHS: 2 * y -> 2 * (x + 7) using our hypothesis that y = x + 7,"rw [h] at h2 at h3 ⊢
+  -- Now we have: 2 * (x + 7) = 2 * x + 14
+  -- Next, we want to prove that 2 * (x + 7) = 2 * x + 14
+  -- We can use the theorem that states that for any natural numbers a and b, a * (b + c) = a * b + a",  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_intro,"  -- 2 * (x + 7) = 2 * (x + 7), QED","rfl at hx ⊢ -> rfl
+
+   -- Step 2: Rewrite the goal to 2 * (x + 7) = 2 * (x + 7)
+  -- 2 * (x + 7) = 2 * (x + 7)
+  -- QED
+
+  -- Step 2: Rewrite the goal to 2 * (x + 7) = 2 * (x + 7)",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+rw_intro,  -- Rewrite LHS: 2 * y -> 2 * (x + 7) using our hypothesis that y = x + 7,"rw [h] at h2 at h3 ⊢
+  -- Now we have: 2 * (x + 7) = 2 * x + 14
+  -- Next, we prove that 2 * (x + 7) = 2 * x + 14
+  -- Simplify LHS: 2 * (x + 7) to 2 * x + 14
+  -- Now we have:",  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+rw_intro,"  -- 2 * (x + 7) = 2 * (x + 7), QED","rfl at hx ⊢ -> rfl
+
+   -- Step 3: Simplify the equation using the properties of equality
+   -- 2 * (x + 7) = 2 * (x + 7), QED
+
+   -- Step 3: Simplify the equation using the properties of equality
+   -- 2 * (x + 7) = 2 * (x + 7), QED
+
+   -- Step 3:",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

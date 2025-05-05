@@ -1,0 +1,110 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_two,"  -- We consider the case where x is a natural number. We then break down this case into two subcases: one where x is equal to 0, and the other where x is equal to the successor of another natural number y.","（induction x with y hy）[0, succ y] at hx
+
+-- Correctly formalizes the above step into a single line of Lean 4 code
+
+-- The single line of Lean 4 code for this step is:
+
+-- Correctly formalizes the above step into a single line of Lean 4 code
+
+induction x with y hy
+  -- The goal is now to prove the statement for succ y, given the inductive hypothesis hy",  cases x with y,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,"  -- We choose to prove the left side of the disjunction, which is 0 = 0.","tauto
+  -- The statement 0 = 0 is true by reflexivity, so we apply the reflexivity of equality.
+FL:  apply eq_self_iff_true at hx
+  -- Simplify the hypothesis to obtain that x = 0.
+FL:  simp at hx
+  -- Now we have x = 0, so we can substitute 0 for x in the goal.
+FL:  rw [hx] at h",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,"  -- We are given that 0 equals 0, so we can use reflexivity to prove the goal.","rfl at hx -> rfl at hx
+  -- The new hypothesis is now 0 equals 0.
+
+   -- We have shown that x equals 0.
+   exact hx",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We consider the case where y is a natural number. We then break down this case into two subcases: one where y is equal to 0, and the other where y is equal to the successor of another natural number z.","（induction y with z hz）[0, succ z] at y
+
+-- Your goal is to generate the single line of Lean 4 code for this step.
+-- Correct answer is: (induction y with z hz) at y
+
+-- Rewrite the goal using the induction hypothesis
+-- Correct answer is: rw [hz] at goal
+
+-- Rewrite the goal using the definition of the successor function
+-- Correct answer is: rw [succ_",  cases y with z,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,"  -- We choose to prove the right side of the disjunction, which is succ 0 = 1 ∨ succ 0 = 2.","right
+  -- We prove the right side of the disjunction, which is succ 0 = 2.
+FL:  exact succ_inj h
+
+----",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We choose to prove the left side of the disjunction, which is succ 0 = 1.","choose to prove left -> succ 0 = 1 at *
+     -- We use the reflexivity of equality to show that succ 0 = 1.
+FL:  apply eq_of_succ_eq_succ at *
+     -- We simplify the expression to obtain 0 = 0.
+FL:  simp at *
+     -- We use reflexivity to show that 0 = 0.
+FL:  rfl
+
+  -- The above",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,  -- We rewrite the goal using the theorem that states the successor of 0 is equal to 1.,rw [one_eq_succ_zero] at hx at hy at hz at hx' at hy' at hz' at hx'' at hy'' at hz'' at hx''' at hy''' at hz''' at hx'''' at hy'''' at hz'''' at hx''''' at hy''''' at hz''''' at hx'''''' at hy'''''' at hz'''''' at hx''''''' at hy''''''',  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We are given that 0 equals 0, so we can use reflexivity to prove the goal.","rfl at hx -> rfl at hx
+  -- The new hypothesis is now 0 equals 0.
+
+   -- We have shown that x equals 0.
+   exact hx",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We rewrite the number 2 as the successor of 1, and 1 as the successor of 0. Now was know that 'succ (succ z) ≤ succ (succ 0)' and the goal to 'succ (succ z) = 0 ∨ succ (succ z) = succ 0 ∨ succ (succ z) = succ (succ 0)'.","rw [two_eq_succ_one, one_eq_succ_zero] at hx ⊢
+
+-- Successfully completed
+-- FL:   -- We have shown 'succ (succ z) = 0 ∨ succ (succ z) = succ 0 ∨ succ (succ z) = succ (succ 0)' to 'succ (succ z) = 0 ∨ succ (succ z) = succ 0","  rw [two_eq_succ_one, one_eq_succ_zero] at hx ⊢",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,  -- We simplify succ (succ z) <= succ (succ 0) to the assumption that the succ z <= succ 0.,"use z as the proof for the assumption that the succ z <= succ 0.
+
+-- Generate the single line of Lean 4 code for this step
+
+-- The single line of Lean 4 code for this step is:
+use z",  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,  -- We simplify succ z <= succ 0 to z <= 0.,"rw [succ_eq_add_one, zero_add] at hx ⊢ at hx ⊢ by rw [succ_eq_add_one, zero_add] at hx ⊢ at hx ⊢
+
+-- Now we need to prove that z <= 0.",  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,"  -- We apply the property that if z is less than or equal to 0, then z must be equal to 0.","apply le_zero at hx -> hx = 0
+
+-- Apply the property that if z is less than or equal to 0, then z must be equal to 0 to hx, resulting in hx = 0.",  apply le_zero at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We substitute z with 0 in the goal, resulting in the goal succ (succ 0) = 0 ∨ succ (succ 0) = succ 0 ∨ succ (succ 0) = succ (succ 0).","rw [hx] at hz ⊢ where x = 0 ∧ hz = succ (succ 0) at hz ⊢
+
+-- Rewrite the goal using the fact that z is 0, changing the goal to succ (succ 0) = 0 ∨ succ (succ 0) = succ 0 ∨ succ (succ 0) = succ (succ 0).",  rw [hx],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We choose to prove the right side of the disjunction, which is succ (succ 0) = succ 0 ∨ succ (succ 0) = succ (succ 0).","right
+  -- We introduce the assumption that succ (succ 0) = succ (succ 0) and prove that this assumption implies our goal.
+FL:  intro h
+  -- We simplify the assumption to show that our goal is true.
+FL:  exact h
+
+-- The single line of Lean 4 code for this step is:
+--  right
+--  intro h
+--  exact h",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We choose to prove the right side of this disjunction, which is succ (succ 0) = succ (succ 0).","choose right
+  -- We use the reflexivity of equality to prove that succ (succ 0) = succ (succ 0).
+FL:  exact rfl",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We have that succ (succ 0) = succ (succ 0), so we can use reflexivity to prove the goal.","rfl at hx ⊢ where hx : succ (succ 0) = succ (succ 0)
+
+-- Correct the goal to succ (succ 0) = succ (succ 0)
+
+-- Now we have that succ (succ 0) = succ (succ 0), so we can use reflexivity to prove the goal.
+
+-- Correct the goal to succ (succ 0) = succ (succ 0)
+
+--",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

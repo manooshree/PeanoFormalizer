@@ -1,0 +1,47 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_comm,"  -- Induct on b, with d = 0 as the base case and the inductive hypothesis a * d = d * a. There are now two proof goals, prove base case: a * 0 = 0 * a, and inductive step: a * succ d = succ d * a.",induction b with d hd,  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,  -- First we prove base case. Simplify RHS 0 * a to 0,rw [Nat.zero_mul],  rw [zero_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,  -- Simplify LHS a * 0 to 0,rw [mul_zero],  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,  -- Next prove inductive step. Rewrite RHS succ d * a to d * a + a,rw mul_succ,  rw [succ_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,  -- Rewrite the RHS from d * a + a to a * d + a using the inductive hypothesis,"rw [mul_succ, add_comm]",  rw [← hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,"  -- Rewrite the LHS, changing a * succ d to a * d + a",rw [mul_succ],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,"  -- Prove LHS and RHS are equal, a * d + a = a * d + a, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,"  -- Induct on b, with d = 0 as the base case and the inductive hypothesis a * d = d * a.",induction b with d hd,  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,  -- First prove base case: we obtain 0 = 0 * a,rw [Nat.zero_mul],  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,  -- 0 = 0,rfl,  rw [zero_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,"  -- 0 = 0, completing base case.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,  -- Next prove inductive step: we obtain a * d + a = succ d * a.,"rw [mul_succ, add_comm]",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,  -- a * d + a = d * a + a,rw [mul_comm],  rw [succ_mul],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,  -- d * a + a = d * a + a,rw [mul_comm],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,"  -- d * a + a = d * a + a, completing the proof.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,"  -- Induct on b, with d = 0 as the base case and the inductive hypothesis a * d = d * a.",induction b with d hd,  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,  -- First prove base case: 0 = 0 by definition of multiplication,"rw [Nat.mul_zero, Nat.zero_mul]","  rw [mul_zero, zero_mul]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,"  -- 0 = 0, completing base case.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,  -- Next prove inductive step: we obtain a * d + a = d * a + a by definition of multiplication,"rw [Nat.mul_succ, Nat.mul_succ, Nat.add_comm]","  rw [mul_succ, succ_mul]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,  -- d * a + a = d * a + a by the inductive hypothesis,rw [mul_comm],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_comm,  -- a + d * a = a + d * a by the commutative property of addition,rw [add_comm],  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_comm,"  -- LHS and RHS are equal, completing the proof.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

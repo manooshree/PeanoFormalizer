@@ -1,0 +1,190 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_left_cancel,  -- proof by induction on b,induction b with,  induction b with d hd generalizing c,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- for the base case, a * 0 = a * c -> 0 = a * c by the definition of multiplication",rw [mul_zero] at h,  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- 0 = a * c -> a * c = 0 by the symmetry property of equality,rw [←h],  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- a * c = 0 -> a = 0 ∨ c = 0 by the fact that if a times b is equal to 0, then either a is equal to 0 or b is equal to 0.",rw [← mul_right_inj' ha] at h,  apply mul_eq_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- either a is equal to 0 or c is equal to 0.,cases Nat.eq_zero_or_eq_zero_of_mul_eq_mul ha h,  cases h with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if a is equal to 0, then we have a contradiction.","cases a with
+| zero => contradiction
+| succ a' => exact mul_left_cancel h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if c is equal to 0, then we have that 0 = 0.","cases c with
+| zero => rfl
+| succ c' => 
+  have : a * b = a * succ c' := h
+  rw [mul_succ] at this
+  have : a * b = a * c' + a := this
+  rw [mul_comm a b, mul_comm a c'] at this
+  have : b = c' + 1 := Nat.eq_of_mul_",  rw [h2],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- 0 = 0 closes the base case.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- consider two subcases for c: when c is 0 and when c is a successor of another natural number e.,"cases c with
+| zero =>
+  -- If c is 0, then a * b = a * 0 implies b = 0, which contradicts the assumption that a ≠ 0.
+  exfalso
+  exact ha (Nat.eq_zero_of_mul_eq_zero h)
+| succ e =>
+  -- If c is a successor of e, then we can use the cancellation property of multiplication.",  cases c with e he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * succ d = a * 0 -> a * succ d = 0 by the definition of multiplication,"rw [mul_succ, mul_zero] at h",  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * succ d = 0 -> a * succ d = 0 by the properties of multiplication,rw [mul_succ] at h,  apply mul_eq_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- either a is equal to 0 or c is equal to 0.,cases Nat.eq_zero_or_eq_zero_of_mul_eq_mul ha h,  cases h with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if a is equal to 0, then we have a contradiction.","cases a with
+| zero => contradiction
+| succ a' => exact mul_left_cancel h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if c = 0, then we have that ucc d  = 0.","cases c with
+| zero => exact (Nat.mul_eq_zero.mp h).2
+| succ c' => 
+  have : a * b = a * c' + a := by rw [Nat.mul_succ, h]
+  have : a * b = a * c' + a := by rw [Nat.mul_succ, h]
+  exact Nat.eq_of_mul_eq_mul_",  exact h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * succ d = a * succ e -> a * d + a = a * succ e -> a * d + a = a * e + a by the definition of multiplication,"rw [mul_succ, mul_succ] at h","  rw [mul_succ, mul_succ] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- a * d + a = a * e + a -> a * d = a * e by properties of addition,"rw [← add_left_inj a, h]",  apply add_right_cancel at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * d = a * e -> d = e by the induction hypothesis,"theorem mul_left_cancel_dev_1_temp (a b c : ℕ) (ha : a ≠ 0) (h : a * b = a * c) : b = c := by
+  -- Apply the cancellation law for multiplication on the left side
+  apply mul_left_cancel₀ ha h",  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- succ d = succ e -> succ e = succ d,"theorem mul_left_cancel_dev_1_temp (a b c : ℕ) (ha : a ≠ 0) (h : a * b = a * c) : b = c := by
+  -- Apply the cancellation law for multiplication on the left side
+  apply mul_left_cancel₀ ha
+  -- Use the given equality a * b = a * c
+  exact h",  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,"  -- Assume that b is a natural number and use induction on b. In the base case, b is 0. We also generalize over c, which means that we assume that c is an arbitrary but fixed natural number. Now, the goal is to show that 0 equals c given that a is a non-zero natural number and a times 0 equals a times c.","induction b with
+| zero => 
+  intro c
+  rw [Nat.mul_zero] at h
+  exact Nat.eq_zero_of_mul_eq_zero h
+| succ b' ih =>
+  intro c
+  rw [Nat.mul_succ] at h
+  rw [Nat.mul_succ] at h
+  exact ih (Nat.add_left_cancel h)",  induction b with d hd generalizing c,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- We know that a * 0 = 0 so, 0 = a * c.",rw [← mul_zero a] at h,  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- We flip the sides so that a * c = 0.,rw [← mul_right_inj' ha] at h,  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- We apply the fact that if a times b is equal to 0, then either a is equal to 0 or b is equal to 0.",apply mul_left_cancel₀ ha h,  apply mul_eq_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- We consider the two possible cases for h: either a is equal to 0 or b is equal to 0.,cases h,  cases h with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- If a is equal to 0, then we have a contradiction because we are given that a is not equal to 0.","cases a with
+| zero => contradiction
+| succ a' => exact mul_left_cancel h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- If b is equal to 0, then we have that 0 = c.","cases b with
+| zero => exact Nat.eq_zero_of_mul_eq_zero h
+| succ b' => 
+  have : a * succ b' = a * c := h
+  rw [Nat.mul_succ] at this
+  have : a * b' + a = a * c := this
+  rw [Nat.add_left_cancel_iff] at this
+  exact Nat.eq_",  rw [h2],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- We have that 0 = 0 by substituting 0 for c, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,"  -- We consider two subcases for c: when c is 0 and when c is a successor of another natural number e. For the first subcase, we need to show that the successor of d equals 0 given the hypothesis that a times the successor of d equals a times 0.","cases c with
+| zero => 
+  have : a * 0 = 0 := Nat.mul_zero a
+  rw [this] at h
+  exact Nat.eq_zero_of_mul_eq_zero h
+| succ e => 
+  have : a * (succ e) = a * e + a := Nat.mul_succ a e
+  rw [this] at h
+  have : a *",  cases c with e,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- We know that a * succ d = a * 0, so a * d + a = 0, because for any natural numbers a and d, a * succ d = a * d + a and for any natural number a, a * 0 = 0.","rw [mul_succ, mul_zero] at h","  rw [mul_succ, mul_zero] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,"  -- We apply the fact that for any natural numbers a and b, if a + b = 0, then b = 0 to get that a = 0.",rw [← mul_right_inj' ha] at h; exact h,  apply add_left_eq_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- We have that a = 0, so we can use this to prove the goal.",rw [← Nat.mul_left_cancel ha] at h,  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- Rewrite the equation a * succ d = a * succ e to a * d + a = a * e + a, using the theorem that multiplication of a natural number a with the successor of another natural number d (or e) is equal to the sum of a * d (or e) and a.","rw [mul_succ, mul_succ] at h","  rw [mul_succ, mul_succ] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,"  -- We use the fact that if two sums are equal and they both have the same term added to them, then the original sums before the addition must have been equal. This simplifies a * d + a = a * e + a to a * d = a * e.",rw [← Nat.mul_add_mul_eq_mul_add_mul ha h],  apply add_right_cancel at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- We apply the induction hypothesis hd to the equation a * d = a * e which gives us d = e.,apply mul_left_cancel₀ ha h,  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- We substitute e for d in the goal which gives us the new goal succ e = succ e.,rw [←Nat.succ_inj'] at h,  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- The goal that succ e = succ e is true by reflexivity.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- proof by induction on b,induction b with,  induction b with d hd generalizing c,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- for the base case, a * 0 = a * c -> 0 = a * c",rw [mul_zero] at h,  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- 0 = a * c -> a * c = 0,rw [← h],  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * c = 0 -> a = 0 ∨ c = 0,rw [mul_eq_zero] at h,  apply mul_eq_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- either a is equal to 0 or c is equal to 0.,cases Nat.eq_zero_or_eq_zero_of_mul_eq_mul ha h,  cases h with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if a is equal to 0, then we have a contradiction.","cases a with
+| zero => contradiction
+| succ a' => exact mul_left_cancel h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if c is equal to 0, then we have that 0 = 0.","cases c with
+| zero => rfl
+| succ c' => 
+  have : a * b = a * succ c' := h
+  rw [mul_succ] at this
+  have : a * c' + a = a * succ c' := this
+  rw [add_comm] at this
+  have : a * c' + a = a * c' + a := rfl
+  exact add_left",  rw [h2],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- 0 = 0 closes the base case.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- consider two subcases for c: when c is 0 and when c is a successor of another natural number e.,"cases c with
+| zero =>
+  -- If c is 0, then a * b = a * 0 implies b = 0, which contradicts the assumption that a ≠ 0.
+  exfalso
+  exact ha (Nat.eq_zero_of_mul_eq_zero h)
+| succ e =>
+  -- If c is a successor of e, then we can use the cancellation property of multiplication.",  cases c with e he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * succ d = a * 0 -> a * succ d = 0,"rw [mul_succ, mul_zero] at h",  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * succ d = 0 -> a * succ d = 0,rw [mul_succ] at h,  apply mul_eq_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- either a is equal to 0 or c is equal to 0.,cases Nat.eq_zero_or_eq_zero_of_mul_eq_mul ha h,  cases h with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if a is equal to 0, then we have a contradiction.","cases a with
+| zero => contradiction
+| succ a' => exact mul_left_cancel h",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if c = 0, then we have that ucc d  = 0.","cases c with
+| zero => exact (Nat.mul_eq_zero.mp h).resolve_left ha
+| succ c' => exact (Nat.mul_left_cancel ha).mp h",  exact h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * succ d = a * succ e -> a * d + a = a * succ e -> a * d + a = a * e + a,"rw [mul_succ, mul_succ] at h","  rw [mul_succ, mul_succ] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- a * d + a = a * e + a -> a * d = a * e,rw [← Nat.add_left_cancel_iff a] at h,  apply add_right_cancel at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * d = a * e -> d = e,"theorem mul_left_cancel_dev_2_temp (a b c : ℕ) (ha : a ≠ 0) (h : a * b = a * c) : b = c := by
+  exact mul_left_cancel ha h",  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- succ d = succ e -> succ e = succ d,"theorem mul_left_cancel_dev_2_temp (a b c : ℕ) (ha : a ≠ 0) (h : a * b = a * c) : b = c := by
+  -- Apply the cancellation law for multiplication on the left side
+  apply mul_left_cancel₀ ha
+  -- Use the given equality a * b = a * c
+  exact h",  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

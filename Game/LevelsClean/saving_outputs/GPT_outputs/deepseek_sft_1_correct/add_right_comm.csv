@@ -1,0 +1,129 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_right_comm,  -- a + b + c -> a + (b + c) on the LHS giving us a + (b + c) = a + c + b,"-- Apply the theorem that addition is associative to rewrite a + b + c as a + (b + c)
+  rw [add_assoc] at h
+  -- Now we have a + (b + c) = a + c + b
+  -- Apply the theorem that addition is commutative to rewrite b + c as c + b
+  rw [add_comm] at h
+  -- Now we have a + (c + b) = a + c",  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,  -- a + c + b -> a + (c + b) on the RHS giving us a + (b + c) = a + (c + b),rw [add_assoc],  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,  -- b + c -> c + b on the LHS giving us a + (c + b) = a + (c + b),"rw [add_assoc] at h
+     rw [add_comm b c] at h
+     rw [←add_assoc] at h
+     exact h
+
+     -- a + (c + b) = a + (c + b)
+
+     -- QED
+
+     -- a + b + c = a + c + b
+
+     -- a + (b + c) = a + (c + b)
+
+     -- a",  rw [add_comm b c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,"  -- a + (c + b) = a + (c + b), QED","FLT
+
+The final line of the proof is:
+
+  -- QED
+  rfl
+  <;>
+  -- a + (c + b) = a + (c + b), QED
+  <;>
+  -- a + (c + b) = a + (c + b), QED
+  <;>
+  -- a + (c + b) = a + (c + b), QED
+  <;>",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,  -- a + b + c -> a + (b + c) on the LHS giving us a + (b + c) = a + c + b,"rw [add_assoc] at hb ⊢
+
+   -- Now we have a + (b + c) = a + (c + b), so we can cancel a from both sides
+
+   -- Now we have b + c = c + b, so we can cancel c from both sides
+
+   -- Now we have b = b, so we can cancel b from both sides
+
+   -- Now we have c = c, so we can",  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,  -- a + c + b -> a + (c + b) on the RHS giving us a + (b + c) = a + (c + b),"rw [add_assoc] at hb2 at hb1 ⊢
+
+*   -- Prove a + c = c + a
+
+    -- Apply the commutative property of addition to obtain c + a = a + c
+
+    -- Use the fact that a + c = c + a to prove a + c = c + a
+
+    -- Apply the commutative property of addition to obtain c + a = a + c
+
+    -- Use",  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,  -- b + c -> c + b on the LHS giving us a + (c + b) = a + (c + b),"rw [add_right_comm] at hb2 ⊢
+
+   -- Now we have a + (c + b) = a + (c + b), so we can conclude that a + b + c = a + c + b
+FL:   exact hb2",  rw [add_comm b c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,"  -- a + (c + b) = a + (c + b), QED","rfl at h2 ⊢
+
+   -- Correctly complete the proof
+   exact h2
+
+   -- Correctly complete the proof
+   ->
+   exact h2
+
+   -- Correctly complete the the proof
+   ->
+   exact h2
+
+   -- Correctly complete the proof
+   ->
+   exact h2
+
+   -- Correctly complete the proof
+   ->
+   exact h2
+
+   -- Correctly complete",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,  -- a + b + c -> a + (b + c) on the LHS giving us a + (b + c) = a + c + b,"rw [add_assoc] at hb ⊢
+
+   -- Now we have a + (b + c) = a + (c + b), so we can cancel a on both sides
+
+   -- Now we have b + c = c + b, so we can cancel c on both sides
+
+   -- Now we have b = b, so we can cancel b on both sides
+
+   -- Now we have c = c, so we can",  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,  -- a + c + b -> a + (c + b) on the RHS giving us a + (b + c) = a + (c + b),"rw [add_assoc] at hb2
+
+!   -- a + c + b -> a + (c + b) on the RHS giving us a + (b + c) = a + (c + b)
+!   -- a + b + c = a + (c + b)
+!   -- a + (b + c) = a + (c + b)
+!   -- a + (c + b) = a + (",  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_right_comm,  -- b + c -> c + b on the LHS giving us a + (c + b) = a + (c + b),"rw [add_right_comm] at hb2 ⊢
+
+   -- Now we have a + (c + b) = a + (c + b), so we can conclude that b + c = c + b
+   -- which is our desired result.
+FL:   exact hb2",  rw [add_comm b c],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_right_comm,"  -- a + (c + b) = a + (c + b), QED","rfl at h2 ⊢
+
+   -- Correctly complete the proof
+   exact h2
+
+   -- Correctly complete the proof
+   ->
+   exact h2
+
+   -- Correctly complete the the proof
+   ->
+   exact h2
+
+   -- Correctly complete the proof
+   ->
+   exact h2",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

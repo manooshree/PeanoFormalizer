@@ -1,0 +1,29 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_zero,"  -- Using the definition of ≤, we have that 0 = x + y for some natural number y.",rw [Nat.le_zero] at hx,  cases hx with y hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,"  -- By the symmetry of equality, we have x + y = 0.",rfl,  symm at hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,"  -- Using the theorem that if a + b = 0, a = 0, we have that x = 0.","theorem le_zero_dev_1_temp (x : ℕ) (hx : x ≤ 0) : x = 0 := by
+  exact Nat.eq_zero_of_le_zero hx",  apply add_right_eq_zero at hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,"  -- So we know that x = 0, which is exactly what we wanted to prove.",exact hx,  exact hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,  -- 0 = x + y,rw [← Nat.add_zero x] at hx,  cases hx with y hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,  -- 0 = x + y -> x + y = 0,rw [← Nat.add_left_cancel_iff] at hx,  symm at hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,  -- x + y = 0 -> x = 0,"theorem le_zero_dev_2_temp (x : ℕ) (hx : x ≤ 0) : x = 0 := by
+  exact Nat.eq_zero_of_le_zero hx",  apply add_right_eq_zero at hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,  -- done,"theorem le_zero_dev_2_temp (x : ℕ) (hx : x ≤ 0) : x = 0 := by
+  exact Nat.eq_zero_of_le_zero hx",  exact hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,  -- The goal is to prove that x equals 0 given that x is less than or equal to 0. We then consider the case where x is the sum of 0 and some natural number y. This gives us the equation 0 = x + y. Our goal now is to show that x equals 0 given this equation.,rw [← Nat.zero_add x] at hx,  cases hx with y hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,  -- Flip the equation so that it reads 'x + y = 0' instead of '0 = x + y'.,rw [eq_comm] at hx,  symm at hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,"  -- The sum of x and y is zero implies that y is zero because for all natural numbers a and n, n + a = 0 implies a = 0.","theorem le_zero_temp (x : ℕ) (hx : x ≤ 0) : x = 0 := by
+  exact Nat.eq_zero_of_le_zero hx",  apply add_right_eq_zero at hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_zero,"  -- The goal is now to prove that x = 0, which can be proven by applying hy to the goal.",exact hx,  exact hy,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

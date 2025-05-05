@@ -1,0 +1,48 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+one_le_of_ne_zero,  -- a is either 0 or the successor of some natural number d.,"cases a with
+| zero => contradiction
+| succ d => exact Nat.succ_le_succ (Nat.zero_le d)",  cases a with d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,"  -- When a = 0, the theorem doesn't hold because we know a != 0.","cases a with
+| zero => contradiction
+| succ a' => exact Nat.succ_le_succ (Nat.zero_le a')",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- 1 <= succ d -> 1 <= d + 1,rw [Nat.succ_eq_add_one],  rw [succ_eq_add_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- 1 <= d + 1 -> 1 + d = d + 1,rw [Nat.add_comm],  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- 1 + d = d + 1 -> 1 + d = 1 + d,rw [add_comm],  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_le_of_ne_zero,"  -- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_le_of_ne_zero,  -- We use induction on a.,induction a with,  induction a with d _,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,"  -- For the base case, a = 0, the theorem doesn't hold because we know a != 0.","theorem one_le_of_ne_zero_dev_2_temp (a : ℕ) (ha : a ≠ 0) : 1 ≤ a := by
+  cases a with
+  | zero => contradiction
+  | succ a' => exact Nat.succ_le_succ (Nat.zero_le a')",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- we know that 1 <= succ d -> 1 <= d + 1,exact Nat.one_le_of_lt (Nat.pos_of_ne_zero ha),  rw [succ_eq_add_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- 1 <= d + 1 -> 1 + a = d + 1 where a is some natural number by the definition of inequality. set a to be d.,rw [← Nat.succ_le_succ_iff],  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- 1 + d = d + 1 -> 1 + d = 1 + d by the commutative property of addition.,rw add_comm,  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,"  -- The LHS and RHS are equal, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_le_of_ne_zero,  -- We use the previous lemma to express a as the successor of some natural number n since a is not equal to 0.,"cases a with
+| zero => contradiction
+| succ n => exact Nat.succ_le_succ (Nat.zero_le n)",  apply eq_succ_of_ne_zero at ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- Simplify the hypothesis to say that a is the successor of some natural number n.,rw [← Nat.succ_pred_eq_of_pos (Nat.pos_of_ne_zero ha)],  cases ha with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- 1 <= a means that there exists some natural number m such that 1 + m = a. We use n as the natural number m.,use a.pred,  use d,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,"  -- We showed that a = succ n, so we can rewrite the goal as succ n = 1 + n.",rw [← succ_eq_add_one],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- Rewrite 'succ n' as '1 + n',rw [← Nat.succ_eq_add_one],  rw [succ_eq_add_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_le_of_ne_zero,  -- Switch the order of addition to match the goal '1 + n = 1 + n',rw [add_comm],  rw [add_comm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_le_of_ne_zero,"  -- We have that 1 + n = 1 + n, so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

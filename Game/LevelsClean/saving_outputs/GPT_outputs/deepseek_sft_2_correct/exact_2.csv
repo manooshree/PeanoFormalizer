@@ -1,0 +1,22 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_2,  -- proof goal 0 + x = y + 2,"rw [add_comm] at hx ⊢
+   -- proof goal x = y + 2
+   -- proof goal 0 + x = y + 2
+FL:   rw [zero_add] at hx ⊢
+   -- proof goal x = y + 2
+   -- proof goal 0 + x = y + 2
+FL:   rw [add_comm] at hx ⊢",  rw [← zero_add x],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- proof goal 0 + x = 0 + y + 2,"rw [zero_add] at hx ⊢
+
+-- Apply the theorem that 0 + x = x and 0 + y + 2 = y + 2 to the hypothesis and the goal
+-- This simplifies the hypothesis and the goal to x = y + 2
+-- The proof goal now is x = y + 2
+
+-- The student's single line of code is:
+-- 3 -- proof goal 0 + x =",  rw [← zero_add y],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_2,  -- hypothesis (0 + x = 0 + y + 2) = proof goal (0 + x = 0 + y + 2),"rw [zero_add] at hx ⊢
+
+-- Rewrite the hypothesis and the goal using the fact that adding zero to any number doesn't change the number.",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

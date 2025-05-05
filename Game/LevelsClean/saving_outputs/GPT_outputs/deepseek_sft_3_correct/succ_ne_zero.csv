@@ -1,0 +1,20 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_ne_zero,  -- Introduce the statement that succ a = 0 is false,"intro h2 at h1
+
+-- Introduce the statement that succ a = 0 is false
+intro h2 at h1",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_ne_zero,  -- Rewrite the proof goal to succ a = 0 if succ (a) is 0,"rw [← hx, add_zero] at hx ⊢ at hx ⊢ by rw [add_zero] at hx ⊢ at hx ⊢ by rw [add_zero] at hx ⊢ at hx ⊢ by rw [add_zero] at hx ⊢ at hx ⊢ by rw [add_zero] at hx �",  rw [← is_zero_succ a],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,  -- Rewrite the proof goal to showing that succ a = 0 if 0 is zero,"rw [zero_eq_succ_zero] at hb ⊢ at hb ⊢
+
+-- Rewrite the proof goal to showing that succ a = 0 if 0 is zero
+rw [zero_eq_succ_zero] at hb ⊢ at hb ⊢",  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,  -- Simplify the if 0 is zero condition to true,rw [if_pos (zero_eq_succ n)] at hx at hy at hx' at hy' at hz at hz' at h at h' at h'' at h''' at h'''' at h''''' at h'''''' at h''''''' at h'''''''' at h''''''''' at h'''''''''' at h''''''''''' at h'''''''''''' at h''''''''''''' at h'''''''''''''' at h''''''''''''''',  rw [is_zero_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_ne_zero,"  -- We prove that our initial statement, of succ a = 0 is false, is indeed a true statement, completing the proof","rfl → succ a = 0 at line 366
+
+-- We introduce a contradiction case where succ a = 0
+introduce contradiction case where succ a = 0 at line 366",  trivial,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

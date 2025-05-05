@@ -1,0 +1,37 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_ne_one,"  -- Assume that 0 = 1, which is false",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_ne_one,"  -- Apply the Peano axiom that zero is not the successor of any natural number to our assumption that 0 = 1, making it false","theorem zero_ne_one_temp : (0 : ℕ) ≠ 1 := by
+  intro h
+  have h1 : succ 0 = 1 := by rw [h]
+  have h2 : succ 0 = 0 := by rfl
+  exact absurd h1 h2",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- We have proven that 0 = 1 is false or that 0 ≠ 1, completing the proof","theorem zero_ne_one_temp : (0 : ℕ) ≠ 1 := by
+  exact zero_ne_one",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- To show 0 ≠ 1, we assume 0 = 1 and derive a contradiction/falsehood","theorem zero_ne_one_dev_1_temp : (0 : ℕ) ≠ 1 := by
+  intro h
+  have : 0 = 1 := h
+  contradiction",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,  -- Rewrite 1 as the successor of 0 in our assumption,rw [← Nat.succ_zero],  rw [one_eq_succ_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,  -- But 0 = succ 0 implies a falsehood by the Peano axiom that zero is not the successor of any natural number,"theorem zero_ne_one_dev_1_temp : (0 : ℕ) ≠ 1 := by
+  intro h
+  have h' := congr_arg succ h
+  rw [succ_zero] at h'
+  exact zero_ne_succ _ h'",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,"  -- So, we have a falsehood, and the proof is complete.","theorem zero_ne_one_dev_1_temp : (0 : ℕ) ≠ 1 := by
+  exact zero_ne_one",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,  -- assume 0 = 1,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_ne_one,  -- Assumption is False,"theorem zero_ne_one_dev_2_temp : (0 : ℕ) ≠ 1 := by
+  intro h
+  contradiction",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_ne_one,  -- False,"theorem zero_ne_one_dev_2_temp : (0 : ℕ) ≠ 1 := by
+  exact zero_ne_one",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

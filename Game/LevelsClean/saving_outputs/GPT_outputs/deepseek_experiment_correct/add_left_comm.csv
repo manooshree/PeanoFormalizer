@@ -1,0 +1,23 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_left_comm,"  -- By associativity of addition, rewrite LHS a + (b + c) into a + b + c",rw [add_assoc],  rw [← add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_comm,"  -- By the commutativity and associativity of addition, rewrite a + b + c to b + (a + c)","rw [add_comm a b, add_assoc b a c]","  rw [add_comm a b, add_assoc]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_comm,"  -- So we just need to show b + (a + c) = b + (a + c), which is true by reflexivity and proof is complete.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_comm,  -- a + (b + c) = b + (a + c) -> a + b + c = b + (a + c),rw [Nat.add_assoc],  rw [← add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_comm,  -- a + b + c = b + (a + c) -> a + b + c = a + b + c,rfl,  rw [← add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_comm,  -- a + b + c = b + a + c,"rw [Nat.add_assoc, Nat.add_comm a b, ←Nat.add_assoc]",  rw [add_comm a b],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_comm,  -- lhs = rhs,theorem add_left_comm_dev_2_temp (a b c : ℕ) : a + (b + c) = b + (a + c) := by,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_comm,"  -- Rewrite LHS using the commutative property of addition, changing a + (b + c) to a + b + c",rw [add_comm b c],  rw [← add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_comm,"  -- Rewrite LHS, swapping the order of a and b, changing a + b + c to b + a + c","rw [add_comm a b, add_assoc]",  rw [add_comm a b],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_comm,  -- Rewrite LHS b + a + c as b + (a + c),rw [Nat.add_assoc],  rw [add_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_comm,"  -- Prove LHS and RHS are equal, b + (a + c) = b + (a + c), completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

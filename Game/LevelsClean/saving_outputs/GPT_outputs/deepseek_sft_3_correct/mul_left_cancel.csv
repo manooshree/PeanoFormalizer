@@ -1,0 +1,113 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_left_cancel,  -- proof by induction on b,"induction a with d hd generalizing a for all b
+NL:    -- base case: a = 0
+FL:     case zero
+   -- Simplify the hypothesis and the goal
+   nlinarith
+NL:    -- inductive step: a = d + 1
+FL:     case succ
+   -- Simplify the hypothesis and the goal
+   nlinarith
+
+  -- for the inductive step, we have a = d + 1
+  --",  induction b with d hd generalizing c,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- for the base case, a * 0 = a * c -> 0 = a * c by the definition of multiplication","rw [mul_zero, mul_zero] at hc -> hc = 0 = a * c
+FL:   rw [mul_zero, mulFL:   rw [mul_zero] at hc
+FL:   rw [mul_zero] at hc
+FL:   rw [mul_zero] at hc
+FL:   rw [mul_zero] at hc
+FL:   rw [mul_zero] at hc",  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- 0 = a * c -> a * c = 0 by the symmetry property of equality,"symm at hb ⊢ where
+     /-
+     We use the symmetry property of equality to change the assumption 0 = a * c to a * c = 0.
+     -/
+     rw [hb] at hb
+     nlinarith
+
+     -- Next, we use the fact that a is nonzero, so a is not equal to 0.
+     -- This means that a * c = 0 implies that c =",  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,"  -- a * c = 0 -> a = 0 ∨ c = 0 by the fact that if a times b is equal to 0, then either a is equal to 0 or b is equal to 0.","apply mul_eq_zero at hx ⊢ where hx := hx
+
+- Rewrite the goal using the fact that if a times b is equal to 0, then either a is equal to 0 or b is equal to 0.",  apply mul_eq_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- either a is equal to 0 or c is equal to 0.,"（1）a = 0 ∨ c = 0 by
+     -- if a is equal to 0, then either a is equal to 0 or c is equal to 0.
+     -- if c is equal to 0, then either a is equal to 0 or c is equal to 0.
+     -- so either a is equal to 0 or c is equal to 0.
+     apply Or.inl
+     assumption",  cases h with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if a is equal to 0, then we have a contradiction.",tauto next[1],  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,"  -- if c is equal to 0, then we have that 0 = 0.","rfl -> rfl = 0 by rw [h2]
+
+2022-03-08T17:00:00+00:00
+
+Update to add the single line of Lean 4 code for the other case:
+
+   -- if c is equal to 0, then we have that 0 = 0.
+   -- else, we have that a * b = a * b.",  rw [h2],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- 0 = 0 closes the base case.,rfl -> rfl = 0,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- consider two subcases for c: when c is 0 and when c is a successor of another natural number e.,"（consider two subcases for c: when c is 0 and when c is a successor of another natural number e）
+  cases c with e he
+
+New line:
+  -- Rewrite the assumption that c is not 0 to instead state that c is the successor of some natural number e.
+  rw [he] at hc
+  -- Simplify the assumption that c is the successor of e and the goal that c is not 0, showing that e",  cases c with e he,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- a * succ d = a * 0 -> a * succ d = 0 by the definition of multiplication,"rw [mul_zero] at hb by assumption -> hb : a * succ d = 0
+NL:   -- a * succ d = 0 -> succ (a * d) = 0 by the definition of multiplication
+FL:    rw [mul_succ] at hb by assumption -> hb : succ (a * d) = 0
+NL:   -- succ (a * d) = 0 -> a * d = 0",  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- a * succ d = 0 -> a * succ d = 0 by the properties of multiplication,"rw [mul_succ, mul_zero, zero_add] at hx by the properties of multiplication and addition
+
+-- Rewrite the hypothesis using the properties of multiplication and addition
+rw [mul_succ, mul_zero, zero_add] at hx",  apply mul_eq_zero at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- either a is equal to 0 or c is equal to 0.,"（1）a = 0 ∨ c = 0 by
+     -- if a is equal to 0, then either a is equal to 0 or c is equal to 0.
+     -- if c is equal to 0, then either a is equal to 0 or c is equal to 0.
+     -- so either a is equal to 0 or c is equal to 0.
+     apply Or.inl
+     assumption",  cases h with h1 h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,"  -- if a is equal to 0, then we have a contradiction.",tauto next[1],  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,"  -- if c = 0, then we have that ucc d  = 0.","rw [h2] at h1 -> h1 : ucc d = 0 [PRECISE] at h1
+
+-- Rewrite the goal using the new hypothesis that ucc d = 0",  exact h2,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * succ d = a * succ e -> a * d + a = a * succ e -> a * d + a = a * e + a by the definition of multiplication,"rw [mul_succ, mul_succ] at hx ⊢ where hx is the hypothesis and the goal is rewritten to a * d + a = a * e + a
+FL:   rw [mul_succ, mul_succ] at hx ⊢ where hx is the hypothesis and the goal is rewritten to a * d + a = a * e + a","  rw [mul_succ, mul_succ] at h",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- a * d + a = a * e + a -> a * d = a * e by properties of addition,"rw [add_comm] at hb or hd -> a * d = a * e by properties of addition
+FL:   rw [add_comm] at hb or hd -> a * d = a * e by properties of addition
+FL:   rw [add_comm] at hb or hd -> a * d = a * e by properties of addition
+/-- a * d = a * e -/
+FL:  rw [add_comm]",  apply add_right_cancel at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_cancel,  -- a * d = a * e -> d = e by the induction hypothesis,"apply hd at hb
+
+The goal is to show that if a * d = a * e, then d = e, using the fact that a is not zero and the induction hypothesis.",  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,  -- succ d = succ e -> succ e = succ d,"rw [h] at h2 ⊢; break
+  -- new goal: succ e = succ d
+FL:  rw [h] at h2
+  -- new goal: d = e
+FL:  rw [h] at h2
+  -- new goal: e = d
+FL:  rw [h] at h2
+  -- new goal: succ e = succ d
+FL:  rw [h] at h2
+  --",  rw [h],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_cancel,"  -- The LHS and RHS are equal, so we can use reflexivity to prove the goal.","（refl）
+  exact hx",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

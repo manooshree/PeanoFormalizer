@@ -1,0 +1,26 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_eq_zero,"  -- We introduce a new fact stating that if neither a nor b is zero, then their product cannot be zero. This is derived from the fact that the product of two non-zero natural numbers is never zero.","have h2 : a * b ≠ 0 → a ≠ 0 ∧ b ≠ 0 := by
+     intro h
+     constructor
+     intro ha
+     apply h
+     rw [ha, zero_mul]
+     intro hb
+     apply h
+     rw [hb, mul_zero]
+
+/-- We introduce a new fact stating that if neither a nor b is zero, then their product cannot be zero",  have h2 := mul_ne_zero a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_eq_zero,  -- We have shown that both a and b can't be non-zero so either a or b must be zero.,"tauto (a * b = 0) ↔ a = 0 ∨ b = 0 at our_goal
+
+-- Apply the previous step to our goal
+apply our_goal
+
+-- Split the disjunction into two cases
+first
+-- Prove the case a = 0
+  assume hb
+  -- Rewrite b with 0 in the goal
+  rw [hb] at our_goal
+  -- Simplify the goal",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

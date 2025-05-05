@@ -1,0 +1,19 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+two_eq_ss0:,   -- Substitute 2 -> succ(1) on the LHS,rw [←succ_eq_add_one],  rw [two_eq_succ_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_eq_ss0:,  -- Substitute 1 -> succ(0) on the LHS,rw [← succ_zero_eq_one],  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_eq_ss0:,"  -- succ(succ(0)) = succ(succ(0)), QED",theorem two_eq_ss0_dev_1:_temp : 2 = succ (succ 0) := by rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_eq_ss0:,"   -- Using the successor properties, we can rewrite the LHS to succ 1",rw [succ_succ_eq_succ_succ],  rw [two_eq_succ_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_eq_ss0:,"  -- Using the successor properties once again, we can rewrite the LHS to succ(succ(0))",rw [succ_succ_eq_succ_succ],  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_eq_ss0:,  -- both sides of the equation are equal hence we can complete the proof,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+two_eq_ss0:,"   -- Use the fact that the successor of 1, succ 1, is 2, in the proof goal, changing the equation to 'succ 1 = succ (succ 0)'",rw [←succ_succ_eq_succ_succ],  rw [two_eq_succ_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_eq_ss0:,"  -- Use the fact that 1 = succ 0 and expand the LHS succ (succ 0), changing the equation to succ (succ 0) = succ (succ 0)",rfl,  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_eq_ss0:,"  -- LHS and RHS are equal, succ (succ 0) = succ (succ 0), completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

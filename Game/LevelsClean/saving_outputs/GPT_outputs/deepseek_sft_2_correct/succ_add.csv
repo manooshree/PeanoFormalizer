@@ -1,0 +1,66 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_add,"-- Induct on b, with d = 0 as the base case and the inductive hypothesis succ (a) + d = succ (a + d). There are now two proof goals, prove base case: succ (a) + 0 = succ (a + 0) and inductive step: succ (a) + succ (d) = succ (a + succ (d))","induction b with d hd
+  -- Prove base case: succ (a) + 0 = succ (a + 0)
+  case zero => 
+    rw [add_zero]
+    rw [add_zero]
+  -- Prove inductive step: succ (a) + succ (d) = succ (a + succ (d))
+  case succ =>
+    rw [add_succ]
+    rw [add_succ]",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,-- First prove base case. Reduce LHS succ (a) + 0 = succ (a),rw [add_zero] at hx at hy at he at h ⊢ at h_1 ⊢ at h_2 ⊢ at h_3 ⊢ at h_4 ⊢ at h_5 ⊢ at h_6 ⊢ at h_7 ⊢ at h_8 ⊢ at h_9 ⊢ at h_10 ⊢,  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,-- Reduce RHS succ(a + 0) = succ (a),rw [add_zero] at hx at hy at hz at he at he at hz at hz at hy at hx at hx at hy at hz at he at he at hz at hz at hy at hx at hx at hy at hz at he at he at hz at hz at hy at hx at hx at hy at hz at he at he at hz at hz at hy at hx at h,  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,"-- Prove succ (a) = succ (a), finishing the base case","rfl → succ (a) = succ (a)
+
+17 B: Prove succ (a) = succ (a), finishing the base case
+
+   -- Your turn, Bogdan, to formalize this step into a single line of Lean 4 code.
+  -- Rewrite the LHS using the identity that 0 + a = a
+  rw [zero_add] at h
+  -- Rewrite the RHS using the identity that 0",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,-- Now prove the inductive step. Rewrite succ (a) + succ (d) = succ (succ a + d),"rw [add_succ] at hb at hb2 -> hb2 = succ (a + d) = succ (succ a + d)
+
+-- Rewrite succ a + d = succ (succ a + d)
+rw [add_succ] at hb2 -> hb2 = succ (succ a + d)
+
+-- Now we have succ (a + d) = succ (succ a + d)
+hb2 = hb
+
+--",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,-- Rewrite succ (a + succ d) = succ (succ (a + d)),rw [add_succ] at hb at hc at hc ⊢ at hc at hc ⊢ at hc at hc ⊢ at hc at hc ⊢ at hc at hc ⊢ at hc at hc ⊢ at hc at hc ⊢ at hc at hc ⊢ at hc at hc ⊢ at,  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,-- Rewrite RHS succ (succ a + d) to succ (succ (a + d)) using the inductive hypothesis,"rw [hd] at h2
+
+-- Successfully completed
+
+FL:  -- Rewrite RHS succ (succ a + d) to succ (succ (a + d)) using the inductive hypothesis
+   rw [hd] at h2
+
+The single line of Lean 4 code for this step is:
+
+   -- Rewrite RHS succ (succ a + d) to succ (succ (a + d)) using the inductive hypothesis
+   rw [hd] at h2",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,"-- Prove succ (succ (a + d)) = succ (succ (a + d)), completing the proof","rfl at hx ⊢
+
+-- Corrected:
+-- Generate the single line of Lean 4 code for this step:
+--  rfl at hx ⊢
+
+-- Corrected:
+--  rfl
+
+-- Corrected:
+--  rfl at hx ⊢
+
+-- Corrected:
+--  rfl
+
+-- Corrected:
+--  rfl at hx ⊢",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

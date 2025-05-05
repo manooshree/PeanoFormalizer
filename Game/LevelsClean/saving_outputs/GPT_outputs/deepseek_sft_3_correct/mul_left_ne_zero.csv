@@ -1,0 +1,25 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_left_ne_zero,  -- Assume that b equals 0.,"intro hb0 ha0 on e1 at hyp1 obtaining hb0 ha0 on e1 = e2 = 0
+  -- Rewrite e1 using the assumption that b equals 0
+  rw [hb0] at hyp1
+  -- This leads to a contradiction because 0 is not equal to 1
+  simp at hyp1
+  -- Conclude the proof for this case
+  exact hyp1",  intro hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_ne_zero,  -- Have to show that a * b = 0,"a * b = 0 → a = 0 ∨ b = 0 by assumption
+   -- We know that a = 0 because a * b = 0
+   -- So, we can use this to show that a * b = 0
+   -- Now, we can use the assumption to show that a = 0 ∨ b = 0
+   -- We can use this to show that a = 0 ∨ b =",  apply h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- a * b = 0 -> a * 0 = 0 -> 0 = 0,"rw [mul_zero] at hb -> hb = 0 at hb by assumption -> hb = 0 ⊢ 0 = 0
+   -- a * b = 0 -> a * b = a * 0 -> b = 0
+   rw [hb] at ha -> ha = a * 0 at ha by assumption -> ha = a * b
+   -- a * b = a * 0
+   rw [ha","  rw [hb, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- We use reflexivity to prove the goal of 0 = 0.,"rfl where rfl is the proof of 0 = 0 by reflexivity
+  -- The goal 0 = 0 is proven by reflexivity
+  rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

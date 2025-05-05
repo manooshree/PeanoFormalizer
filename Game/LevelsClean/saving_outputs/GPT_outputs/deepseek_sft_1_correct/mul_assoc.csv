@@ -1,0 +1,147 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_assoc,  -- Induct on c,"induction c with d hd
+  -- Base case: (a * b) * 0 = a * (b * 0)
+  <;> simp [mul_zero, mul_succ, hd]
+  -- Inductive step: (a * b) * succ d = a * (b * succ d)
+  <;> rw [mul_succ, mul_succ, hd]
+  <;> simp [add_mul]",  induction c with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- The base case becomes 0 = 0 using properties of multiplication by zero,"-- Use the property of multiplication by zero to simplify the goal
+  rw [mul_zero]
+  rw [mul_zero]
+  rfl
+  <;> assumption",  repeat rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case","FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:  rfl
+FL:",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- for the inductive case, we obtain a * b * d + a * b = a * (b * succ d)","-- use the theorem mul_succ to rewrite a * (b * succ d) as a * (b * d) + a * b
+  rw [mul_succ]",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- a * b * d + a * b = a * (b * d + b),"FLT: ← mul_add a (b * d) b
+
+The theorem is proven.",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- a * b * d + a * b = a * (b * d) + a * b,"FLT: ← mul_assoc a b d
+FLT: a * b * d = a * (b * d)
+FLT: a * b * d + a * b = a * (b * d) + a * b
+
+-- a * b * d + a * b = a * (b * d) + a * b
+
+goal: a * b * d + a * b = a * (b * d) +",  rw [mul_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- a * b * d + a * b = a * b * d + a * b,"FLT:   -- a * b * d + a * b = a * b * d + a * b
+  rfl
+  <;>
+  rw [mul_succ] at h
+  <;>
+  rw [mul_zero] at h
+  <;>
+  rw [mul_one] at h
+  <;>
+  rw [mul_assoc] at h
+  <;>
+  rw [mul_",  rw [← hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, completing base case","FLT:
+  rfl
+  =
+FLT:
+  rfl
+  =
+FLT:
+  rfl
+  =
+FLT:
+  rfl
+  =
+FLT:
+  rfl
+  =
+FLT:
+  rfl
+  =
+FLT:
+  rfl
+  =
+FLT:
+  rfl
+  =
+FLT:
+  rfl
+  =",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- Induct on c,"intro c
+  -- Simplify, we consider the base case and inductive step
+  induction c with
+  | zero =>
+    -- Base case: Prove base case
+    -- Simplify using the fact that 0 * a = 0
+    simp [zero_mul] at h
+  | succ c' ih =>
+    -- Inductive step: Assume the hypothesis holds for c' and prove for c' + 1
+    -- Simplify using the",  induction c with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- The base case becomes 0 = 0 using properties of multiplication by zero,"rw [mul_zero] at hb -> 0 = 0 at hb
+  -- QED
+  exact hb
+
+The single line of Lean 4 code for this step is:
+
+FL:  rw [mul_zero] at hb
+
+This line rewrites the base case using the property of multiplication by zero, changing 0 = 0 * b to 0 = 0.",  repeat rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case","rfl [succ_inj'] at hb != 0 = 0
+
+![]",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,"  -- for the inductive case, we obtain a * b * d + a * b = a * (b * succ d)","rw [mul_succ] at hb2 -> hb2 = a * (b * d) + a * b
+
+* The goal is now to show that a * (b * d) + a * b = a * (b * d) + a * b, which is true by reflexivity.",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,  -- a * b * d + a * b = a * (b * d + b),"rw [mul_add] at hb2 ⊢
+  -- a * b * d + a * b = a * b * d + a * b
+  -- a * (b * d + b) = a * (b * d + b)
+  -- QED
+
+The single line of Lean 4 code for this step is:
+
+FL:  rw [mul_add] at hb2 ⊢",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- a * b * d + a * b = a * (b * d) + a * b,"rw [mul_add] at hb ⊢
+  -- a * b * d + a * b = a * b * d + a * b
+  -- a * (b * d) + a * b = a * (b * d) + a * b
+  -- a * (b * d) + a * b = a * (b * d) + a * b
+  -- a * (b * d) + a",  rw [mul_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,  -- a * b * d + a * b = a * b * d + a * b,"rw [mul_add] at hb ⊢
+
+   -- a * b * d + a * b = a * b * d + a * b
+   -- a * b * d + a * b = a * b * d + a * b
+
+   -- a * b * d + a * b = a * b * d + a * b
+   -- a * b * d + a * b = a * b * d",  rw [← hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, completing base case","rfl *←* rfl ⟨a, ha⟩ = 0
+
+*   -- Prove base case
+  -- ∀ (a : ℕ), a + 0 = 0 → a = 0
+  -- ⊢ ∀ (a : ℕ), a + 0 = 0 → a = 0
+  -- ⊢ ∀ (a : �",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

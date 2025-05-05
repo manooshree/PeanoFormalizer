@@ -1,0 +1,253 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+pow_add,"  -- We can use induction on n, making the inductive hypothesis that a ^ (m + d) = a ^ m * a ^ d. Then, the base case is a ^ (m + 0) = a ^ m * a ^ 0, and the inductive case is: a ^ (m + succ d) = a ^ m * a ^ succ d","-- Use induction on n
+  induction n with d hd
+  -- Base case: a ^ (m + 0) = a ^ m * a ^ 0
+  <;> simp [pow_add, pow_succ, mul_succ, mul_zero, zero_mul, mul_one, one_mul] at *
+  -- Inductive case: a ^ (m + succ d) = a ^ m * a ^ succ d",  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- Simplify the base case to a^m = a^m * a^0,"FLT:
+  rw [pow_add]
+  rw [pow_zero]
+  rw [mul_one]
+  rw [mul_one]
+  rw [mul_one]
+  rw [mul_one]
+  rw [mul_one]
+  rw [mul_one]
+  rw [mul_one]
+  rw [mul_one]
+  rw [mul_one]
+  rw [mul_one]",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a^m = a^m * 1,"-- a^m = a^m * 1
+  rw [pow_add]
+  rw [pow_zero]
+  rw [mul_one]
+  rw [pow_add]
+  rw [pow_zero]
+  rw [mul_one]
+  rw [pow_add]
+  rw [pow_zero]
+  rw [mul_one]
+  rw [pow_add]
+  rw [pow_zero",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a^m = a^m,"FLT: 
+  rfl
+  -- a^m = a^m
+  -- a^m * a^n = a^m * a^n
+  -- a^(m + n) = a^m * a^n
+  -- a^m * a^n = a^m * a^n
+  -- a^m * a^n = a^m * a^n
+  -- a^m * a^n",  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- lhs = rhs, so we are done with the base case.","FLT:
+  tauto
+
+  -- tauto is a tactic that solves the goal when the goal is a tautology, i.e., something that is true by definition. In this case, the goal is a tautology, so the proof is complete.",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- For the inductive case we have to show that a ^ (m + succ d) = a ^ m * a ^ succ d, which can be simplified to a ^ succ (m + d) = a ^ m * a ^ succ d","-- Use the definition of addition to rewrite m + succ d as succ (m + d)
+  rw [add_succ]
+  -- Apply the inductive hypothesis to rewrite a ^ succ (m + d) as a ^ m * a ^ succ d
+  rw [pow_succ]
+  -- Rewrite a ^ succ d as a ^ d * a
+  rw [pow_succ]
+  -- Apply the inductive hypothesis to rewrite a ^ succ (m + d",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ (m + d) * a = a ^ m * a ^ succ d,"-- Use the theorem pow_add to rewrite a ^ (m + d) * a as a ^ m * a ^ succ d
+  rw [pow_add]
+  -- Use the theorem pow_succ to rewrite a ^ succ d as a ^ d * a
+  rw [pow_succ]
+  -- Use the theorem mul_assoc to rewrite a ^ m * (a ^ d * a) as a ^ m * a ^ d * a
+  rw",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ (m + d) * a = a ^ m * (a ^ d * a),"FLT:
+  rw [pow_add]
+  rw [mul_assoc]
+  rw [pow_succ]
+  rw [mul_comm]
+  rw [mul_assoc]
+  rw [pow_succ]
+  rw [mul_comm]
+  rw [mul_assoc]
+  rw [pow_succ]
+  rw [mul_comm]
+  rw [mul_assoc]
+  rw [pow_succ]",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ m * a ^ d * a = a ^ m * (a ^ d * a) by the inductive hypothesis,"-- Use the inductive hypothesis to rewrite a ^ m * a ^ d * a as a ^ m * (a ^ d * a)
+  rw [pow_add]
+  rw [mul_assoc]",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ m * (a ^ d * a) = a ^ m * (a ^ d * a),"-- Apply the theorem pow_add to rewrite a ^ (m + n) as a ^ m * a ^ n
+  rw [pow_add]",  rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- lhs = rhs, so we are done.",tauto,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- We can use induction on n, making the inductive hypothesis that a ^ (m + d) = a ^ m * a ^ d. Then, the base case is a ^ (m + 0) = a ^ m * a ^ 0, and the inductive case is: a ^ (m + succ d) = a ^ m * a ^ succ d","induction n with n hn generalizing m where
+  -- Base case: a ^ (m + 0) = a ^ m * a ^ 0
+  case zero =>
+    simp
+  -- Inductive case: a ^ (m + succ d) = a ^ m * a ^ succ d
+  case succ =>
+    rw [pow_succ, pow_succ, pow_succ, hn]
+    ring",  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- Simplify the base case to a^m = a^m * a^0,"rw [pow_zero] at hb ⊢
+  -- Simplify the inductive step to a^(m+1) = a^m * a^1
+FL:  rw [pow_succ] at hb �area[end]
+
+The student described the step as:
+
+   -- Simplify the base case to a^m = a^m * a^0
+   -- Simplify the inductive step to a^(m+",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a^m = a^m * 1,"rw [mul_one] at hb ⊢
+   -- a^m * 1 = a^m
+   -- a^m = a^m
+   -- a^m = a^m * 1
+   -- a^m = a^m
+  -- a^m = a^m
+  -- a^m = a^m
+  -- a^m = a^m
+  -- a^m = a^m",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a^m = a^m,"rfl as the proof step for the base case
+
+   -- a^m * a^n = a^m * a^n
+   -- a^(m+n) = a^(m+n)
+   -- a^m * a^n = a^(m+n)
+   -- a^m * a^n = a^m * a^n
+   -- a^m * a^n = a^m * a^n",  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- lhs = rhs, so we are done with the base case.","rfl [succ_inj'] at h ⊢ <=>
+  -- succ (a + b) = succ (b + a) → a + b = b + a
+  -- succ (b + a) = succ (a + b) → b + a = a + b
+  -- succ (a + b) = succ (a + b) → a + b = a + b
+  -- succ (b + a) =",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- For the inductive case we have to show that a ^ (m + succ d) = a ^ m * a ^ succ d, which can be simplified to a ^ succ (m + d) = a ^ m * a ^ succ d","udecl (a ^ succ (m + d)) = a ^ m * a ^ succ d at h
+
+-- Correctly formalise the inductive case step into a single line of tactic code
+
+
+FL:  rw [pow_succ] at h
+
+-- The goal is now proven, so we close the proof with 'done'
+
+FL: done",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ (m + d) * a = a ^ m * a ^ succ d,repeat rw [pow_succ] at h2 ⊢ ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 �,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ (m + d) * a = a ^ m * (a ^ d * a),"rw [pow_add] at h2x ⊢
+
+* --
+*   -- Rewrite the goal using the theorem that a ^ (m + d) = a ^ m * a ^ d
+*   -- a ^ (m + d) * a = a ^ m * (a ^ d * a)
+*   -- a ^ (m + d) * a = a ^ m * a ^ (d + 1)
+*   --",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ m * a ^ d * a = a ^ m * (a ^ d * a) by the inductive hypothesis,"rw [pow_add] at h2 ⊢ by rw [pow_add] at h2 � ⊢
+  -- a ^ m * a ^ d * a = a ^ m * a ^ (d + 1) by the definition of exponentiation
+FL:  rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 � ⊢
+  -- a",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ m * (a ^ d * a) = a ^ m * (a ^ d * a),"repeat rw [pow_add] at h2 ⊢ -> a ^ m * (a ^ d * a) = a ^ m * (a ^ d * a) by rw [pow_add] at h2 ⊢
+
+-- Step: Rewrite the LHS and RHS of h2 using the pow_add theorem, changing a ^ (m + d + 1) to a ^ m * a ^ (d + 1)
+
+--",  rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- lhs = rhs, so we are done.","exact hx in eq_zero_of_mul_eq_zero at hx ⊢
+
+   -- Prove the goal: 0 = 0
+   -- by applying the fact that if a * b = 0, then either a = 0 or b = 0
+   -- and we have the hypothesis that a = 0, so we can conclude that b = 0
+   -- which completes the proof.
+
+   -- (single",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- We can use induction on n, making the inductive hypothesis that a ^ (m + d) = a ^ m * a ^ d. Then, the base case is a ^ (m + 0) = a ^ m * a ^ 0, and the inductive case is: a ^ (m + succ d) = a ^ m * a ^ succ d","induction n with n hn generalizing m where
+  -- Prove the base case: a ^ (m + 0) = a ^ m * a ^ 0
+  case zero =>
+    -- Simplify the LHS and RHS to a ^ m and a ^ m * 1 respectively
+    nth_rewrite 1 [← pow_zero a]
+    -- Simplify the RHS to a ^ m * 1
+    simp
+  -- Pro",  induction n with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- Simplify the base case to a^m = a^m * a^0,"rw [pow_zero] at hb ⊢
+  -- Simplify the inductive step to a^(m+1) = a^m * a
+FL:  rw [pow_succ] at hb �area[1]
+
+The original step is:
+   -- Simplify the base case to a^m = a^m * a^0
+   -- Simplify the inductive step to a^(m+1) = a^",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a^m = a^m * 1,"rw [one_mul] at hb2 at hb3 ⊢
+   -- a^m * a = a^m * a
+   -- a^m = a^m
+   -- a^m * a = a^m
+   -- a^m * a = a^m * a
+   -- a^m = a^m
+   -- a^m * a = a^m * a
+   -- a^m = a",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a^m = a^m,"rfl as the proof step for the base case
+
+   -- a^m * a^n = a^m * a^n
+   -- a^(m+n) = a^(m+n)
+   -- a^m * a^n = a^(m+n)
+   -- a^m * a^n = a^m * a^n
+   -- a^m * a^n = a^m * a^n",  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- lhs = rhs, so we are done with the base case.","rfl [succ_inj'] at h ⊢ <=>
+  -- succ (a + b) = succ (b + a) → a + b = b + a
+  -- succ (b + a) = succ (a + b) → b + a = a + b
+  -- succ (a + b) = succ (a + b) → a + b = a + b
+  -- succ (a + b) =",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_add,"  -- For the inductive case we have to show that a ^ (m + succ d) = a ^ m * a ^ succ d, which can be simplified to a ^ succ (m + d) = a ^ m * a ^ succ d","eta_reduce at *
+  -- Simplify the goal using the inductive hypothesis
+  rw [pow_succ] at *
+  -- Simplify the goal using the inductive hypothesis
+  rw [pow_succ] at *
+  -- Simplify the goal using the inductive hypothesis
+  rw [pow_succ] at *
+  -- Simplify the goal using the inductive hypothesis
+  rw [pow_succ] at *
+  -- Simplify the goal using the inductive",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ (m + d) * a = a ^ m * a ^ succ d,repeat rw [pow_succ] at h2 ⊢ ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 �,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+pow_add,  -- a ^ (m + d) * a = a ^ m * (a ^ d * a),"rw [pow_add] at h2x ⊢
+
+* --
+*   -- Rewrite the goal using the theorem that a ^ (m + d) = a ^ m * a ^ d
+*   -- a ^ (m + d) * a = a ^ m * (a ^ d * a)
+*   -- a ^ (m + d) * a = a ^ m * a ^ (d + 1)
+*   --",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ m * a ^ d * a = a ^ m * (a ^ d * a) by the inductive hypothesis,"rw [pow_add] at h2 ⊢ by rw [pow_add] at h2 � ⊢
+  -- a ^ m * a ^ d * a = a ^ m * a ^ (d + 1) by the definition of exponentiation
+FL:  rw [pow_succ] at h2 ⊢ by rw [pow_succ] at h2 � ⊢
+  -- a",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,  -- a ^ m * (a ^ d * a) = a ^ m * (a ^ d * a),"repeat rw [pow_add] at h2 ⊢ -> a ^ m * (a ^ d * a) = a ^ m * (a ^ d * a) by rw [pow_add] at h2 ⊢
+
+-- Correctly complete a single line of the proof with the simplified statement
+
+
+FL:  repeat rw [pow_add] at h2 ⊢ -> a ^ m * (a ^ d * a)",  rw [mul_assoc],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+pow_add,"  -- lhs = rhs, so we are done.","exact hx2 ⟨x, ha⟩ at hx1
+
+-- Correct the proof
+  -- (x, ha) = (x, hx2)
+  -- ⟨x, ha⟩ = ⟨x, hx2�
+  -- hx1 = hx2
+  -- lhs = rhs
+  -- done
+
+  ← -- (x, ha) = (x, h",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

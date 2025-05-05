@@ -1,0 +1,49 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_antisymm,  -- We consider the case where x is less than or equal to y so y = x + some natural number a.,"cases hxy with a ha where a is a natural number such that y = x + a.
+     -- We also consider the case where x is less than or equal to y so x = y + some natural number b.
+     cases hxy with b hb where b is a natural number such that x = y + b.
+     -- We know that x cannot be less than or equal to y and y cannot be less than or equal to x at the same time,",  cases hxy with a ha,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_antisymm,  -- We consider the case where y is less than or equal to x so x = y + some natural number b.,"cases hxy with b hb on the right side of the inequality, changing the goal to proving that y + b + 1 = y + (b + 1)
+
+-- Generate the single line of Lean 4 code for this step
+
+   -- We consider the case where y is less than or equal to x so x = y + some natural number b.
+   cases hxy with b hb
+   -- We change the goal to proving that y + b",  cases hyx with b hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_antisymm,"  -- We substitute y in the goal with x + a, changing our goal to prove that x equals x + a.",rw [ha] at hb ⊢ at hb ⊢ wasmual wrote:,  rw [ha],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_antisymm,"  -- Using the equality y = x + a, we substitute y in the equation x = y + b with x + a. Then, we re-arrange the right side of the equation x = x + a + b to x = x + (a + b) using the property that addition is associative.","rw [ha, add_assoc] at hb
+
+* Replace the placeholder '?proof' with the single line of Lean 4 code: *
+
+```lean4
+rw [ha, add_assoc] at hb","  rw [ha, add_assoc] at hb",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_antisymm,  -- We flip the equation so that it reads 'x + (a + b) = x' instead of 'x = x + (a + b)'.,"rw [add_right_comm] at hb2 -> hb2 := add_right_comm x a b
+
+## Proof Step
+
+We flip the equation so that it reads 'x + (a + b) = x' instead of 'x = x + (a + b)'.",  symm at hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_antisymm,"  -- If x + (a + b) = x, then a + b = 0 by since for all natural numbers a and n, n + a = n implies a = 0.","apply add_right_eq_self at hb2
+
+[ ] Generate the single line of Lean 4 code for this step:
+
+-- If x + (a + b) = x, then a + b = 0 by since for all natural numbers a and n, n + a = n implies a = 0.
+apply add_right_eq_self at hb2",  apply add_right_eq_self at hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_antisymm,"  -- If a + b = 0, then a = 0 and b = 0 by since for all natural numbers a and n, n + a = 0 implies a = 0.","rw [add_comm] at hb2
+  rw [hb2] at hb1
+  exact hb1 hb2
+
+NL:   -- If a + b = 0, then a = 0 and b = 0 by since for all natural numbers a and n, n + a = 0 implies a = 0.
+FL:  exact hb1 hb2 at hb2
+
+NL:   -- If a",  apply add_right_eq_zero at hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_antisymm,"  -- We substitute a in the equation x = x + a with zero, as given shown above, changing our goal to prove that x equals x.","rw [hd, zero_add] at hx at hx ⊢ at hx ⊢ by rw [hd, zero_add] at hx at hx ⊢ at hx ⊢","  rw [hb, add_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_antisymm,"  -- The goal is now to prove that x equals x, which is true by reflexivity.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,0 +1,78 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_left_ne_zero,  -- Assume that b equals 0.,"intro hb
+  -- This implies that a * b = 0, which contradicts the hypothesis that a * b ≠ 0.
+  rw [hb] at h
+  -- Therefore, b cannot be 0.
+  exact h rfl",  intro hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- Have to show that a * b = 0,"-- Use the theorem that if a * b = 0, then b = 0
+  have h1 : a * b = 0 → b = 0 := mul_left_ne_zero_dev_1_temp a b
+  -- Apply the theorem to our hypothesis
+  apply h1
+  -- Use the given hypothesis that a * b ≠ 0
+  exact h",  apply h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- a * b = 0 -> a * 0 = 0 -> 0 = 0,"FL: 
+  rw [mul_zero] at h
+  exact h","  rw [hb, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- We use reflexivity to prove the goal of 0 = 0.,"FLT
+
+The final proof is:
+
+theorem mul_left_ne_zero_dev_1_temp (a b : ℕ) (h : a * b ≠ 0) : b ≠ 0 := by
+  intro hb
+  rw [hb] at h
+  exact h rfl
+
+This line is incorrect. The correct line is:
+
+FLT
+
+The final proof is:
+
+theorem",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- Assume that b equals 0.,"intro hb at hb
+   -- Rewrite a * 0 as 0 in the hypothesis.
+   rw [hb] at hb
+   -- Simplify the hypothesis.
+   simp at hb
+   -- Conclude that a equals 0.
+   exact hb
+   done",  intro hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_ne_zero,  -- Have to show that a * b = 0,"a * b = 0 ⊢ a * b = 0 at line 276, column 26
+  -- We know that a * b = 0
+  -- So we can use this fact to show that a * b = 0
+  exact h at line 276, column 46
+
+  -- QED
+  done
+
+  -- Rewrite the LHS of the goal using the hypothesis
+  rw [h]",  apply h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- a * b = 0 -> a * 0 = 0 -> 0 = 0,"rw [mul_zero] at hb ⊢
+
+* Simplify the goal: a * b = 0 → a * 0 = 0 → 0 = 0
+
+   -- Rewrite the goal using the fact that a * 0 = 0
+   -- Now the goal is 0 = 0
+
+   -- Now the goal is 0 = 0
+
+   -- Now the goal is 0 = 0","  rw [hb, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- We use reflexivity to prove the goal of 0 = 0.,"eta_zero at hx ⊢ ⊢ -> 0 = 0, by rfl
+
+-- Correctly complete the proof
+
+-- eta_zero at hx ⊢ ⊢ -> 0 = 0, by rfl
+
+-- Correctly complete the proof
+
+-- eta_zero at hx ⊢ ⊢ -> 0 = 0, by rfl
+
+--",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

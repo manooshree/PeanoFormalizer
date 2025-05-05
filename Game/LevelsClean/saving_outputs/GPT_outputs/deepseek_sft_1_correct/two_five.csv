@@ -1,0 +1,152 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+two_five,  -- Rewrite the proof goal using the definitions of successor and zero addition. Proof goal is now succ (succ (succ (succ 0))) ≠ succ (succ (succ (succ (succ 0)))),"FLT:
+  -- Rewrite the proof goal using the definitions of successor and zero addition. Proof goal is now succ (succ (succ (succ 0))) ≠ succ (succ (succ (succ (succ 0))))
+  rw [add_succ, add_succ] at h
+  rw [add_succ, add_succ] at h
+  exact h","  rw [add_succ, add_succ, add_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- Assume the contradiction, succ (succ (succ (succ 0))) = succ (succ (succ (succ (succ 0))))","-- Assume the contradiction, succ (succ (succ (succ 0))) = succ (succ (succ (succ (succ 0))))
+  intro h
+  rw [add_succ, add_succ] at h
+  rw [add_succ, add a d] at h
+  rw [add_succ, add_succ] at h
+  rw [add_succ, add_succ] at h
+  rw [add_succ, add_",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- Apply injectivity of the successor function and simplify contradiction to 0 = succ (0),"exact succ_inj.mp (by simp)
+
+  -- Apply injectivity of the successor function and simplify contradiction to 0 = succ (0)
+  exact succ_inj.mp (by simp)
+  -- Apply injectivity of the successor function and simplify contradiction to 0 = succ (0)
+  exact succ_inj.mp (by simp)",  repeat apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- By the Peano axiom, 0 cannot be equal to the successor of a natural number, thus our contradiction is false",exact zero_ne_succ (succ 0),  apply zero_ne_succ,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- We show our contradiction is indeed false, and the proof is complete",rfl,  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- Rewrite the proof goal using the definitions of successor and zero addition. Proof goal is now succ (succ (succ (succ 0))) ≠ succ (succ (succ (succ (succ 0)))),"rw [add_succ, add_succ] at hb at hd ⊢ by rw [add_succ, add_succ] at hb at hd ⊢
+
+-- Rewrite the proof goal using the definitions of successor and zero addition. Proof goal is now succ (succ (succ (succ 0))) ≠ succ (succ (succ (succ (succ 0))))","  rw [add_succ, add_succ, add_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- Assume the contradiction, succ (succ (succ (succ 0))) = succ (succ (succ (succ (succ 0))))","intro h at h
+
+  -- Apply the injectivity of the successor function to the contradiction
+  apply succ_inj at h
+
+  -- Simplify the contradiction to succ (succ (succ 0)) = succ (succ (succ (succ 0)))
+  simp at h
+  -- Simplify further to succ (succ 0) = succ (succ (succ 0))
+  simp at h
+  -- Simplify further to succ 0",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- Apply injectivity of the successor function and simplify contradiction to 0 = succ (0),"unfold succ at hx ⊢ ⊢, assumption * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1",  repeat apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- By the Peano axiom, 0 cannot be equal to the successor of a natural number, thus our contradiction is false","（反证法） 0 ≠ succ a
+
+!   -- Prove the contradiction 0 = succ a → False
+
+   -- Prove 0 = succ a → False
+
+   -- Prove 0 = succ a → False
+
+   -- Prove 0 = succ a → False
+
+   -- Prove 0 = succ a → False
+
+   -- Prove 0 = succ a → False",  apply zero_ne_succ,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- We show our contradiction is indeed false, and the proof is complete","end _
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,  -- Rewrite the proof goal using the definitions of successor and zero addition. Proof goal is now succ (succ (succ (succ 0))) ≠ succ (succ (succ (succ (succ 0)))),"rw [add_succ, add_succ] at hb at hd ⊢ by rw [add_succ, add_succ] at hb at hd ⊢
+
+-- Rewrite the proof goal using the definitions of successor and zero addition. Proof goal is now succ (succ (succ (succ 0))) ≠ succ (succ (succ (succ (succ 0))))","  rw [add_succ, add_succ, add_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- Assume the contradiction, succ (succ (succ (succ 0))) = succ (succ (succ (succ (succ 0))))","intro h at h
+
+  -- Apply the injectivity of the successor function to the contradiction
+  apply succ_inj at h
+
+  -- Simplify the contradiction to succ (succ (succ 0)) = succ (succ (succ (succ 0)))
+  simp at h
+  -- Simplify further to succ (succ 0) = succ (succ (succ 0))
+  simp at h
+  -- Simplify further to succ 0",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+two_five,  -- Apply injectivity of the successor function and simplify contradiction to 0 = succ (0),"unfold succ at hx ⊢ ⊢, assumption * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1 * 1",  repeat apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- By the Peano axiom, 0 cannot be equal to the successor of a natural number, thus our contradiction is false","（反证法） 0 ≠ succ a
+
+* The goal is to show that 0 is not equal to the successor of a natural number.
+
+* The hypothesis is that 0 is equal to the successor of a natural number.
+
+* We use the fact that 0 cannot be equal to the successor of a natural number, which is a contradiction.
+
+* Therefore, our hypothesis is false, and we have shown that 0 is not equal",  apply zero_ne_succ,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+two_five,"  -- We show our contradiction is indeed false, and the proof is complete","end _
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --
+  --",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

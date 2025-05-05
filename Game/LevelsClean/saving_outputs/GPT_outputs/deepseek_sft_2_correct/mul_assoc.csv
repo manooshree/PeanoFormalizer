@@ -1,0 +1,71 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_assoc,  -- Induct on c,"induction b with d hd at hb
+
+-- Apply the theorem to the goal
+apply hd at hb
+
+-- Prove the base case
+case zero =>
+  -- Rewrite the goal using the fact that 0 * a = 0
+  rw [zero_mul] at hb
+  -- Simplify the goal
+  simp at hb
+  -- Conclude the proof
+  exact hb
+
+-- Prove the inductive step
+case",  induction c with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- The base case becomes 0 = 0 using properties of multiplication by zero,"rw [mul_zero] at hb -> hb = 0 = 0 [qed]
+
+-- Apply the theorem that a natural number multiplied by zero is zero to the hypothesis
+
+-- Simplify the hypothesis using the theorem to complete the base case proof",  repeat rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case","rfl
+
+-- Apply the inductive hypothesis to simplify the LHS
+   -- 0 + succ d = succ (0 + d)
+   -- 0 + d = 0
+   -- succ (0 + d) = succ 0
+   -- succ (0 + d) = succ d
+   -- 0 + succ d = succ d
+   -- 0 + succ d = succ d
+   -- 0 + succ d = succ d
+   --",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,"  -- for the inductive case, we obtain a * b * d + a * b = a * (b * succ d)","rw [mul_succ] at hb2 -> hb2 : a * b * d + a * b = a * (b * d + b)
+
+-- Apply the inductive hypothesis to the new goal
+apply hd at hb2
+
+-- Complete the proof
+done",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,  -- a * b * d + a * b = a * (b * d + b),"rw [mul_add] at hb2 ⊢
+
+-- Rewrite the hypothesis and the goal using the theorem that a * (b + c) = a * b + a * c
+
+-- Now the goal is: a * b * d + a * b = a * (b * d) + a * b
+
+-- And the hypothesis is: a * b * d + a * b = a * (b * d + b)",  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,  -- a * b * d + a * b = a * (b * d) + a * b,"rw [mul_add] at hb ⊢
+
+-- Rewrite the hypothesis and the goal using the theorem that a * (b + d) = a * b + a * d",  rw [mul_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_assoc,  -- a * b * d + a * b = a * b * d + a * b,"rw [mul_add] at hb2 ⊢
+
+-- Rewrite the goal using the fact that a * b * d + a * b = a * b * d + a b",  rw [← hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_assoc,"  -- Prove LHS and RHS are equal, completing base case","rfl
+
+212 (FL) -> rfl
+
+-- Now we consider the inductive step
+-- We assume that x^a * x^b = x^(a + b) and aim to prove x^a * x^b * x = x^(a + b + 1)
+
+-- The goal is to prove x^a * x^b * x = x^(a + b + 1)
+
+-- We use the inductive hypothesis x",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

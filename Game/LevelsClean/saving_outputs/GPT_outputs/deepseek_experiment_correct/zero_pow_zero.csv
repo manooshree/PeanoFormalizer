@@ -1,0 +1,14 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_pow_zero,"  -- We define the power operation such that a^0 = 1 for any natural number a, so we can write 0^0 = 1.","theorem zero_pow_zero_dev_2_temp : (0 : ℕ) ^ 0 = 1 := by
+  exact rfl",  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_zero,"  -- The goal we are left with is now to prove that 1 = 1, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_pow_zero,  -- Rewrite the left-hand side of the equation using the theorem that any number to the power of 0 is 1,rw [pow_zero],  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_pow_zero,"  -- The goal is now to prove that 1 = 1, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_pow_zero,  -- 1 = 1,rfl,  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_pow_zero,"  -- lhs = rhs, so we are done.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

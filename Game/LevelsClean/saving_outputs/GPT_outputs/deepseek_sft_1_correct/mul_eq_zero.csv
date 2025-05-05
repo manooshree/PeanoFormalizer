@@ -1,0 +1,17 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_eq_zero,"  -- We introduce a new fact stating that if neither a nor b is zero, then their product cannot be zero. This is derived from the fact that the product of two non-zero natural numbers is never zero.","-- We introduce a new fact stating that if neither a nor b is zero, then their product cannot be zero. This is derived from the fact that the product of two non-zero natural numbers is never zero.
+  have h1 : ¬(a = 0 ∨ b = 0) → a * b ≠ 0 := by
+    intro h2
+    apply mul_ne_zero
+    apply h2.left
+    apply h",  have h2 := mul_ne_zero a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_eq_zero,  -- We have shown that both a and b can't be non-zero so either a or b must be zero.,"tauto
+  -- This concludes the proof that if a * b = 0, then either a = 0 or b = 0.",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_eq_zero,"  -- We introduce a new fact stating that if neither a nor b is zero, then their product cannot be zero. This is derived from the fact that the product of two non-zero natural numbers is never zero.","eta_mul (ha ∧ hb) ⟨ha, hb⟩ as b ≠ 0 ∧ bs ≠ 0 → a * b ≠ 0 = (ha ∧ hb) ⟨ha, hb⟩ as b ≠ 0 ∧ bs ≠ 0 → a * b ≠ 0 at line 21",  have h2 := mul_ne_zero a b,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_eq_zero,  -- We have shown that both a and b can't be non-zero so either a or b must be zero.,"tauto (a * b = 0) ⊢ (a = 0 ∨ b = 0) -> a * b = 0
+     -- tauto (a * b = 0) ⊢ (a = 0 ∨ b = 0) → a * b = 0
+     -- tauto (a * b = 0) ⊢ (a = 0 ∨ b =",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

@@ -1,0 +1,33 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_right_eq_self,  -- Rewrite the goal with the hypothesis a * b = a using the fact that a times 1 equals a.,rw [← mul_one a] at h,  nth_rewrite 2 [← mul_one a] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,"  -- Apply the the theorem that states that for all natural numbers a and b, a times b is equal to a times c, then b is equal to c which shows that b = 1.",apply Nat.eq_of_mul_eq_mul_left ha h,  exact mul_left_cancel a b 1 ha h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,"  -- Since b is a natural number, it is either 0 or the successor of some natural number.","cases b with
+| zero => contradiction
+| succ b' => rfl",  cases b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,"  -- if a = 0, then a * 0 = a -> 0 = a","cases a with
+| zero => contradiction
+| succ a' => rw [Nat.mul_succ, Nat.add_succ, Nat.add_zero] at h; exact Nat.succ_inj h",  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,"  -- 0 = a is a contradiction, so we don't need to consider this case.","-- 0 = a is a contradiction, so we don't need to consider this case.",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,"  -- if a is not equal to 0, then a * succ d = a -> a * succ d = a * 1","rw [mul_succ, mul_one] at h",  nth_rewrite 2 [← mul_one a] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,"  -- by properties of multiplication, we know that this implication is true.","theorem mul_right_eq_self_dev_1_temp (a b : ℕ) (ha : a ≠ 0) (h : a * b = a) : b = 1 := by
+  rw [← mul_one a] at h
+  exact mul_left_cancel₀ ha h",  exact mul_left_cancel a (succ d) 1 ha h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,  --  a * b = a -> a * 1 * b = a * 1,rw [mul_one] at h,  rw [← mul_one a] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,  -- a * 1 * b = a * 1 -> a * (1 * b) = a * 1,"rw [mul_assoc, mul_one] at h",  rw [mul_assoc] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,  -- a * (1 * b) = a * 1 -> a * b = a * 1,rw [mul_one] at h,  rw [one_mul b] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,"  -- Apply the the theorem that states that for all natural numbers a and b, a times b is equal to a times c, then b is equal to c which shows that b = 1.",apply Nat.eq_of_mul_eq_mul_left ha h,  exact mul_left_cancel a b 1 ha h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_right_eq_self,,"theorem mul_right_eq_self_dev_2_temp (a b : ℕ) (ha : a ≠ 0) (h : a * b = a) : b = 1 := by
+  rw [← mul_one a] at h
+  exact mul_left_cancel₀ ha h",end MyNat,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

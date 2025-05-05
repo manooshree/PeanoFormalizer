@@ -1,0 +1,47 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+zero_mul,"-- Perform induction on m, with d = 0 as the base case and the inductive hypothesis 0 * d = 0. There are now two proof goals, prove base case: 0 * 0 = 0, and inductive step: 0 * succ (d) = 0","induction m with
+| zero => rfl
+| succ m ih => rw [Nat.zero_mul, ih]",  induction m with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- First prove base case. Simplify LHS 0 * 0 to 0,rw [zero_mul],  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing base case",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,"  -- Now prove inductive step. Rewrite LHS 0 * succ (d) to 0 * d + 0, using the definition of multiplication",rw [Nat.zero_mul],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- Simplify the LHS 0 * d + 0 to 0 + 0 using the inductive hypothesis,rw [zero_mul],  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- Simplify the LHS o 0 + 0 to 0,rw [zero_add],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,"  -- Prove LHS and RHS are equal, 0 = 0, completing the proof",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,  -- Proof by induction on m with base case 0 * 0 = 0 and inductive step 0 * d + 1 = 0,"theorem zero_mul_dev_1_temp (m : ℕ) : 0 * m = 0 := by
+  induction m with
+  | zero => rfl
+  | succ m ih => rw [Nat.zero_mul, ih]",  induction m with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- First prove base case. Simplify LHS 0 * 0 to 0,rw [Nat.zero_mul],  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- The base case is now complete.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,"  -- Now for the inductive step. Rewrite LHS 0 * succ (d) to 0 * d + 0, using the definition of multiplication",rw [Nat.zero_mul],  rw [mul_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- Simplify the LHS 0 * d + 0 to 0 * d using the definition of addition,rw [zero_mul],  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- This is exactly the inductive hypothesis so we can complete the proof.,rfl,  exact hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- Proof by induction on m with base case 0 * 0 = 0 and inductive step 0 * d + 1 = 0,"theorem zero_mul_dev_2_temp (m : ℕ) : 0 * m = 0 := by
+  induction m with
+  | zero => rfl
+  | succ m ih => rw [Nat.zero_mul, ih]",  induction m with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- the base case becomes 0 = 0,rfl,  rw [mul_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- That proves the base case.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+zero_mul,  -- the inductive case becomes 0 * d = 0,"induction m with
+| zero => rfl
+| succ m ih => rw [Nat.zero_mul, ih]","  rw [mul_succ, add_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+zero_mul,  -- This is exactly the inductive hypothesis so we can complete the proof.,rfl,  exact hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

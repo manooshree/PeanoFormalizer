@@ -1,0 +1,50 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+exact_8,  -- We assume that x + 1 = y + 1,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_8,  -- Rewrite x + 1 and y + 1 to succ x and succ y in the LHS and RHS respectively,"rw [←Nat.succ_eq_add_one, ←Nat.succ_eq_add_one]",  repeat rw [← succ_eq_add_one] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,"  -- Apply the injectivity of the successor function to 'succ x = succ y', simplifying it to 'x = y'.","theorem exact_8_temp (x : ℕ) : x + 1 = y + 1 → x = y := by
+  intro h
+  rw [← Nat.succ_eq_add_one] at h
+  exact Nat.succ_inj h",  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,"  -- We can exactly show that x + 1 = y + 1 implies x = y, completing the proof","theorem exact_8_temp (x y : ℕ) : x + 1 = y + 1 → x = y := by
+  intro h
+  rw [← Nat.succ_eq_add_one, ← Nat.succ_eq_add_one] at h
+  exact Nat.succ_inj h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,  -- Consider the given hypothesis x + 1 = y + 1.,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_8,  -- Rewrite x + 1 to succ x in the given hypothesis,rw [←Nat.succ_eq_add_one] at *,  rw [← succ_eq_add_one] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,  -- Rewrite y + 1 to succ x in the given hypothesis,rw [←Nat.succ_eq_add_one] at h,  rw [← succ_eq_add_one] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,"  -- Apply injectivity of the successor function, simplify to x = y","theorem exact_8_dev_1_temp (x : ℕ) : x + 1 = y + 1 → x = y := by
+  intro h
+  rw [← Nat.succ_inj'] at h
+  exact h",  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,"  -- Thus, x = y, which is exactly what we wanted to show.","theorem exact_8_dev_1_temp (x y : ℕ) : x + 1 = y + 1 → x = y := by
+  intro h
+  rw [← Nat.succ_inj'] at h
+  exact h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,  -- given that x + 1 = y + 1,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+exact_8,  -- succ x = y + 1,rw [←succ_eq_add_one],  rw [← succ_eq_add_one x] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,  -- succ x = succ y,"theorem exact_8_dev_2_temp (x : ℕ) : x + 1 = y + 1 → x = y := by
+  intro h
+  rw [← Nat.succ_eq_add_one] at h
+  exact Nat.succ_inj h",  rw [← succ_eq_add_one y] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,  -- x = y,"theorem exact_8_dev_2_temp (x y : ℕ) : x + 1 = y + 1 → x = y := by
+  intro h
+  rw [← Nat.succ_inj'] at h
+  exact h",  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+exact_8,  -- x = y,"theorem exact_8_dev_2_temp (x y : ℕ) : x + 1 = y + 1 → x = y := by
+  intro h
+  rw [← Nat.succ_inj'] at h
+  exact h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

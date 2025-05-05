@@ -1,0 +1,34 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_left_ne_zero,  -- Assume that b equals 0.,intro hb,  intro hb,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_ne_zero,  -- Have to show that a * b = 0,have h1 : a * b = 0 := by,  apply h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- a * b = 0 -> a * 0 = 0 -> 0 = 0,"theorem mul_left_ne_zero_dev_1_temp (a b : ℕ) (h : a * b ≠ 0) : b ≠ 0 := by
+  intro hb
+  rw [hb, mul_zero] at h
+  contradiction","  rw [hb, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- We use reflexivity to prove the goal of 0 = 0.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_ne_zero,  -- Assume that b equals 0. The goal is now to show that this leads to a contradiction.,intro hb,  intro hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,"  -- We are given that a * b ≠ 0, the negation of this is a * b = 0, if we prove this we will have a contradiction.",rw [← not_iff_not] at h,  apply h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,"  -- We know that b = 0, so we can substitute b with 0 in the goal. Then, multipling a natural number a by 0 gives us 0, so our new goal is 0 = 0.",rw [mul_zero] at h,"  rw [hd, mul_zero]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- We use reflexivity to prove the goal of 0 = 0.,rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+mul_left_ne_zero,  -- Assume that b equals 0.,intro hb,  intro hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- subtitute b with 0 which gives us a * 0 != 0,rw [mul_zero] at h,  rw [hd] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- a * 0 != 0 -> 0 != 0,"theorem mul_left_ne_zero_dev_2_temp (a b : ℕ) (h : a * b ≠ 0) : b ≠ 0 := by
+  intro hb
+  rw [hb, mul_zero] at h
+  contradiction",  rw [mul_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_left_ne_zero,  -- We have 0 != 0 which is a contradiction.,"theorem mul_left_ne_zero_dev_2_temp (a b : ℕ) (h : a * b ≠ 0) : b ≠ 0 := by
+  intro hb
+  rw [hb] at h
+  exact h rfl",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

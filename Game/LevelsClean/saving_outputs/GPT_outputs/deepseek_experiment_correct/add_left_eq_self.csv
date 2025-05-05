@@ -1,0 +1,49 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_left_eq_self,  -- intitiate induction on y,induction y with,  induction y with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,  -- assume x + 0 = 0,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_self,  -- x = 0 in our assumption,intro h,  rw [add_zero] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,  -- we have x = 0 as desired,"theorem add_left_eq_self_dev_1_temp (x y : ℕ) : x + y = y → x = 0 := by
+  intro h
+  rw [← Nat.add_zero y] at h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,  -- assume x + succ d = succ d,intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_self,  -- succ (x + d) = succ d in our assumption,rw [add_succ],  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,  -- x + d = d by injectivity in our assumption,intro h,  apply succ_inj at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,  -- x = 0 by induction hypothesis,intro h,  apply hd at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,  -- we have x = 0 as desired,"theorem add_left_eq_self_dev_1_temp (x y : ℕ) : x + y = y → x = 0 := by
+  intro h
+  rw [← Nat.add_zero x] at h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,"  -- To show x + y = y → x = 0, we begin by assuming x + y = y.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_self,  -- We use the fact that 0 + n = n to change x + y = y into x + y = 0 + y.,rw [←zero_add y],  nth_rewrite 2 [← zero_add y] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,  -- We use the theorem that a + n = b + n implies a = b on the fact x + y = 0 + y.,rw [←Nat.add_zero y] at h,  apply add_right_cancel at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,"  -- So, x = 0, as desired.","intro h
+rw [← h]
+exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,"  -- Assume that x + y = y as our hypothesis h, and then prove that x = 0.",intro h,  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_self,"  -- Rewrite the second occurrence of the theorem 'zero_add y' in reverse in the hypothesis 'h', but the goal 'x = 0' remains unchanged.",rw [←zero_add y] at h,  nth_rewrite 2 [← zero_add y] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,"  -- If a + n = b + n, then a = b. So, in our case, if x + y = 0 + y, then x = 0.","theorem add_left_eq_self_temp (x y : ℕ) : x + y = y → x = 0 := by
+  intro h
+  rw [← Nat.add_zero y] at h
+  exact Nat.add_left_cancel h",  apply add_right_cancel at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_self,  -- h proves the goal x = 0 so we can use it to finish the proof,"theorem add_left_eq_self_temp (x y : ℕ) : x + y = y → x = 0 := by
+  intro h
+  rw [← Nat.add_zero y] at h
+  exact Nat.add_left_cancel h",  exact h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

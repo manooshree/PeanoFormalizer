@@ -1,0 +1,41 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+succ_add,"-- Induct on b, with d = 0 as the base case and the inductive hypothesis succ (a) + d = succ (a + d). There are now two proof goals, prove base case: succ (a) + 0 = succ (a + 0) and inductive step: succ (a) + succ (d) = succ (a + succ (d))","inductive_hypothesis hd, rw [add_succ] at hd, rw [add_succ] at hd
+
+-- Prove the base case: succ (a) + 0 = succ (a + 0)
+NL: -- Rewrite LHS using the definition of addition with zero: succ (a) + 0 = succ (a)
+FL:  rw [add_zero] at hd
+
+-- Prove the inductive step: succ (a",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_add,-- First prove base case. Reduce LHS succ (a) + 0 = succ (a),"rw [add_zero] at hx
+ NL: -- Now prove the inductive step. Simplify LHS succ (a) + succ (b) = succ (succ (a) + b)
+ FL:  rw [add_succ] at hx
+
+* Replace the second 'sorry' with the appropriate single line of Lean 4 code*
+
+```lean4
+rw [add_zero] at hx
+rw [add_succ] at hx",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,-- Reduce RHS succ(a + 0) = succ (a),"rw [add_zero] at hx at hx ⊢ at hx ⊢ by
+     -- Your goal is now to prove succ (a) = succ (a), which is true by reflexivity
+     rfl
+
+- This is a complete proof for the base case.",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,"-- Prove succ (a) = succ (a), finishing the base case","rw [add_zero] at hx
+
+The hypothesis now states that the successor of a is equal to 0.",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_add,-- Now prove the inductive step. Rewrite succ (a) + succ (d) = succ (succ a + d),rw [succ_add] at hb at hb2 at hb3 at hb4 at hb5 at hb6 at hb7 at hb8 at hb9 at hb10 at hb11 at hb12 at hb13 at hb14 at hb15 at hb16 at hb17 at hb18 at hb19 at hb20 at hb2,  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+succ_add,-- Rewrite succ (a + succ d) = succ (succ (a + d)),rw [add_succ] at hx at hy at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy �,  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,-- Rewrite RHS succ (succ a + d) to succ (succ (a + d)) using the inductive hypothesis,rw [hd] at h2x at h2y at h2z at h2w at h2y at h2z at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w at h2w,  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+succ_add,"-- Prove succ (succ (a + d)) = succ (succ (a + d)), completing the proof","rw [add_succ] at hx ⊢; break_up_succ at hx ⊢
+
+-- Rewrite the hypothesis and the goal using the definition of addition with successor
+
+The above is the completed and final step in the proof.",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

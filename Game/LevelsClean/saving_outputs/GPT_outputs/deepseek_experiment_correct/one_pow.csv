@@ -1,0 +1,66 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+one_pow,"  -- Induct on m, with d = 0 as the base case and the inductive hypothesis 1^d = 1. There are now two proof goals, prove base case: 1^0 = 1 and inductive step: 1^d = 1 implies 1^(succ d) = 1.","```Lean4
+induction m with
+| zero => rfl
+| succ m ih => rw [pow_succ, ih, one_mul]",  induction m with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,  -- Rewrite the left hand side using the identity that any natural number to the power of 0 is 1,rw pow_zero,  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- The goal is now to prove that 1 = 1, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_pow,"  -- Rewrite the left hand side using the identity that any natural number raised to the power of the successor of another natural number is equal to that number raised to the power of the other number, multiplied by the original number.",rw pow_succ,  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,  -- Rewrite the left hand side using the induction hypothesis,rw pow_succ,  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,  -- Rewrite the left hand side using the identity that any natural number multiplied by 1 is equal to that natural number,rw one_mul,  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- The goal is now to prove that 1 = 1, which is true by reflexivity",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_pow,"  -- We can use induction on m, with the inductive hypothesis 1^m = 1. Our base is 1^0 = 1, and our inductive case is 1^succ(m) = 1.","theorem one_pow_dev_1_temp (m : ℕ) : (1 : ℕ) ^ m = 1 := by
+  induction m with
+  | zero => rfl
+  | succ m ih => rw [pow_succ, ih, one_mul]",  induction m with m hm,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,  -- Simplify base case to 1 = 1,rfl,  rw [pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- rhs = lhs, so we are done.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_pow,"  -- Next, we consider the inductive case, which we write as 1^m * 1 = 1.","theorem one_pow_dev_1_temp (m : ℕ) : (1 : ℕ) ^ m = 1 := by
+  induction m with
+  | zero => rfl
+  | succ m ih => rw [pow_succ, ih, one_mul]",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,  -- 1 * 1 = 1,rfl,  rw [hm],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,  -- 1=1,rfl,  rw [mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- rhs = lhs, so we are done.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_pow,  -- We can begin by inducting on m.,induction m with,  induction m with h hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- First, we prove the base case, which states that 1^0 = 1. To do so, we use the fact that anything to the power of zero is zero, so 1^0 = 1.",rw [pow_zero],  rw[pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- Thus, we have simplified our statement to 1=1, so our proof is complete by reflexivity.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_pow,"  -- Next, we can consider the inductive hypothesis, which states that 1^succ(h) = 1. To do so, we can induct on h again, with a variable k.","```Lean4
+induction m with
+| zero => rfl
+| succ m ih => rw [pow_succ, ih, one_mul]",  induction h with k hk,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- Our new base case is 1^succ(0) = 1. To prove this, we can begin by simplifying using the successor axiom for the power operation, so 1^succ(0) = 1^0*1, and our goal becomes 1^0 *1 = 1.","rw [pow_succ, pow_zero, one_mul]",  rw [pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- We can use the fact that anything to the power of zero is one, and simplify to: 1 * 1 =1.","rw [pow_zero, one_mul]",  rw[pow_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- Simplifying with the fact that multiplication by one is equivalent to the identity operation, we know that 1*1=1, and thus our goal state becomes 1=1.",rfl,  rw[mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- Finally, by reflexivity, we are done with the base case.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+one_pow,"  -- Next, we can consider the inductive case, which states that 1^succ(succ(k)) = 1. Using the successor axiom for powers, we can write our goal as: 1^succ(k) * 1 = 1.","rw [pow_succ, one_pow]",  rw[pow_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- We can simplify the LHS using the fact that multiplication by one is the identity operation, and get: 1^succ(k) = 1.",rw pow_succ,  rw[mul_one],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+one_pow,"  -- Thus, we see that our goal state 1^succ(k) = 1 is precisely the same as our hypothesis hd, so we are done","theorem one_pow_dev_2_temp (m : ℕ) : (1 : ℕ) ^ m = 1 := by
+  induction m with
+  | zero => rfl
+  | succ m ih => rw [pow_succ, ih, one_mul]",  exact hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

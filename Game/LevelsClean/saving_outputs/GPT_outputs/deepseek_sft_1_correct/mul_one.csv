@@ -1,0 +1,97 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_one,  -- We know that 1 is the successor of 0 so by definition of multiplication we have m * 1 = m * 0 + m,"-- Use the definition of multiplication to rewrite m * 1 as m * 0 + m
+  rw [mul_succ]","  rw [one_eq_succ_zero, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- By the fact that 1 = succ 0 and that 0 + n = n, we obtain m","-- By the fact that 1 = succ 0 and that 0 + n = n, we obtain m
+  rw [one_eq_succ_zero, mul_succ, mul_zero, zero_add]","  rw [mul_zero, zero_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- The lhs and rhs are equal, completing the proof","FLT:
+  tauto
+
+  -- The lhs and rhs are equal, completing the proof
+
+  tauto
+
+  -- The lhs and rhs are equal, completing the proof
+
+  tauto
+
+  -- The lhs and rhs are equal, completing the proof
+
+  tauto",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- We know that 1 is the successor of 0 so by definition of multiplication we have m * 1 = m * 0 + m,"eta_mul m 1 = eta_mul m 0 + m at h1
+
+Back to the student'
+FL:  eta_mul m 1 = eta_mul m 0 + m at h1","  rw [one_eq_succ_zero, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- By the fact that 1 = succ 0 and that 0 + n = n, we obtain m","eta_reduce at hm ⊢
+   -- m = 0 + m
+   -- m = succ 0 + m
+   -- m = succ (0 + m)
+   -- m = succ (succ 0 + m)
+   -- m = succ (succ 0 + m)
+  eta_reduce at hm ⊢
+  -- m = succ (succ 0 + m)
+  -- m = succ (","  rw [mul_zero, zero_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- The lhs and rhs are equal, completing the proof","=
+ 1
+
+
+The single line of Lean 4 code for this step is:
+
+* 1
+
+Complete the proof:
+
+-- The lhs and rhs are equal, completing the proof
+=
+1
+
+Final proof:
+
+theorem succ_ne_zero (n : ℕ) : succ n ≠ 0 := by
+  induction n with
+  | zero =>
+    -- Base case: succ 0 ≠",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,  -- We know that 1 is the successor of 0 so by definition of multiplication we have m * 1 = m * 0 + m,"eta_mul m 0 at hb ⊢ with hb
+
+   -- Now we know that m * 1 = m * 0 + m, so we can substitute m * 0 + m for 1 * m in our goal
+   -- Now our goal is to prove that m * 0 + m = m * 0 + m
+   -- This is true by reflexivity of equality
+   rfl at hb
+   -- Now","  rw [one_eq_succ_zero, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- By the fact that 1 = succ 0 and that 0 + n = n, we obtain m","eta_reduce at hx ⊢ ⊢ 1 = succ 0 ∧ 0 + n = n → m = n
+   -- Rewrite the goal using the fact that 1 = succ 0 and that 0 + n = n
+   -- to obtain m = n
+  rw [hx] at hx
+  exact hx
+
+The single line of Lean 4 code for this step is:
+
+-- Rewrite","  rw [mul_zero, zero_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- The lhs and rhs are equal, completing the proof","=
+ 1
+
+
+The single line of Lean 4 code for this step is:
+
+* 1
+
+Complete the proof:
+
+-- The lhs and rhs are equal, completing the proof
+=
+1
+
+Final proof:
+
+theorem succ_ne_zero (n : ℕ) : succ n ≠ 0 := by
+  induction n with
+  | zero =>
+    -- Base case: succ 0 ≠",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

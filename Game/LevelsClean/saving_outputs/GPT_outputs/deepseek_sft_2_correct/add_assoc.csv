@@ -1,0 +1,75 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_assoc,  -- intiate induction on b,"induction b with d hd at hb for the next step
+== 1 line of code:
+  -- 010 -- initiate induction on b
+  induction b with d hd at hb
+
+!",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- We rewrite on the RHS 0 + c -> c to get a + 0 + c = a + c,"rw [zero_add] at hx at hx ⊢
+
+-- Successfully generated
+
+--   -- Rewrite the goal 0 + c = c to a + 0 + c = a + c
+--   rw [zero_add] at hx at hx ⊢
+
+--   -- Rewrite the goal 0 + c = c to a + 0 + c = a + c
+--   rw [zero_add",  rw [zero_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- We rewrite on the LHS a + 0 -> a to get a + c = a + c,"rw [add_zero] at hx ⊢
+
+-- Successfully generated
+
+--   -- Rewrite the goal to a + c = a + c
+--   rw [add_zero] at hx ⊢
+
+--   -- Rewrite the goal to a + c = a + c
+--   rw [add_zero] at hx ⊢
+
+--   -- Rewrite the goal to a + c = a + c",  rw [add_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"    -- a + c = a + c, completing the base case.","rfl at hx ⊢; exact hx
+
+19 FL:  -- a + c = a + c, completing the base case.
+   rfl at hx ⊢; exact hx
+
+-- Correctly complete the base case.",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,  -- Now prove the inductive step.  a + succ d -> succ (a + d) giving us succ (a + d) + c = a + (succ d + c),"rw [add_succ, add_succ, add_succ] at hx ⊢
+
+-- Now prove the inductive step.  a + succ d -> succ (a + d) giving us succ (a + d) + c = a + (succ d + c)
+-- Rewrite using the definition of addition with successor on both sides of the equation and the goal
+rw [add_succ, add_succ, add_succ] at hx",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- Now on the LHS we write succ(a + d) + c -> succ(a + d + c). This gives us succ (a + d + c) = a + succ (d + c),"rw [add_succ] at hb ⊢
+
+* -- Rewrite the LHS using the theorem that a + succ(b) = succ(a + b)
+* Rewrite the LHS using the theorem that a + succ(b) = succ(a + b)
+* Rewrite the L so that it shows succ(a + d + c) = a + succ(d + c)
+* Rewrite the LHS using the theorem that a + succ",  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,  -- Now we use the inductive hypothesis on LHS (a + d + c) -> a + (d + c) to get succ(a + (d + c)) = a + succ (d + c),"rw [hd] at h2
+
+-- Now we use the inductive hypothesis on LHS (a + d + c) -> a + (d + c) to get succ(a + (d + c)) = a + succ (d + c)",  rw [hd],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"--  Rewrite the RHS, succ (d) + c -> succ(d + c), to get succ (a + (d + c)) = a + succ (d + c)","rw [add_succ] at hb2
+
+-- Rewrite the LHS, succ (a + (d + c)) to get a + succ (d + c) = a + succ (d + c)
+FL:  rw [add_succ] at hb1
+
+-- Now we have a + succ (d + c) = a + succ (d + c), which is a contradiction
+-- so we can use this to prove our goal
+FL",  rw [succ_add],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_assoc,"-- Rewrite on RHS, a + succ (d + c) -> succ (a + (d + c)) to get succ (a + (d + c)) = succ (a + (d + c))","rw [add_succ] at hb2
+
+-- Rewrite on RHS, succ (a + (d + c)) to get succ (a + (d + c)) = succ (a + (d + c))
+rw [add_succ] at hb2",  rw [add_succ],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_assoc,"-- succ (a + (d + c)) = succ (a + (d + c)), QED","rfl
+
+17. succ (a + (d + c)) = succ (a + (d + c))
+
+   -- QED
+   rfl",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

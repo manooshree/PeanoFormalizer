@@ -1,0 +1,205 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+add_left_eq_zero,  -- initiate induction on b,"induction b with
+  <;> intro h
+  <;> rw [add_zero] at h
+  <;> exact h
+  <;> contradiction
+  <;> assumption
+  <;> contradiction
+  <;> assumption
+  <;> contradiction
+  <;> assumption
+  <;> contradiction
+  <;> assumption
+  <;> contradiction
+  <;> assumption
+  <;> contradiction
+  <",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = 0 is obviously true,"FL: 
+  rfl
+
+FR: 
+  exact zero_add b
+
+New goal state:
+  a + b = 0 → b = 0
+  case step
+  a b : ℕ
+  h : a + b = 0
+  ⊢ b = 0
+
+New FL:
+  rfl
+
+New FR:
+  exact zero_add b",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- assume a + succ d = 0,"intro h
+
+  -- we want to show that b = 0
+
+  -- we will use induction on a
+  induction a with d hd
+  -- base case: a = 0
+  -- we want to show that b = 0
+  -- we will use the fact that 0 + b = 0 implies b = 0
+  rw [zero_add] at h
+  exact h
+  -- inductive step: a = succ d",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- succ (a + d) = 0 from assumption,"-- Use the fact that the successor of any natural number is not equal to zero to derive a contradiction.
+  exact succ_ne_zero (a + d) h
+  <;>
+  -- Apply the theorem that states that the successor of a natural number is not equal to zero.
+  apply succ_ne_zero
+  <;>
+  -- Use the assumption that a + d = 0 to derive a contradiction.
+  exact h
+  <",  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = succ (a + d) from assumption,"-- 0 = succ (a + d) from assumption
+  rw [h] at goal
+  -- 0 = succ (a + d) from assumption
+  rw [h] at goal
+  -- 0 = succ (a + d) from assumption
+  rw [h] at goal
+  -- 0 = succ (a + d) from assumption
+  rw [h] at goal
+  -- 0 = succ (a + d) from",  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = succ (a + d) is impossible and is false,"-- 0 = succ (a + d) is impossible and is false
+  exact zero_ne_succ _ _
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption
+  <;> assumption",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- This is vacuously true,"FLT:
+  tauto
+
+  -- This is vacuously true
+
+  tauto
+
+  -- This is vacuously true
+
+  tauto
+
+  -- This is vacuously true
+
+  tauto
+
+  -- This is vacuously true
+
+  tauto
+
+  -- This is vacuously true
+
+  tauto
+
+  -- This is vacuously true
+
+  tauto
+
+  -- This is vacuously",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- initiate induction on b,"induction b with d hd at hb
+  -- base case: a = 0
+  -- a + 0 = 0
+  -- a = 0
+  -- inductive step: a = d + 1
+  -- a + (d + 1) = d + 1
+  -- a + d = d
+  -- a = 0
+  -- a = d + 1
+  -- a = 0
+  -- a = d",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = 0 is obviously true,"trivial -> assumption at line 236, changing 0 = 0 to true = true",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- assume a + succ d = 0,"intro h2 at h1
+  -- we want to show that a + succ d = 0 implies succ a + d = 0
+  -- so we use the fact that a + succ d = 0 to show succ a + d = 0
+  -- we use the fact that succ a + d = 0 to show succ a + d = 0
+  -- we use the fact that succ a + d = 0 to show succ a + d =",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- succ (a + d) = 0 from assumption,"rw [add_succ] at hx ⊢
+
+-- Step 2: Change the goal to prove succ (a + d) = 0
+-- using the fact that the sum of a and the successor of d is 0.",  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = succ (a + d) from assumption,"rw [h] at h2 at h3 ⊢ at h4 ⊢ by rw [zero_eq] at h2 at h3 ⊢ at h4 �FL:   rw [h] at h2 at h3 ⊢ at h4 ⊢ by rw [zero_eq] at h2 at h3 ⊢ at h4 ⊢
+  -- 0 = succ",  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = succ (a + d) is impossible and is false,"intro h
+     apply zero_ne_succ at h
+     contradiction",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- This is vacuously true,"tauto, done at line 126 by the hypothesis that for all natural numbers n, if n is less than or equal to 0, then n is equal to 0.
+
+    ← h ⊢ 0 ≤ 0",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- initiate induction on b,"induction b with d hd at hb ⊢
+
+The goal is to formalize the step:
+""induct on b"" into:
+
+   -- Initiate induction on b
+  induction b with d hd at hb ⊢
+
+Complete the rest of the proof:
+
+Complete the proof
+
+The final proof is:
+
+theorem pow_ne_zero {a : ℕ} (b : ℕ) : a",  induction b with d hd,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_zero,  -- 0 = 0 is obviously true,"trivial -> assumption at line 236, changing 0 = 0 to true = true",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- assume a + succ d = 0,"intro h2 at h1
+  -- we want to show that a + succ d = 0 implies succ a + d = 0
+  -- so we use the fact that a + succ d = 0 to show succ a + d = 0
+  -- we use the fact that succ a + d = 0 to show succ a + d = 0
+  -- so we use the fact that succ a + d = 0 to show succ a + d",  intro h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_zero,  -- succ (a + d) = 0 from assumption,"rw [add_succ] at hb ⊢
+
+-- Step 2: Change the goal to succ (a + d) = 0
+-- using the fact that a + (succ d) = 0 implies succ (a + d) = 0
+-- by applying the theorem that a + (succ d) = 0 implies succ (a + d) = 0.",  rw [add_succ] at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_zero,  -- 0 = succ (a + d) from assumption,"rw [h] at h2 at h3 ⊢
+  -- 0 = succ (a + d)
+  -- 0 = succ (a + d)
+  -- 0 = succ (a + d)
+  -- 0 = succ (a + d)
+  -- 0 = succ (a + d)
+  -- 0 = succ (a + d)
+  -- 0 = succ (a 0 + d",  symm at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+add_left_eq_zero,  -- 0 = succ (a + d) is impossible and is false,"intro h
+     apply zero_ne_succ at h
+     contradiction",  apply zero_ne_succ at h,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+add_left_eq_zero,  -- This is vacuously true,"tauto, done at line 226 by the student.
+
+
+   -- Prove the base case
+   -- 0 * a = 0
+   -- 0 * a = 0 + 0 * a
+   -- 0 = 0 + 0 * a
+   -- 0 = 0 * a + 0
+   -- 0 = 0 * a
+   -- 0 = 0 * a
+   -- 0",  tauto,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes

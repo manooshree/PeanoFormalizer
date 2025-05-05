@@ -1,0 +1,20 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+mul_one,  -- We know that 1 is the successor of 0 so by definition of multiplication we have m * 1 = m * 0 + m,"rw [one_eq_succ_zero, mul_succ, mul_zero, zero_add] at hb by rw [one_eq_succ_zero, mul_succ, mul 0, zero_add] at hb
+
+-- Rewrite using the definition of 1 as the successor of 0 and the properties of multiplication with successor and 0
+-- This simplifies to m * 1 = m * 0 + m
+
+x ≤","  rw [one_eq_succ_zero, mul_succ]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- By the fact that 1 = succ 0 and that 0 + n = n, we obtain m","have h2 : m = m + 0, from 1 == 1 ▸ (succ_inj ▸ h1)
+   -- We also know that 0 is the additive identity so m = m + 0
+FL:  have h3 : m = m + 0, from h2
+   -- Therefore, m = m
+FL:  exact h3","  rw [mul_zero, zero_add]",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+mul_one,"  -- The lhs and rhs are equal, completing the proof","exact h1
+
+The single line of Lean 4 code for this step is:
+
+(insert single line of Lean 4 code here)",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No

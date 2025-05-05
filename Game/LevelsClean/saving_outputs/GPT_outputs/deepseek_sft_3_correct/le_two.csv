@@ -1,0 +1,73 @@
+Theorem Name,Natural Language,Predicted Formalization,True Tactic,Predicted Goal State,True Goal State,Is Successful
+le_two,"  -- We consider the case where x is a natural number. We then break down this case into two subcases: one where x is equal to 0, and the other where x is equal to the successor of another natural number y.","（1） x = 0
+FL:  （2） x = succ y
+     -- We simplify the hypothesis x ≤ 0 to 0 ≤ 0 using the assumption that x is equal to 0.
+     -- We simplify the hypothesis 0 ≤ x to 0 ≤ 0 using the assumption that x is equal to 0.
+     -- We simplify the hypothesis x ≤ succ y to x ≤ y + 1",  cases x with y,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,"  -- We choose to prove the left side of the disjunction, which is 0 = 0.","choose_left on hx resulting in the goal 0 = 0
+  -- We rewrite 0 to succ 0 in the goal, changing the goal to succ 0 = succ 0
+  rw [zero_eq_succ_zero] at hx",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We are given that 0 equals 0, so we can use reflexivity to prove the goal.","rfl at hx ⊢ where hx : 0 = 0
+
+-- We have completed the base case.",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We consider the case where y is a natural number. We then break down this case into two subcases: one where y is equal to 0, and the other where y is equal to the successor of another natural number z.","（1） consider y = 0
+FL:  （2） consider y = succ z
+
+     -- For the first subcase, we simplify the expression x + y = x + succ z to x + 0 = x + succ z using the assumption that y is equal to 0.
+     -- For the second subcase, we simplify the expression x + y = x + succ z to x + succ z = x + succ z using the assumption that",  cases y with z,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,"  -- We choose to prove the right side of the disjunction, which is succ 0 = 1 ∨ succ 0 = 2.","choose right
+     -- We choose to prove the left side of the disjunction, which is succ 0 = 1.
+     choose left
+     -- Simplify all expressions to prove succ 0 = 1.
+     simp_all",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We choose to prove the left side of the disjunction, which is succ 0 = 1.","choose_left (succ 0 = 0 ∨ succ 0 = 1) at hx
+   -- We rewrite the chosen hypothesis to succ 0 = 1.
+FL:  rw [hx] at hx",  left,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,  -- We rewrite the goal using the theorem that states the successor of 0 is equal to 1.,rw [one_eq_succ_zero] at hx at hy at hz at hx' at hy' at hz' at hx'' at hy'' at hz'' at hx''' at hy''' at hz''' at hx'''' at hy'''' at hz'''' at hx''''' at hy''''' at hz''''' at hx'''''' at hy'''''' at hz'''''' at hx''''''' at hy''''''',  rw [one_eq_succ_zero],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We are given that 0 equals 0, so we can use reflexivity to prove the goal.","rfl at hx ⊢ where hx : 0 = 0
+
+-- We have completed the proof of the base case.",  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We rewrite the number 2 as the successor of 1, and 1 as the successor of 0. Now was know that 'succ (succ z) ≤ succ (succ 0)' and the goal to 'succ (succ z) = 0 ∨ succ (succ z) = succ 0 ∨ succ (succ z) = succ (succ 0)'.","rw [two_eq_succ_one, one_eq_succ_zero] at hx
+
+- Simplify the goal: Rewrite the number 2 as the successor of 1, and 1 as the successor of 0 in the goal.","  rw [two_eq_succ_one, one_eq_succ_zero] at hx ⊢",error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,  -- We simplify succ (succ z) <= succ (succ 0) to the assumption that the succ z <= succ 0.,use 0+z as the proof for the simplified goal.,  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,  -- We simplify succ z <= succ 0 to z <= 0.,rw [succ_zero] at hx at hy at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy ⊢ at hx ⊢ at hy,  apply succ_le_succ at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,"  -- We apply the property that if z is less than or equal to 0, then z must be equal to 0.","apply le_zero at hx -> hx = 0 ⊢
+
+(Note: The above is a placeholder for the actual single line of code. The actual code would have been either:
+   -- We apply the property that if z is less than or equal to 0, then z must be equal to 0.
+  apply le_zero at hx -> hx = 0 at hx
+  -- We apply the property that if z is",  apply le_zero at hx,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We substitute z with 0 in the goal, resulting in the goal succ (succ 0) = 0 ∨ succ (succ 0) = succ 0 ∨ succ (succ 0) = succ (succ 0).","replace hb with hb2 at hb2 := hb2 with hb2
+
+-- Apply the theorem to the new hypothesis that 0 = 0, which states that 0 is equal to itself. This leaves the goal as either 1 = 0, 1 = 1, or 1 = 2.
+apply one_eq_zero_or_one at hb2
+
+-- Simplify all remaining hypotheses and the goal, leaving the",  rw [hx],error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,"  -- We choose to prove the right side of the disjunction, which is succ (succ 0) = succ 0 ∨ succ (succ 0) = succ (succ 0).","right
+     -- We simplify the goal to succ (succ 0) = succ (succ 0) using the fact that 0 is the additive identity, so adding 0 to any number doesn't change the number.
+     simp [add_zero] at h
+     -- We rewrite the goal to succ (succ 0) = succ (succ 0) using the hypothesis that h is equal to 0.
+     rw [h]
+     -- We",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
+le_two,"  -- We choose to prove the right side of this disjunction, which is succ (succ 0) = succ (succ 0).","repeat rw [add_succ] at hb -> succ (succ 0) = succ (succ 0)
+FL:  repeat rw [add_succ] at hb -> succ (succ 0) = succ (succ 0) at hb
+FL:  repeat rw [add_succ] at hb -> succ (succ 0) = succ (succ 0) at hb at hb
+FL:  repeat rw [add_succ]",  right,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",No
+le_two,"  -- We have that succ (succ 0) = succ (succ 0), so we can use reflexivity to prove the goal.",rfl,  rfl,error,"You might need to open '/home/manooshree/PeanoFormalizer/NNG4' as a workspace in your editor
+",Yes
