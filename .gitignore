@@ -4,9 +4,10 @@ myenv/
 *.pyc
 __pycache__/
 *.dylib
-myenv/
-env/
-__pycache__/
-*.pyc
-*.dylib
 *.so
+deepseek-prover-lora/checkpoint-*/
+deepseek-prover-lora-2/checkpoint-*/
+deepseek-prover-lora-3/checkpoint-*/
+.lake/
+plots/
+deepseek-prover-lora*/
