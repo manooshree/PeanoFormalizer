@@ -1,5 +1,5 @@
 # PeanoFormalizer
-An low-resource training approach for faithful Lean autoformalization of natural language proofs
+An low-resource training approach for faithful Lean autoformalization of natural language proofs. We train PeanoFormalizer, a language model that faithfully autoformalizes natural language proofs into formal Lean syntax. Importantly, we release our training and evaluation pipelines. Our framework is model-agnostic and can effectively be used to train on other model families. 
 
 Repo Map:
 Dataset: Game/LevelsClean/Datasets/full_clean_dataset <br/>
