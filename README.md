@@ -1,5 +1,5 @@
 # PeanoFormalizer
-An low-resource training approach for faithful Lean autoformalization of natural language proofs. We train PeanoFormalizer, a language model that faithfully autoformalizes natural language proofs into formal Lean syntax. Importantly, we release our training and evaluation pipelines. Our framework is model-agnostic and can effectively be used to train on other model families. 
+A low-resource training approach for faithful Lean autoformalization of natural language proofs. We train PeanoFormalizer, a language model that faithfully autoformalizes natural language proofs into formal Lean syntax. Importantly, we release our training and evaluation pipelines. Our framework is model-agnostic and can effectively be used to train on other model families. 
 
 The original ~80 Peano Arithmetic proofs in lean are derived from the [Natural Numbers Game](https://github.com/leanprover-community/NNG4). <br/>
 You can develop this repo as any lean project and use ```lake build``` to build it. If this is your first time installing Lean, we recommend [this guide](https://leanprover-community.github.io/get_started.html). 
